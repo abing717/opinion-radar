@@ -2127,10 +2127,14 @@
           throw new Error(`HTTP ${response.status}`);
         }
         const data = await response.json();
-        const incomingItems = Array.isArray(data.opinionItems) ? data.opinionItems : [];
-        const incomingIdeas = Array.isArray(data.dailyPostIdeas) ? data.dailyPostIdeas : [];
-        const itemResult = mergeById(state.opinionItems, incomingItems.map(normalizeAutoOpinionItem));
-        const ideaResult = mergeById(state.dailyPostIdeas, incomingIdeas.map(normalizeAutoPostIdea));
+        const incomingItems = (Array.isArray(data.opinionItems) ? data.opinionItems : []).map(normalizeAutoOpinionItem);
+        const incomingIdeas = (Array.isArray(data.dailyPostIdeas) ? data.dailyPostIdeas : []).map(normalizeAutoPostIdea);
+        const replaceResult = replaceAutoDataForDates(
+          collectAutoDates(incomingItems, data.generatedDate),
+          collectAutoDates(incomingIdeas, data.generatedDate)
+        );
+        const itemResult = mergeById(state.opinionItems, incomingItems);
+        const ideaResult = mergeById(state.dailyPostIdeas, incomingIdeas);
 
         state.autoCrawl = {
           loaded: true,
@@ -2141,6 +2145,8 @@
           feedErrors: Array.isArray(data.errors) ? data.errors.length : 0,
           itemCount: incomingItems.length,
           ideaCount: incomingIdeas.length,
+          removedItems: replaceResult.removedItems,
+          removedIdeas: replaceResult.removedIdeas,
           addedItems: itemResult.added,
           updatedItems: itemResult.updated,
           addedIdeas: ideaResult.added,
@@ -2152,7 +2158,7 @@
         }
         renderAll();
         if (!silent) {
-          showToast(`已載入自動資料：輿情 ${incomingItems.length} 筆、建議 ${incomingIdeas.length} 則`);
+          showToast(`已重新整理自動資料：輿情 ${incomingItems.length} 筆、建議 ${incomingIdeas.length} 則`);
         }
       } catch (error) {
         state.autoCrawl = {
@@ -2216,6 +2222,26 @@
         sourceItemId: idea.sourceItemId || "",
         createdAt: idea.createdAt || now,
         updatedAt: idea.updatedAt || now
+      };
+    }
+
+    function collectAutoDates(entries, fallbackDate) {
+      const dates = new Set();
+      if (fallbackDate) dates.add(fallbackDate);
+      entries.forEach((entry) => {
+        if (entry.date) dates.add(entry.date);
+      });
+      return dates;
+    }
+
+    function replaceAutoDataForDates(itemDates, ideaDates) {
+      const beforeItems = state.opinionItems.length;
+      const beforeIdeas = state.dailyPostIdeas.length;
+      state.opinionItems = state.opinionItems.filter((item) => !(item.sourceMode === "auto" && itemDates.has(item.date)));
+      state.dailyPostIdeas = state.dailyPostIdeas.filter((idea) => !(idea.sourceMode === "auto" && ideaDates.has(idea.date)));
+      return {
+        removedItems: beforeItems - state.opinionItems.length,
+        removedIdeas: beforeIdeas - state.dailyPostIdeas.length
       };
     }
 
