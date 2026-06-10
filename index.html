@@ -468,6 +468,20 @@
       min-height: 168px;
     }
 
+    .class-card-clickable {
+      cursor: pointer;
+      transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .class-card-clickable:hover,
+    .class-card-clickable:focus-visible,
+    .class-card-clickable.active {
+      border-color: var(--cyan);
+      box-shadow: 0 10px 28px rgba(37, 208, 198, 0.16);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
     .class-card h3,
     .record-card h3,
     .account-card h3,
@@ -497,6 +511,51 @@
       padding-left: 18px;
       color: var(--soft);
       line-height: 1.55;
+    }
+
+    .class-more {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      color: var(--blue);
+      background: var(--soft-blue);
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .classification-detail {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(31, 36, 44, 0.88);
+    }
+
+    .classification-detail[hidden] {
+      display: none;
+    }
+
+    .classification-detail-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .classification-detail-head h3,
+    .classification-detail-head p {
+      margin: 0;
+    }
+
+    .classification-detail-head h3 {
+      color: var(--text);
+      font-size: 1.12rem;
     }
 
     .record-card,
@@ -1053,6 +1112,7 @@
     .form-surface,
     .filter-bar,
     .table-wrap,
+    .classification-detail,
     dialog,
     .class-card,
     .record-card,
@@ -1191,6 +1251,19 @@
 
     .row-title strong {
       color: var(--blue);
+    }
+
+    .title-link {
+      color: inherit;
+      font-weight: inherit;
+      text-decoration: none;
+    }
+
+    .title-link:hover,
+    .title-link:focus-visible {
+      color: var(--red);
+      text-decoration: underline;
+      outline: none;
     }
 
     .row-title span {
@@ -1443,6 +1516,7 @@
             </div>
           </div>
           <div id="classificationGrid" class="classification-grid"></div>
+          <div id="classificationDetail" class="classification-detail" hidden></div>
         </section>
 
         <section class="section-block">
@@ -1885,6 +1959,7 @@
     };
 
     let toastTimer = null;
+    let activeClassificationKey = "";
 
     document.addEventListener("DOMContentLoaded", init);
 
@@ -1971,6 +2046,7 @@
       $("#accountForm").addEventListener("submit", saveAccountFromForm);
       $("#ideaForm").addEventListener("submit", saveIdeaFromForm);
       $("#importFile").addEventListener("change", importDataFile);
+      $("#classificationGrid").addEventListener("keydown", handleClassificationKeydown);
 
       document.addEventListener("click", handleActionClick);
 
@@ -1997,6 +2073,7 @@
     }
 
     function handleActionClick(event) {
+      if (event.target.closest("a[href]")) return;
       const button = event.target.closest("[data-action]");
       if (!button) return;
       const action = button.dataset.action;
@@ -2017,7 +2094,18 @@
       if (action === "load-auto") loadAutoCrawlData({ silent: false });
       if (action === "export-data") exportData();
       if (action === "import-data") $("#importFile").click();
+      if (action === "show-classification") showClassificationDetail(button.dataset.classKey);
+      if (action === "clear-classification") clearClassificationDetail();
       if (action === "close-dialog") closeDialog(button.dataset.dialog);
+    }
+
+    function handleClassificationKeydown(event) {
+      if (event.target.closest("a[href]")) return;
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const card = event.target.closest(".class-card-clickable");
+      if (!card) return;
+      event.preventDefault();
+      showClassificationDetail(card.dataset.classKey);
     }
 
     function renderAll() {
@@ -2220,44 +2308,158 @@
     }
 
     function renderClassification(items) {
+      const classes = getNewsClassificationGroups(items);
+      if (activeClassificationKey && !classes.some((group) => group.key === activeClassificationKey)) {
+        activeClassificationKey = "";
+      }
+
+      $("#classificationGrid").innerHTML = classes.map((group) => {
+        const top = group.items.slice().sort((a, b) => scoreItem(b) - scoreItem(a)).slice(0, 3);
+        const isActive = group.key === activeClassificationKey;
+        return `
+          <article class="class-card class-card-clickable${isActive ? " active" : ""}" role="button" tabindex="0" data-action="show-classification" data-class-key="${escapeHtml(group.key)}" aria-pressed="${isActive ? "true" : "false"}" aria-label="查看${escapeHtml(group.label)}全部 ${group.items.length} 則">
+            <span class="class-count">${group.items.length}</span>
+            <h3>${escapeHtml(group.label)}</h3>
+            ${top.length ? `<ul>${top.map((item) => `<li>${renderTitleLink(item, "title-link")}</li>`).join("")}</ul>` : `<p class="muted">尚無資料</p>`}
+            <span class="class-more">查看全部 ${group.items.length} 則</span>
+          </article>
+        `;
+      }).join("");
+      renderClassificationDetail(classes);
+    }
+
+    function getNewsClassificationGroups(items) {
       const newsItems = items.filter(isNewsItem);
-      const classes = [
+      return [
         {
+          key: "global-major",
           label: "國際重大新聞",
           items: newsItems.filter((item) => item.region === "國際" && item.importance === "高")
         },
         {
+          key: "global-taiwan",
           label: "與台灣相關的國際新聞",
           items: newsItems.filter((item) => item.region === "國際" && hasAnyText(item, ["台灣", "臺灣", "台海", "兩岸", "半導體", "美中", "中國"]))
         },
         {
+          key: "taiwan-major",
           label: "台灣重大新聞",
           items: newsItems.filter((item) => item.region === "台灣" && item.importance !== "低")
         },
         {
+          key: "taiwan-changhua",
           label: "與彰化相關的台灣新聞",
           items: newsItems.filter((item) => (item.region === "台灣" || item.region === "彰化") && hasAnyText(item, ["彰化", "縣府", "中部"]))
         },
         {
+          key: "changhua-major",
           label: "彰化縣重要新聞",
           items: newsItems.filter((item) => item.region === "彰化" && item.importance !== "低")
         },
         {
+          key: "lukang-fuxing",
           label: "鹿港與福興地方新聞",
           items: newsItems.filter((item) => isPlaceRelated(item, "鹿港") || isPlaceRelated(item, "福興"))
         }
       ];
+    }
 
-      $("#classificationGrid").innerHTML = classes.map((group) => {
-        const top = group.items.slice().sort((a, b) => scoreItem(b) - scoreItem(a)).slice(0, 3);
-        return `
-          <article class="class-card">
-            <span class="class-count">${group.items.length}</span>
-            <h3>${escapeHtml(group.label)}</h3>
-            ${top.length ? `<ul>${top.map((item) => `<li>${escapeHtml(item.title || "未命名輿情")}</li>`).join("")}</ul>` : `<p class="muted">尚無資料</p>`}
-          </article>
-        `;
-      }).join("");
+    function renderClassificationDetail(groups) {
+      const detail = $("#classificationDetail");
+      const group = groups.find((entry) => entry.key === activeClassificationKey);
+      if (!group) {
+        detail.hidden = true;
+        detail.innerHTML = "";
+        return;
+      }
+
+      const items = group.items.slice().sort((a, b) => scoreItem(b) - scoreItem(a));
+      detail.hidden = false;
+      detail.innerHTML = `
+        <div class="classification-detail-head">
+          <div>
+            <h3>${escapeHtml(group.label)}完整列表</h3>
+            <p class="muted">共 ${items.length} 則，依重要性、情緒與互動熱度排序。點標題可開新分頁查看原始新聞。</p>
+          </div>
+          <button class="quiet-btn" type="button" data-action="clear-classification">收起列表</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 96px;">日期</th>
+                <th style="width: 176px;">來源</th>
+                <th style="width: 132px;">地區 / 類別</th>
+                <th>標題與摘要</th>
+                <th style="width: 170px;">判讀</th>
+                <th style="width: 120px;">互動</th>
+                <th style="width: 96px;">連結</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${items.length ? items.map(renderClassificationRow).join("") : `<tr><td colspan="7"><div class="empty-state">此分類尚無資料。</div></td></tr>`}
+            </tbody>
+          </table>
+        </div>
+        <div class="mobile-record-list">
+          ${items.length ? items.map(renderRecordCard).join("") : `<div class="empty-state">此分類尚無資料。</div>`}
+        </div>
+      `;
+    }
+
+    function renderClassificationRow(item) {
+      const url = normalizeUrl(item.url);
+      return `
+        <tr>
+          <td>${escapeHtml(item.date || "")}<br><span class="muted">${escapeHtml(item.id || "")}</span></td>
+          <td>
+            <div class="tag-row">
+              ${item.sourceMode === "auto" ? tag("自動", "purple") : tag("人工", "gray")}
+              ${tag(item.platform, "gray")}
+            </div>
+            <div class="muted">${escapeHtml(item.sourceName || "未填來源")}</div>
+          </td>
+          <td>
+            <div class="tag-row">
+              ${tag(item.region, "blue")}
+              ${tag(item.category, "cyan")}
+            </div>
+          </td>
+          <td>
+            <div class="row-title">
+              <strong>${renderTitleLink(item, "title-link")}</strong>
+              <span>${escapeHtml(item.summary || "尚未填寫摘要")}</span>
+              <span>${escapeHtml(item.keywords || "")}</span>
+            </div>
+          </td>
+          <td>
+            <div class="tag-row">
+              ${tag(item.sentiment, sentimentColor(item.sentiment))}
+              ${tag(item.importance, importanceColor(item.importance))}
+              ${tag(item.action, actionColor(item.action))}
+            </div>
+          </td>
+          <td>
+            互動 ${formatNumber(item.interactions)}<br>
+            留言 ${formatNumber(item.comments)}<br>
+            分享 ${formatNumber(item.shares)}<br>
+            觀看 ${formatNumber(item.views)}
+          </td>
+          <td>${url ? `<a class="quiet-btn" href="${url}" target="_blank" rel="noopener">開啟</a>` : `<span class="muted">無連結</span>`}</td>
+        </tr>
+      `;
+    }
+
+    function showClassificationDetail(key) {
+      if (!key) return;
+      activeClassificationKey = key;
+      renderDashboard();
+      $("#classificationDetail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function clearClassificationDetail() {
+      activeClassificationKey = "";
+      renderDashboard();
     }
 
     function renderRecordList(selector, items, emptyText) {
@@ -2280,7 +2482,7 @@
             <span>${escapeHtml(item.platform || "")}</span>
             <span>${escapeHtml(item.sourceName || "")}</span>
           </div>
-          <h3>${escapeHtml(item.title || "未命名輿情")}</h3>
+          <h3>${renderTitleLink(item, "title-link")}</h3>
           <p class="record-summary">${escapeHtml(item.summary || "尚未填寫摘要")}</p>
           <div class="tag-row">
             ${tag(item.region, "blue")}
@@ -2328,7 +2530,7 @@
             </td>
             <td>
               <div class="row-title">
-                <strong>${escapeHtml(item.title || "未命名輿情")}</strong>
+                <strong>${renderTitleLink(item, "title-link")}</strong>
                 <span>${escapeHtml(item.summary || "尚未填寫摘要")}</span>
                 <span>${escapeHtml(item.keywords || "")}</span>
               </div>
@@ -2970,6 +3172,14 @@
     function tag(value, color = "gray") {
       if (!value) return "";
       return `<span class="tag tag-${color}">${escapeHtml(String(value))}</span>`;
+    }
+
+    function renderTitleLink(item, className = "") {
+      const title = escapeHtml(item.title || "未命名輿情");
+      const url = normalizeUrl(item.url);
+      if (!url) return title;
+      const classAttr = className ? ` class="${escapeHtml(className)}"` : "";
+      return `<a${classAttr} href="${url}" target="_blank" rel="noopener">${title}</a>`;
     }
 
     function sentimentColor(value) {
