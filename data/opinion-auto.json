@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-10T07:28:11.430Z",
+  "generatedAt": "2026-06-10T08:13:07.268Z",
   "generatedDate": "2026-06-10",
   "timezone": "Asia/Taipei",
   "source": "GitHub Actions daily crawler + Google News RSS",
@@ -73,17 +73,9 @@
     {
       "feed": "國際重大新聞",
       "query": "國際 重大新聞",
-      "title": "《放. 新聞／世界新聞／英國》英國參謀總長示警 俄軍挑釁北約次數已逼近去年全年",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Wed, 10 Jun 2026 03:44:28 GMT",
-      "reason": "內容含舊日期線索：相對舊時間"
-    },
-    {
-      "feed": "國際重大新聞",
-      "query": "國際 重大新聞",
-      "title": "伊朗媒體：德黑蘭國際機場已重新開放",
+      "title": "花旗：交易員大舉搭建美股空倉 諸多重大風險事件臨近 | 美股動態 | 國際",
       "sourceName": "經濟日報",
-      "pubDate": "Tue, 09 Jun 2026 08:01:40 GMT",
+      "pubDate": "Tue, 09 Jun 2026 11:53:03 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -97,25 +89,9 @@
     {
       "feed": "國際重大新聞",
       "query": "國際 重大新聞",
-      "title": "日議員萩生田光一出席論壇 憶安倍「自由鳳梨」挺台",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 13:05:28 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "國際重大新聞",
-      "query": "國際 重大新聞",
-      "title": "花旗：交易員大舉搭建美股空倉 諸多重大風險事件臨近 | 美股動態 | 國際",
-      "sourceName": "經濟日報",
-      "pubDate": "Tue, 09 Jun 2026 11:53:03 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "國際重大新聞",
-      "query": "國際 重大新聞",
-      "title": "美加邊境新地標！47億美元大橋即將完工 無視川普關稅威脅 | 民視新聞網",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 08:30:15 GMT",
+      "title": "日議員萩生田光一出席論壇憶安倍「自由鳳梨」挺台- 國際",
+      "sourceName": "華視新聞網",
+      "pubDate": "Tue, 09 Jun 2026 12:31:42 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -129,9 +105,9 @@
     {
       "feed": "國際重大新聞",
       "query": "國際 重大新聞",
-      "title": "澳紐再把台海寫進聯合聲明！台灣議題正從區域問題走向國際秩序問題",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:39:01 GMT",
+      "title": "國際刑事法院檢察官 Karim Khan 遭停職 捲入性騷醜聞引發關注 | 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 09:45:20 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -140,22 +116,6 @@
       "title": "出席「無人機海外商機聯盟大會師」 賴清德吐苦水藍白刪相關預算、立院還在審今年總預算",
       "sourceName": "PChome Online 新聞",
       "pubDate": "Tue, 09 Jun 2026 09:09:48 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "國際重大新聞",
-      "query": "國際 重大新聞",
-      "title": "聯發國際股東會／前五月營收突破5.01億元 創歷史同期新高 | 產業熱點 | 產業",
-      "sourceName": "經濟日報",
-      "pubDate": "Tue, 09 Jun 2026 07:50:03 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "國際重大新聞",
-      "query": "國際 重大新聞",
-      "title": "國際刑事法院檢察官 Karim Khan 遭停職 捲入性騷醜聞引發關注 | 民視新聞網",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 09:45:20 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -185,9 +145,17 @@
     {
       "feed": "國際重大新聞",
       "query": "全球 重大新聞",
-      "title": "全球1.2萬核彈頭 俄美共占86％",
-      "sourceName": "Overseas Chinese Daily News",
-      "pubDate": "Tue, 09 Jun 2026 13:27:12 GMT",
+      "title": "日議員萩生田光一出席論壇 憶安倍「自由鳳梨」挺台",
+      "sourceName": "放言Fount Media",
+      "pubDate": "Tue, 09 Jun 2026 13:05:28 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "無人機產業列國家發展重大政策 賴總統：打造台灣為亞洲中心 | 經濟日報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 08:20:33 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -201,9 +169,17 @@
     {
       "feed": "國際重大新聞",
       "query": "全球 重大新聞",
-      "title": "影／台灣卓越無人機海外商機聯盟大會師 盼臺灣成為全球無人機發展亞洲中心",
-      "sourceName": "PChome Online 新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:40:20 GMT",
+      "title": "全球1.2萬核彈頭 俄美共占86％",
+      "sourceName": "Overseas Chinese Daily News",
+      "pubDate": "Tue, 09 Jun 2026 13:27:12 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "出席「無人機海外商機聯盟大會師」 賴清德吐苦水藍白刪相關預算、立院還在審今年總預算",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:09:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -220,22 +196,6 @@
       "title": "自由開講》美伊協議的臨門一腳",
       "sourceName": "自由評論網",
       "pubDate": "Tue, 09 Jun 2026 12:00:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "國際重大新聞",
-      "query": "全球 重大新聞",
-      "title": "無人機產業列國家發展重大政策 賴總統：打造台灣為亞洲中心",
-      "sourceName": "UDN",
-      "pubDate": "Tue, 09 Jun 2026 07:33:42 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "國際重大新聞",
-      "query": "全球 重大新聞",
-      "title": "聯發國際股東會／前五月營收突破5.01億元 創歷史同期新高 | 產業熱點 | 產業",
-      "sourceName": "經濟日報",
-      "pubDate": "Tue, 09 Jun 2026 07:50:03 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -279,35 +239,35 @@
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "AI應用成本增 中國模型崛起挑戰西方主導地位",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:39:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "銀行公會訪京丨孫煜:香港銀行業將主動參與香港五年規劃制定",
+      "sourceName": "信報網站",
+      "pubDate": "Tue, 09 Jun 2026 12:32:16 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "AI基礎建設才剛開始 黃仁勳： 全球科技股賣壓是買進機會",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 11:57:48 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
       "title": "中華觀光美食國際高峰論壇登場 向世界展現台灣美食新高度",
       "sourceName": "Yahoo新聞",
       "pubDate": "Tue, 09 Jun 2026 09:44:41 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "維也納吹起台灣風！劉玄詠、張麗莉雙登國際舞台展軟實力 - 墨新聞-MORE News",
-      "sourceName": "墨新聞-MORE News",
-      "pubDate": "Tue, 09 Jun 2026 10:53:36 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "澳紐再把台海寫進聯合聲明！台灣議題正從區域問題走向國際秩序問題",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:39:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "從農技團到無人機 台灣外交正在輸出新的國家能力",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 09:24:03 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -321,33 +281,33 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "台灣資安威脅居亞太之首！資安院攜手微軟 AI防禦、零信任、國安情資全面升級",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:34:01 GMT",
+      "title": "維也納吹起台灣風！劉玄詠、張麗莉雙登國際舞台展軟實力 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Tue, 09 Jun 2026 10:53:36 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "亞銀把台灣改成「Taipei, China」！立院財委會凍結3000萬捐款 要求善意回應才放行",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 08:09:01 GMT",
+      "title": "接軌國際 台中海空航線大躍進",
+      "sourceName": "中華新聞雲／中華日報",
+      "pubDate": "Tue, 09 Jun 2026 13:09:26 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "美國考慮買下印度洋戰略群島！繞過英國掌握狄耶戈加西亞 印太軍事節點重新洗牌",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 08:09:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "桃園強棒聯隊出征國際賽授旗 蘇俊賓：棒球天使加持穩固桃園三級棒球發展基礎 | 台灣好新聞",
+      "title": "美前防長指大陸不會武力犯台 傾向脅迫逼台灣屈服 | 中廣新聞網",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 10:00:21 GMT",
+      "pubDate": "Tue, 09 Jun 2026 09:29:02 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "世新校長喊「結束自己」竟登美國熱播節目 網傻：丟臉丟到國外！",
+      "sourceName": "自由時報",
+      "pubDate": "Tue, 09 Jun 2026 12:05:55 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -361,41 +321,17 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "中國稀土卡日本！3、4月出口暴跌逾8成 車用、半導體設備供應鏈急找替代來源",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:29:01 GMT",
+      "title": "桃園強棒聯隊出征國際賽授旗 蘇俊賓：棒球天使加持穩固桃園三級棒球發展基礎 | 台灣好新聞",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 10:00:21 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "中國海外投資也要國安審查！北京防堵資金、技術、企業外流 全球供應鏈進入築牆時代",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:29:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "柬埔寨詐騙園區沒消失！國際特赦揭86處僅24處關閉 人口販運與虐待陰影仍在",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:49:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "台灣航空史新頁！孫嘉明當選IATA理事 首度進入全球航空規則核心",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:34:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "不只深化邦誼！蕭美琴把台灣無人機帶進帛琉 太平洋布局悄悄出現新訊號",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 08:45:05 GMT",
+      "title": "國際發展合作新里程碑！國合會、愛沙尼亞簽署MOU",
+      "sourceName": "rti.org.tw",
+      "pubDate": "Tue, 09 Jun 2026 09:21:17 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -409,17 +345,17 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "臺南隊前進首爾國際食品展 展現農產創新實力",
+      "title": "文化大學新聞學系見證一甲子台灣新聞史 勉勵畢業生勇敢向前",
       "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 10:08:00 GMT",
+      "pubDate": "Tue, 09 Jun 2026 08:25:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "文化大學新聞學系見證一甲子台灣新聞史 勉勵畢業生勇敢向前",
+      "title": "臺南隊前進首爾國際食品展 展現農產創新實力",
       "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 08:25:00 GMT",
+      "pubDate": "Tue, 09 Jun 2026 10:08:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -441,17 +377,9 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "AI持續帶旺！台灣五月份出口784.8億美元、創歷年單月次高| 財經",
-      "sourceName": "Newtalk新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:16:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
-      "title": "〔佛光山2026年傳授國際萬佛三壇大戒〕豐原人歡喜植福 行腳僧為世界祈福",
-      "sourceName": "lnanews.com",
-      "pubDate": "Tue, 09 Jun 2026 14:00:18 GMT",
+      "title": "韓國小網紅走進花蓮休閒農業區",
+      "sourceName": "更生日報",
+      "pubDate": "Tue, 09 Jun 2026 09:17:22 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -465,9 +393,9 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "世新校長喊「結束自己」竟登美國熱播節目 網傻：丟臉丟到國外！",
-      "sourceName": "自由時報",
-      "pubDate": "Tue, 09 Jun 2026 12:05:55 GMT",
+      "title": "難以完全駕馭以色列 川普陷入兩難",
+      "sourceName": "美洲台灣日報",
+      "pubDate": "Tue, 09 Jun 2026 14:53:30 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -481,14 +409,6 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "建材防火驗證免送海外 台灣建築中心與德國萊因簽MOU",
-      "sourceName": "PR Newswire",
-      "pubDate": "Tue, 09 Jun 2026 10:31:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台灣 國際 新聞",
       "title": "張雅琴挑戰新聞 0609",
       "sourceName": "美洲台灣日報",
       "pubDate": "Tue, 09 Jun 2026 13:12:42 GMT",
@@ -497,17 +417,17 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "難以完全駕馭以色列 川普陷入兩難",
-      "sourceName": "美洲台灣日報",
-      "pubDate": "Tue, 09 Jun 2026 14:53:30 GMT",
+      "title": "AI持續帶旺！台灣五月份出口784.8億美元、創歷年單月次高| 財經",
+      "sourceName": "Newtalk新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:16:01 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
-      "title": "鄭麗文紐約座談會：民眾支持對話 和統公投現在很困難",
-      "sourceName": "世界新聞網",
-      "pubDate": "Tue, 09 Jun 2026 08:20:56 GMT",
+      "title": "建材防火驗證免送海外 台灣建築中心與德國萊因簽MOU",
+      "sourceName": "PR Newswire",
+      "pubDate": "Tue, 09 Jun 2026 10:31:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -521,9 +441,33 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台灣 國際 新聞",
+      "title": "2026中華觀光美食國際高峰論壇 深度探討AI及 ESG議題 - 生活新聞 - PChome Online 新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Tue, 09 Jun 2026 11:36:18 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "鄭麗文紐約座談會：民眾支持對話 和統公投現在很困難",
+      "sourceName": "世界新聞網",
+      "pubDate": "Tue, 09 Jun 2026 08:20:56 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
       "title": "東吳學子勇闖矽谷展現AI新創實力 - 生活新聞 - PChome Online 新聞",
       "sourceName": "PChome Online 新聞",
       "pubDate": "Tue, 09 Jun 2026 15:08:03 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "2026 台北國際食品系列展「綠色願景獎」，看獲獎企業如何用「ESG門票」取得國際訂單",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Tue, 09 Jun 2026 09:59:27 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -561,14 +505,6 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "臺灣 國際 新聞",
-      "title": "2026中華觀光美食國際高峰論壇 深度探討AI及 ESG議題 - 生活新聞 - PChome Online 新聞",
-      "sourceName": "PChome Online 新聞",
-      "pubDate": "Tue, 09 Jun 2026 11:36:18 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "臺灣 國際 新聞",
       "title": "經濟部率團前進歐盟旗艦通訊大會 簽署台歐6G產業MOU - 消費新聞 - PChome Online 新聞",
       "sourceName": "PChome Online 新聞",
       "pubDate": "Tue, 09 Jun 2026 10:07:28 GMT",
@@ -585,9 +521,9 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "臺灣 國際 新聞",
-      "title": "7-ELEVEN國際啤酒節 買6件+99元送炫彩啤酒燈箱",
-      "sourceName": "卡優新聞網",
-      "pubDate": "Tue, 09 Jun 2026 07:56:40 GMT",
+      "title": "鄒遊台灣 茶山o’oko走出大山親近海洋 - 生活新聞 - PChome Online 新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:01:09 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -601,14 +537,6 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "臺灣 國際 新聞",
-      "title": "台灣大馬深化合作推動穆斯林友善旅遊與旅宿認證| 生活",
-      "sourceName": "中央社 CNA",
-      "pubDate": "Tue, 09 Jun 2026 14:39:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "臺灣 國際 新聞",
       "title": "維也納直擊》駐奧地利代表劉玄詠：結合文化、科技、美學 輸出「台灣模式」布局歐洲",
       "sourceName": "財訊",
       "pubDate": "Tue, 09 Jun 2026 09:18:22 GMT",
@@ -617,9 +545,9 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "臺灣 國際 新聞",
-      "title": "經部率團前進歐盟旗艦通訊大會，簽署台歐6G MoU",
-      "sourceName": "台視全球資訊網",
-      "pubDate": "Tue, 09 Jun 2026 07:33:03 GMT",
+      "title": "黃仁勳之後呢？AI時代的下一位台灣領航者在哪裡",
+      "sourceName": "放言Fount Media",
+      "pubDate": "Tue, 09 Jun 2026 09:59:19 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -628,14 +556,6 @@
       "title": "＂不打你 但要讓你撐不住＂美前防長點破習近平對台真正戰略意圖",
       "sourceName": "NOWnews今日新聞",
       "pubDate": "Tue, 09 Jun 2026 11:22:07 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "臺灣 國際 新聞",
-      "title": "黃仁勳之後呢？AI時代的下一位台灣領航者在哪裡",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 09:59:19 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -652,6 +572,14 @@
       "title": "加拿大公布AI戰略 台商盼加台攜手共創科技生態鏈",
       "sourceName": "放言Fount Media",
       "pubDate": "Tue, 09 Jun 2026 09:33:09 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "共建全球6G生態系 產學研前進歐盟旗艦通訊大會 | 台灣好新聞",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 09:00:11 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -681,6 +609,22 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台海 國際",
+      "title": "美前防長： 陸不會攻台但台海開戰代價遠超荷莫茲危機",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 12:35:54 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "台海一旦開戰 彭博估「這個國家」經濟受害最深 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 14:00:05 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
       "title": "北京硬上強管台海！大陸海巡在我海域盤問外籍商船，陸委會怒轟中共使計擴張主權| 楊騰凱 | 新聞",
       "sourceName": "風傳媒",
       "pubDate": "Tue, 09 Jun 2026 13:16:20 GMT",
@@ -689,57 +633,9 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台海 國際",
-      "title": "台海一旦開戰 彭博估「這個國家」經濟受害最深",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:51:53 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "日菲海域談判無損台灣利益？作家提1事酸賴政府：中艦侵擾他們會幫忙嗎 | 風傳媒",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 09:20:16 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "金正恩支持「一中原則」 外交部籲國際社會正視威權獨裁國家合流 | 鏡新聞",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 10:00:22 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "賴清德讚日本前首相為台灣摯友 盼台日合作持續深化 | CTWANT",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 09:19:38 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "鄭麗文訪美和平論述升級 更稱若特朗普能化戰爭為和平將為21世紀最偉大領導人",
+      "title": "【視頻】台灣在沿海演習中模擬摧毀入侵的中國軍隊",
       "sourceName": "RFI",
-      "pubDate": "Tue, 09 Jun 2026 08:19:45 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "安倍晉三國際論壇登場 賴清德盼深化台日合作",
-      "sourceName": "大纪元",
-      "pubDate": "Tue, 09 Jun 2026 07:56:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "美前防長：台海若爆衝突 經濟衝擊恐「遠超荷姆茲海峽」",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 10:01:18 GMT",
+      "pubDate": "Tue, 09 Jun 2026 14:55:16 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -753,9 +649,73 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台海 國際",
+      "title": "日菲海域談判無損台灣利益？作家提1事酸賴政府：中艦侵擾他們會幫忙嗎 | 風傳媒",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 09:20:16 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "賴清德讚日本前首相為台灣摯友 盼台日合作持續深化 | CTWANT",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 09:19:38 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "金正恩支持「一中原則」 外交部籲國際社會正視威權獨裁國家合流 | 鏡新聞",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 10:00:22 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "鄭麗文訪美和平論述升級 更稱若特朗普能化戰爭為和平將為21世紀最偉大領導人",
+      "sourceName": "RFI",
+      "pubDate": "Tue, 09 Jun 2026 08:19:45 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
       "title": "北京觀察》習近平睽違7年出訪北韓！中朝歷史新起點背後：北京穩固後院重塑台海局勢？ | 風傳媒",
       "sourceName": "LINE TODAY",
       "pubDate": "Tue, 09 Jun 2026 11:40:17 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "美前防長：台海若爆衝突 經濟衝擊恐「遠超荷姆茲海峽」",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 10:01:18 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "菲武裝部隊總參謀長證實黃岩島發現載人漂浮結構 菲外交部向北京採取外交行動",
+      "sourceName": "RFI",
+      "pubDate": "Tue, 09 Jun 2026 09:01:32 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "譴責金正恩扈從中國喊一中 外交部籲國際社會正視威權獨裁國家合流",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 11:18:36 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "遺憾鄭麗文訪美淪習近平傳聲筒邱垂正質疑：替中共宣講| 政治",
+      "sourceName": "Newtalk新聞",
+      "pubDate": "Tue, 09 Jun 2026 08:56:10 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -777,32 +737,16 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台海 國際",
-      "title": "安倍論壇致詞 賴清德：感謝高市早苗延續理念提「升級版印太戰略」 | 太報",
+      "title": "賴清德：感謝高市早苗延續安倍晉三理念 提出升級版「自由開放印太戰略」 | Newtalk",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:40:22 GMT",
+      "pubDate": "Tue, 09 Jun 2026 08:26:27 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台海 國際",
-      "title": "對抗日菲海洋畫界 中國海警船進入日本專屬經濟區",
-      "sourceName": "RFI",
-      "pubDate": "Tue, 09 Jun 2026 08:11:19 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "習近平抵達平壤！金正恩親自接機 中朝高規格互動牽動東北亞安全盤",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:29:59 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "遺憾鄭麗文訪美淪習近平傳聲筒邱垂正質疑：替中共宣講| 政治",
-      "sourceName": "Newtalk新聞",
+      "title": "鄭麗文赴美行 邱垂正：像銜習近平之命為中共宣講 | 中央廣播電臺",
+      "sourceName": "LINE TODAY",
       "pubDate": "Tue, 09 Jun 2026 08:56:10 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
@@ -817,25 +761,9 @@
     {
       "feed": "與台灣相關的國際新聞",
       "query": "台海 國際",
-      "title": "美前防長： 陸不會攻台但台海開戰代價遠超荷莫茲危機",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 12:35:54 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
       "title": "台海開戰經濟大洗牌？彭博報告驚人預測：呢個國家損失慘重過中美！",
       "sourceName": "GOtrip.hk",
       "pubDate": "Tue, 09 Jun 2026 09:08:18 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與台灣相關的國際新聞",
-      "query": "台海 國際",
-      "title": "譴責金正恩扈從中國喊一中 外交部籲國際社會正視威權獨裁國家合流",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 11:18:36 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -850,7 +778,7 @@
       "feed": "台灣重大新聞",
       "query": "台灣 重大新聞",
       "title": "研究：中美若因台灣開戰 歐盟或損失2兆美元",
-      "sourceName": "DW",
+      "sourceName": "DW.com",
       "pubDate": "Tue, 09 Jun 2026 14:06:19 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
@@ -873,33 +801,17 @@
     {
       "feed": "台灣重大新聞",
       "query": "台灣 重大新聞",
-      "title": "澳紐再把台海寫進聯合聲明！台灣議題正從區域問題走向國際秩序問題",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:39:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "台灣重大新聞",
-      "query": "台灣 重大新聞",
-      "title": "無人機產業列國家發展重大政策 賴總統：打造台灣為亞洲中心",
-      "sourceName": "UDN",
-      "pubDate": "Tue, 09 Jun 2026 07:33:42 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "台灣重大新聞",
-      "query": "台灣 重大新聞",
-      "title": "出席「無人機海外商機聯盟大會師」 賴清德吐苦水藍白刪相關預算、立院還在審今年總預算",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:09:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "台灣重大新聞",
-      "query": "台灣 重大新聞",
-      "title": "籲無人機業者表態 賴清德：若無所謂「相關預算就不會過」 | 中廣新聞網",
+      "title": "蔡明芳觀點》從黃仁勳的能源焦慮 看AI浪潮下台灣「差異化電價」的必修課 | Newtalk",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 09:29:02 GMT",
+      "pubDate": "Tue, 09 Jun 2026 15:20:36 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "無人機產業列國家發展重大政策 賴總統：打造台灣為亞洲中心 | 經濟日報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 08:20:33 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -921,25 +833,17 @@
     {
       "feed": "台灣重大新聞",
       "query": "台灣 重大新聞",
-      "title": "菲律賓規模8.2強震 台灣列海嘯警戒範圍 | NOWNEWS今日新聞",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 14:55:02 GMT",
+      "title": "無人機預算遭立院刪光 賴清德：令人意外、盼總預算盡速通過",
+      "sourceName": "客新聞 HakkaNews",
+      "pubDate": "Tue, 09 Jun 2026 11:06:04 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "台灣重大新聞",
       "query": "台灣 重大新聞",
-      "title": "台灣食品安全促進協會2026年世界食品安全日聲明",
-      "sourceName": "NOWnews今日新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:01:33 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "台灣重大新聞",
-      "query": "台灣 重大新聞",
-      "title": "台灣新竹有食肆爆炸 至少2死2傷",
-      "sourceName": "TVB",
-      "pubDate": "Tue, 09 Jun 2026 10:26:34 GMT",
+      "title": "安倍晉三論壇東京登場 安倍昭惠：理念已在世界發芽",
+      "sourceName": "rti.org.tw",
+      "pubDate": "Tue, 09 Jun 2026 08:27:22 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -953,9 +857,41 @@
     {
       "feed": "台灣重大新聞",
       "query": "台灣 重大新聞",
+      "title": "菲律賓規模8.2強震 台灣列海嘯警戒範圍 | NOWNEWS今日新聞",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 14:55:02 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "台灣新竹有食肆爆炸 至少2死2傷",
+      "sourceName": "TVB",
+      "pubDate": "Tue, 09 Jun 2026 10:26:34 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "台灣食品安全促進協會2026年世界食品安全日聲明",
+      "sourceName": "NOWnews今日新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:01:33 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
       "title": "無人機聯盟大會師 打造全球戰略版圖",
       "sourceName": "TDN台灣生活新聞",
       "pubDate": "Tue, 09 Jun 2026 10:07:11 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "無人機是台灣國安戰略得自己造！賴清德喊拚亞洲中心 傳產老本行也能變出新飯碗",
+      "sourceName": "鏡新聞",
+      "pubDate": "Tue, 09 Jun 2026 15:59:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -969,17 +905,17 @@
     {
       "feed": "台灣重大新聞",
       "query": "台灣 重大新聞",
-      "title": "無人機是台灣國安戰略得自己造！賴清德喊拚亞洲中心 傳產老本行也能變出新飯碗",
-      "sourceName": "鏡新聞",
-      "pubDate": "Tue, 09 Jun 2026 15:59:00 GMT",
+      "title": "台灣帛琉合作涵蓋經貿觀光 引入電動巴士、評估設置自行車道 | 自由電子報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 09:35:17 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "台灣重大新聞",
-      "query": "全台 最新新聞",
-      "title": "超狂6天梅雨灌全台! 中、南部水庫「大進帳解渴」 全台蓄水量曝光",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 15:37:28 GMT",
+      "query": "台灣 重大新聞",
+      "title": "貿聯重大訊息待公布！明起暫停交易 市場傳可能與併購案有關",
+      "sourceName": "NOWnews今日新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:43:10 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -993,22 +929,6 @@
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
-      "title": "全台水庫狂補2.1億噸水 湖山與南化蓄水率進入3字頭、曾文穩定回升 | 上報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 12:25:36 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "台灣重大新聞",
-      "query": "全台 最新新聞",
-      "title": "郵局宣布今起「1重要服務」大變動！全台同步上路， 優惠時間方式一次看",
-      "sourceName": "風傳媒",
-      "pubDate": "Tue, 09 Jun 2026 08:30:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "台灣重大新聞",
-      "query": "全台 最新新聞",
       "title": "全台豪雨假看這邊！7縣市雨量達標 5地宣布停班課",
       "sourceName": "Yahoo新聞",
       "pubDate": "Tue, 09 Jun 2026 15:25:14 GMT",
@@ -1017,9 +937,9 @@
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
-      "title": "最新雨量預測出爐 7縣市山區達「停班停課」標準 | 民視新聞網",
+      "title": "全台水庫狂補2.1億噸水 湖山與南化蓄水率進入3字頭、曾文穩定回升 | 上報",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 12:40:23 GMT",
+      "pubDate": "Tue, 09 Jun 2026 12:25:36 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1033,6 +953,30 @@
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
+      "title": "最新雨量預測出爐 7縣市山區達「停班停課」標準 | 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 12:40:23 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "豪雨狂炸！氣象署最新風雨預測：7縣市明天達停班課標準 | Newtalk",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 10:35:18 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "郵局宣布今起「1重要服務」大變動！全台同步上路， 優惠時間方式一次看",
+      "sourceName": "風傳媒",
+      "pubDate": "Tue, 09 Jun 2026 08:30:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
       "title": "今日（06/09）熱門新聞！7縣市明(6/10)停班課達標／賴政府「聲量最高內閣官員」出爐／媒體人示警藍綠2縣市民調「正在失血」",
       "sourceName": "風傳媒",
       "pubDate": "Tue, 09 Jun 2026 09:22:00 GMT",
@@ -1041,9 +985,9 @@
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
-      "title": "台灣餐飲界年度盛事登場！米其林7/21公布最新摘星名單",
-      "sourceName": "udn 女子漾",
-      "pubDate": "Tue, 09 Jun 2026 07:44:22 GMT",
+      "title": "LIVE／最猛雨彈還沒完！高雄六龜時雨量爆97毫米 氣象署20:30說明",
+      "sourceName": "ETtoday新聞雲",
+      "pubDate": "Tue, 09 Jun 2026 12:21:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1065,14 +1009,6 @@
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
-      "title": "滯留鋒面與西南氣流夾擊 全台嚴防致災性短延時強降雨",
-      "sourceName": "公視新聞網PNN",
-      "pubDate": "Tue, 09 Jun 2026 07:42:36 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "台灣重大新聞",
-      "query": "全台 最新新聞",
       "title": "梅雨降雨量驚人！全台水庫累積進帳2.1億噸 嘉南地區水庫仍渴原因曝光",
       "sourceName": "Yahoo新聞",
       "pubDate": "Tue, 09 Jun 2026 08:23:25 GMT",
@@ -1084,6 +1020,14 @@
       "title": "COVID-19疫情近3週緩升 全台單週就診1000人次",
       "sourceName": "中央社 CNA",
       "pubDate": "Tue, 09 Jun 2026 08:47:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "超狂6天梅雨灌全台! 中、南部水庫「大進帳解渴」 全台蓄水量曝光",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 15:37:28 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1105,17 +1049,17 @@
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
-      "title": "今雨勢最猛！這天再迎第二波雨彈",
-      "sourceName": "三立新聞網SETN.com",
-      "pubDate": "Tue, 09 Jun 2026 11:08:52 GMT",
+      "title": "預估雨量再達標！高雄5區明續放「豪雨假」 全台10日停班課一覽",
+      "sourceName": "知新聞",
+      "pubDate": "Tue, 09 Jun 2026 11:13:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
-      "title": "預估雨量再達標！高雄5區明續放「豪雨假」 全台10日停班課一覽",
-      "sourceName": "知新聞",
-      "pubDate": "Tue, 09 Jun 2026 11:13:00 GMT",
+      "title": "今雨勢最猛！這天再迎第二波雨彈",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Tue, 09 Jun 2026 11:08:52 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1129,9 +1073,9 @@
     {
       "feed": "台灣重大新聞",
       "query": "全台 最新新聞",
-      "title": "政壇最新流量密碼！藍綠白大咖全變「陀螺戰士」賴清德、盧秀燕都在瘋 | 上報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 11:50:27 GMT",
+      "title": "快新聞／最新雨量預測出爐 7縣市山區達「停班停課」標準",
+      "sourceName": "民視財經網",
+      "pubDate": "Tue, 09 Jun 2026 11:52:01 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1143,19 +1087,11 @@
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "三百年孔子廟化身最美詩意舞台 6/13邀全民走進古蹟感受文化新風景",
-      "sourceName": "台灣新聞雲",
-      "pubDate": "Tue, 09 Jun 2026 09:47:54 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "邱建富赴民進黨縣黨部遞退黨申請書 宣布以無黨籍參選彰化縣長",
-      "sourceName": "Taiwan News",
-      "pubDate": "Tue, 09 Jun 2026 07:56:18 GMT",
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台21鄉鎮停班課！比台灣大「3慢雲簇」驚悚現形 專家曝最新動向：若在陸地發展恐致災",
+      "sourceName": "鏡報",
+      "pubDate": "Tue, 09 Jun 2026 13:30:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1169,14 +1105,6 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 台灣 新聞",
-      "title": "邱建富脫黨參選彰化縣長 痛批民進黨：淪特定派系玩物 | 台灣好新聞",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 08:46:27 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
       "title": "台灣首部三合一LDCT行動篩檢車亮相 彰化縣開啟行動篩檢新時代",
       "sourceName": "蕃新聞",
       "pubDate": "Tue, 09 Jun 2026 10:33:00 GMT",
@@ -1185,113 +1113,9 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 台灣 新聞",
-      "title": "中部汽車道路救援 台中/彰化拖吊行即時出勤好安心",
-      "sourceName": "ENN台灣電報",
-      "pubDate": "Tue, 09 Jun 2026 12:09:54 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "彰化縣警察局綜合行政大樓今動土 預計117年竣工",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:49:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "彰化縣刑事警察大樓動土 2028年7月完工啟用 | 青年日報",
+      "title": "邱建富脫黨參選彰化縣長 痛批民進黨：淪特定派系玩物 | 台灣好新聞",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 12:25:40 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "豪車欠稅躲地下停車場仍被找到 執行署彰化分署拖吊後38萬元全繳清 | 台灣好新聞",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 10:00:21 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "台灣好生活說明會 陳素月：教育扎根、農業升級 | 自由電子報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:59:41 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "有影片）／從理解到陪伴！國衛院攜手彰化榮家強化失智照護力 | 觀傳媒",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 15:50:35 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "脫黨也要選彰化縣長！邱建富今正式退黨 陳素月冷處裡：按步調爭取支持 | 鏡週刊",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:32:35 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "攜手陳駿季、鄭英耀端政策牛肉 陳素月：教育扎根、農業升級",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:55:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "打造彰化第一座冷鏈物流中心，讓彰化農產原味直送全台各地，也支持在地花卉特色產業結合觀光發光發熱！",
-      "sourceName": "facebook.com",
-      "pubDate": "Tue, 09 Jun 2026 11:30:33 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "玩真的! 邱建富正式退出民進黨以\"無黨籍\"選彰化縣長| 民視新聞網",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 10:49:24 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "彰化警局綜合行政大樓動土 斥資3.15億元打造科技偵查新基地",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 13:49:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "邱建富退黨投身彰化縣長選舉 民進黨籲懸崖勒馬、 勿親痛仇快",
-      "sourceName": "匯流新聞網",
-      "pubDate": "Tue, 09 Jun 2026 07:42:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "邱建富正式退黨選彰化縣長 批民進黨只剩下派系利益",
-      "sourceName": "梅花新聞網",
-      "pubDate": "Tue, 09 Jun 2026 07:49:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "綠鬧分裂？ 邱建富退黨選彰化縣長 陳素月不回應 | 華視新聞",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 09:57:12 GMT",
+      "pubDate": "Tue, 09 Jun 2026 08:46:27 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1305,9 +1129,25 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 台灣 新聞",
-      "title": "「40年元老」邱建富批民進黨失創黨精神 宣布無黨籍參選彰化縣長 | 上報",
+      "title": "豪車欠稅躲地下停車場仍被找到 執行署彰化分署拖吊後38萬元全繳清 | 台灣好新聞",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 08:48:03 GMT",
+      "pubDate": "Tue, 09 Jun 2026 10:00:21 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "有影片）／從理解到陪伴！國衛院攜手彰化榮家強化失智照護力 | 觀傳媒",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 15:50:35 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "玩真的! 邱建富正式退出民進黨以\"無黨籍\"選彰化縣長| 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 10:49:24 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1321,25 +1161,9 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 台灣 新聞",
-      "title": "邱建富退黨轟民進黨剩派系利益 網友酸：楊秋興第2",
-      "sourceName": "自由時報",
-      "pubDate": "Tue, 09 Jun 2026 08:10:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "「土散四維2026陳正勳個展」 第118棒彰化縣美術家接力展盛大揭幕",
-      "sourceName": "中央社 CNA",
-      "pubDate": "Tue, 09 Jun 2026 10:29:16 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 台灣 新聞",
-      "title": "彰化縣警察局綜合行政大樓 動土",
-      "sourceName": "臺灣導報",
-      "pubDate": "Tue, 09 Jun 2026 10:41:49 GMT",
+      "title": "「40年元老」邱建富批民進黨失創黨精神 宣布無黨籍參選彰化縣長 | 上報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 08:48:03 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1353,9 +1177,65 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 台灣 新聞",
-      "title": "快新聞／綠營分裂！邱建富今「退出民進黨」 將以無黨籍參選彰化縣長",
-      "sourceName": "民視新聞網",
-      "pubDate": "Tue, 09 Jun 2026 08:09:11 GMT",
+      "title": "邱建富退黨投身彰化縣長選舉 民進黨籲懸崖勒馬、勿親痛仇快",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 08:17:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "中部汽車道路救援 台中/彰化拖吊行即時出勤好安心",
+      "sourceName": "ENN台灣電報",
+      "pubDate": "Tue, 09 Jun 2026 12:09:54 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "打造彰化第一座冷鏈物流中心，讓彰化農產原味直送全台各地，也支持在地花卉特色產業結合觀光發光發熱！",
+      "sourceName": "facebook.com",
+      "pubDate": "Tue, 09 Jun 2026 11:30:33 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "彰化警局綜合行政大樓動土 斥資3.15億元打造科技偵查新基地",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:49:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "綠鬧分裂？ 邱建富退黨選彰化縣長 陳素月不回應 | 華視新聞",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 09:57:12 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "「土散四維2026陳正勳個展」 第118棒彰化縣美術家接力展盛大揭幕",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Tue, 09 Jun 2026 10:29:16 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "邱建富退黨轟民進黨剩派系利益 網友酸：背骨仔不會當選 | 自由電子報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 08:25:32 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "彰化縣警察局綜合行政大樓 動土",
+      "sourceName": "臺灣導報",
+      "pubDate": "Tue, 09 Jun 2026 10:41:49 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1369,6 +1249,14 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 台灣 新聞",
+      "title": "「彰化囡仔好幸福－115年親子劇場鄉鎮巡演活動」埔心場壓軸登場",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Tue, 09 Jun 2026 10:32:29 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
       "title": "彰化孔子廟建廟300周年 王惠美邀請大家6/13一起見證文脈風華",
       "sourceName": "蕃新聞",
       "pubDate": "Tue, 09 Jun 2026 11:08:00 GMT",
@@ -1377,9 +1265,17 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 台灣 新聞",
-      "title": "赴醫院慰問遭毒駕犯撞斷雙腿警所長 季連成：啟動六大緝毒系統全面掃毒 | 台灣好新聞",
+      "title": "彰化師鐸獎幼園主任涉貪撈477萬遭求刑12年 縣府停聘並追繳超收費用 | 聯合新聞網",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:40:21 GMT",
+      "pubDate": "Tue, 09 Jun 2026 10:55:24 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "1週縱放2毒駕！法官陳德池起底 曾判罵人「龜兒子」無罪 - 社會新聞 - PChome Online 新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:41:29 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1392,10 +1288,26 @@
     },
     {
       "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 縣府",
-      "title": "不斷更新/未達警戒範圍！彰化縣10日正常上班課",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 14:20:17 GMT",
+      "query": "彰化 台灣 新聞",
+      "title": "三百年孔子廟化身最美詩意舞台 6/13邀全民走進古蹟感受文化新風景",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:06:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "影音/創黨黨員再也待不下去 邱建富親送退黨申請",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:21:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 台灣 新聞",
+      "title": "台灣首部三合一LDCT 行動篩檢車亮相彰化縣開啟行動篩檢新時代",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 11:11:28 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1404,6 +1316,14 @@
       "title": "警政服務再升級 彰化縣警察局綜合行政大樓動土典禮圓滿成功 - 大宇宙新聞民時新聞|",
       "sourceName": "大宇宙新聞民時新聞|",
       "pubDate": "Tue, 09 Jun 2026 15:54:44 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "與彰化相關的台灣新聞",
+      "query": "彰化 縣府",
+      "title": "不斷更新/未達警戒範圍！彰化縣10日正常上班課",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 14:20:17 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1441,17 +1361,17 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 縣府",
-      "title": "300年孔子廟化身最美詩意舞台 6/13邀全民走進古蹟感受文化新風景",
-      "sourceName": "中央社 CNA",
-      "pubDate": "Tue, 09 Jun 2026 10:34:03 GMT",
+      "title": "雨彈狂炸尚未達標準 彰化縣週三正常上班上課",
+      "sourceName": "自由時報",
+      "pubDate": "Tue, 09 Jun 2026 13:37:17 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 縣府",
-      "title": "雨彈狂炸尚未達標準 彰化縣週三正常上班上課",
-      "sourceName": "自由時報",
-      "pubDate": "Tue, 09 Jun 2026 13:37:17 GMT",
+      "title": "彰化縣刑事警察大樓動土 2028年7月完工啟用 | 青年日報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 12:25:40 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1489,14 +1409,6 @@
     {
       "feed": "與彰化相關的台灣新聞",
       "query": "彰化 縣府",
-      "title": "長者逾25萬人關鍵票倉！ 藍綠彰化縣長參選人推免健保費成「標配」 | 自由電子報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 09:01:28 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 縣府",
       "title": "（有影片）／彰化孔廟變身詩與科技樂園！XR導覽超吸睛",
       "sourceName": "蕃新聞",
       "pubDate": "Tue, 09 Jun 2026 13:15:00 GMT",
@@ -1519,59 +1431,11 @@
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
-      "feed": "與彰化相關的台灣新聞",
-      "query": "彰化 縣府",
-      "title": "[外稿新聞]-梅雨鋒面及西南氣流來襲彰化縣水災應變三級開設",
-      "sourceName": "atanews.net",
-      "pubDate": "Tue, 09 Jun 2026 07:43:29 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化縣 重要新聞",
-      "title": "台灣好生活說明會 陳素月：教育扎根、農業升級 | 自由電子報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:59:41 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
       "feed": "彰化縣重要新聞",
       "query": "彰化縣 重要新聞",
       "title": "300年孔子廟化身最美詩意舞台 6/13邀全民走進古蹟感受文化新風景",
       "sourceName": "中央社 CNA",
       "pubDate": "Tue, 09 Jun 2026 10:34:03 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化縣 重要新聞",
-      "title": "彰化警局綜合行政大樓動土 斥資3.15億元打造科技偵查新基地",
-      "sourceName": "台灣好新聞",
-      "pubDate": "Tue, 09 Jun 2026 13:50:42 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化縣 重要新聞",
-      "title": "彰化縣長三腳督！邱建富掛無黨戰袍參選 陳素月：依規劃全力以赴 | 政治 | CTWANT",
-      "sourceName": "CTWANT",
-      "pubDate": "Tue, 09 Jun 2026 08:39:08 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化縣 重要新聞",
-      "title": "邱建富退黨投身彰化縣長選舉 民進黨籲懸崖勒馬、 勿親痛仇快",
-      "sourceName": "匯流新聞網",
-      "pubDate": "Tue, 09 Jun 2026 07:42:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化縣 重要新聞",
-      "title": "古蹟也能這樣玩！彰化孔廟詩歌節掀文化熱潮 - 社會新聞 - PChome Online 新聞",
-      "sourceName": "PChome Online 新聞",
-      "pubDate": "Tue, 09 Jun 2026 13:51:30 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1585,9 +1449,25 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化縣 重要新聞",
-      "title": "檢送中山大學地方創生南區輔導中心辦理115年「商品上架通路基礎入門班」活動簡章及海報如附件",
-      "sourceName": "chcg.gov.tw",
-      "pubDate": "Tue, 09 Jun 2026 07:29:48 GMT",
+      "title": "彰化警局綜合行政大樓動土 斥資3.15億元打造科技偵查新基地",
+      "sourceName": "台灣好新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:50:42 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "古蹟也能這樣玩！彰化孔廟詩歌節掀文化熱潮 - 社會新聞 - PChome Online 新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:51:30 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化縣長三腳督！邱建富掛無黨戰袍參選 陳素月：依規劃全力以赴 | 政治 | CTWANT",
+      "sourceName": "CTWANT",
+      "pubDate": "Tue, 09 Jun 2026 08:39:08 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1633,6 +1513,14 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化縣 重要新聞",
+      "title": "邱建富退黨投身彰化縣長選舉 民進黨籲懸崖勒馬、勿親痛仇快",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 08:17:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
       "title": "彰化縣警局綜合行政大樓動土 逾3億打造科技刑事新基地",
       "sourceName": "中時新聞網",
       "pubDate": "Tue, 09 Jun 2026 08:27:12 GMT",
@@ -1657,9 +1545,9 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化縣 重要新聞",
-      "title": "【瑞不可擋】鄭麗文的總統夢",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 07:40:02 GMT",
+      "title": "影音/搶救護理荒，彰基攜手亮宇油封獎助原民、弱勢護理學生",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:50:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1668,14 +1556,6 @@
       "title": "台塑善盡企業社會責任！三節關懷不停歇端午慰低收家庭",
       "sourceName": "蕃新聞",
       "pubDate": "Tue, 09 Jun 2026 09:37:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化縣 重要新聞",
-      "title": "影音/搶救護理荒，彰基攜手亮宇油封獎助原民、弱勢護理學生",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 10:50:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1697,14 +1577,6 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
-      "title": "不斷更新/未達警戒範圍！彰化縣10日正常上班課",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 14:20:17 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
       "title": "水利署淹水警戒！彰化、雲林、高雄6區入列 溪湖時雨量破53毫米",
       "sourceName": "NOWnews今日新聞",
       "pubDate": "Tue, 09 Jun 2026 09:29:39 GMT",
@@ -1713,57 +1585,17 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
-      "title": "彰化咕嚕咕嚕！強降雨炸裂 溪湖交流道下方積水掀波浪",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 12:01:50 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "藍營彰化市長提名再陷僵局 陳文賓、温芝樺二度協調仍無共識",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 14:54:28 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "蔡壁如彰化開講遭圍剿 再掀民眾黨茶壺風暴",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 08:39:12 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "玩真的! 邱建富正式退出民進黨 以\"無黨籍\"選彰化縣長",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:34:07 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "綠營分裂！邱建富今「退出民進黨」 將以無黨籍參選彰化縣長",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 08:09:11 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "邱建富退黨投身彰化縣長選舉 民進黨籲懸崖勒馬、勿親痛仇快",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:42:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
       "title": "彰化「佛系法官」縱放雙毒駕！ 前檢座驚爆內幕：被炎上只是遲早的事",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 14:42:00 GMT",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Tue, 09 Jun 2026 14:37:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "3億打造彰化縣警察局刑警大樓 預計2028年啟用 - 政府消息新聞 - PChome Online 新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:46:18 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1777,6 +1609,14 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
+      "title": "不斷更新/未達警戒範圍！彰化縣10日正常上班課",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 14:20:17 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
       "title": "彰化榮服處鏈結社福資源 致贈愛心物資關懷榮民眷 - 生活新聞 - PChome Online 新聞",
       "sourceName": "PChome Online 新聞",
       "pubDate": "Tue, 09 Jun 2026 15:55:00 GMT",
@@ -1785,17 +1625,9 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
-      "title": "天雨路滑釀災！彰化貨車「打滑甩尾」爆衝撞蔬食店 50萬裝潢全毀了",
+      "title": "彰化咕嚕咕嚕！強降雨炸裂 溪湖交流道下方積水掀波浪",
       "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:17:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "獨／彰化「佛心法官」輕縱毒駕遭抨擊 前檢座直呼：遲早的事！ | 社會 | CTWANT",
-      "sourceName": "CTWANT",
-      "pubDate": "Tue, 09 Jun 2026 13:51:27 GMT",
+      "pubDate": "Tue, 09 Jun 2026 12:01:50 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1817,41 +1649,9 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
-      "title": "天雨路滑釀禍 貨車失控甩尾 撞進彰化新開蔬果店 初估損50萬",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 10:34:02 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
       "title": "「我的未來不是夢」親子音樂會，9校300名學生和「非非藝術團隊」輪番上台演唱。（照片協會提供）",
       "sourceName": "台灣華報",
       "pubDate": "Tue, 09 Jun 2026 12:59:33 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "2毒駕無保請回同一法官裁定 法務部長鄭銘謙:無法認同",
-      "sourceName": "民視新聞網",
-      "pubDate": "Tue, 09 Jun 2026 09:33:21 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "彰化縣刑事警察大樓動土 2028年7月完工啟用",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 11:08:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "彰化撞斷警腿等2毒駕案！2嫌犯無保請回 追出「同一法官」 | TVBS",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:45:05 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1865,17 +1665,81 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
-      "title": "彰化溪湖某國小附設幼兒園主任涉貪 檢方提起公訴具體求刑12年",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:54:51 GMT",
+      "title": "最新／豪雨炸全台！「5縣市21地區今(6/9)停班停課」，人事總處：若遇1狀況，雨量沒達標也可能放假| 風傳媒",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 08:28:22 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
-      "title": "雨彈狂炸彰化! 溪湖交流道旁「水淹半個輪胎」 民眾崩潰",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 11:26:38 GMT",
+      "title": "蔡壁如彰化開講遭圍剿 再掀民眾黨茶壺風暴",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 08:39:12 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "玩真的! 邱建富正式退出民進黨 以\"無黨籍\"選彰化縣長",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:34:07 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "天雨路滑釀災！彰化貨車「打滑甩尾」爆衝撞蔬食店 50萬裝潢全毀了",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:17:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "綠營分裂！邱建富今「退出民進黨」 將以無黨籍參選彰化縣長 | 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 08:55:16 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "獨／彰化「佛心法官」輕縱毒駕遭抨擊 前檢座直呼：遲早的事！ | 社會 | CTWANT",
+      "sourceName": "CTWANT",
+      "pubDate": "Tue, 09 Jun 2026 13:51:27 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "70歲換照新制啟動 彰化監理站走入崙雅社區",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:17:11 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "（有影片）／彰化孔廟變身詩與科技樂園！XR導覽超吸睛",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:15:49 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "天雨路滑釀禍 貨車失控甩尾 撞進彰化新開蔬果店 初估損50萬",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:34:02 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "2毒駕無保請回同一法官裁定 法務部長鄭銘謙:無法認同",
+      "sourceName": "民視新聞網",
+      "pubDate": "Tue, 09 Jun 2026 09:33:21 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1889,25 +1753,25 @@
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
-      "title": "氣象署大雷雨訊息／南投、雲林、嘉義、彰化示警！影響範圍一次看",
-      "sourceName": "NOWnews今日新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:37:05 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "彰化縣重要新聞",
-      "query": "彰化 最新新聞",
-      "title": "彰化監理站高齡換照前進社區 守護長輩移動安全更貼心",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 11:10:00 GMT",
+      "title": "母急協尋！高雄小五女童留紙條失蹤 現身彰化八卦山原因曝",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Tue, 09 Jun 2026 11:43:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "彰化縣重要新聞",
       "query": "彰化 最新新聞",
       "title": "疑上班偷喝？彰化北斗清潔隊員酒駕車禍 辦公室又搜出整箱啤酒、威士忌",
-      "sourceName": "娛樂星聞",
+      "sourceName": "star.setn.com",
       "pubDate": "Tue, 09 Jun 2026 08:59:05 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "雨彈狂炸彰化! 溪湖交流道旁「水淹半個輪胎」 民眾崩潰",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 11:26:38 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1969,17 +1833,17 @@
     {
       "feed": "鹿港與福興地方新聞",
       "query": "鹿港 新聞",
-      "title": "格上租車攜手四縣市旅館公會 打造國旅服務鏈",
-      "sourceName": "cnyes.com",
-      "pubDate": "Tue, 09 Jun 2026 11:45:55 GMT",
+      "title": "台灣角川2026漫博《汙穢不堪的妳最惹人憐愛》まにお首度來台簽名會！簽名資格套組&活動辦法公開6/12起限時抽選開跑！",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:09:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "鹿港與福興地方新聞",
       "query": "鹿港 新聞",
-      "title": "台灣角川2026漫博《汙穢不堪的妳最惹人憐愛》まにお首度來台簽名會！簽名資格套組&活動辦法公開6/12起限時抽選開跑！",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 13:09:00 GMT",
+      "title": "師鐸獎名師無所不貪 彰化幼兒園主任遭求處12年重刑",
+      "sourceName": "中時新聞網",
+      "pubDate": "Tue, 09 Jun 2026 09:20:28 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -1996,22 +1860,6 @@
       "title": "北中東旅館公會聯手打造旅宿X移動X職人體驗新生態",
       "sourceName": "中央社 CNA",
       "pubDate": "Tue, 09 Jun 2026 09:19:23 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "鹿港 新聞",
-      "title": "師鐸獎名師無所不貪 彰化幼兒園主任遭求處12年重刑",
-      "sourceName": "中時新聞網",
-      "pubDate": "Tue, 09 Jun 2026 09:20:28 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "鹿港 新聞",
-      "title": "蘇澳海上龍舟競渡在南方澳漁港開划 考驗控槳技巧及團隊默契",
-      "sourceName": "自由時報",
-      "pubDate": "Tue, 09 Jun 2026 08:49:43 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2041,9 +1889,9 @@
     {
       "feed": "鹿港與福興地方新聞",
       "query": "鹿港 新聞",
-      "title": "2026臺南藝術節登場 逾50場展演串聯城市藝術能量",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:11:00 GMT",
+      "title": "蘇澳海上龍舟競渡在南方澳漁港開划 考驗控槳技巧及團隊默契",
+      "sourceName": "自由時報",
+      "pubDate": "Tue, 09 Jun 2026 08:49:43 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2057,6 +1905,14 @@
     {
       "feed": "鹿港與福興地方新聞",
       "query": "鹿港 新聞",
+      "title": "2026臺南藝術節登場 逾50場展演串聯城市藝術能量",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 09:11:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
       "title": "嘉市童軍運動會 逾450位童軍展現智、仁、勇精神同場較勁",
       "sourceName": "蕃新聞",
       "pubDate": "Tue, 09 Jun 2026 12:20:52 GMT",
@@ -2065,17 +1921,9 @@
     {
       "feed": "鹿港與福興地方新聞",
       "query": "鹿港 新聞",
-      "title": "彰化縣警察局綜合行政大樓今動土 預計117年竣工",
+      "title": "北中東旅館公會聯手打造旅宿X移動X職人體驗新生態",
       "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:49:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "鹿港 新聞",
-      "title": "年增10.89%，北部市場成長逾20% 振宇五金5月營收雙成長 - 生活新聞 - PChome Online 新聞",
-      "sourceName": "PChome Online 新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:45:54 GMT",
+      "pubDate": "Tue, 09 Jun 2026 09:19:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2089,49 +1937,9 @@
     {
       "feed": "鹿港與福興地方新聞",
       "query": "福興 新聞",
-      "title": "[外稿新聞]-南投迴Alang原住民族音樂節6/20~21埔里福興登場",
-      "sourceName": "atanews.net",
-      "pubDate": "Tue, 09 Jun 2026 08:51:51 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "福興 新聞",
       "title": "拒絕霸凌 營造三好校園",
       "sourceName": "lnanews.com",
       "pubDate": "Tue, 09 Jun 2026 10:33:34 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "福興 新聞",
-      "title": "傳唱部落好聲音 「南投迴Alang原住民族音樂節」6/20埔里登場",
-      "sourceName": "中華新聞雲／中華日報",
-      "pubDate": "Tue, 09 Jun 2026 07:58:07 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "福興 新聞",
-      "title": "山林傳唱「2026南投迴Alang原住民族音樂節」6/20登場 聽音樂嘗烤大豬",
-      "sourceName": "台灣好新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:51:29 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "福興 新聞",
-      "title": "蔣萬安助攻 南投咖啡節6/19登場 - 中國時報- 翻爆",
-      "sourceName": "中國時報- 翻爆",
-      "pubDate": "Tue, 09 Jun 2026 07:46:24 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "福興 新聞",
-      "title": "南投原民音樂節祭將登場！超強卡司開唱再加20頭烤大豬飄香- 品文化",
-      "sourceName": "觸mii",
-      "pubDate": "Tue, 09 Jun 2026 07:41:05 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2153,17 +1961,17 @@
     {
       "feed": "鹿港與福興地方新聞",
       "query": "福興 新聞",
-      "title": "「綠能零貪腐 社福才有譜-圖利與便民區辨」 南投縣府廉政宣導",
+      "title": "豪大雨影響 周末南投星空季及百K自行車小鎮漫遊延期",
       "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 08:20:00 GMT",
+      "pubDate": "Tue, 09 Jun 2026 13:51:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "鹿港與福興地方新聞",
       "query": "福興 新聞",
-      "title": "豪大雨影響 周末南投星空季及百K自行車小鎮漫遊延期",
+      "title": "「綠能零貪腐 社福才有譜-圖利與便民區辨」 南投縣府廉政宣導",
       "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 13:51:00 GMT",
+      "pubDate": "Tue, 09 Jun 2026 08:20:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2185,9 +1993,9 @@
     {
       "feed": "鹿港與福興地方新聞",
       "query": "鹿港 福興",
-      "title": "南投迴Alang原住民族音樂節6/20~21埔里福興登場",
-      "sourceName": "觀傳媒",
-      "pubDate": "Tue, 09 Jun 2026 08:08:33 GMT",
+      "title": "南投迴Alang原住民族音樂節 6/20~21埔里福興溫泉區熱鬧展開",
+      "sourceName": "互傳媒",
+      "pubDate": "Tue, 09 Jun 2026 09:10:59 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2196,14 +2004,6 @@
       "title": "南投巧克力咖啡節端午連假登場 許淑華歡迎全國民眾到南投旅遊",
       "sourceName": "互傳媒",
       "pubDate": "Tue, 09 Jun 2026 10:40:34 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港與福興地方新聞",
-      "query": "鹿港 福興",
-      "title": "氣象署大雷雨訊息／南投、雲林、嘉義、彰化示警！影響範圍一次看",
-      "sourceName": "NOWnews今日新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:37:05 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2233,9 +2033,9 @@
     {
       "feed": "地方交通停車",
       "query": "彰化 交通",
-      "title": "警政服務再升級 彰化縣警察局綜合行政大樓動土典禮",
-      "sourceName": "中央社 CNA",
-      "pubDate": "Tue, 09 Jun 2026 10:35:22 GMT",
+      "title": "豪車欠稅躲地下停車場仍被找到 執行署彰化分署拖吊後38萬元全繳清",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:26:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2244,6 +2044,14 @@
       "title": "驚險！休旅車猛撞彰化八卦山牌樓 四輪朝天翻覆",
       "sourceName": "自由時報",
       "pubDate": "Tue, 09 Jun 2026 14:25:39 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "警政服務再升級 彰化縣警察局綜合行政大樓動土典禮",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Tue, 09 Jun 2026 10:35:22 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2260,14 +2068,6 @@
       "title": "台灣首部三合一LDCT行動篩檢車亮相 彰化縣開啟行動篩檢新時代",
       "sourceName": "中央社 CNA",
       "pubDate": "Tue, 09 Jun 2026 10:33:34 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方交通停車",
-      "query": "彰化 交通",
-      "title": "豪車欠稅躲地下停車場仍被找到 執行署彰化分署拖吊後38萬元全繳清",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 10:26:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2312,22 +2112,6 @@
     },
     {
       "feed": "地方交通停車",
-      "query": "彰化 交通",
-      "title": "彰化縣警察局綜合行政大樓今動土 預計117年竣工 - 生活新聞 - PChome Online 新聞",
-      "sourceName": "PChome Online 新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:30:59 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方交通停車",
-      "query": "彰化 交通",
-      "title": "中共艦艇假冒管轄權「騷擾外籍商船」 陸委會揭目的轟：詭計絕不會得逞",
-      "sourceName": "三立新聞網SETN.com",
-      "pubDate": "Tue, 09 Jun 2026 13:10:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方交通停車",
       "query": "彰化 停車",
       "title": "（有影片）／強化打詐戰力！彰化刑警大樓動土 直攻虛擬貨幣犯罪 | 觀傳媒",
       "sourceName": "LINE TODAY",
@@ -2344,42 +2128,10 @@
     },
     {
       "feed": "地方交通停車",
-      "query": "彰化 停車",
-      "title": "彰化員林鬧區驚魂!毒駕男肇事連撞2 車民眾見義勇攔阻",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 07:48:48 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方交通停車",
-      "query": "彰化 停車",
-      "title": "驚險！休旅車猛撞彰化八卦山牌樓 四輪朝天翻覆",
-      "sourceName": "自由時報",
-      "pubDate": "Tue, 09 Jun 2026 14:25:39 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方交通停車",
-      "query": "彰化 停車",
-      "title": "喪屍煙彈毒駕失控暴衝！ 員林正義哥肉身擋車慘遭輾壓仍助警逮人 | CTWANT",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:58:37 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方交通停車",
       "query": "鹿港 停車",
       "title": "87歲翁就醫後失聯 妻憂心報警求助 警方兵分多路迅速尋獲",
       "sourceName": "蕃新聞",
       "pubDate": "Tue, 09 Jun 2026 10:01:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 長照",
-      "title": "藍營彰化市長提名再陷僵局 陳文賓、温芝樺二度協調仍無共識",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 14:54:28 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2409,22 +2161,6 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 長照",
-      "title": "台灣首部三合一LDCT 行動篩檢車亮相彰化縣開啟行動篩檢新時代",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 11:11:28 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 長照",
-      "title": "邱建富退黨投身彰化縣長選舉 民進黨籲懸崖勒馬、 勿親痛仇快",
-      "sourceName": "匯流新聞網",
-      "pubDate": "Tue, 09 Jun 2026 07:42:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 長照",
       "title": "台塑善盡企業社會責任！三節關懷不停歇端午慰低收家庭",
       "sourceName": "三星傳媒",
       "pubDate": "Tue, 09 Jun 2026 09:40:54 GMT",
@@ -2433,9 +2169,17 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 長照",
-      "title": "2026大選》邱建富正式退黨參選縣長 民進黨彰化縣長選情添變數 | 信傳媒",
+      "title": "彰化監理站高齡換照前進社區 守護長輩移動安全更貼心 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Tue, 09 Jun 2026 11:52:51 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "綠營40年創黨元老出走！邱建富正式退黨參選彰化縣長 砲轟：民進黨只剩派系利益 | 風傳媒",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 11:29:40 GMT",
+      "pubDate": "Tue, 09 Jun 2026 09:45:16 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2449,17 +2193,9 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 長照",
-      "title": "台塑端午送暖1364戶弱勢家庭 志工挨家挨戶關懷不停歇",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 15:45:29 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 長照",
-      "title": "綠營40年創黨元老出走！邱建富正式退黨參選彰化縣長 砲轟：民進黨只剩派系利益 | 風傳媒",
+      "title": "2026大選》邱建富正式退黨參選縣長 民進黨彰化縣長選情添變數 | 信傳媒",
       "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 09:45:16 GMT",
+      "pubDate": "Tue, 09 Jun 2026 11:29:40 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2476,14 +2212,6 @@
       "title": "長者逾25萬人關鍵票倉！ 藍綠彰化縣長參選人推免健保費成「標配」 | 自由電子報",
       "sourceName": "LINE TODAY",
       "pubDate": "Tue, 09 Jun 2026 09:01:28 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 長照",
-      "title": "彰化監理站高齡換照前進社區 守護長輩移動安全更貼心 - 墨新聞-MORE News",
-      "sourceName": "墨新聞-MORE News",
-      "pubDate": "Tue, 09 Jun 2026 11:52:51 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2513,6 +2241,14 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 長照",
+      "title": "台灣首部三合一LDCT 行動篩檢車亮相彰化縣開啟行動篩檢新時代",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 11:11:28 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
       "title": "70歲換照新制啟動 彰化監理站走入崙雅社區",
       "sourceName": "Yahoo新聞",
       "pubDate": "Tue, 09 Jun 2026 13:17:11 GMT",
@@ -2537,14 +2273,6 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 長照",
-      "title": "退出民進黨 邱建富投入彰縣長選戰 | 中華日報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 15:36:02 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 長照",
       "title": "（有影片）／強化打詐戰力！彰化刑警大樓動土 直攻虛擬貨幣犯罪 | 觀傳媒",
       "sourceName": "LINE TODAY",
       "pubDate": "Tue, 09 Jun 2026 15:50:37 GMT",
@@ -2553,17 +2281,17 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 長照",
-      "title": "玩真的! 邱建富正式退出民進黨 以\"無黨籍\"選彰化縣長",
-      "sourceName": "民視新聞網",
-      "pubDate": "Tue, 09 Jun 2026 09:34:07 GMT",
+      "title": "退出民進黨 邱建富投入彰縣長選戰 | 中華日報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 15:36:02 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "地方民生服務",
       "query": "彰化 長照",
-      "title": "快新聞／綠營分裂！邱建富今「退出民進黨」 將以無黨籍參選彰化縣長",
+      "title": "玩真的! 邱建富正式退出民進黨 以\"無黨籍\"選彰化縣長",
       "sourceName": "民視新聞網",
-      "pubDate": "Tue, 09 Jun 2026 08:09:11 GMT",
+      "pubDate": "Tue, 09 Jun 2026 09:34:07 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2640,14 +2368,6 @@
     },
     {
       "feed": "地方民生服務",
-      "query": "彰化 醫療",
-      "title": "高雄榮總跨界守護新住民 精湛醫術助婦人重見光明",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:49:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
       "query": "彰化 教育",
       "title": "田中鎮農會「2026彰化食農體驗嘉年華」，推廣食農教育認識在地產業!",
       "sourceName": "peopo.org",
@@ -2673,9 +2393,9 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 教育",
-      "title": "台灣好生活說明會 陳素月：教育扎根、農業升級 | 自由電子報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 07:59:41 GMT",
+      "title": "300年孔子廟化身最美詩意舞台 6/13邀全民走進古蹟感受文化新風景",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Tue, 09 Jun 2026 10:34:03 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2689,33 +2409,9 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 教育",
-      "title": "300年孔子廟化身最美詩意舞台 6/13邀全民走進古蹟感受文化新風景",
-      "sourceName": "中央社 CNA",
-      "pubDate": "Tue, 09 Jun 2026 10:34:03 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 教育",
-      "title": "古蹟也能這樣玩！彰化孔廟詩歌節掀文化熱潮",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 14:01:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 教育",
       "title": "彰化孔子廟建廟300周年王惠美邀請大家6/13一起見證文脈風華- 社會新聞- PChome Online 新聞",
       "sourceName": "PChome Online 新聞",
       "pubDate": "Tue, 09 Jun 2026 11:08:03 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 教育",
-      "title": "陳素月獲2部長站台 魏平政： 答應陳立委的也會答應魏縣長",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 14:24:36 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2737,6 +2433,14 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 教育",
+      "title": "古蹟也能這樣玩！彰化孔廟詩歌節掀文化熱潮",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 14:01:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 教育",
       "title": "師鐸獎幼兒園主任連營養午餐都貪！5年A走476萬遭求刑7年6月",
       "sourceName": "自由時報",
       "pubDate": "Tue, 09 Jun 2026 08:32:22 GMT",
@@ -2753,9 +2457,9 @@
     {
       "feed": "地方民生服務",
       "query": "彰化 教育",
-      "title": "邱建富赴民進黨縣黨部遞退黨申請書 宣布以無黨籍參選彰化縣長",
-      "sourceName": "Taiwan News",
-      "pubDate": "Tue, 09 Jun 2026 07:56:18 GMT",
+      "title": "（有影片）／彰化孔廟變身詩與科技樂園！XR導覽超吸睛",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:15:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2764,14 +2468,6 @@
       "title": "灃食教育基金受邀新加坡國際論壇以飲食教育經驗參與永續飲食國際對話- 生活新聞- PChome Online 新聞",
       "sourceName": "PChome Online 新聞",
       "pubDate": "Tue, 09 Jun 2026 10:50:56 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方民生服務",
-      "query": "彰化 教育",
-      "title": "（有影片）／彰化孔廟變身詩與科技樂園！XR導覽超吸睛",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 13:15:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2841,17 +2537,17 @@
     {
       "feed": "地方風險事件",
       "query": "彰化 環境",
-      "title": "彰化縣警察局綜合行政大樓今動土 預計117年竣工",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:49:00 GMT",
+      "title": "彰警新大樓動土 設科偵機房強化數位打擊能力",
+      "sourceName": "放言Fount Media",
+      "pubDate": "Tue, 09 Jun 2026 08:35:04 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "地方風險事件",
       "query": "彰化 環境",
-      "title": "台化國賠更審案 中部環團力挺依法行政並堅決反對天價國賠",
-      "sourceName": "Yahoo新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:41:52 GMT",
+      "title": "冏了! 慶台鐵宿舍修復完工 剪綵噴彩帶卡電車線! 「秒跳電」 彰化市長張嘴傻了",
+      "sourceName": "MSN",
+      "pubDate": "Tue, 09 Jun 2026 14:15:21 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2860,14 +2556,6 @@
       "title": "(有影片）／從理解到陪伴！國衛院攜手彰化榮家強化失智照護力",
       "sourceName": "觀傳媒",
       "pubDate": "Tue, 09 Jun 2026 13:08:32 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 環境",
-      "title": "彰警新大樓動土 設科偵機房強化數位打擊能力",
-      "sourceName": "放言Fount Media",
-      "pubDate": "Tue, 09 Jun 2026 08:35:04 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2892,14 +2580,6 @@
       "title": "田尾鳳凰園藝打造食蟲植物專區 吸引民眾探索生態奧秘",
       "sourceName": "蕃新聞",
       "pubDate": "Tue, 09 Jun 2026 11:18:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 環境",
-      "title": "冏了! 慶台鐵宿舍修復完工 剪綵噴彩帶卡電車線! 「秒跳電」 彰化市長張嘴傻了",
-      "sourceName": "MSN",
-      "pubDate": "Tue, 09 Jun 2026 14:15:21 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -2937,46 +2617,6 @@
     {
       "feed": "地方風險事件",
       "query": "彰化 災害",
-      "title": "彰化榮服處鏈結社福資源 致贈愛心物資關懷榮民眷",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 15:55:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 災害",
-      "title": "梅雨鋒面及西南氣流來襲 彰化縣水災應變三級開設",
-      "sourceName": "台灣新聞雲報",
-      "pubDate": "Tue, 09 Jun 2026 07:45:08 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 災害",
-      "title": "彰化縣長選舉成三腳督？邱建富退黨批綠營只剩派系利益 | CTWANT",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 11:52:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 災害",
-      "title": "彰化「佛系法官」縱放雙毒駕！ 前檢座驚爆內幕：被炎上只是遲早的事",
-      "sourceName": "三立新聞網SETN.com",
-      "pubDate": "Tue, 09 Jun 2026 14:37:00 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 災害",
-      "title": "2026大選》邱建富正式退黨參選縣長 民進黨彰化縣長選情添變數 | 信傳媒",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 11:29:40 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 災害",
       "title": "【職缺徵詢】彰化縣彰化市泰和國民小學人事室主任職缺",
       "sourceName": "chcg.gov.tw",
       "pubDate": "Tue, 09 Jun 2026 10:55:10 GMT",
@@ -3001,17 +2641,33 @@
     {
       "feed": "地方風險事件",
       "query": "彰化 災害",
-      "title": "豪雨狂炸會放假？「這些地方」明天達停班停課標準，最新雨量預測揭曉",
-      "sourceName": "食尚玩家",
-      "pubDate": "Tue, 09 Jun 2026 09:32:00 GMT",
+      "title": "彰化榮服處鏈結社福資源 致贈愛心物資關懷榮民眷",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 15:55:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "地方風險事件",
       "query": "彰化 災害",
-      "title": "第四作戰區投入防災應變 協助高雄山區預防性撤離",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 10:10:00 GMT",
+      "title": "彰化縣長選舉成三腳督？邱建富退黨批綠營只剩派系利益 | CTWANT",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 11:52:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
+      "title": "2026大選》邱建富正式退黨參選縣長 民進黨彰化縣長選情添變數 | 信傳媒",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 11:29:40 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
+      "title": "最新／豪雨炸全台！「5縣市21地區今(6/9)停班停課」，人事總處：若遇1狀況，雨量沒達標也可能放假| 風傳媒",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Tue, 09 Jun 2026 08:28:22 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -3025,9 +2681,9 @@
     {
       "feed": "地方風險事件",
       "query": "彰化 災害",
-      "title": "民調還是開放搞不定！國民黨彰化市長提名協調第2度破局| 時事",
-      "sourceName": "聯合影音",
-      "pubDate": "Tue, 09 Jun 2026 12:11:00 GMT",
+      "title": "豪雨狂炸會放假？「這些地方」明天達停班停課標準，最新雨量預測揭曉",
+      "sourceName": "食尚玩家",
+      "pubDate": "Tue, 09 Jun 2026 09:32:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -3041,9 +2697,25 @@
     {
       "feed": "地方風險事件",
       "query": "彰化 災害",
+      "title": "民調還是開放搞不定！國民黨彰化市長提名協調第2度破局| 時事",
+      "sourceName": "聯合影音",
+      "pubDate": "Tue, 09 Jun 2026 12:11:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
       "title": "70歲換照新制啟動 彰化監理站走入崙雅社區",
       "sourceName": "警政時報",
       "pubDate": "Tue, 09 Jun 2026 13:32:28 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
+      "title": "第四作戰區投入防災應變 協助高雄山區預防性撤離",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:10:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -3057,25 +2729,9 @@
     {
       "feed": "地方風險事件",
       "query": "彰化 災害",
-      "title": "攜手陳駿季、鄭英耀端政策牛肉 陳素月：教育扎根、農業升級",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 07:55:01 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 災害",
       "title": "2毒駕無保請回同一法官裁定 法務部長鄭銘謙:無法認同",
       "sourceName": "民視新聞網",
       "pubDate": "Tue, 09 Jun 2026 09:33:21 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "地方風險事件",
-      "query": "彰化 災害",
-      "title": "快新聞／綠營分裂！邱建富今「退出民進黨」 將以無黨籍參選彰化縣長",
-      "sourceName": "民視新聞網",
-      "pubDate": "Tue, 09 Jun 2026 08:09:11 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -3128,18 +2784,18 @@
     },
     {
       "feed": "鹿港福興觀光活動",
-      "query": "鹿港 宮廟",
-      "title": "2026鹿港慶端陽「龍王祭」 首度雙龍齊聚揭序幕",
-      "sourceName": "idn.com.tw",
-      "pubDate": "Tue, 09 Jun 2026 11:00:17 GMT",
+      "query": "鹿港 觀光",
+      "title": "格上租車攜手四縣市旅館公會 打造國旅服務鏈",
+      "sourceName": "cnyes.com",
+      "pubDate": "Tue, 09 Jun 2026 11:45:55 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "鹿港福興觀光活動",
       "query": "鹿港 宮廟",
-      "title": "拱範宮龍王首度出巡 龍王祭迎歷史性「雙龍會」",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 11:45:34 GMT",
+      "title": "2026鹿港慶端陽「龍王祭」 首度雙龍齊聚揭序幕",
+      "sourceName": "idn.com.tw",
+      "pubDate": "Tue, 09 Jun 2026 11:00:17 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -3161,9 +2817,9 @@
     {
       "feed": "鹿港福興觀光活動",
       "query": "福興 活動",
-      "title": "蔣萬安助攻 南投咖啡節6/19登場 - 中國時報- 翻爆",
-      "sourceName": "中國時報- 翻爆",
-      "pubDate": "Tue, 09 Jun 2026 07:46:24 GMT",
+      "title": "山林傳唱、迴流部落「2026南投迴Alang原住民族音樂節」6/20-21日埔里登場",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Tue, 09 Jun 2026 10:32:56 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
@@ -3177,30 +2833,6 @@
     {
       "feed": "鹿港福興觀光活動",
       "query": "福興 活動",
-      "title": "南投原民音樂節祭將登場！超強卡司開唱再加20頭烤大豬飄香- 品文化",
-      "sourceName": "觸mii",
-      "pubDate": "Tue, 09 Jun 2026 07:41:05 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港福興觀光活動",
-      "query": "福興 活動",
-      "title": "山林傳唱「2026南投迴Alang原住民族音樂節」6/20登場 聽音樂嘗烤大豬",
-      "sourceName": "台灣好新聞",
-      "pubDate": "Tue, 09 Jun 2026 09:51:29 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港福興觀光活動",
-      "query": "福興 活動",
-      "title": "傳唱部落好聲音 「南投迴Alang原住民族音樂節」6/20埔里登場 | 中華日報",
-      "sourceName": "LINE TODAY",
-      "pubDate": "Tue, 09 Jun 2026 08:05:26 GMT",
-      "reason": "RSS 發布時間不是 2026-06-10"
-    },
-    {
-      "feed": "鹿港福興觀光活動",
-      "query": "福興 活動",
       "title": "婁峻碩、阿爆埔里開唱！「南投迴Alang原民音樂節」6/20登場 爽看煙火品巧咖",
       "sourceName": "勢傳媒",
       "pubDate": "Tue, 09 Jun 2026 10:22:20 GMT",
@@ -3209,17 +2841,25 @@
     {
       "feed": "鹿港福興觀光活動",
       "query": "福興 活動",
-      "title": "山林傳唱、迴流部落「2026南投迴Alang原住民族音樂節」6/20-21日埔里登場",
-      "sourceName": "PChome Online 新聞",
-      "pubDate": "Tue, 09 Jun 2026 10:32:56 GMT",
+      "title": "南投原住民族音樂節流行樂歌唱賽結合傳統樂舞| 地方",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Tue, 09 Jun 2026 08:29:00 GMT",
+      "reason": "RSS 發布時間不是 2026-06-10"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "福興 活動",
+      "title": "豪大雨影響 周末南投星空季及百K自行車小鎮漫遊延期",
+      "sourceName": "蕃新聞",
+      "pubDate": "Tue, 09 Jun 2026 13:51:00 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     },
     {
       "feed": "鹿港福興觀光活動",
       "query": "福興 觀光",
-      "title": "豪大雨影響 周末南投星空季及百K自行車小鎮漫遊延期",
-      "sourceName": "蕃新聞",
-      "pubDate": "Tue, 09 Jun 2026 13:51:00 GMT",
+      "title": "南投迴Alang原住民族音樂節6月20至21日埔里福興登場 - 大宇宙新聞民時新聞|",
+      "sourceName": "大宇宙新聞民時新聞|",
+      "pubDate": "Tue, 09 Jun 2026 15:49:41 GMT",
       "reason": "RSS 發布時間不是 2026-06-10"
     }
   ],
@@ -3249,8 +2889,8 @@
       "action": "需回應",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T06:10:00.000Z",
       "publishedAt": "2026-06-10T06:10:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-KH04X8",
@@ -3277,8 +2917,8 @@
       "action": "需回應",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-10T02:01:00.000Z",
       "publishedAt": "2026-06-10T02:01:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-O0ONRT",
@@ -3305,36 +2945,8 @@
       "action": "需回應",
       "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T03:38:21.000Z",
       "publishedAt": "2026-06-10T03:38:21.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-GHJHZK",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "地方交通停車",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "自由時報",
-      "title": "交部補貼油價獨厚計程車 運輸業反彈",
-      "summary": "交部補貼油價獨厚計程車 運輸業反彈 &nbsp;&nbsp; 自由時報（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1WbC1uRVFzQWNKUi1DeUJ3ZFlodzlSM280MXpRaHBEaC1VNlNxd2hCNUxNZ1ZaMWhtVElCRDZDcVFGSGNMY3ZsVFppa1BjcEZTeGd1aDRBSVZ5VVHSAWBBVV95cUxOeDNJM1h3dHI3OFVsczN5bHlWVUd0TjZrUjdFcHJTT0VBcjE1WGQyZ1NRWFQ4REt6YXQ0WXFBUXFETEhrUUM1R2w1TXo4Y3Y0UGl3Y1U0NjJGTWhyQlhHZ2M?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "爭議",
-      "importance": "高",
-      "status": "觀察",
-      "action": "需回應",
-      "notes": "自動爬抓：地方交通停車。發布時間：2026-06-09T21:30:00.000Z",
-      "publishedAt": "2026-06-09T21:30:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1HF6NFH",
@@ -3361,8 +2973,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T04:25:00.000Z",
       "publishedAt": "2026-06-10T04:25:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1WXA3S5",
@@ -3389,8 +3001,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T04:03:00.000Z",
       "publishedAt": "2026-06-10T04:03:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1DHA62D",
@@ -3417,8 +3029,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-10T01:20:41.000Z",
       "publishedAt": "2026-06-10T01:20:41.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-HW5YEV",
@@ -3445,8 +3057,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-09T19:23:11.000Z",
       "publishedAt": "2026-06-09T19:23:11.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1FIYBNM",
@@ -3473,8 +3085,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-09T18:05:15.000Z",
       "publishedAt": "2026-06-09T18:05:15.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-D12AAD",
@@ -3501,8 +3113,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-10T05:35:17.000Z",
       "publishedAt": "2026-06-10T05:35:17.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1F7G03E",
@@ -3529,8 +3141,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-10T03:52:29.000Z",
       "publishedAt": "2026-06-10T03:52:29.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1UMPY4W",
@@ -3557,8 +3169,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-10T06:32:58.000Z",
       "publishedAt": "2026-06-10T06:32:58.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1H73TFE",
@@ -3585,8 +3197,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-10T04:28:00.000Z",
       "publishedAt": "2026-06-10T04:28:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1046MU",
@@ -3613,8 +3225,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方風險事件。發布時間：2026-06-10T05:55:00.000Z",
       "publishedAt": "2026-06-10T05:55:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1H271HC",
@@ -3641,8 +3253,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T04:42:35.000Z",
       "publishedAt": "2026-06-10T04:42:35.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-LK7QQA",
@@ -3669,8 +3281,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T05:42:30.000Z",
       "publishedAt": "2026-06-10T05:42:30.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1TU8AAJ",
@@ -3697,36 +3309,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T05:22:05.000Z",
       "publishedAt": "2026-06-10T05:22:05.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-DPL735",
-      "sourceMode": "auto",
-      "autoClassification": "國際重大新聞",
-      "autoFeedName": "國際重大新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "蕃新聞",
-      "title": "鄭麗文訪紐約皇后植物園 以台灣蘭花象徵和平精神盼深化台美交流",
-      "summary": "鄭麗文訪紐約皇后植物園 以台灣蘭花象徵和平精神盼深化台美交流 &nbsp;&nbsp; 蕃新聞（自動歸類：國際重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAtenNzaDdZVjhGYnZ2dmRZNnlIbEZlcjVEclRYNFZBRXdjeXdjTXhaVHZWRWhvZDhTdkpQQUxjZ0tWUmxENTJINzN0ZWR4SW5zbWc?oc=5",
-      "region": "台灣",
-      "keywords": "台灣, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "高",
-      "status": "觀察",
-      "action": "需觀察",
-      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T07:14:00.000Z",
-      "publishedAt": "2026-06-10T07:14:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1IELPYT",
@@ -3753,8 +3337,36 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-09T22:33:00.000Z",
       "publishedAt": "2026-06-09T22:33:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-DPL735",
+      "sourceMode": "auto",
+      "autoClassification": "國際重大新聞",
+      "autoFeedName": "國際重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "蕃新聞",
+      "title": "鄭麗文訪紐約皇后植物園 以台灣蘭花象徵和平精神盼深化台美交流",
+      "summary": "鄭麗文訪紐約皇后植物園 以台灣蘭花象徵和平精神盼深化台美交流 &nbsp;&nbsp; 蕃新聞（自動歸類：國際重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAtenNzaDdZVjhGYnZ2dmRZNnlIbEZlcjVEclRYNFZBRXdjeXdjTXhaVHZWRWhvZDhTdkpQQUxjZ0tWUmxENTJINzN0ZWR4SW5zbWc?oc=5",
+      "region": "台灣",
+      "keywords": "台灣, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "需觀察",
+      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T07:14:00.000Z",
+      "publishedAt": "2026-06-10T07:14:00.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-ZZ7KWB",
@@ -3781,8 +3393,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-09T17:37:30.000Z",
       "publishedAt": "2026-06-09T17:37:30.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1T1AGY9",
@@ -3809,8 +3421,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-09T19:16:46.000Z",
       "publishedAt": "2026-06-09T19:16:46.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-L88VRW",
@@ -3837,11 +3449,39 @@
       "action": "需觀察",
       "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T03:44:28.000Z",
       "publishedAt": "2026-06-10T03:44:28.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-1VBM8S2",
+      "id": "AUTO-2026-06-10-1B0CP7O",
+      "sourceMode": "auto",
+      "autoClassification": "國際重大新聞",
+      "autoFeedName": "國際重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "UDN",
+      "title": "直式短劇風靡全球 Netflix推直式觀影新功能 7月日、韓先上線",
+      "summary": "直式短劇風靡全球 Netflix推直式觀影新功能 7月日、韓先上線 &nbsp;&nbsp; UDN（自動歸類：國際重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA2c19YZFFfa3l3ZF9PcGh4UjBTYWlHQmNwRjY2N2djZXlvNXJlbHp3MjBzTnViSGwyU3N5WUpVN1hFdVlud0VDdnhjUmVETXY10gFWQVVfeXFMTWFILVBsdTRNcHVLOUtxY2RsUjl4SDlDMjBkMjJzSXFMMkJFdGJFbk5UNEtpamdEM0dhajZEM2FIeS1yUXI0ODFtRFpKOE12R3ZnVDhLTWc?oc=5",
+      "region": "國際",
+      "keywords": "國際, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "需觀察",
+      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T07:51:20.000Z",
+      "publishedAt": "2026-06-10T07:51:20.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-11L60J7",
       "sourceMode": "auto",
       "autoClassification": "國際重大新聞",
       "autoFeedName": "國際重大新聞",
@@ -3849,9 +3489,9 @@
       "sourceType": "新聞",
       "platform": "Google News",
       "sourceName": "LINE TODAY",
-      "title": "2026年「藍色星球獎」揭曉！美毒理學家與經濟學家獲殊榮 | 民視新聞網",
-      "summary": "2026年「藍色星球獎」揭曉！美毒理學家與經濟學家獲殊榮 | 民視新聞網 &nbsp;&nbsp; LINE TODAY（自動歸類：國際重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBEU05QSFhOSU5UUHlPWEZrYi1VNEs4WGdydzljck1CLXNwZGdlVnBQQVRQRHlmcmJqY245VFFCQjRWS3c4TDV2SFpNTkMzQUJZS3k4cXZn?oc=5",
+      "title": "Netflix宣布推出行動裝置重大更新 直式影片牆重塑手機娛樂體驗 | 太報",
+      "summary": "Netflix宣布推出行動裝置重大更新 直式影片牆重塑手機娛樂體驗 | 太報 &nbsp;&nbsp; LINE TODAY（自動歸類：國際重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAtbjZvaVpTclppNWZ1c3BFOThPWm12eDI4a3kyM1lKWnR3TmZtYkRRblgyMmV1QnVwUHRhYklXdk9IQndaYU9YS0tXc0pMenFKYVpmc3BR?oc=5",
       "region": "國際",
       "keywords": "國際, 其他",
       "category": "其他",
@@ -3863,66 +3503,10 @@
       "importance": "高",
       "status": "觀察",
       "action": "需觀察",
-      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T04:00:18.000Z",
-      "publishedAt": "2026-06-10T04:00:18.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-KHSY9W",
-      "sourceMode": "auto",
-      "autoClassification": "國際重大新聞",
-      "autoFeedName": "國際重大新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "旺得富理財網",
-      "title": "學者：全球出生率下降智慧型手機害的- 國際",
-      "summary": "學者：全球出生率下降智慧型手機害的- 國際 &nbsp;&nbsp; 旺得富理財網（自動歸類：國際重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE41a2pRRGJnc3c2OVhzRjJKU0R5RjFZQlRfLWpTQ1RrenJFd01mY0R2SGNUWk9IcGxqU1lrWkJHNURMS0g5YTFvOEF1bWN4UVYtdHJkX3Q0Tk81VEhZbjcta29ISldLbm9QaFE?oc=5",
-      "region": "國際",
-      "keywords": "國際, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "高",
-      "status": "觀察",
-      "action": "需觀察",
-      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-09T20:25:44.000Z",
-      "publishedAt": "2026-06-09T20:25:44.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1NHG0UW",
-      "sourceMode": "auto",
-      "autoClassification": "國際重大新聞",
-      "autoFeedName": "國際重大新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "自由財經",
-      "title": "股市震盪！謝金河曝「投資成敗關鍵」：極端預測多半失準",
-      "summary": "股市震盪！謝金河曝「投資成敗關鍵」：極端預測多半失準 &nbsp;&nbsp; 自由財經（自動歸類：國際重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1na3FZM3c2ZzhaeVJNNlIzaTJjNmdIOWhRZ2lwc09BSTVRdDk5c1N1YkhjUnBNWmE2YnlqUElTY3M0bVhzaE83NDl3aURHR1g4ZTZYRDZ6Z3VyODh6RFlZZzlYZVPSAWRBVV95cUxNZ2txWTN3Nmc4WnlSTTZSM2kyYzZnSDloUWdpcHNPQUk1UXQ5OXNTdWJIY1JwTVphNmJ5alBJU2NzNG1Yc2hPNzQ5d2lER0dYOGU2WEQ2emd1cjg4ekRZWWc5WGVT?oc=5",
-      "region": "國際",
-      "keywords": "國際, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "高",
-      "status": "觀察",
-      "action": "需觀察",
-      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T00:37:31.000Z",
-      "publishedAt": "2026-06-10T00:37:31.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T06:05:23.000Z",
+      "publishedAt": "2026-06-10T06:05:23.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1N81BWM",
@@ -3949,92 +3533,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-09T16:02:02.000Z",
       "publishedAt": "2026-06-09T16:02:02.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-DNDQJ4",
-      "sourceMode": "auto",
-      "autoClassification": "台灣重大新聞",
-      "autoFeedName": "台灣重大新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "中國時報- 翻爆",
-      "title": "美前防長：習無意武力奪台 短期風險下降 - 中國時報- 翻爆",
-      "summary": "美前防長：習無意武力奪台 短期風險下降 &nbsp;&nbsp; 中國時報- 翻爆（自動歸類：台灣重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVmNlUEg0WlhBYUxYN0N5WEdoU3gzWERRTnQwTm9mUmpQQk04dEJKVjlTdHl1eUI1M3lfQkJUUjUzcDNaX3Nkd3A0cU5wVkdWUjVfTnZFak1ETnZrVFNNV3VmQXAzTlA5T2x6MzRvbXBZUWVhVjFNazZ3TEdlWVFPdXFSMkkzZw?oc=5",
-      "region": "台灣",
-      "keywords": "台灣, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "高",
-      "status": "觀察",
-      "action": "需觀察",
-      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-09T23:12:02.000Z",
-      "publishedAt": "2026-06-09T23:12:02.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1Q20UBW",
-      "sourceMode": "auto",
-      "autoClassification": "台灣重大新聞",
-      "autoFeedName": "台灣重大新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "LINE TODAY",
-      "title": "森崴下市始末一次看 郭台強坦承下市難避免 | NOWNEWS今日新聞",
-      "summary": "森崴下市始末一次看 郭台強坦承下市難避免 | NOWNEWS今日新聞 &nbsp;&nbsp; LINE TODAY（自動歸類：台灣重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAxT1dJdHdaZW1SMVVPMmdHRGtpUzdmZUYzc3g3VldQa0d5bllYNFNvYkoxWk5xNWVwblA2N0wwY1BQdTh6UGZCekNfYnhLNW1UV3RfYWFB?oc=5",
-      "region": "台灣",
-      "keywords": "台灣, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "高",
-      "status": "觀察",
-      "action": "需觀察",
-      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T03:56:18.000Z",
-      "publishedAt": "2026-06-10T03:56:18.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1MK7IND",
-      "sourceMode": "auto",
-      "autoClassification": "台灣重大新聞",
-      "autoFeedName": "台灣重大新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "Newtalk新聞",
-      "title": "美國這樣看台灣：政治分歧、兵力招募困難及基礎設施脆弱自我防衛蒙陰影| 國際",
-      "summary": "美國這樣看台灣：政治分歧、兵力招募困難及基礎設施脆弱自我防衛蒙陰影| 國際 &nbsp;&nbsp; Newtalk新聞（自動歸類：台灣重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5zaEFVcW5zb0gtV3JhRGVZel9scFEtSTNGejFXdmkzblNEcS1WRXRPbVBWUFNvQi14bXphUEgzNzM1dmxYMlUyNkF0QWM0RmkzMVY5bkNMZUdBUXc?oc=5",
-      "region": "台灣",
-      "keywords": "台灣, 政治, 國際",
-      "category": "政治",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "高",
-      "status": "觀察",
-      "action": "需觀察",
-      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T05:19:07.000Z",
-      "publishedAt": "2026-06-10T05:19:07.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-14WYHFB",
@@ -4061,8 +3561,64 @@
       "action": "需觀察",
       "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T06:07:07.000Z",
       "publishedAt": "2026-06-10T06:07:07.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1MK7IND",
+      "sourceMode": "auto",
+      "autoClassification": "台灣重大新聞",
+      "autoFeedName": "台灣重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "Newtalk新聞",
+      "title": "美國這樣看台灣：政治分歧、兵力招募困難及基礎設施脆弱自我防衛蒙陰影| 國際",
+      "summary": "美國這樣看台灣：政治分歧、兵力招募困難及基礎設施脆弱自我防衛蒙陰影| 國際 &nbsp;&nbsp; Newtalk新聞（自動歸類：台灣重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5zaEFVcW5zb0gtV3JhRGVZel9scFEtSTNGejFXdmkzblNEcS1WRXRPbVBWUFNvQi14bXphUEgzNzM1dmxYMlUyNkF0QWM0RmkzMVY5bkNMZUdBUXc?oc=5",
+      "region": "台灣",
+      "keywords": "台灣, 政治, 國際",
+      "category": "政治",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "需觀察",
+      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T05:19:07.000Z",
+      "publishedAt": "2026-06-10T05:19:07.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-7O17L8",
+      "sourceMode": "auto",
+      "autoClassification": "台灣重大新聞",
+      "autoFeedName": "台灣重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "僑務電子報",
+      "title": "總統出席無人機海外商機聯盟大會師 盼打造臺灣成為全球無人機發展亞洲中心|經貿",
+      "summary": "總統出席無人機海外商機聯盟大會師 盼打造臺灣成為全球無人機發展亞洲中心|經貿 &nbsp;&nbsp; 僑務電子報（自動歸類：台灣重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE0zZXZ3UUFqc1FLQU1xNHI1NTJwNHJmdGRVbk40M3BXelBSWG5RVGh2V3ZSdkF6THRhNExtT3BSMy1pbU1nWWJvN2ZYYw?oc=5",
+      "region": "台灣",
+      "keywords": "台灣, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "需觀察",
+      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-09T19:00:00.000Z",
+      "publishedAt": "2026-06-09T19:00:00.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-F919XD",
@@ -4089,21 +3645,21 @@
       "action": "需觀察",
       "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T03:33:45.000Z",
       "publishedAt": "2026-06-10T03:33:45.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-S3N6YV",
+      "id": "AUTO-2026-06-10-1QYS6FV",
       "sourceMode": "auto",
       "autoClassification": "台灣重大新聞",
       "autoFeedName": "台灣重大新聞",
       "date": "2026-06-10",
       "sourceType": "新聞",
       "platform": "Google News",
-      "sourceName": "經濟日報",
-      "title": "反制中國稀土武器化 專家籲各國攜手台灣打造供應鏈",
-      "summary": "反制中國稀土武器化 專家籲各國攜手台灣打造供應鏈 &nbsp;&nbsp; 經濟日報（自動歸類：台灣重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9aa1JFNldvcFpYSHh4YlJaLTc0cW5QSDJ1N0NOWmVpcnZCNzdzTXMwWkY3SmZpRHBSXzBVaXpGckl2SU1Uc0FpVFBKazUza09VbVBUMERPcW5pUdIBX0FVX3lxTE1DS2wyb0ZvbmNqNVBMVUpXemluWE5lb3Ryek5KUmc0ZG4tZUhLSnJVTTJNSkVjdjhuaWlKRkwxQ2xlZF9kZXd1Rkg3ZEVyQjZfdGtfQ2l5dmJGamFZZlRF?oc=5",
+      "sourceName": "NOWnews今日新聞",
+      "title": "森崴能源下市始末一次看 郭台強綠能布局遭遇最大挫敗",
+      "summary": "森崴能源下市始末一次看 郭台強綠能布局遭遇最大挫敗 &nbsp;&nbsp; NOWnews今日新聞（自動歸類：台灣重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE45d2UtMmFBdXpGS29ucGVuVmdMbk80cWJXVk5KWjJDSDVDbkZQYV93a2pvQnRaaS1lbGhjaU9XZkZ5ZW1GN3A4ZWtsaWpvbWhSTWfSAVJBVV95cUxOOXdlLTJhQXV6RktvbnBlblZnTG5PNHFiV1ZOSloyQ0g1Q25GUGFfd2tqb0J0WmktZWxoY2lPV2ZGeWVtRjdwOGVrbGlqb21oUk1n?oc=5",
       "region": "台灣",
       "keywords": "台灣, 其他",
       "category": "其他",
@@ -4115,10 +3671,94 @@
       "importance": "高",
       "status": "觀察",
       "action": "需觀察",
-      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-09T21:21:28.000Z",
-      "publishedAt": "2026-06-09T21:21:28.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T03:45:03.000Z",
+      "publishedAt": "2026-06-10T03:45:03.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-DNDQJ4",
+      "sourceMode": "auto",
+      "autoClassification": "台灣重大新聞",
+      "autoFeedName": "台灣重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "中國時報- 翻爆",
+      "title": "美前防長：習無意武力奪台 短期風險下降 - 中國時報- 翻爆",
+      "summary": "美前防長：習無意武力奪台 短期風險下降 &nbsp;&nbsp; 中國時報- 翻爆（自動歸類：台灣重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVmNlUEg0WlhBYUxYN0N5WEdoU3gzWERRTnQwTm9mUmpQQk04dEJKVjlTdHl1eUI1M3lfQkJUUjUzcDNaX3Nkd3A0cU5wVkdWUjVfTnZFak1ETnZrVFNNV3VmQXAzTlA5T2x6MzRvbXBZUWVhVjFNazZ3TEdlWVFPdXFSMkkzZw?oc=5",
+      "region": "台灣",
+      "keywords": "台灣, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "需觀察",
+      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-09T23:12:02.000Z",
+      "publishedAt": "2026-06-09T23:12:02.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1TCGMY",
+      "sourceMode": "auto",
+      "autoClassification": "台灣重大新聞",
+      "autoFeedName": "台灣重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "台灣好新聞",
+      "title": "再轟藍白現還在審今年總預算 賴清德：台灣發展不能等待，人民期待更不能延宕",
+      "summary": "再轟藍白現還在審今年總預算 賴清德：台灣發展不能等待，人民期待更不能延宕 &nbsp;&nbsp; 台灣好新聞（自動歸類：台灣重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMi9gNBVV95cUxNbEZyZkxuOG05YWNWNExzbi11UGU1dVN2ajFocXEyUHlZclRhZkltSDduS2VJd0JSZEl6NDZkVzlMelU0OWlROXp2SmZxdGdPODI2RENQX05jT096bnZWdlZiMDRHdFpjOTVlMmc0VWEtLTlVNHJFWUNsWldoOFhPYTdIdXhqQ0UwTWN6eFp2Zzhzc204VkM5NGhkNGpmdlM3Y2phR0hoTnk1cUdFWGR1bUVuS21NMmZlNWUzUUR2WmtfSHoyYzVpSkNNVlRyOXBWZkhLMm5NMEg5aUJ3SkFJQlRqUHJCUzF4ZnFPbWpMTnA3bjkwQXRUd0NuRkVYR19ybU50LW5UWnZJa21YMXItdDMzWFVpNG15Wk1LaFNiMDF4M3BHZ3EtQm1kY05ZdTYyWncxVlIzUE9PdGlRSGNXZDVDbGkwZldTSGZVSlh3aXU3M1dPamhHaWRlUUZlQ0ZSUXJ6ZnpjeVFPbXpoVWM5amxuMXRkNVZMWjBJOTRla2d5N3pkeHZ2TlRTc3NDcVFwLWhZZGdWSF9fNTBFSEVnUUVUOWNkRFpBenJQb3hGcHgwYk80dmlONWRkcmpBa1FzTjJXRXR5Ylk5akMyVk1oVTRjaW85dmpIRHc3TGNwRXJBNFRMQjhfdmV6QTRzdUdGa0xsOVNB?oc=5",
+      "region": "台灣",
+      "keywords": "台灣, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "需觀察",
+      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T07:35:24.000Z",
+      "publishedAt": "2026-06-10T07:35:24.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1VK9KYS",
+      "sourceMode": "auto",
+      "autoClassification": "台灣重大新聞",
+      "autoFeedName": "台灣重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "台灣教會公報新聞網",
+      "title": "【社論】渴求公義的國度降臨",
+      "summary": "【社論】渴求公義的國度降臨 &nbsp;&nbsp; 台灣教會公報新聞網（自動歸類：台灣重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1XSUlkQWVsd1hmWGR0dldHcFRIS1FNb2dlRnZDYi1sTUFya0J1X2phN0MxVWRrcnFKd09adlNTc2JNbWFmLWRnV1g1RQ?oc=5",
+      "region": "台灣",
+      "keywords": "台灣, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "需觀察",
+      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T03:58:27.000Z",
+      "publishedAt": "2026-06-10T03:58:27.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-19OLL2",
@@ -4145,8 +3785,8 @@
       "action": "需觀察",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T01:50:00.000Z",
       "publishedAt": "2026-06-10T01:50:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-6G2LWK",
@@ -4173,39 +3813,11 @@
       "action": "需觀察",
       "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-09T18:25:59.000Z",
       "publishedAt": "2026-06-09T18:25:59.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-3854GP",
-      "sourceMode": "auto",
-      "autoClassification": "台灣重大新聞",
-      "autoFeedName": "台灣重大新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "LINE TODAY",
-      "title": "歷史數據現巧合！菲律賓強震後「13次規模7地震在台灣」 郭鎧紋：包括921 | CTWANT",
-      "summary": "歷史數據現巧合！菲律賓強震後「13次規模7地震在台灣」 郭鎧紋：包括921 | CTWANT &nbsp;&nbsp; LINE TODAY（自動歸類：台灣重大新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1nbFI3UlJuRm9jcTZtLWhEN2ZPSWtpdkEwSXFPaHF4WDZ2VlRuRzRrYUlTY3hIcmpMVUZQSE90emZ2dDB4T2YwQ2ZpcUdhaUVJZXI2VWJR?oc=5",
-      "region": "台灣",
-      "keywords": "台灣, 災害",
-      "category": "災害",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "高",
-      "status": "觀察",
-      "action": "可做懶人包",
-      "notes": "自動爬抓：台灣重大新聞。發布時間：2026-06-10T07:00:10.000Z",
-      "publishedAt": "2026-06-10T07:00:10.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-FIJTT8",
+      "id": "AUTO-2026-06-10-556IKI",
       "sourceMode": "auto",
       "autoClassification": "與彰化相關的台灣新聞",
       "autoFeedName": "與彰化相關的台灣新聞",
@@ -4213,8 +3825,8 @@
       "sourceType": "新聞",
       "platform": "Google News",
       "sourceName": "TVBS新聞網",
-      "title": "豪雨假》6縣市宣布了！5地「6/10停班停課」全台縣市不斷更新",
-      "summary": "豪雨假》6縣市宣布了！5地「6/10停班停課」全台縣市不斷更新 &nbsp;&nbsp; TVBS新聞網（自動歸類：與彰化相關的台灣新聞）",
+      "title": "豪雨假》6縣市宣布了！7地「6/10停班停課」全台縣市不斷更新",
+      "summary": "豪雨假》6縣市宣布了！7地「6/10停班停課」全台縣市不斷更新 &nbsp;&nbsp; TVBS新聞網（自動歸類：與彰化相關的台灣新聞）",
       "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBYT0VLX0hyOUM4S0t5ZWd6dElYVjAwSXlIQ0lGS3RvbUlPN3JNcGJuYzBYeUotalJJQTFSdWpzNU8tcF9wTjdqZWdFTm9TQQ?oc=5",
       "region": "台灣",
       "keywords": "台灣, 災害",
@@ -4227,13 +3839,41 @@
       "importance": "高",
       "status": "觀察",
       "action": "可做懶人包",
-      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-09T23:27:00.000Z",
-      "publishedAt": "2026-06-09T23:27:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T04:38:00.000Z",
+      "publishedAt": "2026-06-10T04:38:00.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-1G8Y6DH",
+      "id": "AUTO-2026-06-10-1241QDZ",
+      "sourceMode": "auto",
+      "autoClassification": "國際重大新聞",
+      "autoFeedName": "國際重大新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "桃園電子報",
+      "title": "桃園觀光進軍國際！i-dle舒華登上叮叮車、樟宜機場 搶攻星港旅客",
+      "summary": "桃園觀光進軍國際！i-dle舒華登上叮叮車、樟宜機場 搶攻星港旅客 &nbsp;&nbsp; 桃園電子報（自動歸類：國際重大新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBKczRLcmdTU3hZTnlGYnNEbWhNTDJTYWNKWnV4dldhU0cxdUk0SFM2Q3d4VVFha2lodmRoOUNhZjNCQW14T0p1MmZBcFE?oc=5",
+      "region": "國際",
+      "keywords": "國際, 觀光",
+      "category": "觀光",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "高",
+      "status": "觀察",
+      "action": "可做限動",
+      "notes": "自動爬抓：國際重大新聞。發布時間：2026-06-10T06:20:15.000Z",
+      "publishedAt": "2026-06-10T06:20:15.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-10QS9A1",
       "sourceMode": "auto",
       "autoClassification": "彰化縣重要新聞",
       "autoFeedName": "彰化縣重要新聞",
@@ -4243,7 +3883,7 @@
       "sourceName": "自由時報",
       "title": "彰化表揚66績優警員 警友會貼心送「這1禮」",
       "summary": "彰化表揚66績優警員 警友會貼心送「這1禮」 &nbsp;&nbsp; 自由時報（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9hVHI2T2lZQXRzSWsxNm9mcWpyVjBWVTg1TmVTYXZWNjZtVjUwRHA3SFZoX1dOUEZVTHZPazlrMjdJSDlfcDViNzNocFhJY1NNUE91MEdHbEpyaGNCMnpTVW9wNmNsYV9vS0JTT1h30gFuQVVfeXFMT2FUcjZPaVlBdHNJazE2b2ZxanJWMFZVODVOZVNhdlY2Nm1WNTBEcDdIVmhfV05QRlVMdk9rOWsyN0lIOV9wNWI3M2hwWEljU01QT3UwR0dsSnJoY0IyelNVb3A2Y2xhX29LQlNPWHc?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE45emdBVjRHOG5FQnBlNnZ0WTk0VzJPSzc3dl9vc0Q4RUgxTzVpYm9qUXdqZVplVk5MOGFaZFJlSks0SEdjZEV5YUpjc2ljSDVzcVk1RXBVUnhnMlpzOWpZWE9fbzZfdW1h0gFuQVVfeXFMT2FUcjZPaVlBdHNJazE2b2ZxanJWMFZVODVOZVNhdlY2Nm1WNTBEcDdIVmhfV05QRlVMdk9rOWsyN0lIOV9wNWI3M2hwWEljU01QT3UwR0dsSnJoY0IyelNVb3A2Y2xhX29LQlNPWHc?oc=5",
       "region": "彰化",
       "keywords": "彰化, 其他",
       "category": "其他",
@@ -4257,8 +3897,8 @@
       "action": "可發文",
       "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T06:11:55.000Z",
       "publishedAt": "2026-06-10T06:11:55.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-8XBU9J",
@@ -4285,8 +3925,8 @@
       "action": "可發文",
       "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-09T23:30:00.000Z",
       "publishedAt": "2026-06-09T23:30:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1UKVMVN",
@@ -4313,8 +3953,36 @@
       "action": "可發文",
       "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T04:44:53.000Z",
       "publishedAt": "2026-06-10T04:44:53.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-61COGG",
+      "sourceMode": "auto",
+      "autoClassification": "與彰化相關的台灣新聞",
+      "autoFeedName": "與彰化相關的台灣新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "PChome Online 新聞",
+      "title": "邱建富退黨參選彰化縣長 林楚茵：依黨章處理、不要親痛仇快 - 政治新聞 - PChome Online 新聞",
+      "summary": "邱建富退黨參選彰化縣長 林楚茵：依黨章處理、不要親痛仇快 - 政治新聞 - PChome Online 新聞 &nbsp;&nbsp; PChome Online 新聞（自動歸類：與彰化相關的台灣新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaW1xN3I2aXY2N213cTY4cHVINldneERVSWFTUGplRDNmcThoVXA4MEJaSWw5dUQ2OG5uZXlQQzNIWjdqaTlXYUpiaGtHbGhtaGlYODlyVDBYRWgzekJqTC1hNEV6YlZoSVZpaEtRVVVGSlpNVGVReTNab3FyVDI2OFlyMDd2dTZFM2c?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 政治",
+      "category": "政治",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T07:37:08.000Z",
+      "publishedAt": "2026-06-10T07:37:08.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1T7NV06",
@@ -4341,8 +4009,8 @@
       "action": "可發文",
       "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-09T20:10:31.000Z",
       "publishedAt": "2026-06-09T20:10:31.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1UC1WX1",
@@ -4369,39 +4037,11 @@
       "action": "可發文",
       "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-09T16:25:51.000Z",
       "publishedAt": "2026-06-09T16:25:51.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-D04XYR",
-      "sourceMode": "auto",
-      "autoClassification": "與彰化相關的台灣新聞",
-      "autoFeedName": "與彰化相關的台灣新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "MSN",
-      "title": "男涉毒駕撞警無保請回 彰化市長將向監察院陳情",
-      "summary": "男涉毒駕撞警無保請回 彰化市長將向監察院陳情 &nbsp;&nbsp; MSN（自動歸類：與彰化相關的台灣新聞）",
-      "url": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxQLTFkMXI1TW9OM1dsUlpwNklGak90ZVYySXdEWW9EZ2V4b0NjcGE1UGlzYTkxSDdJQlMtZGxNWDNDUlhCdkd0ZkFKb09KOExJLVkzc2RWRl9VaG40RXhKcTZlMzJrTmtJMTNLX1dIdm8zaHJPdF8yMDFDU2gxbmFHdUwwdFI3VHBkQXdGNE1wenMwOTUzNHVuREVubm9vbi1sOGlGU2VKd1U4U3NlUkljRWh1MllWSHNqbk1SRDl0bW5oV0IzT2o2YUNpZFROaFY1a0tGUVJVWHlhaE5jQnMxal9SeUlFd3k3WHh4V2JzTXh1UmVLSVR5ejlmWHEzRUlsQXJGM1BiTFpSNzFfeVlwajRrSmI5alMtVEZIQjY3a0sxRUVJeEJiSC13anFUMjQ2LW0wMWZtSi1CbnM0b3M5WFNzQjJmSUhybmM5YXJNc3ZQVVloTU1DTE9GNi1WQQ?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-09T23:23:52.000Z",
-      "publishedAt": "2026-06-09T23:23:52.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1CLLMVS",
+      "id": "AUTO-2026-06-10-17PQASI",
       "sourceMode": "auto",
       "autoClassification": "與彰化相關的台灣新聞",
       "autoFeedName": "與彰化相關的台灣新聞",
@@ -4411,7 +4051,7 @@
       "sourceName": "MSN",
       "title": "唐復年觀點》邱建富退黨參選 藍白合又看似有譜 彰化縣長選局全盤洗牌",
       "summary": "唐復年觀點》邱建富退黨參選 藍白合又看似有譜 彰化縣長選局全盤洗牌 &nbsp;&nbsp; MSN（自動歸類：與彰化相關的台灣新聞）",
-      "url": "https://news.google.com/rss/articles/CBMizgNBVV95cUxOZTNEclc2Y2FvbDhUVml4bGNjbEJESmN3TXQ4WnpXRXV5TmctNjcxVnZDMTlfQnNZOXk0XzFfdG9uUEd1SzVaa0pIaG8tS0N1enVFdmg3RW1iN21Qc2ZzdXR3VWJ5Skhxa1dhNmZyNUJjVjRlZGZsbVlpaVNpYmdaX1hkZUthVnNjOHVqdUJvTVVmSTctU1Z0RGtIVkhoMnAwc1I2TUFTX0ZKTFcydkFhbFpOSEZWd1U1QmU5MWxlRUN4WnlLVGp2M2l1Mk8wRHQzbjZZQktwY2cxSUFMamtPemtZbzdYd0dtWUlzWms1b3JZUVZzWWZZWkREVW1EWUFNMU9lWWJYd3A0cEpsX09UdGZyNTh0Vl9Wc1NUYllMSlZlUnZoNWxtOEV3V08zZkRydmpqUjlqNDRmd0RpaU5BMUJoR3d4TF8waVkwOFRRMDJiZDBPUUJVOXRFSDFfQ2s1WFhKQThWZzNGV2FiSHBPR3VuRnJqQUtvY1VFeEo4bDNsajZfQ2ViakszdnBYX0h5RER4dDdfT0lDNi1nbUZ2bEJTN2NwZTIyMUJaQUMzX3EybzRHUHVYT2ktd0FWMVhlZER3NlpkMk1PX3paamc?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi5ARBVV95cUxPdTV4eEl6cnRmYzFfTUNuQnM2cUxFRkVZNlkzZE56X3RBRFpyVkFZNWhwMEZRbUNvY1hGOG5zVGZYaVBVSWM4bDJSU0kzRUQ3Sm1tMk9Mdlh5LTVnd29ETU5XRzFVazA3Zl9rUzRoREZLdEo1U0pMRTNqeTdUWDhxQml5S2Z2MHZod2pLTzhHbnlLMHZIbjc0Y2I5UFBnMVVDSnBRb3gwR21yU0JXWVZWMXFiV3A4UFNCV1BRcUR2QjN1VUxZdWFnVmQ3LXozMUhnTUtROHdBSUZ0QXBJSWRhX0E5bm9Id0pnNmRyaUhhR3BGSy1pT0VFb3U0YVo5Zmk5cjRyNnNVbS1Ub2VWX3FmT0hjZjl0ZjZQdjNtbWMtUnAwOHA5ZzEzRlBmalRmcE5HdjJhY3U1YXYtaW5YbEZRcFhLWWdRQklMVGlzaWRrajNsM0M1aTdYbVJGenpXS3hXTTg5ZW9HRUd5b2lnRkJxb3Z1VFA0Qk1TLS1hUDQ3V0Y5SzM5VzBZdVRXVTlqM01POVJ0ZVBKSE5veFRIbzJKalRJTVFpd3FYaVFKRHFfaEhTdDJ3cHpISmgzSkFuakxQYXZTWEpCRG1lcXphZmN1bjZidXJWcWJBMzh0bGoyanNoVXF5NWM2NjJfRGJOWTlVTl9fVzBpOG9NWEcxWXo0VzBuM1ZWZjdpTkdGMFZyYzRyZDNtVDRyYlRMblVhdVJaM3ZZdHMyeF94alBfeTA0SldsRFZRcFR2UXQtM192dnJrcXdzMzlqQkJKd091ZVJBLU1wNzVrb3ZSc0s1MG03YlBnLWw?oc=5",
       "region": "彰化",
       "keywords": "彰化, 政治",
       "category": "政治",
@@ -4423,10 +4063,10 @@
       "importance": "中",
       "status": "未讀",
       "action": "可發文",
-      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-09T16:06:08.000Z",
-      "publishedAt": "2026-06-09T16:06:08.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T01:52:30.000Z",
+      "publishedAt": "2026-06-10T01:52:30.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1SHGNXG",
@@ -4453,36 +4093,8 @@
       "action": "可發文",
       "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T05:45:03.000Z",
       "publishedAt": "2026-06-10T05:45:03.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-PNPL0M",
-      "sourceMode": "auto",
-      "autoClassification": "與彰化相關的台灣新聞",
-      "autoFeedName": "與彰化相關的台灣新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "hkcna.hk",
-      "title": "台綠營老將退黨參選彰化縣長，批民進黨只剩派系利益",
-      "summary": "台綠營老將退黨參選彰化縣長，批民進黨只剩派系利益 &nbsp;&nbsp; hkcna.hk（自動歸類：與彰化相關的台灣新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5YYzZIbnIzLU8ycXFXeVhwMGlZamxmY3lndkdDVGVicE5US1RsYVJneGhwWXNqWmpsQjdlc2VuQUgtc1kxaGdheGwwS3gtT0dmUWJMSVVGSXRUbF9mSEZCX0NrNW45dw?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 政治",
-      "category": "政治",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T00:41:00.000Z",
-      "publishedAt": "2026-06-10T00:41:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1XYZTT1",
@@ -4509,8 +4121,8 @@
       "action": "可發文",
       "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T02:12:01.000Z",
       "publishedAt": "2026-06-10T02:12:01.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-B6W1QU",
@@ -4537,8 +4149,92 @@
       "action": "可發文",
       "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T06:05:32.000Z",
       "publishedAt": "2026-06-10T06:05:32.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1RIMWW9",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "彰化縣重要新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "Yahoo新聞",
+      "title": "邱建富退黨參選彰化縣長 林楚茵：依黨章處理、不要親痛仇快",
+      "summary": "邱建富退黨參選彰化縣長 林楚茵：依黨章處理、不要親痛仇快 &nbsp;&nbsp; Yahoo新聞（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxQQVNSOWJ2elkzOTBnbGRLbUJrYXdQSVU5ZG9MZ0tETF94WUNkQzdTOFNYcnpHRl9OOTVZcGZWTjlRbE1LZGdjQm1hNDA0Um5BT1BpWmxMSVktSUVwSVZ3dnJjYVloNUFEOWl3WTI5RzdWUzFBTlo3dmhXVlJXOWxxejYySE9TeEw5QWNQdFlBdDNBWUQ0Umh6S20xYjVSZjdhM0pRZm1UMnZ2MFNQb2tKQ0dEQVlMV0lGYnVzWV9UY3ZjUmlIQ01mYURUbkdwUGp1dmhONU05YlMyb2Y3UEkzUGJfZk8ydnZiZG1nYjFUWGxmS29KQ1N2WExkQzVPaGFtX3pPekxLSGRSMUdid29UU3o4MEc0aGdOaVUyMXpYUmdSVFdnRFhzUThYZWFZMXpUWjgzR2VlU29SMXBlU3RTSzVIM1FvcFFkREoxSmJILWtuYi0wYVdpeU9HUHNHcUhOdWF1UnNsV2xnMXUzckxwXy1mcVJrSjdpMHd3R05wV25DSEE?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 政治",
+      "category": "政治",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T07:37:08.000Z",
+      "publishedAt": "2026-06-10T07:37:08.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1EALZMQ",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "彰化縣重要新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "匯流新聞網",
+      "title": "民進黨拍板徵召鄭朝方選新竹縣長 賴清德讚他擁創新美學治理能力",
+      "summary": "民進黨拍板徵召鄭朝方選新竹縣長 賴清德讚他擁創新美學治理能力 &nbsp;&nbsp; 匯流新聞網（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBKZWdZZ3k1NUlrRXUtcllOMnFEdmNyYXRRcmJTOERZZEpwSExxUUttaW1pMHdGR2txaFBSY2NwSlFUUm9GZXd2T3FB?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 政治",
+      "category": "政治",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T07:48:37.000Z",
+      "publishedAt": "2026-06-10T07:48:37.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-PNPL0M",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "彰化縣重要新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "hkcna.hk",
+      "title": "台綠營老將退黨參選彰化縣長，批民進黨只剩派系利益",
+      "summary": "台綠營老將退黨參選彰化縣長，批民進黨只剩派系利益 &nbsp;&nbsp; hkcna.hk（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5YYzZIbnIzLU8ycXFXeVhwMGlZamxmY3lndkdDVGVicE5US1RsYVJneGhwWXNqWmpsQjdlc2VuQUgtc1kxaGdheGwwS3gtT0dmUWJMSVVGSXRUbF9mSEZCX0NrNW45dw?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 政治",
+      "category": "政治",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T00:41:00.000Z",
+      "publishedAt": "2026-06-10T00:41:00.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1U3KKS2",
@@ -4565,8 +4261,8 @@
       "action": "可發文",
       "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T06:49:46.000Z",
       "publishedAt": "2026-06-10T06:49:46.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-6GNSKI",
@@ -4593,8 +4289,36 @@
       "action": "可發文",
       "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T06:45:27.000Z",
       "publishedAt": "2026-06-10T06:45:27.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1IMB5CZ",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "彰化縣重要新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "蕃新聞",
+      "title": "麝香貓現蹤嘉義山林生態報喜",
+      "summary": "麝香貓現蹤嘉義山林生態報喜 &nbsp;&nbsp; 蕃新聞（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1PcFhyTlZycXhiNnN1b3I1U3hLZW5qZ21Md3pxenBBa1cyQXhlZEJCZzZSOW5zN09ld1dXa2F1eUJQbzdnQlozTTdFUEwxR1I0UWc?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T07:54:00.000Z",
+      "publishedAt": "2026-06-10T07:54:00.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-18NU2NJ",
@@ -4621,8 +4345,36 @@
       "action": "可發文",
       "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T00:31:00.000Z",
       "publishedAt": "2026-06-10T00:31:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-XCAHWD",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "彰化縣重要新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "Yahoo新聞",
+      "title": "獲徵召參選新竹縣長再戰徐欣瑩 鄭朝方談趙武姆修女重要啟發",
+      "summary": "獲徵召參選新竹縣長再戰徐欣瑩 鄭朝方談趙武姆修女重要啟發 &nbsp;&nbsp; Yahoo新聞（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMimANBVV95cUxPc19adW5MczM0ZFdIOTU0d0hNY0gyNkJWV010WmpyeEpBNHlmeTh6akRESWtxaFVNOWxNaG1LMzNOSGctUnR5bklreFQtRE4zQ3pQUy1aY1pIMURLY3V0cGlRYWU3MFVJZ2pMRk1XV25qaXZWdnpkc08xN1hWRVdKZlo0bUMtZ0JVRWIyRnEyNW1Ba3FILXdpY3F0QmRWaWZISnlXeHZuX3hra05lMjVETTRod3dQdDlsaFZNMFFHLXZqNlJPXzBoQTVVMnpOZ3RIaVNqX1R1d2djS0tHa0ZPTElTZ0pUVzd4bFM0ckstR1JybzdnWHBDdDlodmEzbFJRbDh4ekxUZV9mT2M4a05vR1VvZHY0blQ5azJtQVRjUmNvWGdwejZJWDktMmtnNWRqMDlvdGMwaW83T0MwWThUcXh4Z1lCbUs1MWxqMVc5TkdHaENLMzNzbEF3WmEyY2dqaHNzUElTb21YOUFGbjNLcEdKS1J3a1UzaTdBdVJRTFNBZ2VZZG9QVkk2Q3BJbWtydWIwVU5YejQ?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 政治",
+      "category": "政治",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T07:39:31.000Z",
+      "publishedAt": "2026-06-10T07:39:31.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1QDCO2I",
@@ -4649,77 +4401,21 @@
       "action": "可發文",
       "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-09T16:18:33.000Z",
       "publishedAt": "2026-06-09T16:18:33.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-M6OD48",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "彰化縣重要新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "行銷人",
-      "title": "彰化縣警察局綜合行政大樓動土 預計117年7月竣工",
-      "summary": "彰化縣警察局綜合行政大樓動土 預計117年7月竣工 &nbsp;&nbsp; 行銷人（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMi7gJBVV95cUxQWlFDWk5OQUx1Vm9keEQ0MjRURkxzNzctWVhDbHlpTXlwRmU2SllYY1lxY1VfMzZhODg1ZE8tcUp3cER4OVlJcmNTWTVKN1hSMWtKOE1faUVINlhWQ2RKRXh5LW1WVDE3OE1FdjUySVNLRkludm5oNHNKNTNKYTUxcEc4MXF0ZHJ2QzllRUR5dVd5MW1xcmZQUVQxYlpHWF9seDdZRWZrVGp6MENwNlBOWFhzeHoyTndvS1RCX2JUa1FrT1dETHF3QlNFeUxTQkpsODR2RWx2TWk5Y0tQemRiQ3BDNTY4QXdhazVTaVdaSDZUdVBrWXliWGx4eFNEaHc3MXg0TXNyMUdLTHZLdlVJUm1YdDF4UXNJaGNmTWx6SHA0bS1rbHlyRnZDb0RfVnBwM0otb2xVMmpkVjByYVVLMUhvNng0NTU5OUZuNTd1WWRPaDFCRmlmc0lCYkdBUGZSY19lTjI0aWpJOVJ5OGc?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 治安",
-      "category": "治安",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-09T19:13:39.000Z",
-      "publishedAt": "2026-06-09T19:13:39.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-3V52V6",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "彰化縣重要新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "民視新聞網",
-      "title": "不只彰化搞不定！國民黨「這選區」也驚傳分裂 3人搶市長綠營有望翻轉",
-      "summary": "不只彰化搞不定！國民黨「這選區」也驚傳分裂 3人搶市長綠營有望翻轉 &nbsp;&nbsp; 民視新聞網（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9QYjhjVjE3V0pJZkNVbnNBZHFzcUdMRzR0R2RVVnFybHJYcVRJNGdnejh1Y292WHNlUUxkS1FCcFhobk1ad3NQcEF3MUlHYzF6cUItNW5qa0w1SjNjS1ZhRw?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-10T04:26:02.000Z",
-      "publishedAt": "2026-06-10T04:26:02.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-Z3BZVY",
+      "id": "AUTO-2026-06-10-1C68C23",
       "sourceMode": "auto",
       "autoClassification": "鹿港與福興地方新聞",
       "autoFeedName": "鹿港與福興地方新聞",
       "date": "2026-06-10",
       "sourceType": "新聞",
       "platform": "Google News",
-      "sourceName": "蕃新聞",
+      "sourceName": "Yahoo新聞",
       "title": "科博館《許蒼澤的鹿城拾影》特展 帶你重溫鏡頭下的一天、一年與一輩子",
-      "summary": "科博館《許蒼澤的鹿城拾影》特展 帶你重溫鏡頭下的一天、一年與一輩子 &nbsp;&nbsp; 蕃新聞（自動歸類：鹿港與福興地方新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9jNUtqTHc4NlRTZnhEdS1qd05GVWZmRGU0NDlxRTduWUNFZDJXNHROSk82SkJXX3RSNDE0dzRKblRoMWlDcmNOeHdTMXN0eHh5YVE?oc=5",
+      "summary": "科博館《許蒼澤的鹿城拾影》特展 帶你重溫鏡頭下的一天、一年與一輩子 &nbsp;&nbsp; Yahoo新聞（自動歸類：鹿港與福興地方新聞）",
+      "url": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxNSEQ5bzVKXzd3QmliYWtqTTBJWlNZU09kZE5mRXZlb0llZzBDVXAtY3FlS2pBSThrR0dTX3lleDVhVDZEbFV1NGRCSVNnalVNaFUxZXNsc2h2RlFvdFd6Zi05TXJfN1pXbFZZVG1haFpXY0M1ODI0OVQ4R0dhdV9fZWZ6OWxMTjhCcG04NzkwSkY3UUpmcDZJcFNVN2MwTVpUUWF6RnpqLUFRMVdEWDh6R210S1BpRXNBTUVxV1ZtaWNvQWVGU0hWdjh0NC1yMThGRWtseEtIX1RtZ1BRYnpyVEkxRmFxNm5vak9TN1Z0Ti1PNGFEck5FSXNqbHBpQVhxX0ZlWmVVYnJIeE5wcG9hbzY2bTZISnVGTzBVcWdCRVBMTG1ULVlCOUZzLWlpN3dNUXZwRDQ1WHlORXdMdERYbWVYanlsam1YUG9oZkRLcXdScXFoNXdQWHJ1TDE5TURX?oc=5",
       "region": "鹿港",
       "keywords": "鹿港, 其他",
       "category": "其他",
@@ -4731,10 +4427,10 @@
       "importance": "中",
       "status": "未讀",
       "action": "可發文",
-      "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T06:36:00.000Z",
-      "publishedAt": "2026-06-10T06:36:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T06:33:59.000Z",
+      "publishedAt": "2026-06-10T06:33:59.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-N9289Y",
@@ -4761,36 +4457,8 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T02:12:06.000Z",
       "publishedAt": "2026-06-10T02:12:06.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-9D9QBI",
-      "sourceMode": "auto",
-      "autoClassification": "鹿港與福興地方新聞",
-      "autoFeedName": "鹿港與福興地方新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "蕃新聞",
-      "title": "鹿港慶端陽-龍王祭 首度雲林、彰化齊聚為龍王祭開光點睛",
-      "summary": "鹿港慶端陽-龍王祭 首度雲林、彰化齊聚為龍王祭開光點睛 &nbsp;&nbsp; 蕃新聞（自動歸類：鹿港與福興地方新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0zQWlqcnN4WVJyeHAtSDdISFhQdUtUUFhTSU9HdDFzNzZNbHNjcHVsMkpIWmt1OXhzSDNwZXVjS0VBbVZtbWozbWxDbllNYTJjcXc?oc=5",
-      "region": "鹿港",
-      "keywords": "鹿港, 其他, 彰化",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-09T23:07:12.000Z",
-      "publishedAt": "2026-06-09T23:07:12.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-VBI4FV",
@@ -4817,8 +4485,36 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T02:05:29.000Z",
       "publishedAt": "2026-06-10T02:05:29.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-9D9QBI",
+      "sourceMode": "auto",
+      "autoClassification": "鹿港與福興地方新聞",
+      "autoFeedName": "鹿港與福興地方新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "蕃新聞",
+      "title": "鹿港慶端陽-龍王祭 首度雲林、彰化齊聚為龍王祭開光點睛",
+      "summary": "鹿港慶端陽-龍王祭 首度雲林、彰化齊聚為龍王祭開光點睛 &nbsp;&nbsp; 蕃新聞（自動歸類：鹿港與福興地方新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0zQWlqcnN4WVJyeHAtSDdISFhQdUtUUFhTSU9HdDFzNzZNbHNjcHVsMkpIWmt1OXhzSDNwZXVjS0VBbVZtbWozbWxDbllNYTJjcXc?oc=5",
+      "region": "鹿港",
+      "keywords": "鹿港, 其他, 彰化",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-09T23:07:12.000Z",
+      "publishedAt": "2026-06-09T23:07:12.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1FQ12GN",
@@ -4845,8 +4541,8 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T01:05:00.000Z",
       "publishedAt": "2026-06-10T01:05:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1QQEQJN",
@@ -4873,36 +4569,8 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T03:31:39.000Z",
       "publishedAt": "2026-06-10T03:31:39.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-P5REZJ",
-      "sourceMode": "auto",
-      "autoClassification": "鹿港與福興地方新聞",
-      "autoFeedName": "鹿港與福興地方新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "蕃新聞",
-      "title": "鹿港慶端陽揭幕！兩尊龍王世紀同框！萬人見證歷史",
-      "summary": "鹿港慶端陽揭幕！兩尊龍王世紀同框！萬人見證歷史 &nbsp;&nbsp; 蕃新聞（自動歸類：鹿港與福興地方新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1YUhyVkNhT3dGY0JJazhkX3d4dXp1VkZCVWlXRlNtb1o1eVpPNEp4dzF2NkZTN1Z3UUROalV3V01OMWVCTzI2NkRHUE5jQXBaTEE?oc=5",
-      "region": "鹿港",
-      "keywords": "鹿港, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-09T18:06:54.000Z",
-      "publishedAt": "2026-06-09T18:06:54.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-KZXPN3",
@@ -4929,8 +4597,64 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T01:05:00.000Z",
       "publishedAt": "2026-06-10T01:05:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1MTFI9T",
+      "sourceMode": "auto",
+      "autoClassification": "鹿港與福興地方新聞",
+      "autoFeedName": "鹿港與福興地方新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "蕃新聞",
+      "title": "影／彰化警察局綜合行政大樓動土 3.15億元打造科技辦案新基地",
+      "summary": "影／彰化警察局綜合行政大樓動土 3.15億元打造科技辦案新基地 &nbsp;&nbsp; 蕃新聞（自動歸類：鹿港與福興地方新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1Dak1TX3ViMlNqTkJielh4cFpfaDZmNlNvbERucWhqb3hfSVdKT19OMEZ2Y2xBSVFCZ0RYY1JuWVU2b21EVFFIamhSbWs2eVBCdXc?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 治安",
+      "category": "治安",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-09T18:48:36.000Z",
+      "publishedAt": "2026-06-09T18:48:36.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-RITRHR",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "地方交通停車",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "台灣華報",
+      "title": "積欠38萬餘元，法務部彰化分署使出扣車拍賣絕招，義務人乖乖繳清。（照片分署提供）",
+      "summary": "積欠38萬餘元，法務部彰化分署使出扣車拍賣絕招，義務人乖乖繳清。（照片分署提供） &nbsp;&nbsp; 台灣華報（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBrY2hDcS0tdDI1cm5DY21uWU5VbjE4TFdYNTIzejBjeWE1a181OWpBdHFtQ1AwM05XcUNmSENTQWh5S1c2aXhDaVlUQmFna19NOVVVVC1QcW1VUlFnbnkzU0ZYMkdqQl9abEow?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 其他, 台灣",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T07:45:07.000Z",
+      "publishedAt": "2026-06-10T07:45:07.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-E026HT",
@@ -4957,8 +4681,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T06:21:25.000Z",
       "publishedAt": "2026-06-10T06:21:25.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1K12VJP",
@@ -4985,8 +4709,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-09T21:30:00.000Z",
       "publishedAt": "2026-06-09T21:30:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1PSQSRN",
@@ -5013,8 +4737,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T01:29:00.000Z",
       "publishedAt": "2026-06-10T01:29:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-14L8PM4",
@@ -5041,8 +4765,36 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T04:48:04.000Z",
       "publishedAt": "2026-06-10T04:48:04.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-KKLU8U",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "地方交通停車",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "台灣華報",
+      "title": "彰化縣「警察節」慶祝大會」，王縣長（前排中）出席。（照片縣府提供）",
+      "summary": "彰化縣「警察節」慶祝大會」，王縣長（前排中）出席。（照片縣府提供） &nbsp;&nbsp; 台灣華報（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE81cHcyek1uVjZUSVRJYlhFanBkV2x0cWhDOXh3cHBTQXJGYmVyaXI5TnFYaUtYanRzSFI5dWVjVks4N1cyZXE4WXFSX0NlYzZVQndkQmp4UVpuQVI0X0pGR3ZMUTZrNjJMNWdF?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 治安, 台灣",
+      "category": "治安",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T06:47:43.000Z",
+      "publishedAt": "2026-06-10T06:47:43.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1IYIAGW",
@@ -5069,8 +4821,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T06:39:07.000Z",
       "publishedAt": "2026-06-10T06:39:07.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-T1BAWK",
@@ -5097,8 +4849,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-09T23:23:41.000Z",
       "publishedAt": "2026-06-09T23:23:41.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1U3VGVS",
@@ -5125,21 +4877,21 @@
       "action": "可發文",
       "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T04:48:45.000Z",
       "publishedAt": "2026-06-10T04:48:45.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-3943FA",
+      "id": "AUTO-2026-06-10-115ZGT3",
       "sourceMode": "auto",
       "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "地方交通停車",
+      "autoFeedName": "地方民生服務",
       "date": "2026-06-10",
       "sourceType": "新聞",
       "platform": "Google News",
-      "sourceName": "聯合影音",
-      "title": "雨夜視線差！休旅車撞上彰化八卦山牌樓翻覆駕駛輕傷| 時事",
-      "summary": "雨夜視線差！休旅車撞上彰化八卦山牌樓翻覆駕駛輕傷| 時事 &nbsp;&nbsp; 聯合影音（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5UcjNmNmhpeTVZRWJoeVlNZEcwbWFYUkxkN1hyMU40OXVTTHUxNmNlNVVrd3p1YlA3M1kzdWl3UUVtbTZyMi04a0Rn?oc=5",
+      "sourceName": "PChome Online 新聞",
+      "title": "【藍營彰化市長提名2-1】國民黨彰化市長提名歧見未解 民調與基層實力對決浮上檯面",
+      "summary": "【藍營彰化市長提名2-1】國民黨彰化市長提名歧見未解 民調與基層實力對決浮上檯面 &nbsp;&nbsp; PChome Online 新聞（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNLTZGekxnY19kUDktV3lhMFFLWDlNUkRYa1hJbVVUYTRVdU9TcG13OFdYTDN1amtXVHdyM2FCMjM4MFY3RENwV1E3NmwxYlo1ZWl3M09KRWtQNllwandMT3VhOHFHNFJFaXloelAyZUR1VHpMS1VzekVSQjNyQ2FXS2pvOE5HTzBvRnc?oc=5",
       "region": "彰化",
       "keywords": "彰化, 其他",
       "category": "其他",
@@ -5151,38 +4903,10 @@
       "importance": "中",
       "status": "未讀",
       "action": "可發文",
-      "notes": "自動爬抓：地方交通停車。發布時間：2026-06-10T02:23:00.000Z",
-      "publishedAt": "2026-06-10T02:23:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1MTFI9T",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "地方民生服務",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "蕃新聞",
-      "title": "影／彰化警察局綜合行政大樓動土 3.15億元打造科技辦案新基地",
-      "summary": "影／彰化警察局綜合行政大樓動土 3.15億元打造科技辦案新基地 &nbsp;&nbsp; 蕃新聞（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1Dak1TX3ViMlNqTkJielh4cFpfaDZmNlNvbERucWhqb3hfSVdKT19OMEZ2Y2xBSVFCZ0RYY1JuWVU2b21EVFFIamhSbWs2eVBCdXc?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 治安",
-      "category": "治安",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：地方民生服務。發布時間：2026-06-09T18:48:36.000Z",
-      "publishedAt": "2026-06-09T18:48:36.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：地方民生服務。發布時間：2026-06-10T07:27:00.000Z",
+      "publishedAt": "2026-06-10T07:27:00.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-15U7J6G",
@@ -5209,8 +4933,36 @@
       "action": "可發文",
       "notes": "自動爬抓：地方民生服務。發布時間：2026-06-09T20:10:00.000Z",
       "publishedAt": "2026-06-09T20:10:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1QBYXRE",
+      "sourceMode": "auto",
+      "autoClassification": "彰化縣重要新聞",
+      "autoFeedName": "地方民生服務",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "Yahoo新聞",
+      "title": "【藍營彰化市長提名2-2】藍營彰化市長協調會變動員大會？「全民民調」對決「基層樁腳」",
+      "summary": "【藍營彰化市長提名2-2】藍營彰化市長協調會變動員大會？「全民民調」對決「基層樁腳」 &nbsp;&nbsp; Yahoo新聞（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiqwNBVV95cUxQVUI0LVVCN013N2hucW1sTFluVFNPalNHTDkwbktCaW9jSFZEbThieHE3RFhUMEFCbE94NEVwNGNpZk5MTVdlYm5TWjl2S28xb05BVFFHUmsyOTRBWUgwbFNtZFJhUFM0dkV1NEpDNmw2THdIN19YeXJuX3JCd0RPTHFPZWN4aFh0NU5SSjBxdl9jZVd0ZktVMmR0b0xBTDVIV3c3UGJVejVRNnM1eWtmV0dsVTc5ZzlYSWpsazNsclY1YkJKWTY1ZFV5Uk9tVEVtRmRfcmVOMzhXQkdTd2JRbjVTQW1xaFZRV1NTdkptVC1KZjhqNms0RUk1YTlIenVzNF9qNDdnbXQzekVOc3daZEx5bURLX3JvbURHal9va3puRFlKOG5ETU8xTzUxWUl4WklLcDFmYzBvSnIzUkhkcTE1VE82VnNSNEROcGtJcEhBWWpOenZHX3NTMVF0Um11Ui1ZOEhaVWFzSFc5ay1KVTZjbmM5endmMFpjNjUxVWxyVVl0UEZqMFN5TkpiOVFLR0NDWUo2YnliMlY0WU1GMFVpOExCNlotaEtn?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：地方民生服務。發布時間：2026-06-10T07:28:20.000Z",
+      "publishedAt": "2026-06-10T07:28:20.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1TVFF32",
@@ -5237,8 +4989,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方民生服務。發布時間：2026-06-10T02:35:42.000Z",
       "publishedAt": "2026-06-10T02:35:42.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-R6GUBJ",
@@ -5265,64 +5017,8 @@
       "action": "可發文",
       "notes": "自動爬抓：地方民生服務。發布時間：2026-06-10T01:31:02.000Z",
       "publishedAt": "2026-06-10T01:31:02.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1LV2FQD",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "地方民生服務",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "MSN",
-      "title": "邱建富今退黨參選彰化縣長 綠支持者炸鍋出征",
-      "summary": "邱建富今退黨參選彰化縣長 綠支持者炸鍋出征 &nbsp;&nbsp; MSN（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMi6ANBVV95cUxPeDNZWVpRcGNPZGNIb2pRUVBfZC1HQ2ZGbFc3RlhKVWFseGR4aFFqRkFGNGhsTWhDTUs2clpKeklwT1hvcnQ0dkk4ZWRrQTNxZENtbjc5TFpaeHI2RGlpdDZyaDJqVk1kSXJIZjJVZ2JEVF9sMUhBRDJQRElvUU1laWx2cjFMd0UyU0plank2S2FSNnR2S3c3WWlrODNtdmFBUEVJSEF6MzRFbVNPdnNPNTNjNnN2M1lYeDI1WEhpZmdNQ3RKUFo1UVJHUnRKbGxTbWIwcnJ5OU1yNVF6eUZDTXhPczlZZklfU1AwcUM5X2VXekhhbkY1ajNiVEJiNkVtZ2ZHLUROalNvMWxhSjI5RV96Z2xHdTdxV3pvWW1MOXEyR000U21KSFBuLUoyNUxyRW81MkJXeFpKc1U2X1NhNFROdU9MMS12aWl0cGhPNDhMRFkwaDhFQ3VOdFdHVnlqczBkaHVZallLNmlHMTBIMEVOXzJlbl9VQm9qYjdtSXgxbExCQnktREM1c0pnMjJHRC12TzU5eXhxTXM0NDlJRkhackYyOGJaOVRvbkpDZGFCVjZoQXZGTE5CU1l0em1kWXdNai1xY3JLMFpMbVVDS3FFb0dhOTVfTkhuS2sxakNQV1N3Z1RjMg?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 政治",
-      "category": "政治",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：地方民生服務。發布時間：2026-06-09T22:09:29.000Z",
-      "publishedAt": "2026-06-09T22:09:29.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1FKHLMG",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "地方民生服務",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "PChome Online 新聞",
-      "title": "影／彰化中興莊故事館開館重溫眷村文化公共藝術《同舟》同步亮相- 社會新聞- PChome Online 新聞",
-      "summary": "影／彰化中興莊故事館開館重溫眷村文化公共藝術《同舟》同步亮相- 社會新聞- PChome Online 新聞 &nbsp;&nbsp; PChome Online 新聞（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcVI3OHoxdGRFX0Nua2hvaWhBUTNUQW9HcUp6aE43Y0NDaTUwamFkR2s2VHVBaENfNUZHRkl6Um9ObEpjTW5SQ2U5NGRGWDQ1N0dBV1lLYU1JZEpmRVlpUi1tRDllNHV5dWwycUlJZzBHYlZPdlh0LVRMWkVxUzNVTkNsbUNlVHJZVjZZZw?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：地方民生服務。發布時間：2026-06-10T05:08:38.000Z",
-      "publishedAt": "2026-06-10T05:08:38.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-FSDI7B",
@@ -5349,8 +5045,8 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-10T02:04:00.000Z",
       "publishedAt": "2026-06-10T02:04:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1MJ0PNY",
@@ -5377,8 +5073,8 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-10T02:22:11.000Z",
       "publishedAt": "2026-06-10T02:22:11.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1PS1EYZ",
@@ -5405,36 +5101,8 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-10T06:09:40.000Z",
       "publishedAt": "2026-06-10T06:09:40.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-921R3Q",
-      "sourceMode": "auto",
-      "autoClassification": "鹿港與福興地方新聞",
-      "autoFeedName": "鹿港福興觀光活動",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "news.cnyes.com",
-      "title": "格上租車攜手四縣市旅館公會 打造國旅服務鏈",
-      "summary": "格上租車攜手四縣市旅館公會 打造國旅服務鏈 &nbsp;&nbsp; news.cnyes.com（自動歸類：鹿港與福興地方新聞）",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxORFc4cmNLdGg2UkRnYWMwSmEtYlpZU2E5RXc0bGhnaHcyXy13LVlUTUtMTUZaSDZFSVZHR1NaWlhvUjFOQjFfY19ITVRHY1FuSzdGVzFiOGh0NjlrcEMyNTZ4clp6cDNwSjZqYlRwcG1WU2J5QjlmejR0ZU5qT3J4V0FhcmFaZlAydFBXbC01Y2V5VHF2bS16UEJTOEJwd1ZKaHZ6OFRB?oc=5",
-      "region": "鹿港",
-      "keywords": "鹿港, 其他",
-      "category": "其他",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可發文",
-      "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-09T19:21:34.000Z",
-      "publishedAt": "2026-06-09T19:21:34.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1R511BI",
@@ -5461,8 +5129,8 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-10T04:53:45.000Z",
       "publishedAt": "2026-06-10T04:53:45.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1GT9QG2",
@@ -5489,21 +5157,49 @@
       "action": "可發文",
       "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-09T22:21:00.000Z",
       "publishedAt": "2026-06-09T22:21:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-1NF9OQV",
+      "id": "AUTO-2026-06-10-1Y8H826",
       "sourceMode": "auto",
       "autoClassification": "鹿港與福興地方新聞",
       "autoFeedName": "鹿港福興觀光活動",
       "date": "2026-06-10",
       "sourceType": "新聞",
       "platform": "Google News",
-      "sourceName": "idn.com.tw",
-      "title": "南投迴Alang原住民族音樂節 6/20埔里登場",
-      "summary": "南投迴Alang原住民族音樂節 6/20埔里登場 &nbsp;&nbsp; idn.com.tw（自動歸類：鹿港與福興地方新聞）",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQOTlyMk92dnFvWHIxOVZqRG1SeGItNWNBVHBZSmZnT0ZwY181M0pSV0ttRUJoTkRsazJIaFZNbDJXQ0FRVEhURWtkZTRmTUNJYkpoNHd3SC1fRmdHcjY1ZDU3UlVHU2lSU1ozMHc5QnJzTm14UmhBVlEtYTdqUHhrVmoyekkzdjV1UkhoXzJMZkZhbzhEWVIxSg?oc=5",
+      "sourceName": "LINE TODAY",
+      "title": "南投巧克力咖啡節6月19日登場 百家品牌、晚會、煙火閃亮福興溫泉 | 中廣新聞網",
+      "summary": "南投巧克力咖啡節6月19日登場 百家品牌、晚會、煙火閃亮福興溫泉 | 中廣新聞網 &nbsp;&nbsp; LINE TODAY（自動歸類：鹿港與福興地方新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1CVE5yaDBSUTBobTdQQmxPZzJjTjFlcDBaYmpNZjRPWnZGZGhhWmxtVWxLWEtUVUZNQTQ3Z09ZZHRXTFoxYnFWbmVFekxGcTlXY3pqcVR3?oc=5",
+      "region": "福興",
+      "keywords": "福興, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可發文",
+      "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-10T07:46:38.000Z",
+      "publishedAt": "2026-06-10T07:46:38.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-10TUG7M",
+      "sourceMode": "auto",
+      "autoClassification": "鹿港與福興地方新聞",
+      "autoFeedName": "鹿港福興觀光活動",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "放言Fount Media",
+      "title": "南投巧克力咖啡節6/19登場 百家品牌、晚會煙火秀",
+      "summary": "南投巧克力咖啡節6/19登場 百家品牌、晚會煙火秀 &nbsp;&nbsp; 放言Fount Media（自動歸類：鹿港與福興地方新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBnVm9YQnZPcVdIVHhMRHFGN1RhaHdEUjliX1dpUHJOQThxZGNfRzdjM0U3SlNqNXRWc2p3Um0xU194VU9WS2t4Wm5FTDFpd0xBeFE?oc=5",
       "region": "鹿港",
       "keywords": "鹿港, 其他",
       "category": "其他",
@@ -5515,10 +5211,38 @@
       "importance": "中",
       "status": "未讀",
       "action": "可發文",
-      "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-09T23:11:11.000Z",
-      "publishedAt": "2026-06-09T23:11:11.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：鹿港福興觀光活動。發布時間：2026-06-10T05:57:28.000Z",
+      "publishedAt": "2026-06-10T05:57:28.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-2026-06-10-1TG8KRE",
+      "sourceMode": "auto",
+      "autoClassification": "與彰化相關的台灣新聞",
+      "autoFeedName": "與彰化相關的台灣新聞",
+      "date": "2026-06-10",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "LINE TODAY",
+      "title": "下班尖峰大雨狂灌彰化！ 溪湖道路水淹半個輪胎高 | 華視新聞",
+      "summary": "下班尖峰大雨狂灌彰化！ 溪湖道路水淹半個輪胎高 | 華視新聞 &nbsp;&nbsp; LINE TODAY（自動歸類：與彰化相關的台灣新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4xcHdaV2dqQ0RTeWkzR3ZXWlJOOTRGc3lRUFRmQlhqblZ4Zi1sTy1YallVNkxESzQydDViVW5oV2hTVF9rSUNtWE0xel9sMXJab2FlaEpR?oc=5",
+      "region": "彰化",
+      "keywords": "彰化, 交通",
+      "category": "交通",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "可做懶人包",
+      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T02:35:20.000Z",
+      "publishedAt": "2026-06-10T02:35:20.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-PBUKSB",
@@ -5545,8 +5269,8 @@
       "action": "可做懶人包",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T02:24:22.000Z",
       "publishedAt": "2026-06-10T02:24:22.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1RML16X",
@@ -5573,8 +5297,8 @@
       "action": "可做懶人包",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T01:05:00.000Z",
       "publishedAt": "2026-06-10T01:05:00.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-OTCTT5",
@@ -5601,49 +5325,21 @@
       "action": "可做懶人包",
       "notes": "自動爬抓：鹿港與福興地方新聞。發布時間：2026-06-10T02:24:57.000Z",
       "publishedAt": "2026-06-10T02:24:57.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
-      "id": "AUTO-2026-06-10-1YUJF",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "地方交通停車",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "蕃新聞",
-      "title": "彰化監理站首創AI宣導影片 高齡駕駛換照新制資訊一看就懂",
-      "summary": "彰化監理站首創AI宣導影片 高齡駕駛換照新制資訊一看就懂 &nbsp;&nbsp; 蕃新聞（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBnZzFvVkJaOWQxNk55Qi15aEZUaF9PUk1Ba0xaWU00ZUgzdG1CQ0t2dkI3M09Ubjd6MWtOQW1mVEducjNIU3N2aTVGX0NaVGhBZVE?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 長照",
-      "category": "長照",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可做懶人包",
-      "notes": "自動爬抓：地方交通停車。發布時間：2026-06-09T16:47:07.000Z",
-      "publishedAt": "2026-06-09T16:47:07.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-1N942X2",
+      "id": "AUTO-2026-06-10-1B3WU5V",
       "sourceMode": "auto",
       "autoClassification": "彰化縣重要新聞",
       "autoFeedName": "地方民生服務",
       "date": "2026-06-10",
       "sourceType": "新聞",
       "platform": "Google News",
-      "sourceName": "天天上新聞",
-      "title": "彰化榮服處鏈結社福資源 致贈愛心物資關懷榮民眷",
-      "summary": "彰化榮服處鏈結社福資源 致贈愛心物資關懷榮民眷 &nbsp;&nbsp; 天天上新聞（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1lSTNVMmFEWlhPSWpUSWd0QlItU1Z4d2FRS3JQRDVkOUtEckhzN2c0OFJMUHNfdjNlVnJ0T1MzSXhlWk9zSE15OFk3ZWlOZw?oc=5",
+      "sourceName": "蕃新聞",
+      "title": "台塑端午送暖1364戶弱勢家庭 志工挨家挨戶關懷不停歇",
+      "summary": "台塑端午送暖1364戶弱勢家庭 志工挨家挨戶關懷不停歇 &nbsp;&nbsp; 蕃新聞（自動歸類：彰化縣重要新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE00cGo2WjFJUWVfR0ctQmxQZ3YzbHo4X2N2c3BJUFpOWlEyNXczeDJzVXdWUEh4ZjA3RWFtdUIzTFRORDB0R1VDUlViU2g3MGgyNUE?oc=5",
       "region": "彰化",
       "keywords": "彰化, 社福",
       "category": "社福",
@@ -5655,10 +5351,10 @@
       "importance": "中",
       "status": "未讀",
       "action": "可做懶人包",
-      "notes": "自動爬抓：地方民生服務。發布時間：2026-06-09T23:24:39.000Z",
-      "publishedAt": "2026-06-09T23:24:39.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "notes": "自動爬抓：地方民生服務。發布時間：2026-06-10T03:38:26.000Z",
+      "publishedAt": "2026-06-10T03:38:26.000Z",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-2026-06-10-1LZ8PAV",
@@ -5685,152 +5381,11 @@
       "action": "可做限動",
       "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-10T07:15:21.000Z",
       "publishedAt": "2026-06-10T07:15:21.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-ABB3WZ",
-      "sourceMode": "auto",
-      "autoClassification": "與彰化相關的台灣新聞",
-      "autoFeedName": "與彰化相關的台灣新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "LINE TODAY",
-      "title": "（有影片）／彰化孔廟變身詩與科技樂園！XR導覽超吸睛 | 觀傳媒",
-      "summary": "（有影片）／彰化孔廟變身詩與科技樂園！XR導覽超吸睛 | 觀傳媒 &nbsp;&nbsp; LINE TODAY（自動歸類：與彰化相關的台灣新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1JS1hfZFRmTUE0YUVmc3lNbFhTSDlnd1V5M2pmNVJSQ0ZIcTdGakU5d2xyRE1meGdQcVpNVXlkUUNwaHRzXzlMUy1WWmtVMEFuQ0VORWJR?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 宮廟",
-      "category": "宮廟",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可做限動",
-      "notes": "自動爬抓：與彰化相關的台灣新聞。發布時間：2026-06-09T16:25:48.000Z",
-      "publishedAt": "2026-06-09T16:25:48.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-2026-06-10-D3QBEN",
-      "sourceMode": "auto",
-      "autoClassification": "彰化縣重要新聞",
-      "autoFeedName": "彰化縣重要新聞",
-      "date": "2026-06-10",
-      "sourceType": "新聞",
-      "platform": "Google News",
-      "sourceName": "蕃新聞",
-      "title": "彰化孔子廟建廟300周年慶活動6/13登場",
-      "summary": "彰化孔子廟建廟300周年慶活動6/13登場 &nbsp;&nbsp; 蕃新聞（自動歸類：彰化縣重要新聞）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1jcmhxdmdHQWJabnhFbDFrUmhuZzlZQXE4RTFjbUx3RmJabDBnRFZHNGNOdmZmZzRKZ2JxNXZncW4xN0hyZnhGUDFvdjc2MEQ5Vnc?oc=5",
-      "region": "彰化",
-      "keywords": "彰化, 宮廟, 活動",
-      "category": "宮廟",
-      "interactions": 0,
-      "comments": 0,
-      "shares": 0,
-      "views": 0,
-      "sentiment": "中性",
-      "importance": "中",
-      "status": "未讀",
-      "action": "可做限動",
-      "notes": "自動爬抓：彰化縣重要新聞。發布時間：2026-06-09T19:54:57.000Z",
-      "publishedAt": "2026-06-09T19:54:57.000Z",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     }
   ],
   "dailyPostIdeas": [
-    {
-      "id": "AUTO-IDEA-2026-06-10-6BDV9W",
-      "sourceMode": "auto",
-      "date": "2026-06-10",
-      "articleType": "即時回應文",
-      "suggestedTopic": "彰化其他：國1、國3彰化路段接連事故！小貨車側翻路肩 轎車撞護欄滾一圈",
-      "angle": "先承接民眾感受，再整理目前已知事實、可協助窗口與後續追蹤方向。",
-      "platform": "Facebook / Threads",
-      "title": "關於「國1、國3彰化路段接連事故！小貨車側翻路肩 轎車撞護欄滾一圈」的說明與追蹤",
-      "draft": "關於「國1、國3彰化路段接連事故！小貨車側翻路肩 轎車撞護欄滾一圈」的說明與追蹤\n\n今天注意到這則討論（來源：ETtoday新聞雲）。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：國1、國3彰化路段接連事故！小貨車側翻路肩 轎車撞護欄滾一圈 &nbsp;&nbsp; ETtoday新聞雲（自動歸類：彰化縣重要新聞）\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。",
-      "materials": "原始連結、重點截圖",
-      "isPublished": false,
-      "publishUrl": "",
-      "sourceItemId": "AUTO-2026-06-10-1UZ6BPY",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-IDEA-2026-06-10-1KY8IPE",
-      "sourceMode": "auto",
-      "date": "2026-06-10",
-      "articleType": "即時回應文",
-      "suggestedTopic": "彰化環境：聚焦污染農地轉型種電 落實綠能與土地休養 | 綠色產業 | 商情",
-      "angle": "先承接民眾感受，再整理目前已知事實、可協助窗口與後續追蹤方向。",
-      "platform": "Facebook / Threads",
-      "title": "關於「聚焦污染農地轉型種電 落實綠能與土地休養 | 綠色產業 | 商情」的說明與追蹤",
-      "draft": "關於「聚焦污染農地轉型種電 落實綠能與土地休養 | 綠色產業 | 商情」的說明與追蹤\n\n今天注意到這則討論（來源：經濟日報）。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：聚焦污染農地轉型種電 落實綠能與土地休養 | 綠色產業 | 商情 &nbsp;&nbsp; 經濟日報（自動歸類：彰化縣重要新聞）\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。",
-      "materials": "原始連結、重點截圖、現場照片、位置資訊、主管機關說明",
-      "isPublished": false,
-      "publishUrl": "",
-      "sourceItemId": "AUTO-2026-06-10-KH04X8",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-IDEA-2026-06-10-OT67I1",
-      "sourceMode": "auto",
-      "date": "2026-06-10",
-      "articleType": "即時回應文",
-      "suggestedTopic": "彰化其他：彰化「佛系法官」被起底！毒駕、污辱通通放了 過往爭議全曝光",
-      "angle": "先承接民眾感受，再整理目前已知事實、可協助窗口與後續追蹤方向。",
-      "platform": "Facebook / Threads",
-      "title": "關於「彰化「佛系法官」被起底！毒駕、污辱通通放了 過往爭議全曝光」的說明與追蹤",
-      "draft": "關於「彰化「佛系法官」被起底！毒駕、污辱通通放了 過往爭議全曝光」的說明與追蹤\n\n今天注意到這則討論（來源：TEEPR 亮新聞）。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：彰化「佛系法官」被起底！毒駕、污辱通通放了 過往爭議全曝光 &nbsp;&nbsp; TEEPR 亮新聞（自動歸類：與彰化相關的台灣新聞）\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。",
-      "materials": "原始連結、重點截圖",
-      "isPublished": false,
-      "publishUrl": "",
-      "sourceItemId": "AUTO-2026-06-10-O0ONRT",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-IDEA-2026-06-10-1A113D7",
-      "sourceMode": "auto",
-      "date": "2026-06-10",
-      "articleType": "即時回應文",
-      "suggestedTopic": "彰化其他：交部補貼油價獨厚計程車 運輸業反彈",
-      "angle": "先承接民眾感受，再整理目前已知事實、可協助窗口與後續追蹤方向。",
-      "platform": "Facebook / Threads",
-      "title": "關於「交部補貼油價獨厚計程車 運輸業反彈」的說明與追蹤",
-      "draft": "關於「交部補貼油價獨厚計程車 運輸業反彈」的說明與追蹤\n\n今天注意到這則討論（來源：自由時報）。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：交部補貼油價獨厚計程車 運輸業反彈 &nbsp;&nbsp; 自由時報（自動歸類：彰化縣重要新聞）\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。",
-      "materials": "原始連結、重點截圖",
-      "isPublished": false,
-      "publishUrl": "",
-      "sourceItemId": "AUTO-2026-06-10-GHJHZK",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
-    {
-      "id": "AUTO-IDEA-2026-06-10-KTLZD8",
-      "sourceMode": "auto",
-      "date": "2026-06-10",
-      "articleType": "即時回應文",
-      "suggestedTopic": "國際其他：鏡獨家直擊韓選舞弊疑雲 知名大學聯合聲明怒吼1／獨家／鏡新聞跨海報…",
-      "angle": "先承接民眾感受，再整理目前已知事實、可協助窗口與後續追蹤方向。",
-      "platform": "Facebook / Threads",
-      "title": "關於「鏡獨家直擊韓選舞弊疑雲 知名大學聯合聲明怒吼1／獨家／鏡新聞跨海報…」的說明與追蹤",
-      "draft": "關於「鏡獨家直擊韓選舞弊疑雲 知名大學聯合聲明怒吼1／獨家／鏡新聞跨海報…」的說明與追蹤\n\n今天注意到這則討論（來源：鏡新聞）。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：鏡獨家直擊韓選舞弊疑雲 知名大學聯合聲明怒吼1／獨家／鏡新聞跨海報導「韓媒關注採訪」！ 「開會釐真相」16所大學發聲 &nbsp;&nbsp; 鏡新聞（自動歸類：國際重大新聞）\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。",
-      "materials": "原始連結、重點截圖",
-      "isPublished": false,
-      "publishUrl": "",
-      "sourceItemId": "AUTO-2026-06-10-1HF6NFH",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
-    },
     {
       "id": "AUTO-IDEA-2026-06-10-4HVK4X",
       "sourceMode": "auto",
@@ -5845,8 +5400,8 @@
       "isPublished": false,
       "publishUrl": "",
       "sourceItemId": "AUTO-2026-06-10-1WXA3S5",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-IDEA-2026-06-10-FCAC33",
@@ -5862,8 +5417,8 @@
       "isPublished": false,
       "publishUrl": "",
       "sourceItemId": "AUTO-2026-06-10-1DHA62D",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-IDEA-2026-06-10-1FPB2CV",
@@ -5879,8 +5434,8 @@
       "isPublished": false,
       "publishUrl": "",
       "sourceItemId": "AUTO-2026-06-10-HW5YEV",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-IDEA-2026-06-10-117GOHT",
@@ -5896,8 +5451,8 @@
       "isPublished": false,
       "publishUrl": "",
       "sourceItemId": "AUTO-2026-06-10-1FIYBNM",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-IDEA-2026-06-10-1GTWYVS",
@@ -5913,8 +5468,8 @@
       "isPublished": false,
       "publishUrl": "",
       "sourceItemId": "AUTO-2026-06-10-D12AAD",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-IDEA-2026-06-10-1XWDSVQ",
@@ -5930,8 +5485,8 @@
       "isPublished": false,
       "publishUrl": "",
       "sourceItemId": "AUTO-2026-06-10-1F7G03E",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     },
     {
       "id": "AUTO-IDEA-2026-06-10-1G1THUQ",
@@ -5947,60 +5502,179 @@
       "isPublished": false,
       "publishUrl": "",
       "sourceItemId": "AUTO-2026-06-10-1UMPY4W",
-      "createdAt": "2026-06-10T07:28:11.430Z",
-      "updatedAt": "2026-06-10T07:28:11.430Z"
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-IDEA-2026-06-10-PSCHF9",
+      "sourceMode": "auto",
+      "date": "2026-06-10",
+      "articleType": "地方關懷文",
+      "suggestedTopic": "彰化其他：成美文化園號召挽袖捐熱血 6月12日公益捐血守護生命",
+      "angle": "以彰化民眾視角整理重點，連結服務處日常關懷。",
+      "platform": "Facebook / Threads",
+      "title": "彰化其他關心：成美文化園號召挽袖捐熱血 6月12日公益捐血守護生命",
+      "draft": "彰化其他關心：成美文化園號召挽袖捐熱血 6月12日公益捐血守護生命\n\n今天整理一則與民眾生活相關的消息（來源：蕃新聞）：成美文化園號召挽袖捐熱血 6月12日公益捐血守護生命 &nbsp;&nbsp; 蕃新聞（自動歸類：彰化縣重要新聞）\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。",
+      "materials": "原始連結、重點截圖",
+      "isPublished": false,
+      "publishUrl": "",
+      "sourceItemId": "AUTO-2026-06-10-1H73TFE",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-IDEA-2026-06-10-1ABURJA",
+      "sourceMode": "auto",
+      "date": "2026-06-10",
+      "articleType": "地方關懷文",
+      "suggestedTopic": "彰化其他：發布台中港土石方作業要點 都發局建立完善管理機制",
+      "angle": "以彰化民眾視角整理重點，連結服務處日常關懷。",
+      "platform": "Facebook / Threads",
+      "title": "彰化其他關心：發布台中港土石方作業要點 都發局建立完善管理機制",
+      "draft": "彰化其他關心：發布台中港土石方作業要點 都發局建立完善管理機制\n\n今天整理一則與民眾生活相關的消息（來源：蕃新聞）：發布台中港土石方作業要點 都發局建立完善管理機制 &nbsp;&nbsp; 蕃新聞（自動歸類：彰化縣重要新聞）\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。",
+      "materials": "原始連結、重點截圖",
+      "isPublished": false,
+      "publishUrl": "",
+      "sourceItemId": "AUTO-2026-06-10-1046MU",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-IDEA-2026-06-10-ISTJRR",
+      "sourceMode": "auto",
+      "date": "2026-06-10",
+      "articleType": "政策白話文",
+      "suggestedTopic": "台灣災害：豪雨假》6縣市宣布了！7地「6/10停班停課」全台縣市不斷更新",
+      "angle": "把議題拆成影響誰、現在怎麼做、接下來怎麼追三個重點。",
+      "platform": "Facebook / Threads",
+      "title": "災害白話整理：民眾最需要知道的重點",
+      "draft": "災害白話整理：民眾最需要知道的重點\n\n這個議題和民眾生活有關，我們先用白話整理：\n1. 發生什麼事：豪雨假》6縣市宣布了！7地「6/10停班停課」全台縣市不斷更新 &nbsp;&nbsp; TVBS新聞網（自動歸類：與彰化相關的台灣新聞）\n2. 可能影響：請留意台灣相關公告與現場狀況。\n3. 後續追蹤：服務處會持續掌握進度，必要時協助反映。",
+      "materials": "原始連結、重點截圖、現場照片、位置資訊、主管機關說明",
+      "isPublished": false,
+      "publishUrl": "",
+      "sourceItemId": "AUTO-2026-06-10-556IKI",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-IDEA-2026-06-10-1UVEHOF",
+      "sourceMode": "auto",
+      "date": "2026-06-10",
+      "articleType": "限時動態",
+      "suggestedTopic": "國際觀光：桃園觀光進軍國際！i-dle舒華登上叮叮車、樟宜機場 搶攻星港旅客",
+      "angle": "以國際民眾視角整理重點，連結服務處日常關懷。",
+      "platform": "Instagram / Facebook 限時動態",
+      "title": "國際觀光快訊：桃園觀光進軍國際！i-dle舒華登上叮叮車、樟宜機場 搶攻星港旅客",
+      "draft": "國際觀光快訊：桃園觀光進軍國際！i-dle舒華登上叮叮車、樟宜機場 搶攻星港旅客\n\n今天整理一則與民眾生活相關的消息（來源：桃園電子報）：桃園觀光進軍國際！i-dle舒華登上叮叮車、樟宜機場 搶攻星港旅客 &nbsp;&nbsp; 桃園電子報（自動歸類：國際重大新聞）\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。",
+      "materials": "原始連結、重點截圖",
+      "isPublished": false,
+      "publishUrl": "",
+      "sourceItemId": "AUTO-2026-06-10-1241QDZ",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
+    },
+    {
+      "id": "AUTO-IDEA-2026-06-10-2FR8SV",
+      "sourceMode": "auto",
+      "date": "2026-06-10",
+      "articleType": "地方關懷文",
+      "suggestedTopic": "彰化其他：彰化表揚66績優警員 警友會貼心送「這1禮」",
+      "angle": "以彰化民眾視角整理重點，連結服務處日常關懷。",
+      "platform": "Facebook / Threads",
+      "title": "彰化其他關心：彰化表揚66績優警員 警友會貼心送「這1禮」",
+      "draft": "彰化其他關心：彰化表揚66績優警員 警友會貼心送「這1禮」\n\n今天整理一則與民眾生活相關的消息（來源：自由時報）：彰化表揚66績優警員 警友會貼心送「這1禮」 &nbsp;&nbsp; 自由時報（自動歸類：彰化縣重要新聞）\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。",
+      "materials": "原始連結、重點截圖",
+      "isPublished": false,
+      "publishUrl": "",
+      "sourceItemId": "AUTO-2026-06-10-10QS9A1",
+      "createdAt": "2026-06-10T08:13:07.268Z",
+      "updatedAt": "2026-06-10T08:13:07.268Z"
     }
   ],
   "socialWatchTasks": [
     {
+      "id": "SOCIAL-2026-06-10-1E4GSNF",
+      "date": "2026-06-10",
+      "targetType": "熱門社群",
+      "platform": "Facebook",
+      "queryName": "彰化 鹿港 福興熱門貼文",
+      "url": "https://www.facebook.com/search/posts/?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88",
+      "status": "待人工確認",
+      "notes": "社群平台通常需要登入、授權或官方 API；請打開連結人工確認今日公開熱門內容，再將值得追蹤的貼文新增為社群輿情。"
+    },
+    {
+      "id": "SOCIAL-2026-06-10-1DEH8SQ",
+      "date": "2026-06-10",
+      "targetType": "熱門社群",
+      "platform": "Threads",
+      "queryName": "彰化 鹿港 福興熱門討論",
+      "url": "https://www.threads.com/search?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88",
+      "status": "待人工確認",
+      "notes": "社群平台通常需要登入、授權或官方 API；請打開連結人工確認今日公開熱門內容，再將值得追蹤的貼文新增為社群輿情。"
+    },
+    {
+      "id": "SOCIAL-2026-06-10-1NUURR3",
+      "date": "2026-06-10",
+      "targetType": "熱門社群",
+      "platform": "Instagram",
+      "queryName": "彰化 鹿港 福興熱門標籤",
+      "url": "https://www.instagram.com/explore/tags/%E5%BD%B0%E5%8C%96/",
+      "status": "待人工確認",
+      "notes": "社群平台通常需要登入、授權或官方 API；請打開連結人工確認今日公開熱門內容，再將值得追蹤的貼文新增為社群輿情。"
+    },
+    {
       "id": "SOCIAL-2026-06-10-179494W",
       "date": "2026-06-10",
+      "targetType": "特定對象",
       "personName": "楊妙月",
       "platform": "Facebook",
       "accountName": "個人臉書",
       "url": "https://www.facebook.com/yang.miao.yue",
       "status": "待人工確認",
-      "notes": "社群平台通常需要登入、授權或官方 API；請打開連結確認今日公開動態，再補入系統。"
+      "notes": "請打開公開帳號連結確認今日公開動態，再補入系統；不登入、不抓私人資料。"
     },
     {
       "id": "SOCIAL-2026-06-10-1SAN27B",
       "date": "2026-06-10",
+      "targetType": "特定對象",
       "personName": "楊妙月",
       "platform": "Facebook",
       "accountName": "粉絲專頁",
       "url": "https://www.facebook.com/profile.php?id=100063726009551",
       "status": "待人工確認",
-      "notes": "社群平台通常需要登入、授權或官方 API；請打開連結確認今日公開動態，再補入系統。"
+      "notes": "請打開公開帳號連結確認今日公開動態，再補入系統；不登入、不抓私人資料。"
     },
     {
       "id": "SOCIAL-2026-06-10-BEWEQU",
       "date": "2026-06-10",
+      "targetType": "特定對象",
       "personName": "楊妙月",
       "platform": "Instagram",
       "accountName": "yangmiaoyue",
       "url": "https://www.instagram.com/yangmiaoyue",
       "status": "待人工確認",
-      "notes": "社群平台通常需要登入、授權或官方 API；請打開連結確認今日公開動態，再補入系統。"
+      "notes": "請打開公開帳號連結確認今日公開動態，再補入系統；不登入、不抓私人資料。"
     },
     {
       "id": "SOCIAL-2026-06-10-YPU2DT",
       "date": "2026-06-10",
+      "targetType": "特定對象",
       "personName": "楊妙月",
       "platform": "Threads",
       "accountName": "@yangmiaoyue",
       "url": "https://www.threads.com/@yangmiaoyue?xmt=AQG0rAnuM2z7GOheP9TlgnW8vHwTIrrgv_77FyMWr5bVRPo",
       "status": "待人工確認",
-      "notes": "社群平台通常需要登入、授權或官方 API；請打開連結確認今日公開動態，再補入系統。"
+      "notes": "請打開公開帳號連結確認今日公開動態，再補入系統；不登入、不抓私人資料。"
     }
   ],
   "summary": {
     "totalItems": 90,
     "highImportance": 36,
-    "negativeOrControversial": 5,
-    "changhuaRelated": 67,
-    "lukangOrFuxing": 17,
+    "negativeOrControversial": 4,
+    "changhuaRelated": 66,
+    "lukangOrFuxing": 16,
     "postIdeas": 12,
     "feedErrors": 0,
-    "filteredOut": 394
+    "filteredOut": 349
   }
 }
