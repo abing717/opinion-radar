@@ -1,0 +1,3056 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>輿情監測雷達</title>
+  <meta name="theme-color" content="#3E4D84">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1014;
+      --panel: #171a20;
+      --panel-2: #1f242c;
+      --panel-3: #252b34;
+      --line: #343b46;
+      --text: #f4f7fb;
+      --muted: #aab4c3;
+      --soft: #d8dee9;
+      --blue: #2f86ff;
+      --green: #27c46a;
+      --gray: #929baa;
+      --orange: #f5a524;
+      --red: #f05252;
+      --purple: #a65cff;
+      --cyan: #25d0c6;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+      --radius: 8px;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      letter-spacing: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(145deg, #0f1014 0%, #18110f 48%, #101416 100%);
+      background-size: 36px 36px, 36px 36px, 100% 100%;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: var(--panel-2);
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+    }
+
+    button:hover,
+    button:focus-visible {
+      border-color: var(--cyan);
+      background: #25303a;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+      transform: none;
+    }
+
+    a {
+      color: #8fc7ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .app-shell {
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0 14px;
+      background: rgba(15, 16, 20, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 240px;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      flex: 0 0 auto;
+      border: 1px solid rgba(37, 208, 198, 0.5);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, rgba(37, 208, 198, 0.8) 0 3px, transparent 4px),
+        repeating-radial-gradient(circle at center, transparent 0 9px, rgba(47, 134, 255, 0.36) 10px, transparent 11px),
+        conic-gradient(from 40deg, rgba(37, 208, 198, 0.55), transparent 70deg, rgba(166, 92, 255, 0.38), transparent 180deg);
+      box-shadow: inset 0 0 18px rgba(37, 208, 198, 0.16), 0 0 22px rgba(37, 208, 198, 0.16);
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 50% 50% auto auto;
+      width: 50%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(37, 208, 198, 0.9), transparent);
+      transform-origin: left center;
+      animation: sweep 5s linear infinite;
+    }
+
+    @keyframes sweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand-mark::after {
+        animation: none;
+      }
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      line-height: 1.12;
+    }
+
+    .brand p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .date-control {
+      display: grid;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .date-control input {
+      min-width: 156px;
+    }
+
+    .primary-btn,
+    .danger-btn,
+    .quiet-btn,
+    .success-btn,
+    .purple-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 15px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .primary-btn {
+      border-color: rgba(47, 134, 255, 0.72);
+      background: linear-gradient(135deg, #246fd0, #1c8b86);
+    }
+
+    .success-btn {
+      border-color: rgba(39, 196, 106, 0.68);
+      background: linear-gradient(135deg, #1d7f55, #236e97);
+    }
+
+    .danger-btn {
+      border-color: rgba(240, 82, 82, 0.72);
+      background: #4b1f24;
+    }
+
+    .purple-btn {
+      border-color: rgba(166, 92, 255, 0.68);
+      background: #382654;
+    }
+
+    .quiet-btn {
+      color: var(--soft);
+      background: #222731;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 14px 0 16px;
+      scrollbar-width: thin;
+    }
+
+    .tab-btn {
+      min-width: max-content;
+      padding: 0 18px;
+      color: var(--muted);
+      background: rgba(31, 36, 44, 0.9);
+    }
+
+    .tab-btn.active {
+      color: var(--text);
+      border-color: rgba(37, 208, 198, 0.85);
+      background: linear-gradient(135deg, rgba(47, 134, 255, 0.28), rgba(37, 208, 198, 0.18));
+      box-shadow: inset 0 -3px 0 var(--cyan);
+    }
+
+    .view {
+      display: none;
+    }
+
+    .view.active {
+      display: block;
+    }
+
+    .command-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+
+    .radar-visual,
+    .brief-panel,
+    .form-surface {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(23, 26, 32, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .radar-visual {
+      position: relative;
+      min-height: 250px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(37, 208, 198, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 208, 198, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at center, rgba(37, 208, 198, 0.26), transparent 64%),
+        #10171a;
+      background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
+    }
+
+    .radar-visual::before {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(37, 208, 198, 0.4);
+      box-shadow:
+        inset 0 0 0 32px rgba(37, 208, 198, 0.04),
+        inset 0 0 0 68px rgba(47, 134, 255, 0.05),
+        inset 0 0 0 102px rgba(166, 92, 255, 0.04);
+    }
+
+    .radar-visual::after {
+      content: "";
+      position: absolute;
+      inset: 50% 50% auto auto;
+      width: 42%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(37, 208, 198, 0.95), transparent);
+      transform-origin: left center;
+      animation: sweep 7s linear infinite;
+    }
+
+    .radar-points {
+      position: absolute;
+      inset: 0;
+    }
+
+    .radar-points span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 14px currentColor;
+    }
+
+    .radar-points span:nth-child(1) {
+      left: 24%;
+      top: 32%;
+      color: var(--blue);
+    }
+
+    .radar-points span:nth-child(2) {
+      right: 27%;
+      top: 43%;
+      color: var(--red);
+    }
+
+    .radar-points span:nth-child(3) {
+      left: 49%;
+      bottom: 28%;
+      color: var(--green);
+    }
+
+    .radar-points span:nth-child(4) {
+      right: 18%;
+      bottom: 18%;
+      color: var(--purple);
+    }
+
+    .radar-caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .brief-panel {
+      display: grid;
+      align-content: center;
+      gap: 14px;
+      padding: 22px;
+    }
+
+    .brief-panel h2,
+    .section-head h2,
+    .view-head h2 {
+      margin: 0;
+      font-size: clamp(1.18rem, 2vw, 1.55rem);
+    }
+
+    .brief-panel p {
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+
+    .status-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(132px, 1fr));
+      gap: 10px;
+    }
+
+    .metric-card {
+      min-height: 112px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(31, 36, 44, 0.88);
+      border-left: 5px solid var(--blue);
+    }
+
+    .metric-card strong {
+      display: block;
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .accent-blue { border-left-color: var(--blue); }
+    .accent-green { border-left-color: var(--green); }
+    .accent-gray { border-left-color: var(--gray); }
+    .accent-orange { border-left-color: var(--orange); }
+    .accent-red { border-left-color: var(--red); }
+    .accent-purple { border-left-color: var(--purple); }
+    .accent-cyan { border-left-color: var(--cyan); }
+
+    .section-block {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section-head,
+    .view-head,
+    .table-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section-head p,
+    .view-head p {
+      margin: 5px 0 0;
+      color: var(--muted);
+    }
+
+    .classification-grid,
+    .record-grid,
+    .account-grid,
+    .idea-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .class-card,
+    .record-card,
+    .account-card,
+    .idea-card,
+    .empty-state {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(31, 36, 44, 0.88);
+    }
+
+    .class-card {
+      padding: 14px;
+      min-height: 168px;
+    }
+
+    .class-card h3,
+    .record-card h3,
+    .account-card h3,
+    .idea-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .class-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 28px;
+      padding: 0 8px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      color: var(--bg);
+      background: var(--cyan);
+      font-weight: 900;
+    }
+
+    .class-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--soft);
+      line-height: 1.55;
+    }
+
+    .record-card,
+    .account-card,
+    .idea-card {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+    }
+
+    .record-summary,
+    .idea-draft {
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.62;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .meta-row,
+    .tag-row,
+    .card-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .meta-row {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .card-actions {
+      margin-top: 2px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      max-width: 100%;
+      padding: 3px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      color: var(--soft);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.82rem;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .tag-blue { border-color: rgba(47, 134, 255, 0.55); color: #a9d2ff; }
+    .tag-green { border-color: rgba(39, 196, 106, 0.55); color: #a8f2c6; }
+    .tag-gray { border-color: rgba(146, 155, 170, 0.55); color: #d1d6df; }
+    .tag-orange { border-color: rgba(245, 165, 36, 0.65); color: #ffd38a; }
+    .tag-red { border-color: rgba(240, 82, 82, 0.65); color: #ffb1b1; }
+    .tag-purple { border-color: rgba(166, 92, 255, 0.62); color: #d7bdff; }
+    .tag-cyan { border-color: rgba(37, 208, 198, 0.62); color: #a8fff8; }
+
+    .empty-state {
+      padding: 18px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .filter-bar,
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .filter-bar {
+      margin-bottom: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(23, 26, 32, 0.92);
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .field label,
+    .field > span,
+    .checkbox-field {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: #12161c;
+      padding: 10px 12px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(37, 208, 198, 0.16);
+    }
+
+    .span-2 {
+      grid-column: span 2;
+    }
+
+    .span-4 {
+      grid-column: 1 / -1;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(23, 26, 32, 0.92);
+    }
+
+    table {
+      width: 100%;
+      min-width: 1120px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      color: var(--muted);
+      background: #151a21;
+      font-size: 0.86rem;
+    }
+
+    tbody tr:hover {
+      background: rgba(37, 208, 198, 0.06);
+    }
+
+    .row-title {
+      display: grid;
+      gap: 5px;
+    }
+
+    .row-title strong {
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .row-title span {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .mobile-record-list {
+      display: none;
+    }
+
+    dialog {
+      width: min(980px, calc(100vw - 28px));
+      max-height: calc(100vh - 32px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: #171a20;
+      box-shadow: var(--shadow);
+      padding: 0;
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(5px);
+    }
+
+    .dialog-body {
+      padding: 18px;
+    }
+
+    .dialog-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #171a20;
+    }
+
+    .dialog-head h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .dialog-actions {
+      position: sticky;
+      bottom: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 14px 18px;
+      border-top: 1px solid var(--line);
+      background: #171a20;
+    }
+
+    .checkbox-field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #12161c;
+    }
+
+    .checkbox-field input {
+      width: 22px;
+      min-height: 22px;
+      accent-color: var(--cyan);
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+      max-width: min(420px, calc(100vw - 36px));
+      padding: 12px 14px;
+      border: 1px solid rgba(37, 208, 198, 0.5);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: rgba(18, 24, 28, 0.96);
+      box-shadow: var(--shadow);
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1240px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .app-header,
+      .command-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-header {
+        position: static;
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .header-tools {
+        justify-content: flex-start;
+      }
+
+      .command-grid {
+        display: grid;
+      }
+
+      .filter-bar,
+      .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .span-2,
+      .span-4 {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .app-shell {
+        padding: 12px;
+      }
+
+      .brand {
+        align-items: flex-start;
+      }
+
+      .brand-mark {
+        width: 48px;
+        height: 48px;
+      }
+
+      .header-tools > *,
+      .header-tools button,
+      .date-control {
+        width: 100%;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .filter-bar,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .table-wrap {
+        display: none;
+      }
+
+      .mobile-record-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .dialog-actions {
+        flex-direction: column-reverse;
+      }
+
+      .dialog-actions button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .classification-grid,
+      .record-grid,
+      .account-grid,
+      .idea-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 服務處 APP 共用視覺語言：白底、服務處藍、珊瑚紅、粉紅邊線。 */
+    :root {
+      color-scheme: light;
+      --bg: #FFFFFF;
+      --panel: #FFFFFF;
+      --panel-2: #F1F5FF;
+      --panel-3: #FFF7F8;
+      --line: #F3C2C8;
+      --text: #1A1413;
+      --muted: #7E88A6;
+      --soft: #3B3535;
+      --blue: #3E4D84;
+      --green: #4F946B;
+      --gray: #7E88A6;
+      --orange: #D69838;
+      --red: #D07A7A;
+      --purple: #7C5DA8;
+      --cyan: #6E8EC6;
+      --pink: #F3C2C8;
+      --pink-soft: #F3DEE1;
+      --gold: #FFE600;
+      --soft-blue: #F1F5FF;
+      --soft-rose: #FFF1F3;
+      --shadow: 0 6px 18px rgba(62, 77, 132, 0.08);
+      --shadow-soft: 0 3px 10px rgba(208, 122, 122, 0.12);
+      --radius: 8px;
+      font-family: Arial, "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    }
+
+    body {
+      color: var(--text);
+      background:
+        radial-gradient(circle at 6% 5%, rgba(243, 194, 200, 0.22), transparent 24%),
+        radial-gradient(circle at 92% 8%, rgba(255, 230, 0, 0.13), transparent 18%),
+        linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 48%, #F7FAFF 100%);
+    }
+
+    a {
+      color: var(--red);
+      font-weight: 800;
+    }
+
+    button {
+      border: 0;
+      border-radius: 6px;
+      color: #FFFFFF;
+      background: var(--blue);
+      box-shadow: var(--shadow-soft);
+    }
+
+    button:hover,
+    button:focus-visible {
+      border-color: transparent;
+      background: var(--cyan);
+      transform: none;
+      outline: 3px solid rgba(110, 142, 198, 0.24);
+    }
+
+    .app-header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 3px solid var(--pink);
+      box-shadow: 0 2px 18px rgba(62, 77, 132, 0.08);
+    }
+
+    .brand {
+      align-items: flex-start;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 70px;
+      border: 0;
+      border-radius: 0;
+      background: linear-gradient(90deg, var(--red) 0 10px, transparent 10px 16px, var(--pink) 16px 26px, transparent 26px 100%);
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .brand-mark::after {
+      display: none;
+    }
+
+    .brand h1 {
+      color: var(--blue);
+      font-size: clamp(1.55rem, 2.6vw, 2rem);
+      font-weight: 900;
+    }
+
+    .brand-title-main {
+      color: var(--blue);
+    }
+
+    .brand-title-divider {
+      color: #3B3535;
+      font-weight: 800;
+    }
+
+    .brand-title-page {
+      color: var(--red);
+    }
+
+    .brand p {
+      color: #3B3535;
+      font-weight: 800;
+    }
+
+    .date-control {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .primary-btn,
+    .success-btn,
+    .purple-btn {
+      border: 0;
+      background: var(--blue);
+    }
+
+    .danger-btn {
+      border: 0;
+      background: var(--red);
+    }
+
+    .quiet-btn {
+      color: var(--blue);
+      border: 1px solid #C9D6F4;
+      background: var(--soft-blue);
+      box-shadow: none;
+    }
+
+    .success-btn:hover,
+    .primary-btn:hover,
+    .purple-btn:hover {
+      background: var(--cyan);
+    }
+
+    .danger-btn:hover {
+      background: #BE6868;
+    }
+
+    .quiet-btn:hover {
+      color: var(--blue);
+      background: #EAF3FF;
+    }
+
+    .tabs {
+      padding-top: 16px;
+    }
+
+    .tab-btn {
+      color: var(--blue);
+      border: 1px solid #C9D6F4;
+      background: #FFFFFF;
+      box-shadow: none;
+    }
+
+    .tab-btn.active {
+      color: #FFFFFF;
+      border-color: var(--blue);
+      background: var(--blue);
+      box-shadow: none;
+    }
+
+    .radar-visual,
+    .brief-panel,
+    .form-surface,
+    .filter-bar,
+    .table-wrap,
+    dialog,
+    .class-card,
+    .record-card,
+    .account-card,
+    .idea-card,
+    .empty-state {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+    }
+
+    .radar-visual {
+      background:
+        linear-gradient(rgba(62, 77, 132, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(62, 77, 132, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at center, rgba(110, 142, 198, 0.18), transparent 62%),
+        #FBFDFF;
+      background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
+    }
+
+    .radar-visual::before {
+      border-color: rgba(110, 142, 198, 0.38);
+      box-shadow:
+        inset 0 0 0 32px rgba(241, 245, 255, 0.9),
+        inset 0 0 0 68px rgba(243, 222, 225, 0.55),
+        inset 0 0 0 102px rgba(255, 230, 0, 0.13);
+    }
+
+    .radar-visual::after {
+      background: linear-gradient(90deg, rgba(208, 122, 122, 0.78), transparent);
+    }
+
+    .radar-caption,
+    .brief-panel p,
+    .section-head p,
+    .view-head p,
+    .meta-row,
+    .muted {
+      color: var(--muted);
+    }
+
+    .radar-points span {
+      background: currentColor;
+    }
+
+    .brief-panel h2,
+    .section-head h2,
+    .view-head h2,
+    .class-card h3,
+    .record-card h3,
+    .account-card h3,
+    .idea-card h3 {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .metric-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #FFFFFF, var(--soft-blue));
+      box-shadow: var(--shadow);
+    }
+
+    .metric-card strong {
+      color: var(--blue);
+    }
+
+    .metric-card span {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .section-block {
+      border-top: 1px solid #F4D4D8;
+    }
+
+    .class-count {
+      color: var(--blue);
+      background: var(--gold);
+    }
+
+    .record-summary,
+    .idea-draft {
+      color: var(--soft);
+    }
+
+    input,
+    select,
+    textarea {
+      border: 1px solid #E8C8CC;
+      color: var(--text);
+      background: #FFFCFD;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--cyan);
+      box-shadow: none;
+      outline: 3px solid rgba(110, 142, 198, 0.24);
+    }
+
+    .field label,
+    .field > span,
+    .checkbox-field {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .checkbox-field {
+      border: 1px solid #E8C8CC;
+      background: #FFFCFD;
+    }
+
+    .checkbox-field input {
+      accent-color: var(--red);
+    }
+
+    table {
+      background: #FFFFFF;
+    }
+
+    th {
+      color: var(--blue);
+      background: #F7FAFF;
+      font-weight: 900;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #F4D4D8;
+    }
+
+    tbody tr:hover {
+      background: #FFF8F9;
+    }
+
+    .row-title strong {
+      color: var(--blue);
+    }
+
+    .row-title span {
+      color: var(--muted);
+    }
+
+    .dialog-head,
+    .dialog-actions {
+      border-color: var(--line);
+      background: #FFFFFF;
+    }
+
+    .dialog-head h2 {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    dialog::backdrop {
+      background: rgba(62, 77, 132, 0.26);
+    }
+
+    .tag {
+      border-color: #DDE6F6;
+      color: var(--blue);
+      background: var(--soft-blue);
+    }
+
+    .tag-blue,
+    .tag-cyan {
+      border-color: #C9D6F4;
+      color: var(--blue);
+      background: var(--soft-blue);
+    }
+
+    .tag-green {
+      border-color: #C9E7D2;
+      color: #3F7D5B;
+      background: #F1FBF4;
+    }
+
+    .tag-gray {
+      border-color: #DDE2EA;
+      color: var(--muted);
+      background: #F8FAFD;
+    }
+
+    .tag-orange {
+      border-color: #F0D8A4;
+      color: #8B6C00;
+      background: #FFF8D7;
+    }
+
+    .tag-red {
+      border-color: #F1C7CC;
+      color: var(--red);
+      background: var(--soft-rose);
+    }
+
+    .tag-purple {
+      border-color: #D8CCF2;
+      color: var(--purple);
+      background: #F7F2FF;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      background: #FFFFFF;
+    }
+
+    .toast {
+      color: var(--blue);
+      border: 1px solid #C9D6F4;
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    @media (min-width: 901px) {
+      .app-shell {
+        width: min(1760px, 100%);
+      }
+
+      .app-header {
+        display: grid;
+        grid-template-columns: minmax(max-content, 1fr) max-content;
+        align-items: start;
+        gap: 18px;
+      }
+
+      .brand {
+        min-width: max-content;
+      }
+
+      .brand h1 {
+        max-width: none;
+        font-size: clamp(1.5rem, 2vw, 1.9rem);
+        line-height: 1.18;
+        white-space: nowrap;
+      }
+
+      .brand p {
+        white-space: nowrap;
+      }
+
+      .header-tools {
+        flex-wrap: nowrap;
+        align-items: end;
+        min-width: max-content;
+      }
+
+      .header-tools button,
+      .date-control {
+        flex: 0 0 auto;
+      }
+
+      .date-control {
+        min-width: 172px;
+      }
+
+      .primary-btn,
+      .danger-btn,
+      .quiet-btn,
+      .success-btn,
+      .purple-btn {
+        padding-inline: 14px;
+        white-space: nowrap;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(9, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .metric-card {
+        min-height: 96px;
+        padding: 12px 10px;
+      }
+
+      .metric-card strong {
+        font-size: clamp(1.65rem, 2.2vw, 2.2rem);
+      }
+
+      .metric-card span {
+        white-space: nowrap;
+        font-size: 0.82rem;
+      }
+    }
+
+    @media (min-width: 901px) and (max-width: 1500px) {
+      .app-header {
+        grid-template-columns: 1fr;
+      }
+
+      .header-tools {
+        justify-content: flex-start;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .brand {
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 28px;
+        height: 62px;
+      }
+
+      .brand h1 {
+        font-size: 25px;
+        line-height: 1.25;
+      }
+
+      .brand p {
+        font-size: 14px;
+      }
+
+      .app-header {
+        padding-top: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <h1><span class="brand-title-main">施佩妤服務處</span><span class="brand-title-divider">｜</span><span class="brand-title-page">輿情監測雷達</span></h1>
+          <p>有妤有您，幸福同行</p>
+        </div>
+      </div>
+      <div class="header-tools">
+        <label class="date-control">
+          作業日期
+          <input id="activeDate" type="date">
+        </label>
+        <button class="primary-btn" type="button" data-action="new-item">新增輿情</button>
+        <button class="success-btn" type="button" data-action="load-auto">載入自動資料</button>
+        <button class="success-btn" type="button" data-action="generate-ideas">產生建議</button>
+        <button class="quiet-btn" type="button" data-action="export-data">匯出 JSON</button>
+        <button class="quiet-btn" type="button" data-action="import-data">匯入 JSON</button>
+        <input id="importFile" class="sr-only" type="file" accept="application/json,.json">
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="主功能">
+      <button class="tab-btn active" type="button" data-view="dashboard">每日儀表板</button>
+      <button class="tab-btn" type="button" data-view="items">輿情資料</button>
+      <button class="tab-btn" type="button" data-view="accounts">特定對象</button>
+      <button class="tab-btn" type="button" data-view="ideas">每日建議發文</button>
+    </nav>
+
+    <main>
+      <section id="view-dashboard" class="view active" data-view-panel="dashboard">
+        <div class="command-grid">
+          <div class="radar-visual" aria-label="輿情雷達視覺">
+            <div class="radar-points" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="radar-caption">
+              <span>LOCAL</span>
+              <span>NEWS</span>
+              <span>SOCIAL</span>
+            </div>
+          </div>
+          <div class="brief-panel">
+            <div>
+              <h2>今日戰情摘要</h2>
+              <p id="dailyBrief">載入中...</p>
+            </div>
+            <div class="status-line">
+              <span id="saveStatus">localStorage 已就緒</span>
+              <span id="autoCrawlStatus">自動爬抓資料載入中...</span>
+              <span id="recordTotals"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="metricsGrid" class="metrics-grid" aria-live="polite"></div>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div>
+              <h2>每日新聞分類</h2>
+              <p>依地區、重要性與關鍵字自動歸入六組戰情分類。</p>
+            </div>
+          </div>
+          <div id="classificationGrid" class="classification-grid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <h2>今日最重要 10 則輿情</h2>
+          </div>
+          <div id="topImportantList" class="record-grid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <h2>今日負面或爭議事件</h2>
+          </div>
+          <div id="negativeList" class="record-grid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <h2>今日鹿港 / 福興相關熱門議題</h2>
+          </div>
+          <div id="localHotList" class="record-grid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <h2>今日特定對象動態</h2>
+          </div>
+          <div id="accountTodayList" class="account-grid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <h2>今日建議行動清單</h2>
+          </div>
+          <div id="actionList" class="record-grid"></div>
+        </section>
+      </section>
+
+      <section id="view-items" class="view" data-view-panel="items">
+        <div class="view-head">
+          <div>
+            <h2>輿情資料管理</h2>
+            <p>手動新增新聞、社群貼文、公開人物動態與人工紀錄。</p>
+          </div>
+          <button class="primary-btn" type="button" data-action="new-item">新增輿情</button>
+        </div>
+
+        <form id="filterForm" class="filter-bar">
+          <div class="field">
+            <label for="filterDate">日期</label>
+            <input id="filterDate" type="date">
+          </div>
+          <div class="field">
+            <label for="filterSourceType">來源類型</label>
+            <select id="filterSourceType" data-options="sourceTypes" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterPlatform">平台</label>
+            <select id="filterPlatform" data-options="platforms" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterRegion">地區</label>
+            <select id="filterRegion" data-options="regions" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterCategory">議題類別</label>
+            <select id="filterCategory" data-options="categories" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterSentiment">情緒</label>
+            <select id="filterSentiment" data-options="sentiments" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterImportance">重要性</label>
+            <select id="filterImportance" data-options="importanceLevels" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterStatus">處理狀態</label>
+            <select id="filterStatus" data-options="statuses" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterAction">建議行動</label>
+            <select id="filterAction" data-options="actions" data-empty="全部"></select>
+          </div>
+          <div class="field">
+            <label for="filterSourceName">來源名稱</label>
+            <input id="filterSourceName" type="search" placeholder="例如：中央社、地方社團">
+          </div>
+          <div class="field span-2">
+            <label for="filterKeyword">關鍵字</label>
+            <input id="filterKeyword" type="search" placeholder="搜尋標題、摘要、關鍵字、備註">
+          </div>
+          <div class="field">
+            <span>篩選</span>
+            <button class="quiet-btn" type="button" data-action="clear-filters">清除條件</button>
+          </div>
+        </form>
+
+        <div class="table-toolbar">
+          <span id="itemCount" class="muted">0 筆</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 96px;">日期</th>
+                <th style="width: 176px;">來源</th>
+                <th style="width: 132px;">地區 / 類別</th>
+                <th>標題與摘要</th>
+                <th style="width: 170px;">判讀</th>
+                <th style="width: 120px;">互動</th>
+                <th style="width: 180px;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="itemsTableBody"></tbody>
+          </table>
+        </div>
+        <div id="itemsMobileList" class="mobile-record-list"></div>
+      </section>
+
+      <section id="view-accounts" class="view" data-view-panel="accounts">
+        <div class="view-head">
+          <div>
+            <h2>特定對象追蹤</h2>
+            <p>記錄公開人物或帳號每日公開動態。</p>
+          </div>
+          <button class="purple-btn" type="button" data-action="new-account">新增帳號</button>
+        </div>
+        <div id="accountsList" class="account-grid"></div>
+      </section>
+
+      <section id="view-ideas" class="view" data-view-panel="ideas">
+        <div class="view-head">
+          <div>
+            <h2>每日建議發文</h2>
+            <p>依當日輿情整理可產出的文章、限動、短影音與 LINE 轉傳稿。</p>
+          </div>
+          <div class="header-tools">
+            <button class="success-btn" type="button" data-action="generate-ideas">產生今日建議</button>
+            <button class="primary-btn" type="button" data-action="new-idea">新增建議</button>
+          </div>
+        </div>
+        <div id="ideasList" class="idea-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="opinionDialog">
+    <form id="opinionForm">
+      <div class="dialog-head">
+        <h2 id="opinionDialogTitle">新增輿情資料</h2>
+        <button class="quiet-btn" type="button" data-action="close-dialog" data-dialog="opinionDialog">關閉</button>
+      </div>
+      <div class="dialog-body">
+        <input id="opinionId" type="hidden">
+        <div class="form-grid">
+          <div class="field">
+            <label for="opinionDate">日期</label>
+            <input id="opinionDate" type="date" required>
+          </div>
+          <div class="field">
+            <label for="opinionSourceType">來源類型</label>
+            <select id="opinionSourceType" data-options="sourceTypes" required></select>
+          </div>
+          <div class="field">
+            <label for="opinionPlatform">平台</label>
+            <select id="opinionPlatform" data-options="platforms" required></select>
+          </div>
+          <div class="field">
+            <label for="opinionSourceName">來源名稱</label>
+            <input id="opinionSourceName" type="text" placeholder="例如：中央社、鹿港大小事">
+          </div>
+          <div class="field span-2">
+            <label for="opinionTitle">標題</label>
+            <input id="opinionTitle" type="text" required placeholder="輸入新聞或貼文標題">
+          </div>
+          <div class="field span-2">
+            <label for="opinionUrl">原始連結</label>
+            <input id="opinionUrl" type="url" placeholder="https://">
+          </div>
+          <div class="field span-4">
+            <label for="opinionSummary">內容摘要</label>
+            <textarea id="opinionSummary" placeholder="重點、民眾反應、可能影響"></textarea>
+          </div>
+          <div class="field">
+            <label for="opinionRegion">地區</label>
+            <select id="opinionRegion" data-options="regions" required></select>
+          </div>
+          <div class="field">
+            <label for="opinionCategory">議題類別</label>
+            <select id="opinionCategory" data-options="categories" required></select>
+          </div>
+          <div class="field span-2">
+            <label for="opinionKeywords">關鍵字</label>
+            <input id="opinionKeywords" type="text" placeholder="以逗號分隔，例如：鹿港, 停車, 觀光">
+          </div>
+          <div class="field">
+            <label for="opinionInteractions">互動數</label>
+            <input id="opinionInteractions" type="number" min="0" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="opinionComments">留言數</label>
+            <input id="opinionComments" type="number" min="0" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="opinionShares">分享數</label>
+            <input id="opinionShares" type="number" min="0" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="opinionViews">觀看數</label>
+            <input id="opinionViews" type="number" min="0" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="opinionSentiment">情緒</label>
+            <select id="opinionSentiment" data-options="sentiments" required></select>
+          </div>
+          <div class="field">
+            <label for="opinionImportance">重要性</label>
+            <select id="opinionImportance" data-options="importanceLevels" required></select>
+          </div>
+          <div class="field">
+            <label for="opinionStatus">處理狀態</label>
+            <select id="opinionStatus" data-options="statuses" required></select>
+          </div>
+          <div class="field">
+            <label for="opinionAction">建議行動</label>
+            <select id="opinionAction" data-options="actions" required></select>
+          </div>
+          <div class="field span-2">
+            <label for="opinionNotes">備註</label>
+            <textarea id="opinionNotes" placeholder="後續追蹤、責任單位、內部判斷"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-actions">
+        <button class="quiet-btn" type="button" data-action="close-dialog" data-dialog="opinionDialog">取消</button>
+        <button class="primary-btn" type="submit">儲存輿情</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="accountDialog">
+    <form id="accountForm">
+      <div class="dialog-head">
+        <h2 id="accountDialogTitle">特定對象帳號</h2>
+        <button class="quiet-btn" type="button" data-action="close-dialog" data-dialog="accountDialog">關閉</button>
+      </div>
+      <div class="dialog-body">
+        <input id="accountId" type="hidden">
+        <div class="form-grid">
+          <div class="field">
+            <label for="accountPersonName">姓名</label>
+            <input id="accountPersonName" type="text" required>
+          </div>
+          <div class="field">
+            <label for="accountPlatform">平台</label>
+            <select id="accountPlatform" data-options="accountPlatforms" required></select>
+          </div>
+          <div class="field span-2">
+            <label for="accountName">帳號名稱</label>
+            <input id="accountName" type="text" required>
+          </div>
+          <div class="field span-4">
+            <label for="accountUrl">連結</label>
+            <input id="accountUrl" type="url" required placeholder="https://">
+          </div>
+          <div class="field">
+            <label for="accountLogDate">紀錄日期</label>
+            <input id="accountLogDate" type="date" required>
+          </div>
+          <div class="field">
+            <label for="accountTodayPosted">今日是否發文</label>
+            <select id="accountTodayPosted" required>
+              <option value="false">否</option>
+              <option value="true">是</option>
+            </select>
+          </div>
+          <div class="field span-2">
+            <label for="accountPostTopic">發文主題</label>
+            <input id="accountPostTopic" type="text" placeholder="例如：地方活動、政策回應">
+          </div>
+          <div class="field span-4">
+            <label for="accountPostSummary">發文摘要</label>
+            <textarea id="accountPostSummary" placeholder="今日公開動態摘要"></textarea>
+          </div>
+          <div class="field">
+            <label for="accountInteractions">互動數</label>
+            <input id="accountInteractions" type="number" min="0" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="accountCommentDirection">留言方向</label>
+            <select id="accountCommentDirection" data-options="commentDirections"></select>
+          </div>
+          <div class="field">
+            <label for="accountSparkedDiscussion">是否引發討論</label>
+            <select id="accountSparkedDiscussion">
+              <option value="false">否</option>
+              <option value="true">是</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="accountNeedResponse">是否需要回應</label>
+            <select id="accountNeedResponse">
+              <option value="false">否</option>
+              <option value="true">是</option>
+            </select>
+          </div>
+          <div class="field span-4">
+            <label for="accountNotes">備註</label>
+            <textarea id="accountNotes" placeholder="補充觀察、截圖位置、後續處理"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-actions">
+        <button class="quiet-btn" type="button" data-action="close-dialog" data-dialog="accountDialog">取消</button>
+        <button class="purple-btn" type="submit">儲存帳號紀錄</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="ideaDialog">
+    <form id="ideaForm">
+      <div class="dialog-head">
+        <h2 id="ideaDialogTitle">每日建議發文</h2>
+        <button class="quiet-btn" type="button" data-action="close-dialog" data-dialog="ideaDialog">關閉</button>
+      </div>
+      <div class="dialog-body">
+        <input id="ideaId" type="hidden">
+        <div class="form-grid">
+          <div class="field">
+            <label for="ideaDate">日期</label>
+            <input id="ideaDate" type="date" required>
+          </div>
+          <div class="field">
+            <label for="ideaArticleType">文章類型</label>
+            <select id="ideaArticleType" data-options="articleTypes" required></select>
+          </div>
+          <div class="field span-2">
+            <label for="ideaPlatform">適合平台</label>
+            <input id="ideaPlatform" type="text" required placeholder="Facebook / Threads / Instagram / LINE">
+          </div>
+          <div class="field span-2">
+            <label for="ideaTopic">建議主題</label>
+            <input id="ideaTopic" type="text" required>
+          </div>
+          <div class="field span-2">
+            <label for="ideaTitle">建議標題</label>
+            <input id="ideaTitle" type="text" required>
+          </div>
+          <div class="field span-4">
+            <label for="ideaAngle">建議角度</label>
+            <textarea id="ideaAngle" required></textarea>
+          </div>
+          <div class="field span-4">
+            <label for="ideaDraft">文章草稿</label>
+            <textarea id="ideaDraft" required></textarea>
+          </div>
+          <div class="field span-4">
+            <label for="ideaMaterials">素材需求</label>
+            <textarea id="ideaMaterials" placeholder="照片、數據、主管機關說明、截圖"></textarea>
+          </div>
+          <label class="checkbox-field span-2">
+            <input id="ideaPublished" type="checkbox">
+            是否已發布
+          </label>
+          <div class="field span-2">
+            <label for="ideaPublishUrl">發布連結</label>
+            <input id="ideaPublishUrl" type="url" placeholder="https://">
+          </div>
+        </div>
+      </div>
+      <div class="dialog-actions">
+        <button class="quiet-btn" type="button" data-action="close-dialog" data-dialog="ideaDialog">取消</button>
+        <button class="success-btn" type="submit">儲存建議</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const STORAGE_KEYS = {
+      opinionItems: "opinionItems",
+      trackedAccounts: "trackedAccounts",
+      dailyPostIdeas: "dailyPostIdeas",
+      settings: "settings"
+    };
+
+    const OPTIONS = {
+      sourceTypes: ["新聞", "社群", "特定對象", "人工紀錄"],
+      platforms: ["新聞網站", "Facebook", "Instagram", "Threads", "YouTube", "Google News", "其他"],
+      accountPlatforms: ["Facebook", "Instagram", "Threads", "YouTube", "新聞網站", "其他"],
+      regions: ["國際", "台灣", "彰化", "鹿港", "福興", "其他"],
+      categories: ["交通", "觀光", "宮廟", "教育", "長照", "醫療", "環境", "治安", "停車", "青年", "社福", "活動", "地方建設", "政治", "災害", "其他"],
+      sentiments: ["正面", "中性", "負面", "爭議"],
+      importanceLevels: ["高", "中", "低"],
+      statuses: ["未讀", "已讀", "觀察", "已回應", "不處理"],
+      actions: ["可發文", "需觀察", "需回應", "可做限動", "可做懶人包", "不建議處理"],
+      articleTypes: ["服務型貼文", "地方關懷文", "政策白話文", "即時回應文", "社群回應文", "活動宣傳文", "限時動態", "短影音腳本", "LINE 群組轉傳文"],
+      commentDirections: ["待觀察", "正面", "中性", "負面", "分歧"]
+    };
+
+    const SEED_ACCOUNTS = [
+      {
+        personName: "楊妙月",
+        platform: "Facebook",
+        accountName: "個人臉書",
+        url: "https://www.facebook.com/yang.miao.yue"
+      },
+      {
+        personName: "楊妙月",
+        platform: "Facebook",
+        accountName: "粉絲專頁",
+        url: "https://www.facebook.com/profile.php?id=100063726009551"
+      },
+      {
+        personName: "楊妙月",
+        platform: "Instagram",
+        accountName: "yangmiaoyue",
+        url: "https://www.instagram.com/yangmiaoyue"
+      },
+      {
+        personName: "楊妙月",
+        platform: "Threads",
+        accountName: "@yangmiaoyue",
+        url: "https://www.threads.com/@yangmiaoyue?xmt=AQG0rAnuM2z7GOheP9TlgnW8vHwTIrrgv_77FyMWr5bVRPo"
+      }
+    ];
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+    let state = {
+      opinionItems: [],
+      trackedAccounts: [],
+      dailyPostIdeas: [],
+      settings: {},
+      autoCrawl: null
+    };
+
+    let toastTimer = null;
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    async function init() {
+      loadState();
+      fillAllSelects();
+      bindEvents();
+      $("#activeDate").value = state.settings.activeDate || todayISO();
+      $("#filterDate").value = state.settings.activeDate || todayISO();
+      renderAll();
+      await loadAutoCrawlData({ silent: true });
+    }
+
+    function loadState() {
+      state.opinionItems = readArray(STORAGE_KEYS.opinionItems);
+      state.trackedAccounts = readArray(STORAGE_KEYS.trackedAccounts);
+      state.dailyPostIdeas = readArray(STORAGE_KEYS.dailyPostIdeas);
+      state.settings = readObject(STORAGE_KEYS.settings, {});
+
+      if (!state.settings.activeDate) {
+        state.settings.activeDate = todayISO();
+      }
+      state.settings.version = "2.0.0-auto-crawl";
+      ensureSeedAccounts();
+      saveState("資料已載入");
+    }
+
+    function readArray(key) {
+      try {
+        const value = JSON.parse(localStorage.getItem(key) || "[]");
+        return Array.isArray(value) ? value : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function readObject(key, fallback) {
+      try {
+        const value = JSON.parse(localStorage.getItem(key) || "null");
+        return value && typeof value === "object" && !Array.isArray(value) ? value : fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    function ensureSeedAccounts() {
+      const now = new Date().toISOString();
+      SEED_ACCOUNTS.forEach((seed) => {
+        const exists = state.trackedAccounts.some((account) => account.url === seed.url);
+        if (!exists) {
+          state.trackedAccounts.push({
+            id: createId("TA"),
+            ...seed,
+            dailyLogs: [],
+            createdAt: now,
+            updatedAt: now
+          });
+        }
+      });
+    }
+
+    function saveState(message = "已儲存") {
+      localStorage.setItem(STORAGE_KEYS.opinionItems, JSON.stringify(state.opinionItems));
+      localStorage.setItem(STORAGE_KEYS.trackedAccounts, JSON.stringify(state.trackedAccounts));
+      localStorage.setItem(STORAGE_KEYS.dailyPostIdeas, JSON.stringify(state.dailyPostIdeas));
+      localStorage.setItem(STORAGE_KEYS.settings, JSON.stringify(state.settings));
+      const status = $("#saveStatus");
+      if (status) {
+        status.textContent = `${message}：${new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" })}`;
+      }
+    }
+
+    function bindEvents() {
+      $("#activeDate").addEventListener("change", (event) => {
+        state.settings.activeDate = event.target.value || todayISO();
+        $("#filterDate").value = state.settings.activeDate;
+        saveState("已切換日期");
+        renderAll();
+      });
+
+      $("#filterForm").addEventListener("input", renderItemsView);
+      $("#filterForm").addEventListener("change", renderItemsView);
+      $("#opinionForm").addEventListener("submit", saveOpinionFromForm);
+      $("#accountForm").addEventListener("submit", saveAccountFromForm);
+      $("#ideaForm").addEventListener("submit", saveIdeaFromForm);
+      $("#importFile").addEventListener("change", importDataFile);
+
+      document.addEventListener("click", handleActionClick);
+
+      $$(".tab-btn").forEach((button) => {
+        button.addEventListener("click", () => switchView(button.dataset.view));
+      });
+    }
+
+    function fillAllSelects() {
+      $$("select[data-options]").forEach((select) => {
+        const key = select.dataset.options;
+        const emptyLabel = select.dataset.empty;
+        select.innerHTML = "";
+        if (emptyLabel) {
+          select.append(new Option(emptyLabel, ""));
+        }
+        OPTIONS[key].forEach((option) => select.append(new Option(option, option)));
+      });
+    }
+
+    function switchView(view) {
+      $$(".tab-btn").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
+      $$("[data-view-panel]").forEach((panel) => panel.classList.toggle("active", panel.dataset.viewPanel === view));
+    }
+
+    function handleActionClick(event) {
+      const button = event.target.closest("[data-action]");
+      if (!button) return;
+      const action = button.dataset.action;
+      const id = button.dataset.id;
+
+      if (action === "new-item") openOpinionDialog();
+      if (action === "edit-item") openOpinionDialog(id);
+      if (action === "delete-item") deleteOpinionItem(id);
+      if (action === "clear-filters") clearFilters();
+      if (action === "new-account") openAccountDialog();
+      if (action === "edit-account") openAccountDialog(id);
+      if (action === "delete-account") deleteAccount(id);
+      if (action === "new-idea") openIdeaDialog();
+      if (action === "edit-idea") openIdeaDialog(id);
+      if (action === "delete-idea") deleteIdea(id);
+      if (action === "toggle-published") toggleIdeaPublished(id);
+      if (action === "generate-ideas") generateDailyIdeas();
+      if (action === "load-auto") loadAutoCrawlData({ silent: false });
+      if (action === "export-data") exportData();
+      if (action === "import-data") $("#importFile").click();
+      if (action === "close-dialog") closeDialog(button.dataset.dialog);
+    }
+
+    function renderAll() {
+      renderDashboard();
+      renderItemsView();
+      renderAccountsView();
+      renderIdeasView();
+      renderAutoCrawlStatus();
+      const autoItems = state.opinionItems.filter((item) => item.sourceMode === "auto").length;
+      $("#recordTotals").textContent = `輿情 ${state.opinionItems.length} 筆（自動 ${autoItems}）/ 追蹤帳號 ${state.trackedAccounts.length} 個 / 建議 ${state.dailyPostIdeas.length} 則`;
+    }
+
+    async function loadAutoCrawlData(options = {}) {
+      const silent = Boolean(options.silent);
+      try {
+        setAutoCrawlStatus("自動爬抓資料讀取中...");
+        const response = await fetch(`./data/opinion-auto.json?ts=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const data = await response.json();
+        const incomingItems = Array.isArray(data.opinionItems) ? data.opinionItems : [];
+        const incomingIdeas = Array.isArray(data.dailyPostIdeas) ? data.dailyPostIdeas : [];
+        const itemResult = mergeById(state.opinionItems, incomingItems.map(normalizeAutoOpinionItem));
+        const ideaResult = mergeById(state.dailyPostIdeas, incomingIdeas.map(normalizeAutoPostIdea));
+
+        state.autoCrawl = {
+          loaded: true,
+          generatedAt: data.generatedAt || "",
+          generatedDate: data.generatedDate || "",
+          source: data.source || "自動爬抓資料",
+          note: data.note || "",
+          feedErrors: Array.isArray(data.errors) ? data.errors.length : 0,
+          itemCount: incomingItems.length,
+          ideaCount: incomingIdeas.length,
+          addedItems: itemResult.added,
+          updatedItems: itemResult.updated,
+          addedIdeas: ideaResult.added,
+          updatedIdeas: ideaResult.updated
+        };
+
+        if (incomingItems.length || incomingIdeas.length) {
+          saveState("自動資料已同步");
+        }
+        renderAll();
+        if (!silent) {
+          showToast(`已載入自動資料：輿情 ${incomingItems.length} 筆、建議 ${incomingIdeas.length} 則`);
+        }
+      } catch (error) {
+        state.autoCrawl = {
+          loaded: false,
+          error: error instanceof Error ? error.message : String(error)
+        };
+        renderAutoCrawlStatus();
+        if (!silent) {
+          showToast("目前無法載入自動資料；部署到 GitHub Pages 後會自動讀取 data/opinion-auto.json");
+        }
+      }
+    }
+
+    function normalizeAutoOpinionItem(item) {
+      const now = new Date().toISOString();
+      return {
+        id: item.id || createId("AUTO"),
+        sourceMode: "auto",
+        date: item.date || todayISO(),
+        sourceType: item.sourceType || "新聞",
+        platform: item.platform || "Google News",
+        sourceName: item.sourceName || "自動爬抓",
+        title: item.title || "未命名自動輿情",
+        summary: item.summary || "",
+        url: item.url || "",
+        region: item.region || "其他",
+        keywords: item.keywords || "",
+        category: item.category || "其他",
+        interactions: toNumber(item.interactions),
+        comments: toNumber(item.comments),
+        shares: toNumber(item.shares),
+        views: toNumber(item.views),
+        sentiment: item.sentiment || "中性",
+        importance: item.importance || "中",
+        status: item.status || "未讀",
+        action: item.action || "需觀察",
+        notes: item.notes || "自動爬抓資料",
+        publishedAt: item.publishedAt || "",
+        autoClassification: item.autoClassification || "",
+        autoFeedName: item.autoFeedName || "",
+        createdAt: item.createdAt || now,
+        updatedAt: item.updatedAt || now
+      };
+    }
+
+    function normalizeAutoPostIdea(idea) {
+      const now = new Date().toISOString();
+      return {
+        id: idea.id || createId("AUTO-IDEA"),
+        sourceMode: "auto",
+        date: idea.date || todayISO(),
+        articleType: idea.articleType || "地方關懷文",
+        suggestedTopic: idea.suggestedTopic || "今日自動輿情建議",
+        angle: idea.angle || "",
+        platform: idea.platform || "Facebook / Threads",
+        title: idea.title || idea.suggestedTopic || "今日自動輿情建議",
+        draft: idea.draft || "",
+        materials: idea.materials || "",
+        isPublished: Boolean(idea.isPublished),
+        publishUrl: idea.publishUrl || "",
+        sourceItemId: idea.sourceItemId || "",
+        createdAt: idea.createdAt || now,
+        updatedAt: idea.updatedAt || now
+      };
+    }
+
+    function mergeById(target, incoming) {
+      let added = 0;
+      let updated = 0;
+      incoming.forEach((entry) => {
+        const index = target.findIndex((item) => item.id === entry.id);
+        if (index >= 0) {
+          if (target[index].sourceMode === "auto") {
+            target[index] = { ...target[index], ...entry };
+            updated += 1;
+          }
+          return;
+        }
+        target.push(entry);
+        added += 1;
+      });
+      return { added, updated };
+    }
+
+    function renderAutoCrawlStatus() {
+      const status = $("#autoCrawlStatus");
+      if (!status) return;
+      if (!state.autoCrawl) {
+        status.textContent = "自動爬抓：等待資料";
+        return;
+      }
+      if (!state.autoCrawl.loaded) {
+        status.textContent = `自動爬抓：尚未載入（${state.autoCrawl.error || "本機 file 開啟可能無法讀取 JSON"}）`;
+        return;
+      }
+      const time = state.autoCrawl.generatedAt ? new Date(state.autoCrawl.generatedAt).toLocaleString("zh-TW") : state.autoCrawl.generatedDate || "未知時間";
+      status.textContent = `自動爬抓：${time}，新聞 ${state.autoCrawl.itemCount} 筆，建議 ${state.autoCrawl.ideaCount} 則`;
+    }
+
+    function setAutoCrawlStatus(message) {
+      const status = $("#autoCrawlStatus");
+      if (status) status.textContent = message;
+    }
+
+    function getActiveDate() {
+      return state.settings.activeDate || $("#activeDate").value || todayISO();
+    }
+
+    function renderDashboard() {
+      const date = getActiveDate();
+      const dayItems = getItemsByDate(date);
+      const dayIdeas = state.dailyPostIdeas.filter((idea) => idea.date === date);
+      const dayLogs = state.trackedAccounts.map((account) => ({ account, log: getAccountLog(account, date) }));
+      const metrics = [
+        { label: "今日新增輿情數", value: dayItems.length, accent: "blue" },
+        { label: "高重要性事件數", value: dayItems.filter((item) => item.importance === "高").length, accent: "red" },
+        { label: "負面或爭議事件數", value: dayItems.filter(isNegativeOrControversial).length, accent: "red" },
+        { label: "彰化相關事件數", value: dayItems.filter(isChanghuaRelated).length, accent: "green" },
+        { label: "鹿港相關事件數", value: dayItems.filter((item) => isPlaceRelated(item, "鹿港")).length, accent: "purple" },
+        { label: "特定對象今日發文數", value: dayLogs.filter(({ log }) => log.todayPosted).length, accent: "purple" },
+        { label: "建議發文數", value: dayIdeas.length || dayItems.filter(isPostableAction).length, accent: "cyan" },
+        { label: "需觀察事件數", value: dayItems.filter((item) => item.action === "需觀察" || item.status === "觀察").length, accent: "orange" },
+        { label: "需回應事件數", value: dayItems.filter((item) => item.action === "需回應").length, accent: "red" }
+      ];
+
+      $("#metricsGrid").innerHTML = metrics.map((metric) => `
+        <article class="metric-card accent-${metric.accent}">
+          <strong>${metric.value}</strong>
+          <span>${escapeHtml(metric.label)}</span>
+        </article>
+      `).join("");
+
+      $("#dailyBrief").textContent = buildDailyBrief(dayItems, dayLogs, dayIdeas);
+      renderClassification(dayItems);
+      renderRecordList("#topImportantList", dayItems.slice().sort((a, b) => scoreItem(b) - scoreItem(a)).slice(0, 10), "今日尚無重要輿情。");
+      renderRecordList("#negativeList", dayItems.filter(isNegativeOrControversial).sort((a, b) => scoreItem(b) - scoreItem(a)), "今日尚無負面或爭議事件。");
+      renderRecordList("#localHotList", getLocalHotItems(dayItems), "今日尚無鹿港 / 福興熱門議題。");
+      renderAccountTodayList(dayLogs);
+      renderRecordList("#actionList", dayItems.filter((item) => item.action !== "不建議處理").sort((a, b) => scoreItem(b) - scoreItem(a)), "今日尚無待處理行動。");
+    }
+
+    function buildDailyBrief(items, logs, ideas) {
+      if (!items.length) {
+        return "今日尚未載入輿情資料。部署到 GitHub Pages 後，系統會每天自動抓公開新聞 RSS；社群平台若未串 API，仍會列為巡查任務。";
+      }
+      const high = items.filter((item) => item.importance === "高").length;
+      const negative = items.filter(isNegativeOrControversial).length;
+      const local = items.filter((item) => isPlaceRelated(item, "鹿港") || isPlaceRelated(item, "福興")).length;
+      const posted = logs.filter(({ log }) => log.todayPosted).length;
+      const auto = items.filter((item) => item.sourceMode === "auto").length;
+      const ideaText = ideas.length ? `已整理 ${ideas.length} 則發文建議` : "尚未產生發文建議";
+      return `今日共 ${items.length} 則輿情，其中自動爬抓 ${auto} 則；高重要性 ${high} 則，負面或爭議 ${negative} 則，鹿港 / 福興相關 ${local} 則。特定對象今日發文 ${posted} 則，${ideaText}。`;
+    }
+
+    function renderClassification(items) {
+      const newsItems = items.filter(isNewsItem);
+      const classes = [
+        {
+          label: "國際重大新聞",
+          items: newsItems.filter((item) => item.region === "國際" && item.importance === "高")
+        },
+        {
+          label: "與台灣相關的國際新聞",
+          items: newsItems.filter((item) => item.region === "國際" && hasAnyText(item, ["台灣", "臺灣", "台海", "兩岸", "半導體", "美中", "中國"]))
+        },
+        {
+          label: "台灣重大新聞",
+          items: newsItems.filter((item) => item.region === "台灣" && item.importance !== "低")
+        },
+        {
+          label: "與彰化相關的台灣新聞",
+          items: newsItems.filter((item) => (item.region === "台灣" || item.region === "彰化") && hasAnyText(item, ["彰化", "縣府", "中部"]))
+        },
+        {
+          label: "彰化縣重要新聞",
+          items: newsItems.filter((item) => item.region === "彰化" && item.importance !== "低")
+        },
+        {
+          label: "鹿港與福興地方新聞",
+          items: newsItems.filter((item) => isPlaceRelated(item, "鹿港") || isPlaceRelated(item, "福興"))
+        }
+      ];
+
+      $("#classificationGrid").innerHTML = classes.map((group) => {
+        const top = group.items.slice().sort((a, b) => scoreItem(b) - scoreItem(a)).slice(0, 3);
+        return `
+          <article class="class-card">
+            <span class="class-count">${group.items.length}</span>
+            <h3>${escapeHtml(group.label)}</h3>
+            ${top.length ? `<ul>${top.map((item) => `<li>${escapeHtml(item.title || "未命名輿情")}</li>`).join("")}</ul>` : `<p class="muted">尚無資料</p>`}
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderRecordList(selector, items, emptyText) {
+      const container = $(selector);
+      if (!items.length) {
+        container.innerHTML = `<div class="empty-state">${escapeHtml(emptyText)}</div>`;
+        return;
+      }
+      container.innerHTML = items.map(renderRecordCard).join("");
+    }
+
+    function renderRecordCard(item) {
+      const url = normalizeUrl(item.url);
+      return `
+        <article class="record-card">
+          <div class="meta-row">
+            ${item.sourceMode === "auto" ? "<span>自動</span>" : "<span>人工</span>"}
+            <span>${escapeHtml(item.date || "")}</span>
+            <span>${escapeHtml(item.sourceType || "")}</span>
+            <span>${escapeHtml(item.platform || "")}</span>
+            <span>${escapeHtml(item.sourceName || "")}</span>
+          </div>
+          <h3>${escapeHtml(item.title || "未命名輿情")}</h3>
+          <p class="record-summary">${escapeHtml(item.summary || "尚未填寫摘要")}</p>
+          <div class="tag-row">
+            ${tag(item.region, "blue")}
+            ${tag(item.category, "cyan")}
+            ${tag(item.sentiment, sentimentColor(item.sentiment))}
+            ${tag(`重要性 ${item.importance || "中"}`, importanceColor(item.importance))}
+            ${tag(item.action || "需觀察", actionColor(item.action))}
+          </div>
+          <div class="meta-row">
+            <span>互動 ${formatNumber(item.interactions)}</span>
+            <span>留言 ${formatNumber(item.comments)}</span>
+            <span>分享 ${formatNumber(item.shares)}</span>
+            <span>觀看 ${formatNumber(item.views)}</span>
+          </div>
+          <div class="card-actions">
+            <button class="quiet-btn" type="button" data-action="edit-item" data-id="${item.id}">編修</button>
+            ${url ? `<a class="quiet-btn" href="${url}" target="_blank" rel="noopener">開啟連結</a>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderItemsView() {
+      const items = applyFilters(state.opinionItems).sort((a, b) => `${b.date || ""}${b.updatedAt || ""}`.localeCompare(`${a.date || ""}${a.updatedAt || ""}`));
+      $("#itemCount").textContent = `${items.length} 筆符合條件`;
+
+      $("#itemsTableBody").innerHTML = items.length ? items.map((item) => {
+        const url = normalizeUrl(item.url);
+        return `
+          <tr>
+            <td>${escapeHtml(item.date || "")}<br><span class="muted">${escapeHtml(item.id || "")}</span></td>
+            <td>
+              <div class="tag-row">
+                ${item.sourceMode === "auto" ? tag("自動", "purple") : tag("人工", "gray")}
+                ${tag(item.sourceType, sourceTypeColor(item.sourceType))}
+                ${tag(item.platform, "gray")}
+              </div>
+              <div class="muted">${escapeHtml(item.sourceName || "未填來源")}</div>
+            </td>
+            <td>
+              <div class="tag-row">
+                ${tag(item.region, "blue")}
+                ${tag(item.category, "cyan")}
+              </div>
+            </td>
+            <td>
+              <div class="row-title">
+                <strong>${escapeHtml(item.title || "未命名輿情")}</strong>
+                <span>${escapeHtml(item.summary || "尚未填寫摘要")}</span>
+                <span>${escapeHtml(item.keywords || "")}</span>
+              </div>
+            </td>
+            <td>
+              <div class="tag-row">
+                ${tag(item.sentiment, sentimentColor(item.sentiment))}
+                ${tag(item.importance, importanceColor(item.importance))}
+                ${tag(item.status, statusColor(item.status))}
+                ${tag(item.action, actionColor(item.action))}
+              </div>
+            </td>
+            <td>
+              互動 ${formatNumber(item.interactions)}<br>
+              留言 ${formatNumber(item.comments)}<br>
+              分享 ${formatNumber(item.shares)}<br>
+              觀看 ${formatNumber(item.views)}
+            </td>
+            <td>
+              <div class="card-actions">
+                <button class="quiet-btn" type="button" data-action="edit-item" data-id="${item.id}">編修</button>
+                <button class="danger-btn" type="button" data-action="delete-item" data-id="${item.id}">刪除</button>
+                ${url ? `<a class="quiet-btn" href="${url}" target="_blank" rel="noopener">連結</a>` : ""}
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join("") : `<tr><td colspan="7"><div class="empty-state">尚無符合條件的輿情資料。</div></td></tr>`;
+
+      $("#itemsMobileList").innerHTML = items.length ? items.map((item) => {
+        const card = renderRecordCard(item);
+        return card.replace("</div>\n        </article>", `<button class="danger-btn" type="button" data-action="delete-item" data-id="${item.id}">刪除</button></div>\n        </article>`);
+      }).join("") : `<div class="empty-state">尚無符合條件的輿情資料。</div>`;
+    }
+
+    function applyFilters(items) {
+      const filters = {
+        date: $("#filterDate").value,
+        sourceType: $("#filterSourceType").value,
+        platform: $("#filterPlatform").value,
+        region: $("#filterRegion").value,
+        category: $("#filterCategory").value,
+        sentiment: $("#filterSentiment").value,
+        importance: $("#filterImportance").value,
+        status: $("#filterStatus").value,
+        action: $("#filterAction").value,
+        sourceName: normalizeText($("#filterSourceName").value),
+        keyword: normalizeText($("#filterKeyword").value)
+      };
+
+      return items.filter((item) => {
+        if (filters.date && item.date !== filters.date) return false;
+        if (filters.sourceType && item.sourceType !== filters.sourceType) return false;
+        if (filters.platform && item.platform !== filters.platform) return false;
+        if (filters.region && item.region !== filters.region) return false;
+        if (filters.category && item.category !== filters.category) return false;
+        if (filters.sentiment && item.sentiment !== filters.sentiment) return false;
+        if (filters.importance && item.importance !== filters.importance) return false;
+        if (filters.status && item.status !== filters.status) return false;
+        if (filters.action && item.action !== filters.action) return false;
+        if (filters.sourceName && !normalizeText(item.sourceName).includes(filters.sourceName)) return false;
+        if (filters.keyword && !normalizeText(collectText(item)).includes(filters.keyword)) return false;
+        return true;
+      });
+    }
+
+    function clearFilters() {
+      $("#filterForm").reset();
+      $("#filterDate").value = getActiveDate();
+      renderItemsView();
+    }
+
+    function openOpinionDialog(id) {
+      const item = id ? state.opinionItems.find((entry) => entry.id === id) : null;
+      $("#opinionDialogTitle").textContent = item ? "編修輿情資料" : "新增輿情資料";
+      $("#opinionId").value = item?.id || "";
+      $("#opinionDate").value = item?.date || getActiveDate();
+      $("#opinionSourceType").value = item?.sourceType || "新聞";
+      $("#opinionPlatform").value = item?.platform || "新聞網站";
+      $("#opinionSourceName").value = item?.sourceName || "";
+      $("#opinionTitle").value = item?.title || "";
+      $("#opinionUrl").value = item?.url || "";
+      $("#opinionSummary").value = item?.summary || "";
+      $("#opinionRegion").value = item?.region || "彰化";
+      $("#opinionCategory").value = item?.category || "其他";
+      $("#opinionKeywords").value = item?.keywords || "";
+      $("#opinionInteractions").value = item?.interactions || "";
+      $("#opinionComments").value = item?.comments || "";
+      $("#opinionShares").value = item?.shares || "";
+      $("#opinionViews").value = item?.views || "";
+      $("#opinionSentiment").value = item?.sentiment || "中性";
+      $("#opinionImportance").value = item?.importance || "中";
+      $("#opinionStatus").value = item?.status || "未讀";
+      $("#opinionAction").value = item?.action || "需觀察";
+      $("#opinionNotes").value = item?.notes || "";
+      $("#opinionDialog").showModal();
+      $("#opinionTitle").focus();
+    }
+
+    function saveOpinionFromForm(event) {
+      event.preventDefault();
+      const id = $("#opinionId").value || createId("OP");
+      const existing = state.opinionItems.find((item) => item.id === id);
+      const now = new Date().toISOString();
+      const item = {
+        id,
+        date: $("#opinionDate").value,
+        sourceType: $("#opinionSourceType").value,
+        platform: $("#opinionPlatform").value,
+        sourceName: $("#opinionSourceName").value.trim(),
+        title: $("#opinionTitle").value.trim(),
+        summary: $("#opinionSummary").value.trim(),
+        url: $("#opinionUrl").value.trim(),
+        region: $("#opinionRegion").value,
+        keywords: $("#opinionKeywords").value.trim(),
+        category: $("#opinionCategory").value,
+        interactions: toNumber($("#opinionInteractions").value),
+        comments: toNumber($("#opinionComments").value),
+        shares: toNumber($("#opinionShares").value),
+        views: toNumber($("#opinionViews").value),
+        sentiment: $("#opinionSentiment").value,
+        importance: $("#opinionImportance").value,
+        status: $("#opinionStatus").value,
+        action: $("#opinionAction").value,
+        notes: $("#opinionNotes").value.trim(),
+        createdAt: existing?.createdAt || now,
+        updatedAt: now
+      };
+
+      if (existing) {
+        Object.assign(existing, item);
+      } else {
+        state.opinionItems.unshift(item);
+      }
+
+      saveState("輿情已儲存");
+      closeDialog("opinionDialog");
+      renderAll();
+      showToast("輿情資料已儲存");
+    }
+
+    function deleteOpinionItem(id) {
+      const item = state.opinionItems.find((entry) => entry.id === id);
+      if (!item) return;
+      if (!confirm(`確定刪除「${item.title || item.id}」？`)) return;
+      state.opinionItems = state.opinionItems.filter((entry) => entry.id !== id);
+      saveState("輿情已刪除");
+      renderAll();
+      showToast("已刪除輿情資料");
+    }
+
+    function renderAccountsView() {
+      const date = getActiveDate();
+      const accounts = state.trackedAccounts.slice().sort((a, b) => `${a.personName}${a.platform}${a.accountName}`.localeCompare(`${b.personName}${b.platform}${b.accountName}`));
+      $("#accountsList").innerHTML = accounts.length ? accounts.map((account) => renderAccountCard(account, date)).join("") : `<div class="empty-state">尚未建立追蹤帳號。</div>`;
+    }
+
+    function renderAccountTodayList(dayLogs) {
+      const visible = dayLogs.filter(({ log }) => log.todayPosted || log.postTopic || log.postSummary || log.needResponse || log.sparkedDiscussion);
+      $("#accountTodayList").innerHTML = visible.length ? visible.map(({ account, log }) => renderAccountCard(account, getActiveDate(), log)).join("") : `<div class="empty-state">今日尚無特定對象公開動態紀錄。</div>`;
+    }
+
+    function renderAccountCard(account, date, providedLog) {
+      const log = providedLog || getAccountLog(account, date);
+      const url = normalizeUrl(account.url);
+      return `
+        <article class="account-card">
+          <div class="meta-row">
+            ${tag(account.platform, "purple")}
+            ${tag(log.todayPosted ? "今日已發文" : "今日未發文", log.todayPosted ? "green" : "gray")}
+            ${log.needResponse ? tag("需要回應", "red") : ""}
+          </div>
+          <h3>${escapeHtml(account.personName || "未命名")}｜${escapeHtml(account.accountName || "")}</h3>
+          <p class="record-summary">${escapeHtml(log.postSummary || "尚未填寫今日公開動態。")}</p>
+          <div class="tag-row">
+            ${tag(log.postTopic || "無主題", "cyan")}
+            ${tag(`留言 ${log.commentDirection || "待觀察"}`, statusColor(log.commentDirection))}
+            ${tag(log.sparkedDiscussion ? "引發討論" : "討論量低", log.sparkedDiscussion ? "orange" : "gray")}
+          </div>
+          <div class="meta-row">
+            <span>互動 ${formatNumber(log.interactions)}</span>
+            <span>${escapeHtml(date)}</span>
+          </div>
+          <div class="card-actions">
+            <button class="purple-btn" type="button" data-action="edit-account" data-id="${account.id}">記錄 / 編修</button>
+            ${url ? `<a class="quiet-btn" href="${url}" target="_blank" rel="noopener">開啟帳號</a>` : ""}
+            <button class="danger-btn" type="button" data-action="delete-account" data-id="${account.id}">刪除</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function openAccountDialog(id) {
+      const account = id ? state.trackedAccounts.find((entry) => entry.id === id) : null;
+      const log = account ? getAccountLog(account, getActiveDate()) : emptyAccountLog(getActiveDate());
+      $("#accountDialogTitle").textContent = account ? "編修特定對象帳號" : "新增特定對象帳號";
+      $("#accountId").value = account?.id || "";
+      $("#accountPersonName").value = account?.personName || "";
+      $("#accountPlatform").value = account?.platform || "Facebook";
+      $("#accountName").value = account?.accountName || "";
+      $("#accountUrl").value = account?.url || "";
+      $("#accountLogDate").value = log.date || getActiveDate();
+      $("#accountTodayPosted").value = String(Boolean(log.todayPosted));
+      $("#accountPostTopic").value = log.postTopic || "";
+      $("#accountPostSummary").value = log.postSummary || "";
+      $("#accountInteractions").value = log.interactions || "";
+      $("#accountCommentDirection").value = log.commentDirection || "待觀察";
+      $("#accountSparkedDiscussion").value = String(Boolean(log.sparkedDiscussion));
+      $("#accountNeedResponse").value = String(Boolean(log.needResponse));
+      $("#accountNotes").value = log.notes || "";
+      $("#accountDialog").showModal();
+      $("#accountPersonName").focus();
+    }
+
+    function saveAccountFromForm(event) {
+      event.preventDefault();
+      const id = $("#accountId").value || createId("TA");
+      const existing = state.trackedAccounts.find((account) => account.id === id);
+      const now = new Date().toISOString();
+      const base = {
+        id,
+        personName: $("#accountPersonName").value.trim(),
+        platform: $("#accountPlatform").value,
+        accountName: $("#accountName").value.trim(),
+        url: $("#accountUrl").value.trim(),
+        dailyLogs: existing?.dailyLogs || [],
+        createdAt: existing?.createdAt || now,
+        updatedAt: now
+      };
+      const log = {
+        date: $("#accountLogDate").value,
+        todayPosted: $("#accountTodayPosted").value === "true",
+        postTopic: $("#accountPostTopic").value.trim(),
+        postSummary: $("#accountPostSummary").value.trim(),
+        interactions: toNumber($("#accountInteractions").value),
+        commentDirection: $("#accountCommentDirection").value || "待觀察",
+        sparkedDiscussion: $("#accountSparkedDiscussion").value === "true",
+        needResponse: $("#accountNeedResponse").value === "true",
+        notes: $("#accountNotes").value.trim(),
+        updatedAt: now
+      };
+
+      upsertAccountLog(base, log);
+
+      if (existing) {
+        Object.assign(existing, base);
+      } else {
+        state.trackedAccounts.push(base);
+      }
+
+      saveState("帳號紀錄已儲存");
+      closeDialog("accountDialog");
+      renderAll();
+      showToast("特定對象紀錄已儲存");
+    }
+
+    function deleteAccount(id) {
+      const account = state.trackedAccounts.find((entry) => entry.id === id);
+      if (!account) return;
+      if (!confirm(`確定刪除「${account.personName}｜${account.accountName}」？`)) return;
+      state.trackedAccounts = state.trackedAccounts.filter((entry) => entry.id !== id);
+      saveState("帳號已刪除");
+      renderAll();
+      showToast("已刪除追蹤帳號");
+    }
+
+    function renderIdeasView() {
+      const date = getActiveDate();
+      const ideas = state.dailyPostIdeas.filter((idea) => idea.date === date).sort((a, b) => Number(a.isPublished) - Number(b.isPublished) || `${b.updatedAt || ""}`.localeCompare(`${a.updatedAt || ""}`));
+      $("#ideasList").innerHTML = ideas.length ? ideas.map(renderIdeaCard).join("") : `<div class="empty-state">今日尚無發文建議。可從儀表板或本頁產生建議。</div>`;
+    }
+
+    function renderIdeaCard(idea) {
+      const publishUrl = normalizeUrl(idea.publishUrl);
+      return `
+        <article class="idea-card">
+          <div class="tag-row">
+            ${tag(idea.articleType, "green")}
+            ${tag(idea.isPublished ? "已發布" : "未發布", idea.isPublished ? "green" : "orange")}
+            ${tag(idea.platform, "purple")}
+          </div>
+          <h3>${escapeHtml(idea.title || idea.suggestedTopic || "未命名建議")}</h3>
+          <p class="record-summary"><strong>主題：</strong>${escapeHtml(idea.suggestedTopic || "")}</p>
+          <p class="record-summary"><strong>角度：</strong>${escapeHtml(idea.angle || "")}</p>
+          <p class="idea-draft">${escapeHtml(idea.draft || "")}</p>
+          <p class="record-summary"><strong>素材需求：</strong>${escapeHtml(idea.materials || "無")}</p>
+          <div class="card-actions">
+            <button class="success-btn" type="button" data-action="toggle-published" data-id="${idea.id}">${idea.isPublished ? "標為未發布" : "標為已發布"}</button>
+            <button class="quiet-btn" type="button" data-action="edit-idea" data-id="${idea.id}">編修</button>
+            <button class="danger-btn" type="button" data-action="delete-idea" data-id="${idea.id}">刪除</button>
+            ${publishUrl ? `<a class="quiet-btn" href="${publishUrl}" target="_blank" rel="noopener">發布連結</a>` : ""}
+          </div>
+        </article>
+      `;
+    }
+
+    function openIdeaDialog(id) {
+      const idea = id ? state.dailyPostIdeas.find((entry) => entry.id === id) : null;
+      $("#ideaDialogTitle").textContent = idea ? "編修每日建議發文" : "新增每日建議發文";
+      $("#ideaId").value = idea?.id || "";
+      $("#ideaDate").value = idea?.date || getActiveDate();
+      $("#ideaArticleType").value = idea?.articleType || "服務型貼文";
+      $("#ideaPlatform").value = idea?.platform || "Facebook / Threads / Instagram";
+      $("#ideaTopic").value = idea?.suggestedTopic || "";
+      $("#ideaTitle").value = idea?.title || "";
+      $("#ideaAngle").value = idea?.angle || "";
+      $("#ideaDraft").value = idea?.draft || "";
+      $("#ideaMaterials").value = idea?.materials || "";
+      $("#ideaPublished").checked = Boolean(idea?.isPublished);
+      $("#ideaPublishUrl").value = idea?.publishUrl || "";
+      $("#ideaDialog").showModal();
+      $("#ideaTopic").focus();
+    }
+
+    function saveIdeaFromForm(event) {
+      event.preventDefault();
+      const id = $("#ideaId").value || createId("PI");
+      const existing = state.dailyPostIdeas.find((idea) => idea.id === id);
+      const now = new Date().toISOString();
+      const idea = {
+        id,
+        date: $("#ideaDate").value,
+        articleType: $("#ideaArticleType").value,
+        suggestedTopic: $("#ideaTopic").value.trim(),
+        angle: $("#ideaAngle").value.trim(),
+        platform: $("#ideaPlatform").value.trim(),
+        title: $("#ideaTitle").value.trim(),
+        draft: $("#ideaDraft").value.trim(),
+        materials: $("#ideaMaterials").value.trim(),
+        isPublished: $("#ideaPublished").checked,
+        publishUrl: $("#ideaPublishUrl").value.trim(),
+        sourceItemId: existing?.sourceItemId || "",
+        createdAt: existing?.createdAt || now,
+        updatedAt: now
+      };
+
+      if (existing) {
+        Object.assign(existing, idea);
+      } else {
+        state.dailyPostIdeas.unshift(idea);
+      }
+
+      saveState("建議已儲存");
+      closeDialog("ideaDialog");
+      renderAll();
+      showToast("每日建議已儲存");
+    }
+
+    function toggleIdeaPublished(id) {
+      const idea = state.dailyPostIdeas.find((entry) => entry.id === id);
+      if (!idea) return;
+      idea.isPublished = !idea.isPublished;
+      idea.updatedAt = new Date().toISOString();
+      saveState("發布狀態已更新");
+      renderAll();
+    }
+
+    function deleteIdea(id) {
+      const idea = state.dailyPostIdeas.find((entry) => entry.id === id);
+      if (!idea) return;
+      if (!confirm(`確定刪除「${idea.title || idea.suggestedTopic}」？`)) return;
+      state.dailyPostIdeas = state.dailyPostIdeas.filter((entry) => entry.id !== id);
+      saveState("建議已刪除");
+      renderAll();
+      showToast("已刪除發文建議");
+    }
+
+    function generateDailyIdeas() {
+      const date = getActiveDate();
+      const candidates = getItemsByDate(date)
+        .filter((item) => item.action !== "不建議處理")
+        .sort((a, b) => scoreItem(b) - scoreItem(a))
+        .slice(0, 8);
+
+      if (!candidates.length) {
+        showToast("今日尚無可產生建議的輿情資料");
+        return;
+      }
+
+      const now = new Date().toISOString();
+      let added = 0;
+      candidates.forEach((item) => {
+        const exists = state.dailyPostIdeas.some((idea) => idea.sourceItemId === item.id && idea.date === date);
+        if (exists) return;
+        state.dailyPostIdeas.unshift(buildIdeaFromItem(item, now));
+        added += 1;
+      });
+
+      saveState("已產生每日建議");
+      renderAll();
+      switchView("ideas");
+      showToast(added ? `已新增 ${added} 則建議` : "今日建議已存在，沒有重複新增");
+    }
+
+    function buildIdeaFromItem(item, now) {
+      const articleType = chooseArticleType(item);
+      const shortTitle = truncate(item.title || item.summary || "今日輿情", 34);
+      const region = item.region || "地方";
+      const category = item.category || "議題";
+      const title = buildIdeaTitle(articleType, region, category, shortTitle);
+      return {
+        id: createId("PI"),
+        date: item.date,
+        articleType,
+        suggestedTopic: `${region}${category}：${shortTitle}`,
+        angle: buildIdeaAngle(item, articleType),
+        platform: recommendPlatforms(articleType, item),
+        title,
+        draft: buildIdeaDraft(item, articleType, title),
+        materials: buildMaterialNeeds(item),
+        isPublished: false,
+        publishUrl: "",
+        sourceItemId: item.id,
+        createdAt: now,
+        updatedAt: now
+      };
+    }
+
+    function chooseArticleType(item) {
+      if (item.action === "需回應" || isNegativeOrControversial(item)) {
+        return item.sourceType === "社群" ? "社群回應文" : "即時回應文";
+      }
+      if (item.action === "可做限動") return "限時動態";
+      if (item.action === "可做懶人包") return "政策白話文";
+      if (item.category === "活動") return "活動宣傳文";
+      if (["交通", "停車", "長照", "醫療", "教育", "社福"].includes(item.category)) return "服務型貼文";
+      if (item.sourceType === "社群") return "社群回應文";
+      return "地方關懷文";
+    }
+
+    function buildIdeaTitle(articleType, region, category, shortTitle) {
+      if (articleType === "限時動態") return `${region}${category}快訊：${shortTitle}`;
+      if (articleType === "短影音腳本") return `60 秒看懂 ${region}${category}`;
+      if (articleType === "LINE 群組轉傳文") return `${region}朋友請留意：${shortTitle}`;
+      if (articleType === "政策白話文") return `${category}白話整理：民眾最需要知道的重點`;
+      if (articleType === "即時回應文" || articleType === "社群回應文") return `關於「${shortTitle}」的說明與回應`;
+      return `${region}${category}關心：${shortTitle}`;
+    }
+
+    function buildIdeaAngle(item, articleType) {
+      if (articleType === "即時回應文" || articleType === "社群回應文") {
+        return "先承接民眾情緒，再整理目前已知事實、可協助窗口與後續追蹤方向，避免與網友爭辯。";
+      }
+      if (articleType === "政策白話文") {
+        return "把議題拆成民眾最關心的三件事：影響誰、現在怎麼做、接下來怎麼追。";
+      }
+      if (articleType === "服務型貼文") {
+        return "用清楚條列提供辦理方式、提醒事項與服務處可協助事項。";
+      }
+      if (articleType === "活動宣傳文") {
+        return "用時間、地點、亮點與交通提醒降低民眾參與門檻。";
+      }
+      return `以${item.region || "地方"}民眾視角整理重點，連結服務處日常關懷與後續行動。`;
+    }
+
+    function buildIdeaDraft(item, articleType, title) {
+      const source = item.sourceName ? `（來源：${item.sourceName}）` : "";
+      const summary = item.summary || item.title || "今日相關輿情值得持續關注。";
+      if (articleType === "即時回應文" || articleType === "社群回應文") {
+        return `${title}\n\n今天我們注意到這則討論${source}。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：${summary}\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。`;
+      }
+      if (articleType === "政策白話文") {
+        return `${title}\n\n這個議題和民眾生活有關，我們先用白話整理：\n1. 發生什麼事：${summary}\n2. 可能影響：請留意${item.region || "地方"}相關公告與現場狀況。\n3. 後續追蹤：服務處會持續掌握進度，必要時協助反映。`;
+      }
+      if (articleType === "服務型貼文") {
+        return `${title}\n\n今天整理一則與民眾生活相關的提醒：${summary}\n\n需要協助的朋友，可以先準備相關資料、照片或聯絡方式，服務處會協助確認可處理的管道。`;
+      }
+      if (articleType === "限時動態") {
+        return `${title}\n\n重點一句：${truncate(summary, 52)}\n\n下一張：民眾可注意事項\n最後一張：服務處協助管道`;
+      }
+      if (articleType === "短影音腳本") {
+        return `開場 3 秒：${title}\n中段：用 2 到 3 句說明事件重點：${summary}\n結尾：提醒民眾留言提供地點與狀況，服務處會持續追蹤。`;
+      }
+      if (articleType === "LINE 群組轉傳文") {
+        return `【${item.region || "地方"}提醒】${truncate(summary, 90)}\n若有相關狀況，可提供照片、時間與地點，方便後續協助彙整。`;
+      }
+      return `${title}\n\n今天看到這則${item.region || "地方"}消息${source}，重點是：${summary}\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。`;
+    }
+
+    function buildMaterialNeeds(item) {
+      const needs = ["原始連結", "重點截圖"];
+      if (["交通", "停車", "地方建設", "環境", "災害"].includes(item.category)) {
+        needs.push("現場照片", "位置資訊", "主管機關說明");
+      }
+      if (item.sourceType === "社群") {
+        needs.push("留言方向截圖", "互動數更新");
+      }
+      return needs.join("、");
+    }
+
+    function recommendPlatforms(articleType, item) {
+      if (articleType === "限時動態") return "Instagram / Facebook 限時動態";
+      if (articleType === "短影音腳本") return "Instagram Reels / Facebook Reels / YouTube Shorts";
+      if (articleType === "LINE 群組轉傳文") return "LINE 群組";
+      if (item.sourceType === "社群") return "Threads / Facebook / Instagram";
+      return "Facebook / Threads / LINE";
+    }
+
+    function exportData() {
+      const payload = {
+        exportedAt: new Date().toISOString(),
+        opinionItems: state.opinionItems,
+        trackedAccounts: state.trackedAccounts,
+        dailyPostIdeas: state.dailyPostIdeas,
+        settings: state.settings
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `opinion-radar-${todayISO()}.json`;
+      link.click();
+      URL.revokeObjectURL(url);
+      showToast("已匯出 JSON 備份");
+    }
+
+    function importDataFile(event) {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const data = JSON.parse(String(reader.result || "{}"));
+          if (!confirm("匯入會覆蓋目前瀏覽器中的輿情雷達資料，確定匯入？")) {
+            event.target.value = "";
+            return;
+          }
+          state.opinionItems = Array.isArray(data.opinionItems) ? data.opinionItems : [];
+          state.trackedAccounts = Array.isArray(data.trackedAccounts) ? data.trackedAccounts : [];
+          state.dailyPostIdeas = Array.isArray(data.dailyPostIdeas) ? data.dailyPostIdeas : [];
+          state.settings = data.settings && typeof data.settings === "object" ? data.settings : { activeDate: todayISO() };
+          ensureSeedAccounts();
+          $("#activeDate").value = state.settings.activeDate || todayISO();
+          $("#filterDate").value = state.settings.activeDate || todayISO();
+          saveState("已匯入資料");
+          renderAll();
+          showToast("匯入完成");
+        } catch (error) {
+          alert("匯入失敗，請確認檔案是正確的 JSON。");
+        } finally {
+          event.target.value = "";
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function closeDialog(id) {
+      const dialog = document.getElementById(id);
+      if (dialog?.open) dialog.close();
+    }
+
+    function getItemsByDate(date) {
+      return state.opinionItems.filter((item) => item.date === date);
+    }
+
+    function getLocalHotItems(items) {
+      return items
+        .filter((item) => isPlaceRelated(item, "鹿港") || isPlaceRelated(item, "福興"))
+        .sort((a, b) => scoreItem(b) - scoreItem(a))
+        .slice(0, 10);
+    }
+
+    function isNewsItem(item) {
+      return item.sourceType === "新聞" || item.platform === "新聞網站" || item.platform === "Google News";
+    }
+
+    function isNegativeOrControversial(item) {
+      return item.sentiment === "負面" || item.sentiment === "爭議";
+    }
+
+    function isChanghuaRelated(item) {
+      return ["彰化", "鹿港", "福興"].includes(item.region) || hasAnyText(item, ["彰化", "鹿港", "福興"]);
+    }
+
+    function isPlaceRelated(item, place) {
+      return item.region === place || hasAnyText(item, [place]);
+    }
+
+    function hasAnyText(item, words) {
+      const text = normalizeText(collectText(item));
+      return words.some((word) => text.includes(normalizeText(word)));
+    }
+
+    function isPostableAction(item) {
+      return ["可發文", "可做限動", "可做懶人包"].includes(item.action);
+    }
+
+    function scoreItem(item) {
+      const importance = { 高: 70, 中: 42, 低: 18 }[item.importance] || 30;
+      const sentiment = { 負面: 28, 爭議: 25, 正面: 10, 中性: 6 }[item.sentiment] || 6;
+      const action = { 需回應: 28, 需觀察: 16, 可發文: 14, 可做懶人包: 12, 可做限動: 10, 不建議處理: -10 }[item.action] || 0;
+      const local = isChanghuaRelated(item) ? 14 : 0;
+      const social = Math.min(26, Math.log10(1 + toNumber(item.interactions) + toNumber(item.comments) * 2 + toNumber(item.shares) * 3 + toNumber(item.views) / 20) * 9);
+      return importance + sentiment + action + local + social;
+    }
+
+    function collectText(item) {
+      return [
+        item.title,
+        item.summary,
+        item.sourceName,
+        item.keywords,
+        item.notes,
+        item.region,
+        item.category,
+        item.platform
+      ].filter(Boolean).join(" ");
+    }
+
+    function getAccountLog(account, date) {
+      const logs = Array.isArray(account.dailyLogs) ? account.dailyLogs : [];
+      return logs.find((log) => log.date === date) || emptyAccountLog(date);
+    }
+
+    function emptyAccountLog(date) {
+      return {
+        date,
+        todayPosted: false,
+        postTopic: "",
+        postSummary: "",
+        interactions: 0,
+        commentDirection: "待觀察",
+        sparkedDiscussion: false,
+        needResponse: false,
+        notes: ""
+      };
+    }
+
+    function upsertAccountLog(account, log) {
+      account.dailyLogs = Array.isArray(account.dailyLogs) ? account.dailyLogs : [];
+      const existing = account.dailyLogs.find((entry) => entry.date === log.date);
+      if (existing) {
+        Object.assign(existing, log);
+      } else {
+        account.dailyLogs.push(log);
+      }
+    }
+
+    function tag(value, color = "gray") {
+      if (!value) return "";
+      return `<span class="tag tag-${color}">${escapeHtml(String(value))}</span>`;
+    }
+
+    function sentimentColor(value) {
+      return { 正面: "green", 中性: "gray", 負面: "red", 爭議: "red" }[value] || "gray";
+    }
+
+    function importanceColor(value) {
+      return { 高: "red", 中: "orange", 低: "gray" }[value] || "gray";
+    }
+
+    function statusColor(value) {
+      return { 未讀: "orange", 已讀: "blue", 觀察: "orange", 已回應: "green", 不處理: "gray", 負面: "red", 分歧: "orange", 正面: "green", 中性: "gray", 待觀察: "orange" }[value] || "gray";
+    }
+
+    function actionColor(value) {
+      return { 可發文: "green", 需觀察: "orange", 需回應: "red", 可做限動: "purple", 可做懶人包: "cyan", 不建議處理: "gray" }[value] || "gray";
+    }
+
+    function sourceTypeColor(value) {
+      return { 新聞: "blue", 社群: "green", 特定對象: "purple", 人工紀錄: "gray" }[value] || "gray";
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function normalizeUrl(value) {
+      const url = String(value || "").trim();
+      if (!url) return "";
+      if (/^https?:\/\//i.test(url)) return escapeHtml(url);
+      return "";
+    }
+
+    function normalizeText(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+
+    function toNumber(value) {
+      const number = Number(value);
+      return Number.isFinite(number) && number > 0 ? Math.round(number) : 0;
+    }
+
+    function formatNumber(value) {
+      return toNumber(value).toLocaleString("zh-TW");
+    }
+
+    function createId(prefix) {
+      return `${prefix}-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+    }
+
+    function truncate(value, maxLength) {
+      const text = String(value || "").trim();
+      if (text.length <= maxLength) return text;
+      return `${text.slice(0, maxLength - 1)}…`;
+    }
+
+    function todayISO() {
+      const parts = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Taipei",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(new Date()).reduce((acc, part) => {
+        acc[part.type] = part.value;
+        return acc;
+      }, {});
+      return `${parts.year}-${parts.month}-${parts.day}`;
+    }
+
+    function showToast(message) {
+      const toast = $("#toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+    }
+  </script>
+</body>
+</html>
