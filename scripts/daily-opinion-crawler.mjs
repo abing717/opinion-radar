@@ -89,24 +89,46 @@ const feeds = [
 
 const trackedSocialTargets = [
   {
+    targetType: "熱門社群",
+    platform: "Facebook",
+    queryName: "彰化 鹿港 福興熱門貼文",
+    url: "https://www.facebook.com/search/posts/?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88"
+  },
+  {
+    targetType: "熱門社群",
+    platform: "Threads",
+    queryName: "彰化 鹿港 福興熱門討論",
+    url: "https://www.threads.com/search?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88"
+  },
+  {
+    targetType: "熱門社群",
+    platform: "Instagram",
+    queryName: "彰化 鹿港 福興熱門標籤",
+    url: "https://www.instagram.com/explore/tags/%E5%BD%B0%E5%8C%96/"
+  },
+  {
+    targetType: "特定對象",
     personName: "楊妙月",
     platform: "Facebook",
     accountName: "個人臉書",
     url: "https://www.facebook.com/yang.miao.yue"
   },
   {
+    targetType: "特定對象",
     personName: "楊妙月",
     platform: "Facebook",
     accountName: "粉絲專頁",
     url: "https://www.facebook.com/profile.php?id=100063726009551"
   },
   {
+    targetType: "特定對象",
     personName: "楊妙月",
     platform: "Instagram",
     accountName: "yangmiaoyue",
     url: "https://www.instagram.com/yangmiaoyue"
   },
   {
+    targetType: "特定對象",
     personName: "楊妙月",
     platform: "Threads",
     accountName: "@yangmiaoyue",
@@ -166,7 +188,7 @@ async function main() {
     .slice(0, MAX_TOTAL_ITEMS);
 
   const dailyPostIdeas = opinionItems
-    .filter((item) => item.action !== "不建議處理")
+    .filter(isContentSuggestionAction)
     .slice(0, 12)
     .map((item) => buildPostIdea(item, generatedAt));
 
@@ -188,7 +210,9 @@ async function main() {
       date,
       ...target,
       status: "待人工確認",
-      notes: "社群平台通常需要登入、授權或官方 API；請打開連結確認今日公開動態，再補入系統。"
+      notes: target.targetType === "熱門社群"
+        ? "社群平台通常需要登入、授權或官方 API；請打開連結人工確認今日公開熱門內容，再將值得追蹤的貼文新增為社群輿情。"
+        : "請打開公開帳號連結確認今日公開動態，再補入系統；不登入、不抓私人資料。"
     })),
     summary: buildSummary(opinionItems, dailyPostIdeas, errors, filteredOut)
   };
@@ -558,6 +582,10 @@ function recommendPlatforms(articleType, item) {
   if (articleType === "限時動態") return "Instagram / Facebook 限時動態";
   if (item.region === "鹿港" || item.region === "福興") return "Facebook / Threads / LINE";
   return "Facebook / Threads";
+}
+
+function isContentSuggestionAction(item) {
+  return ["可發文", "可做限動", "可做懶人包"].includes(item.action);
 }
 
 function scoreItem(item) {
