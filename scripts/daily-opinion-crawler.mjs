@@ -12,6 +12,7 @@ const GOOGLE_NEWS_BASE = "https://news.google.com/rss/search";
 const TAIPEI_TIME_ZONE = "Asia/Taipei";
 const MAX_ITEMS_PER_FEED = 12;
 const MAX_TOTAL_ITEMS = 90;
+const STRICT_TODAY_ONLY = true;
 
 const feeds = [
   {
@@ -121,20 +122,43 @@ async function main() {
   const date = taipeiDate(generatedAt);
   const fetched = [];
   const errors = [];
+  const filteredOut = [];
 
   for (const feed of feeds) {
-    try {
-      const xml = await fetchText(buildGoogleNewsUrl(feed.query));
-      const items = parseRssItems(xml)
-        .slice(0, MAX_ITEMS_PER_FEED)
-        .map((item) => normalizeNewsItem(item, feed, date, generatedAt));
-      fetched.push(...items);
-    } catch (error) {
-      errors.push({
-        feed: feed.name,
-        message: error instanceof Error ? error.message : String(error)
-      });
+    const rawItems = [];
+    for (const query of splitFeedQueries(feed.query)) {
+      try {
+        const xml = await fetchText(buildGoogleNewsUrl(query));
+        rawItems.push(...parseRssItems(xml).map((item) => ({ ...item, query })));
+      } catch (error) {
+        errors.push({
+          feed: feed.name,
+          query,
+          message: error instanceof Error ? error.message : String(error)
+        });
+      }
     }
+
+    const freshItems = [];
+    for (const item of dedupeRawItems(rawItems)) {
+      const rejectReason = getFreshnessRejectReason(item, date);
+      if (rejectReason) {
+        filteredOut.push({
+          feed: feed.name,
+          query: item.query || "",
+          title: cleanTitle(item.title),
+          sourceName: item.sourceName || "",
+          pubDate: item.pubDate || "",
+          reason: rejectReason
+        });
+        continue;
+      }
+      freshItems.push(item);
+    }
+
+    fetched.push(...freshItems
+      .slice(0, MAX_ITEMS_PER_FEED)
+      .map((item) => normalizeNewsItem(item, feed, date, generatedAt)));
   }
 
   const opinionItems = dedupeItems(fetched)
@@ -152,9 +176,11 @@ async function main() {
     generatedDate: date,
     timezone: TAIPEI_TIME_ZONE,
     source: "GitHub Actions daily crawler + Google News RSS",
-    note: "新聞以公開 RSS 自動彙整；Facebook、Instagram、Threads 若未串接官方 API 或授權工具，僅建立每日巡查任務，不登入、不抓私人資料。",
+    note: "新聞以公開 RSS 自動彙整，僅保留 Google News 發布時間為台灣時間當日且標題/摘要未出現舊日期線索的新聞；Facebook、Instagram、Threads 若未串接官方 API 或授權工具，僅建立每日巡查任務，不登入、不抓私人資料。",
+    strictTodayOnly: STRICT_TODAY_ONLY,
     feeds: feeds.map(({ name, classification, query, region }) => ({ name, classification, query, region })),
     errors,
+    filteredOut,
     opinionItems,
     dailyPostIdeas,
     socialWatchTasks: trackedSocialTargets.map((target) => ({
@@ -164,7 +190,7 @@ async function main() {
       status: "待人工確認",
       notes: "社群平台通常需要登入、授權或官方 API；請打開連結確認今日公開動態，再補入系統。"
     })),
-    summary: buildSummary(opinionItems, dailyPostIdeas, errors)
+    summary: buildSummary(opinionItems, dailyPostIdeas, errors, filteredOut)
   };
 
   await fs.writeFile(latestPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
@@ -177,12 +203,19 @@ async function main() {
 
 function buildGoogleNewsUrl(query) {
   const params = new URLSearchParams({
-    q: query,
+    q: `${query} when:1d`,
     hl: "zh-TW",
     gl: "TW",
     ceid: "TW:zh-Hant"
   });
   return `${GOOGLE_NEWS_BASE}?${params.toString()}`;
+}
+
+function splitFeedQueries(query) {
+  return String(query || "")
+    .split(/\s+OR\s+/i)
+    .map((part) => part.replace(/[()]/g, "").replace(/\s+/g, " ").trim())
+    .filter(Boolean);
 }
 
 async function fetchText(url) {
@@ -240,6 +273,30 @@ function stripHtml(value) {
     .trim();
 }
 
+function dedupeRawItems(items) {
+  const seen = new Set();
+  const output = [];
+  for (const item of items) {
+    const key = normalizeKey(`${cleanTitle(item.title)}-${item.sourceName || inferSourceName(item.description)}-${item.link}`);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    output.push(item);
+  }
+  return output;
+}
+
+function getFreshnessRejectReason(item, targetDate) {
+  if (STRICT_TODAY_ONLY && !isPublishedOnTaipeiDate(item.pubDate, targetDate)) {
+    return `RSS 發布時間不是 ${targetDate}`;
+  }
+  const text = `${cleanTitle(item.title)} ${stripHtml(item.description)} ${item.sourceName || ""}`;
+  const staleHint = findStaleDateHint(text, targetDate);
+  if (staleHint) {
+    return `內容含舊日期線索：${staleHint}`;
+  }
+  return "";
+}
+
 function normalizeNewsItem(raw, feed, date, generatedAt) {
   const title = cleanTitle(raw.title);
   const text = `${title} ${raw.description}`;
@@ -250,13 +307,14 @@ function normalizeNewsItem(raw, feed, date, generatedAt) {
   const action = inferAction({ region, category, sentiment, importance });
   const sourceName = raw.sourceName || inferSourceName(raw.description) || "Google News";
   const publishedAt = parseDate(raw.pubDate) || generatedAt.toISOString();
+  const publishedDate = taipeiDate(new Date(publishedAt));
 
   return {
-    id: `AUTO-${date}-${hashText(`${title}-${raw.link}`)}`,
+    id: `AUTO-${publishedDate}-${hashText(`${title}-${raw.link}`)}`,
     sourceMode: "auto",
     autoClassification: feed.classification,
     autoFeedName: feed.name,
-    date,
+    date: publishedDate,
     sourceType: "新聞",
     platform: "Google News",
     sourceName,
@@ -296,6 +354,61 @@ function inferSourceName(description) {
 function parseDate(value) {
   const date = new Date(value);
   return Number.isNaN(date.getTime()) ? "" : date.toISOString();
+}
+
+function isPublishedOnTaipeiDate(pubDate, targetDate) {
+  const parsed = new Date(pubDate);
+  if (Number.isNaN(parsed.getTime())) return false;
+  return taipeiDate(parsed) === targetDate;
+}
+
+function findStaleDateHint(text, targetDate) {
+  const normalized = String(text || "").replace(/\s+/g, " ");
+  const target = parseISODateParts(targetDate);
+  if (!target) return "";
+
+  if (/(去年|前年|上月|上週|上周)/.test(normalized)) {
+    return "相對舊時間";
+  }
+
+  for (const match of normalized.matchAll(/\b(20\d{2})\s*[年\/.-]\s*(\d{1,2})\s*[月\/.-]\s*(\d{1,2})\s*日?/g)) {
+    const hint = { year: Number(match[1]), month: Number(match[2]), day: Number(match[3]) };
+    if (isPastDateHint(hint, target)) return match[0];
+  }
+
+  for (const match of normalized.matchAll(/\b(1\d{2})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日?/g)) {
+    const hint = { year: Number(match[1]) + 1911, month: Number(match[2]), day: Number(match[3]) };
+    if (isPastDateHint(hint, target)) return match[0];
+  }
+
+  for (const match of normalized.matchAll(/\b(1\d{2})\s*年\s*(\d{1,2})(?:\s*[-~至到]\s*\d{1,2})?\s*月/g)) {
+    const hint = { year: Number(match[1]) + 1911, month: Number(match[2]), day: 1 };
+    if (hint.year < target.year || (hint.year === target.year && hint.month < target.month)) return match[0];
+  }
+
+  for (const match of normalized.matchAll(/\b(20\d{2})\s*年/g)) {
+    if (Number(match[1]) < target.year) return match[0];
+  }
+
+  for (const match of normalized.matchAll(/(^|[^\d])(\d{1,2})\s*月\s*(\d{1,2})\s*日/g)) {
+    const hint = { year: target.year, month: Number(match[2]), day: Number(match[3]) };
+    if (isPastDateHint(hint, target)) return match[0].trim();
+  }
+
+  return "";
+}
+
+function parseISODateParts(value) {
+  const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return null;
+  return { year: Number(match[1]), month: Number(match[2]), day: Number(match[3]) };
+}
+
+function isPastDateHint(hint, target) {
+  if (!hint.year || !hint.month || !hint.day) return false;
+  const hintValue = hint.year * 10000 + hint.month * 100 + hint.day;
+  const targetValue = target.year * 10000 + target.month * 100 + target.day;
+  return hintValue < targetValue;
 }
 
 function inferRegion(text, fallback) {
@@ -455,7 +568,7 @@ function scoreItem(item) {
   return importance + sentiment + action + local;
 }
 
-function buildSummary(items, ideas, errors) {
+function buildSummary(items, ideas, errors, filteredOut = []) {
   return {
     totalItems: items.length,
     highImportance: items.filter((item) => item.importance === "高").length,
@@ -463,7 +576,8 @@ function buildSummary(items, ideas, errors) {
     changhuaRelated: items.filter((item) => ["彰化", "鹿港", "福興"].includes(item.region)).length,
     lukangOrFuxing: items.filter((item) => item.region === "鹿港" || item.region === "福興").length,
     postIdeas: ideas.length,
-    feedErrors: errors.length
+    feedErrors: errors.length,
+    filteredOut: filteredOut.length
   };
 }
 
