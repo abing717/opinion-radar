@@ -178,6 +178,10 @@
       flex-wrap: wrap;
     }
 
+    .quick-actions {
+      display: contents;
+    }
+
     .date-control {
       display: grid;
       gap: 4px;
@@ -898,6 +902,31 @@
     }
 
     @media (max-width: 760px) {
+      .top-workspace {
+        position: static;
+        background: transparent;
+        border-bottom: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+      }
+
+      .tabs {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        margin-inline: -12px;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.97);
+        border-bottom: 2px solid var(--pink);
+        box-shadow: 0 4px 14px rgba(62, 77, 132, 0.1);
+      }
+
+      .tab-btn {
+        min-height: 42px;
+        padding: 0 14px;
+        font-size: 0.94rem;
+      }
+
       #ideasList.idea-grid {
         grid-template-columns: 1fr;
       }
@@ -921,6 +950,32 @@
       .header-tools button,
       .date-control {
         width: 100%;
+      }
+
+      .app-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .app-actions .date-control {
+        width: 100%;
+      }
+
+      .app-actions .quick-actions {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 2px 0 6px;
+        scrollbar-width: thin;
+      }
+
+      .app-actions .quick-actions button {
+        flex: 0 0 auto;
+        width: auto;
+        min-height: 42px;
+        padding: 0 14px;
+        font-size: 0.94rem;
       }
 
       .metrics-grid {
@@ -1489,17 +1544,21 @@
             <p>有妤有您，幸福同行</p>
           </div>
         </div>
-        <div class="header-tools">
+        <div class="header-tools app-actions">
           <label class="date-control">
             作業日期
             <input id="activeDate" type="date">
           </label>
-          <button class="primary-btn" type="button" data-action="new-item">新增輿情</button>
+          <div class="quick-actions" aria-label="actions">
+
+            <button class="primary-btn" type="button" data-action="new-item">新增輿情</button>
           <button class="success-btn" type="button" data-action="load-auto">載入自動資料</button>
           <button class="success-btn" type="button" data-action="generate-ideas">產生建議</button>
           <button class="quiet-btn" type="button" data-action="export-data">匯出 JSON</button>
           <button class="quiet-btn" type="button" data-action="import-data">匯入 JSON</button>
-          <input id="importFile" class="sr-only" type="file" accept="application/json,.json">
+            <input id="importFile" class="sr-only" type="file" accept="application/json,.json">
+
+          </div>
         </div>
       </header>
 
