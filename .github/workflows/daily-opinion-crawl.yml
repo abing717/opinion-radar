@@ -5,7 +5,10 @@ on:
     branches:
       - main
   schedule:
-    - cron: "20 22 * * *"
+    # 08:30 Asia/Taipei every day.
+    - cron: "30 0 * * *"
+    # 15:30 Asia/Taipei every day.
+    - cron: "30 7 * * *"
   workflow_dispatch:
 
 permissions:
