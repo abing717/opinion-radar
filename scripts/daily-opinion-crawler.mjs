@@ -13,6 +13,17 @@ const TAIPEI_TIME_ZONE = "Asia/Taipei";
 const MAX_ITEMS_PER_FEED = 12;
 const MAX_TOTAL_ITEMS = 90;
 const STRICT_TODAY_ONLY = true;
+const LOCAL_TERMS = ["彰化", "鹿港", "福興"];
+const OTHER_LOCALITY_TERMS = [
+  "基隆", "台北", "臺北", "新北", "桃園", "新竹", "苗栗", "台中", "臺中", "南投",
+  "雲林", "嘉義", "台南", "臺南", "高雄", "屏東", "宜蘭", "花蓮", "台東", "臺東",
+  "澎湖", "金門", "馬祖", "連江"
+];
+const NATIONAL_SCOPE_TERMS = [
+  "全台", "全臺", "全國", "中央", "行政院", "立法院", "總統", "國會", "內政部",
+  "交通部", "衛福部", "農業部", "經濟部", "教育部", "環境部", "國發會", "央行",
+  "法案", "政策", "預算", "補助", "物價", "油價", "電價", "關稅", "台海", "臺海"
+];
 
 const feeds = [
   {
@@ -41,6 +52,7 @@ const feeds = [
     classification: "與彰化相關的台灣新聞",
     query: "彰化 台灣 新聞 OR 彰化 縣府",
     region: "彰化",
+    mustIncludeAny: ["彰化", "鹿港", "福興"],
     defaultImportance: "中"
   },
   {
@@ -48,6 +60,7 @@ const feeds = [
     classification: "彰化縣重要新聞",
     query: "彰化縣 重要新聞 OR 彰化 最新新聞",
     region: "彰化",
+    mustIncludeAny: ["彰化", "鹿港", "福興"],
     defaultImportance: "中"
   },
   {
@@ -55,6 +68,7 @@ const feeds = [
     classification: "鹿港與福興地方新聞",
     query: "鹿港 新聞 OR 福興 新聞 OR 鹿港 福興",
     region: "鹿港",
+    mustIncludeAny: ["鹿港", "福興"],
     defaultImportance: "中"
   },
   {
@@ -62,6 +76,7 @@ const feeds = [
     classification: "彰化縣重要新聞",
     query: "彰化 交通 OR 彰化 停車 OR 鹿港 停車 OR 福興 交通",
     region: "彰化",
+    mustIncludeAny: ["彰化", "鹿港", "福興"],
     defaultImportance: "中"
   },
   {
@@ -69,6 +84,7 @@ const feeds = [
     classification: "彰化縣重要新聞",
     query: "彰化 長照 OR 彰化 醫療 OR 彰化 教育 OR 彰化 社福",
     region: "彰化",
+    mustIncludeAny: ["彰化", "鹿港", "福興"],
     defaultImportance: "中"
   },
   {
@@ -76,6 +92,7 @@ const feeds = [
     classification: "彰化縣重要新聞",
     query: "彰化 環境 OR 彰化 治安 OR 彰化 災害 OR 鹿港 災害 OR 福興 災害",
     region: "彰化",
+    mustIncludeAny: ["彰化", "鹿港", "福興"],
     defaultImportance: "高"
   },
   {
@@ -83,56 +100,29 @@ const feeds = [
     classification: "鹿港與福興地方新聞",
     query: "鹿港 觀光 OR 鹿港 宮廟 OR 福興 活動 OR 福興 觀光",
     region: "鹿港",
+    mustIncludeAny: ["鹿港", "福興"],
     defaultImportance: "中"
   }
 ];
 
-const trackedSocialTargets = [
+const socialWatchTargets = [
   {
     targetType: "熱門社群",
     platform: "Facebook",
-    queryName: "彰化 鹿港 福興熱門貼文",
+    queryName: "彰化 / 鹿港 / 福興高互動熱門貼文",
     url: "https://www.facebook.com/search/posts/?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88"
   },
   {
     targetType: "熱門社群",
     platform: "Threads",
-    queryName: "彰化 鹿港 福興熱門討論",
+    queryName: "彰化 / 鹿港 / 福興高互動熱門討論",
     url: "https://www.threads.com/search?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88"
   },
   {
     targetType: "熱門社群",
     platform: "Instagram",
-    queryName: "彰化 鹿港 福興熱門標籤",
+    queryName: "彰化 / 鹿港 / 福興高點閱熱門標籤",
     url: "https://www.instagram.com/explore/tags/%E5%BD%B0%E5%8C%96/"
-  },
-  {
-    targetType: "特定對象",
-    personName: "楊妙月",
-    platform: "Facebook",
-    accountName: "個人臉書",
-    url: "https://www.facebook.com/yang.miao.yue"
-  },
-  {
-    targetType: "特定對象",
-    personName: "楊妙月",
-    platform: "Facebook",
-    accountName: "粉絲專頁",
-    url: "https://www.facebook.com/profile.php?id=100063726009551"
-  },
-  {
-    targetType: "特定對象",
-    personName: "楊妙月",
-    platform: "Instagram",
-    accountName: "yangmiaoyue",
-    url: "https://www.instagram.com/yangmiaoyue"
-  },
-  {
-    targetType: "特定對象",
-    personName: "楊妙月",
-    platform: "Threads",
-    accountName: "@yangmiaoyue",
-    url: "https://www.threads.com/@yangmiaoyue?xmt=AQG0rAnuM2z7GOheP9TlgnW8vHwTIrrgv_77FyMWr5bVRPo"
   }
 ];
 
@@ -175,6 +165,18 @@ async function main() {
         });
         continue;
       }
+      const relevanceRejectReason = getRelevanceRejectReason(item, feed);
+      if (relevanceRejectReason) {
+        filteredOut.push({
+          feed: feed.name,
+          query: item.query || "",
+          title: cleanTitle(item.title),
+          sourceName: item.sourceName || "",
+          pubDate: item.pubDate || "",
+          reason: relevanceRejectReason
+        });
+        continue;
+      }
       freshItems.push(item);
     }
 
@@ -200,19 +202,17 @@ async function main() {
     source: "GitHub Actions daily crawler + Google News RSS",
     note: "新聞以公開 RSS 自動彙整，僅保留 Google News 發布時間為台灣時間當日且標題/摘要未出現舊日期線索的新聞；Facebook、Instagram、Threads 若未串接官方 API 或授權工具，僅建立每日巡查任務，不登入、不抓私人資料。",
     strictTodayOnly: STRICT_TODAY_ONLY,
-    feeds: feeds.map(({ name, classification, query, region }) => ({ name, classification, query, region })),
+    feeds: feeds.map(({ name, classification, query, region, mustIncludeAny }) => ({ name, classification, query, region, mustIncludeAny })),
     errors,
     filteredOut,
     opinionItems,
     dailyPostIdeas,
-    socialWatchTasks: trackedSocialTargets.map((target) => ({
+    socialWatchTasks: socialWatchTargets.map((target) => ({
       id: `SOCIAL-${date}-${hashText(`${target.platform}-${target.url}`)}`,
       date,
       ...target,
       status: "待人工確認",
-      notes: target.targetType === "熱門社群"
-        ? "社群平台通常需要登入、授權或官方 API；請打開連結人工確認今日公開熱門內容，再將值得追蹤的貼文新增為社群輿情。"
-        : "請打開公開帳號連結確認今日公開動態，再補入系統；不登入、不抓私人資料。"
+      notes: "請人工確認今日公開內容中，與彰化、鹿港、福興相關且互動數、留言數、分享數或觀看數較高的熱門貼文，再新增為社群輿情。"
     })),
     summary: buildSummary(opinionItems, dailyPostIdeas, errors, filteredOut)
   };
@@ -318,6 +318,24 @@ function getFreshnessRejectReason(item, targetDate) {
   if (staleHint) {
     return `內容含舊日期線索：${staleHint}`;
   }
+  return "";
+}
+
+function getRelevanceRejectReason(item, feed) {
+  const text = `${cleanTitle(item.title)} ${stripHtml(item.description)} ${item.sourceName || ""}`;
+  if (feed.mustIncludeAny?.length && !containsAny(text, feed.mustIncludeAny)) {
+    return `未命中地方關鍵字：${feed.mustIncludeAny.join("、")}`;
+  }
+
+  if (feed.classification === "台灣重大新聞") {
+    const hasLocalTerm = containsAny(text, LOCAL_TERMS);
+    const hasOtherLocality = containsAny(text, OTHER_LOCALITY_TERMS);
+    const hasNationalScope = containsAny(text, NATIONAL_SCOPE_TERMS);
+    if (hasOtherLocality && !hasLocalTerm && !hasNationalScope) {
+      return "台灣重大新聞排除外縣市地方新聞";
+    }
+  }
+
   return "";
 }
 
