@@ -1614,20 +1614,6 @@
 
         <section class="section-block">
           <div class="section-head">
-            <h2>今日最重要 10 則輿情</h2>
-          </div>
-          <div id="topImportantList" class="record-grid"></div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-head">
-            <h2>今日負面或爭議事件</h2>
-          </div>
-          <div id="negativeList" class="record-grid"></div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-head">
             <h2>今日鹿港 / 福興相關熱門議題</h2>
           </div>
           <div id="localHotList" class="record-grid"></div>
@@ -2424,8 +2410,6 @@
 
       $("#dailyBrief").textContent = buildDailyBrief(dayItems, dayLogs, dayIdeas);
       renderClassification(dayItems);
-      renderRecordList("#topImportantList", dayItems.slice().sort((a, b) => scoreItem(b) - scoreItem(a)).slice(0, 10), "今日尚無重要輿情。");
-      renderRecordList("#negativeList", dayItems.filter(isNegativeOrControversial).sort((a, b) => scoreItem(b) - scoreItem(a)), "今日尚無負面或爭議事件。");
       renderRecordList("#localHotList", getLocalHotItems(dayItems), "今日尚無鹿港 / 福興熱門議題。");
       renderAccountTodayList(dayLogs);
       renderSocialWatchList(date);
@@ -2861,7 +2845,9 @@
     }
 
     function renderSocialWatchList(date) {
-      const tasks = (state.autoCrawl?.socialWatchTasks || []).filter((task) => !task.date || task.date === date);
+      const tasks = (state.autoCrawl?.socialWatchTasks || [])
+        .filter((task) => !task.date || task.date === date)
+        .filter((task) => (task.targetType || "熱門社群") === "熱門社群");
       $("#socialWatchList").innerHTML = tasks.length
         ? tasks.map(renderSocialWatchCard).join("")
         : `<div class="empty-state">今日尚無社群巡查任務。請先載入自動資料，或在「輿情資料」手動新增 Facebook、Threads、Instagram 貼文。</div>`;
