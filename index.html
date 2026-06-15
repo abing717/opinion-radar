@@ -1621,13 +1621,6 @@
 
         <section class="section-block">
           <div class="section-head">
-            <h2>今日特定對象動態</h2>
-          </div>
-          <div id="accountTodayList" class="account-grid"></div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-head">
             <div>
               <h2>今日社群巡查</h2>
               <p>Facebook、Threads、Instagram 需人工確認公開熱門內容；看到值得收錄的貼文可新增為社群輿情。</p>
@@ -2411,7 +2404,6 @@
       $("#dailyBrief").textContent = buildDailyBrief(dayItems, dayLogs, dayIdeas);
       renderClassification(dayItems);
       renderRecordList("#localHotList", getLocalHotItems(dayItems), "今日尚無鹿港 / 福興熱門議題。");
-      renderAccountTodayList(dayLogs);
       renderSocialWatchList(date);
     }
 
@@ -2837,11 +2829,6 @@
       const date = getActiveDate();
       const accounts = state.trackedAccounts.slice().sort((a, b) => `${a.personName}${a.platform}${a.accountName}`.localeCompare(`${b.personName}${b.platform}${b.accountName}`));
       $("#accountsList").innerHTML = accounts.length ? accounts.map((account) => renderAccountCard(account, date)).join("") : `<div class="empty-state">尚未建立追蹤帳號。</div>`;
-    }
-
-    function renderAccountTodayList(dayLogs) {
-      const visible = dayLogs.filter(({ log }) => log.todayPosted || log.postTopic || log.postSummary || log.needResponse || log.sparkedDiscussion);
-      $("#accountTodayList").innerHTML = visible.length ? visible.map(({ account, log }) => renderAccountCard(account, getActiveDate(), log)).join("") : `<div class="empty-state">今日尚無特定對象公開動態紀錄。</div>`;
     }
 
     function renderSocialWatchList(date) {
