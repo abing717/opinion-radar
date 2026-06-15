@@ -2074,10 +2074,7 @@
       state.trackedAccounts = readArray(STORAGE_KEYS.trackedAccounts);
       state.dailyPostIdeas = readArray(STORAGE_KEYS.dailyPostIdeas);
       state.settings = readObject(STORAGE_KEYS.settings, {});
-
-      if (!state.settings.activeDate) {
-        state.settings.activeDate = todayISO();
-      }
+      state.settings.activeDate = todayISO();
       state.settings.version = "2.0.0-auto-crawl";
       ensureSeedAccounts();
       saveState("資料已載入");
