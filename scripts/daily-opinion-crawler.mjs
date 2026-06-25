@@ -13,7 +13,7 @@ const TAIPEI_TIME_ZONE = "Asia/Taipei";
 const MAX_ITEMS_PER_FEED = 12;
 const MAX_TOTAL_ITEMS = 90;
 const STRICT_TODAY_ONLY = true;
-const LOCAL_TERMS = ["彰化", "鹿港", "福興"];
+const LOCAL_TERMS = ["彰化", "鹿港", "福興", "秀水"];
 const OTHER_LOCALITY_TERMS = [
   "基隆", "台北", "臺北", "新北", "桃園", "新竹", "苗栗", "台中", "臺中", "南投",
   "雲林", "嘉義", "台南", "臺南", "高雄", "屏東", "宜蘭", "花蓮", "台東", "臺東",
@@ -48,11 +48,11 @@ const feeds = [
     defaultImportance: "高"
   },
   {
-    name: "與彰化相關的台灣新聞",
-    classification: "與彰化相關的台灣新聞",
-    query: "彰化 台灣 新聞 OR 彰化 縣府",
+    name: "彰化縣重要新聞（台灣相關）",
+    classification: "彰化縣重要新聞",
+    query: "彰化 台灣 新聞 OR 彰化 縣府 OR 秀水 新聞",
     region: "彰化",
-    mustIncludeAny: ["彰化", "鹿港", "福興"],
+    mustIncludeAny: ["彰化", "鹿港", "福興", "秀水"],
     defaultImportance: "中"
   },
   {
@@ -60,7 +60,7 @@ const feeds = [
     classification: "彰化縣重要新聞",
     query: "彰化縣 重要新聞 OR 彰化 最新新聞",
     region: "彰化",
-    mustIncludeAny: ["彰化", "鹿港", "福興"],
+    mustIncludeAny: ["彰化", "鹿港", "福興", "秀水"],
     defaultImportance: "中"
   },
   {
@@ -74,25 +74,25 @@ const feeds = [
   {
     name: "地方交通停車",
     classification: "彰化縣重要新聞",
-    query: "彰化 交通 OR 彰化 停車 OR 鹿港 停車 OR 福興 交通",
+    query: "彰化 交通 OR 彰化 停車 OR 鹿港 停車 OR 福興 交通 OR 秀水 交通",
     region: "彰化",
-    mustIncludeAny: ["彰化", "鹿港", "福興"],
+    mustIncludeAny: ["彰化", "鹿港", "福興", "秀水"],
     defaultImportance: "中"
   },
   {
     name: "地方民生服務",
     classification: "彰化縣重要新聞",
-    query: "彰化 長照 OR 彰化 醫療 OR 彰化 教育 OR 彰化 社福",
+    query: "彰化 長照 OR 彰化 醫療 OR 彰化 教育 OR 彰化 社福 OR 秀水 民生",
     region: "彰化",
-    mustIncludeAny: ["彰化", "鹿港", "福興"],
+    mustIncludeAny: ["彰化", "鹿港", "福興", "秀水"],
     defaultImportance: "中"
   },
   {
     name: "地方風險事件",
     classification: "彰化縣重要新聞",
-    query: "彰化 環境 OR 彰化 治安 OR 彰化 災害 OR 鹿港 災害 OR 福興 災害",
+    query: "彰化 環境 OR 彰化 治安 OR 彰化 災害 OR 鹿港 災害 OR 福興 災害 OR 秀水 災害",
     region: "彰化",
-    mustIncludeAny: ["彰化", "鹿港", "福興"],
+    mustIncludeAny: ["彰化", "鹿港", "福興", "秀水"],
     defaultImportance: "高"
   },
   {
@@ -109,20 +109,38 @@ const socialWatchTargets = [
   {
     targetType: "熱門社群",
     platform: "Facebook",
-    queryName: "彰化 / 鹿港 / 福興高互動熱門貼文",
-    url: "https://www.facebook.com/search/posts/?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88"
-  },
-  {
-    targetType: "熱門社群",
-    platform: "Threads",
-    queryName: "彰化 / 鹿港 / 福興高互動熱門討論",
-    url: "https://www.threads.com/search?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88"
+    queryName: "今日高回覆熱門貼文＋彰化 / 鹿港 / 福興 / 秀水",
+    url: "https://www.facebook.com/search/posts/?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88%20%E7%A7%80%E6%B0%B4"
   },
   {
     targetType: "熱門社群",
     platform: "Instagram",
-    queryName: "彰化 / 鹿港 / 福興高點閱熱門標籤",
+    queryName: "今日高互動熱門貼文＋彰化 / 鹿港 / 福興 / 秀水",
     url: "https://www.instagram.com/explore/tags/%E5%BD%B0%E5%8C%96/"
+  },
+  {
+    targetType: "熱門社群",
+    platform: "Threads",
+    queryName: "今日高回覆熱門討論＋彰化 / 鹿港 / 福興 / 秀水",
+    url: "https://www.threads.com/search?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88%20%E7%A7%80%E6%B0%B4"
+  },
+  {
+    targetType: "熱門社群",
+    platform: "YouTube",
+    queryName: "今日高觀看熱門影片＋彰化 / 鹿港 / 福興 / 秀水",
+    url: "https://www.youtube.com/results?search_query=%E5%BD%B0%E5%8C%96+%E9%B9%BF%E6%B8%AF+%E7%A6%8F%E8%88%88+%E7%A7%80%E6%B0%B4"
+  },
+  {
+    targetType: "熱門社群",
+    platform: "Dcard",
+    queryName: "今日高回覆熱門話題＋彰化 / 鹿港 / 福興 / 秀水",
+    url: "https://www.dcard.tw/search?query=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88%20%E7%A7%80%E6%B0%B4"
+  },
+  {
+    targetType: "熱門社群",
+    platform: "PTT",
+    queryName: "今日高回覆熱門話題＋彰化 / 鹿港 / 福興 / 秀水",
+    url: "https://www.google.com/search?q=site%3Aptt.cc+%E5%BD%B0%E5%8C%96+%E9%B9%BF%E6%B8%AF+%E7%A6%8F%E8%88%88+%E7%A7%80%E6%B0%B4"
   }
 ];
 
@@ -200,7 +218,7 @@ async function main() {
     generatedDate: date,
     timezone: TAIPEI_TIME_ZONE,
     source: "GitHub Actions daily crawler + Google News RSS",
-    note: "新聞以公開 RSS 自動彙整，僅保留 Google News 發布時間為台灣時間當日且標題/摘要未出現舊日期線索的新聞；Facebook、Instagram、Threads 若未串接官方 API 或授權工具，僅建立每日巡查任務，不登入、不抓私人資料。",
+    note: "新聞以公開 RSS 自動彙整，僅保留 Google News 發布時間為台灣時間當日且標題/摘要未出現舊日期線索的新聞；社群巡查列出 Facebook、Instagram、Threads、YouTube、Dcard、PTT 的公開搜尋入口，不登入、不抓私人資料。",
     strictTodayOnly: STRICT_TODAY_ONLY,
     feeds: feeds.map(({ name, classification, query, region, mustIncludeAny }) => ({ name, classification, query, region, mustIncludeAny })),
     errors,
@@ -212,7 +230,7 @@ async function main() {
       date,
       ...target,
       status: "待人工確認",
-      notes: "請人工確認今日公開內容中，與彰化、鹿港、福興相關且互動數、留言數、分享數或觀看數較高的熱門貼文，再新增為社群輿情。"
+      notes: "請確認今日公開內容中，回覆率、互動數、留言數、分享數或觀看數較高，且與彰化、鹿港鎮、福興鄉、秀水鄉相關的熱門話題，再新增為社群輿情。"
     })),
     summary: buildSummary(opinionItems, dailyPostIdeas, errors, filteredOut)
   };
@@ -456,7 +474,7 @@ function isPastDateHint(hint, target) {
 function inferRegion(text, fallback) {
   if (containsAny(text, ["鹿港"])) return "鹿港";
   if (containsAny(text, ["福興"])) return "福興";
-  if (containsAny(text, ["彰化"])) return "彰化";
+  if (containsAny(text, ["彰化", "秀水"])) return "彰化";
   if (containsAny(text, ["台灣", "臺灣", "全台", "行政院", "立法院", "中央"])) return "台灣";
   return fallback || "其他";
 }
@@ -515,7 +533,7 @@ function buildSummaryText(description, classification) {
 
 function buildKeywords(text, region, category) {
   const keywords = new Set([region, category]);
-  const candidates = ["彰化", "鹿港", "福興", "交通", "停車", "觀光", "宮廟", "教育", "長照", "醫療", "環境", "治安", "社福", "活動", "建設", "災害", "台灣", "國際"];
+  const candidates = ["彰化", "鹿港", "福興", "秀水", "交通", "停車", "觀光", "宮廟", "教育", "長照", "醫療", "環境", "治安", "社福", "活動", "建設", "災害", "台灣", "國際"];
   candidates.filter((word) => text.includes(word)).forEach((word) => keywords.add(word));
   return [...keywords].filter(Boolean);
 }
