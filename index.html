@@ -1565,6 +1565,7 @@
       <nav class="tabs" aria-label="主功能">
         <button class="tab-btn active" type="button" data-view="dashboard">每日儀表板</button>
         <button class="tab-btn" type="button" data-view="items">輿情資料</button>
+        <button class="tab-btn" type="button" data-view="social">社群巡查</button>
         <button class="tab-btn" type="button" data-view="accounts">特定對象</button>
         <button class="tab-btn" type="button" data-view="ideas">每日建議發文</button>
       </nav>
@@ -1599,13 +1600,11 @@
           </div>
         </div>
 
-        <div id="metricsGrid" class="metrics-grid" aria-live="polite"></div>
-
         <section class="section-block">
           <div class="section-head">
             <div>
               <h2>每日新聞分類</h2>
-              <p>依地區、重要性與關鍵字自動歸入六組戰情分類。</p>
+              <p>依地區、重要性與關鍵字自動歸入五組戰情分類。</p>
             </div>
           </div>
           <div id="classificationGrid" class="classification-grid"></div>
@@ -1617,16 +1616,6 @@
             <h2>今日鹿港 / 福興相關熱門議題</h2>
           </div>
           <div id="localHotList" class="record-grid"></div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-head">
-            <div>
-              <h2>今日社群巡查</h2>
-              <p>Facebook、Threads、Instagram 需人工確認公開熱門內容；看到值得收錄的貼文可新增為社群輿情。</p>
-            </div>
-          </div>
-          <div id="socialWatchList" class="account-grid"></div>
         </section>
       </section>
 
@@ -1711,6 +1700,17 @@
           </table>
         </div>
         <div id="itemsMobileList" class="mobile-record-list"></div>
+      </section>
+
+      <section id="view-social" class="view" data-view-panel="social">
+        <div class="view-head">
+          <div>
+            <h2>社群巡查</h2>
+            <p>巡查 Facebook、Instagram、Threads、YouTube、Dcard、PTT 今日高回覆、高互動話題與彰化、鹿港、福興、秀水相關公開內容。</p>
+          </div>
+          <button class="primary-btn" type="button" data-action="new-item">新增社群紀錄</button>
+        </div>
+        <div id="socialWatchList" class="account-grid"></div>
       </section>
 
       <section id="view-accounts" class="view" data-view-panel="accounts">
@@ -1983,7 +1983,7 @@
 
     const OPTIONS = {
       sourceTypes: ["新聞", "社群", "特定對象", "人工紀錄"],
-      platforms: ["新聞網站", "Facebook", "Instagram", "Threads", "YouTube", "Google News", "其他"],
+      platforms: ["新聞網站", "Facebook", "Instagram", "Threads", "YouTube", "Dcard", "PTT", "Google News", "其他"],
       accountPlatforms: ["Facebook", "Instagram", "Threads", "YouTube", "新聞網站", "其他"],
       regions: ["國際", "台灣", "彰化", "鹿港", "福興", "其他"],
       categories: ["交通", "觀光", "宮廟", "教育", "長照", "醫療", "環境", "治安", "停車", "青年", "社福", "活動", "地方建設", "政治", "災害", "其他"],
@@ -2000,25 +2000,25 @@
         personName: "楊妙月",
         platform: "Facebook",
         accountName: "個人臉書",
-        url: "https://www.facebook.com/yang.miao.yue"
+        url: "https://www.facebook.com/share/1EGj1Ls15U/"
       },
       {
         personName: "楊妙月",
         platform: "Facebook",
         accountName: "粉絲專頁",
-        url: "https://www.facebook.com/profile.php?id=100063726009551"
+        url: "https://www.facebook.com/share/1U9jjWos4C/"
       },
       {
         personName: "楊妙月",
         platform: "Instagram",
         accountName: "yangmiaoyue",
-        url: "https://www.instagram.com/yangmiaoyue"
+        url: "https://www.instagram.com/yangmiaoyue?igshMWM00NGue"
       },
       {
         personName: "楊妙月",
         platform: "Threads",
         accountName: "@yangmiaoyue",
-        url: "https://www.threads.com/@yangmiaoyue?xmt=AQG0rAnuM2z7GOheP9TlgnW8vHwTIrrgv_77FyMWr5bVRPo"
+        url: "https://www.threads.com/@yangmiaoyue"
       }
     ];
 
@@ -2080,8 +2080,16 @@
     function ensureSeedAccounts() {
       const now = new Date().toISOString();
       SEED_ACCOUNTS.forEach((seed) => {
-        const exists = state.trackedAccounts.some((account) => account.url === seed.url);
-        if (!exists) {
+        const existing = state.trackedAccounts.find((account) =>
+          account.personName === seed.personName &&
+          account.platform === seed.platform &&
+          account.accountName === seed.accountName
+        );
+        if (existing) {
+          existing.url = seed.url;
+          existing.updatedAt = now;
+          existing.dailyLogs = Array.isArray(existing.dailyLogs) ? existing.dailyLogs : [];
+        } else {
           state.trackedAccounts.push({
             id: createId("TA"),
             ...seed,
@@ -2184,6 +2192,7 @@
     function renderAll() {
       renderDashboard();
       renderItemsView();
+      renderSocialView();
       renderAccountsView();
       renderIdeasView();
       renderAutoCrawlStatus();
@@ -2382,29 +2391,9 @@
       const dayItems = getItemsByDate(date);
       const dayIdeas = state.dailyPostIdeas.filter((idea) => idea.date === date);
       const dayLogs = state.trackedAccounts.map((account) => ({ account, log: getAccountLog(account, date) }));
-      const metrics = [
-        { label: "今日新增輿情數", value: dayItems.length, accent: "blue" },
-        { label: "高重要性事件數", value: dayItems.filter((item) => item.importance === "高").length, accent: "red" },
-        { label: "負面或爭議事件數", value: dayItems.filter(isNegativeOrControversial).length, accent: "red" },
-        { label: "彰化相關事件數", value: dayItems.filter(isChanghuaRelated).length, accent: "green" },
-        { label: "鹿港相關事件數", value: dayItems.filter((item) => isPlaceRelated(item, "鹿港")).length, accent: "purple" },
-        { label: "特定對象今日發文數", value: dayLogs.filter(({ log }) => log.todayPosted).length, accent: "purple" },
-        { label: "建議發文數", value: dayIdeas.length || dayItems.filter(isPostableAction).length, accent: "cyan" },
-        { label: "需觀察事件數", value: dayItems.filter((item) => item.action === "需觀察" || item.status === "觀察").length, accent: "orange" },
-        { label: "需回應事件數", value: dayItems.filter((item) => item.action === "需回應").length, accent: "red" }
-      ];
-
-      $("#metricsGrid").innerHTML = metrics.map((metric) => `
-        <article class="metric-card accent-${metric.accent}">
-          <strong>${metric.value}</strong>
-          <span>${escapeHtml(metric.label)}</span>
-        </article>
-      `).join("");
-
       $("#dailyBrief").textContent = buildDailyBrief(dayItems, dayLogs, dayIdeas);
       renderClassification(dayItems);
       renderRecordList("#localHotList", getLocalHotItems(dayItems), "今日尚無鹿港 / 福興熱門議題。");
-      renderSocialWatchList(date);
     }
 
     function buildDailyBrief(items, logs, ideas) {
@@ -2460,14 +2449,14 @@
           items: newsItems.filter((item) => item.region === "台灣" && item.importance !== "低")
         },
         {
-          key: "taiwan-changhua",
-          label: "與彰化相關的台灣新聞",
-          items: newsItems.filter((item) => (item.region === "台灣" || item.region === "彰化") && hasAnyText(item, ["彰化", "縣府", "中部"]))
-        },
-        {
           key: "changhua-major",
           label: "彰化縣重要新聞",
-          items: newsItems.filter((item) => item.region === "彰化" && item.importance !== "低")
+          items: newsItems.filter((item) => (
+            item.region === "彰化" ||
+            item.region === "鹿港" ||
+            item.region === "福興" ||
+            hasAnyText(item, ["彰化", "鹿港", "福興", "秀水", "縣府", "中部"])
+          ))
         },
         {
           key: "lukang-fuxing",
@@ -2831,13 +2820,17 @@
       $("#accountsList").innerHTML = accounts.length ? accounts.map((account) => renderAccountCard(account, date)).join("") : `<div class="empty-state">尚未建立追蹤帳號。</div>`;
     }
 
+    function renderSocialView() {
+      renderSocialWatchList(getActiveDate());
+    }
+
     function renderSocialWatchList(date) {
       const tasks = (state.autoCrawl?.socialWatchTasks || [])
         .filter((task) => !task.date || task.date === date)
         .filter((task) => (task.targetType || "熱門社群") === "熱門社群");
       $("#socialWatchList").innerHTML = tasks.length
         ? tasks.map(renderSocialWatchCard).join("")
-        : `<div class="empty-state">今日尚無社群巡查任務。請先載入自動資料，或在「輿情資料」手動新增 Facebook、Threads、Instagram 貼文。</div>`;
+        : `<div class="empty-state">今日尚無社群巡查任務。請先載入自動資料，或在「輿情資料」手動新增 Facebook、Instagram、Threads、YouTube、Dcard、PTT 貼文。</div>`;
     }
 
     function renderSocialWatchCard(task) {
@@ -3271,7 +3264,7 @@
     }
 
     function isChanghuaRelated(item) {
-      return ["彰化", "鹿港", "福興"].includes(item.region) || hasAnyText(item, ["彰化", "鹿港", "福興"]);
+      return ["彰化", "鹿港", "福興"].includes(item.region) || hasAnyText(item, ["彰化", "鹿港", "福興", "秀水"]);
     }
 
     function isPlaceRelated(item, place) {
