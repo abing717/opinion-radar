@@ -594,6 +594,24 @@
       overflow-wrap: anywhere;
     }
 
+    .idea-field {
+      display: grid;
+      gap: 4px;
+    }
+
+    .idea-field strong {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .idea-field p {
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
     .meta-row,
     .tag-row,
     .card-actions {
@@ -1935,7 +1953,7 @@
             <input id="ideaPlatform" type="text" required placeholder="Facebook / Threads / Instagram / LINE">
           </div>
           <div class="field span-2">
-            <label for="ideaTopic">建議主題</label>
+            <label for="ideaTopic">主題</label>
             <input id="ideaTopic" type="text" required>
           </div>
           <div class="field span-2">
@@ -1943,15 +1961,15 @@
             <input id="ideaTitle" type="text" required>
           </div>
           <div class="field span-4">
-            <label for="ideaAngle">建議角度</label>
+            <label for="ideaAngle">角度</label>
             <textarea id="ideaAngle" required></textarea>
           </div>
           <div class="field span-4">
-            <label for="ideaDraft">文章草稿</label>
+            <label for="ideaDraft">發文內容</label>
             <textarea id="ideaDraft" required></textarea>
           </div>
           <div class="field span-4">
-            <label for="ideaMaterials">素材需求</label>
+            <label for="ideaMaterials">建議素材</label>
             <textarea id="ideaMaterials" placeholder="照片、數據、主管機關說明、截圖"></textarea>
           </div>
           <label class="checkbox-field span-2">
@@ -2295,6 +2313,7 @@
         sourceMode: "auto",
         date: idea.date || todayISO(),
         articleType: idea.articleType || "地方關懷文",
+        ideaVariant: idea.ideaVariant || "fanpage",
         suggestedTopic: idea.suggestedTopic || "今日自動輿情建議",
         angle: idea.angle || "",
         platform: idea.platform || "Facebook / Threads",
@@ -2974,11 +2993,22 @@
             ${tag(idea.isPublished ? "已發布" : "未發布", idea.isPublished ? "green" : "orange")}
             ${tag(idea.platform, "purple")}
           </div>
-          <h3>${escapeHtml(idea.title || idea.suggestedTopic || "未命名建議")}</h3>
-          <p class="record-summary"><strong>主題：</strong>${escapeHtml(idea.suggestedTopic || "")}</p>
-          <p class="record-summary"><strong>角度：</strong>${escapeHtml(idea.angle || "")}</p>
-          <p class="idea-draft">${escapeHtml(idea.draft || "")}</p>
-          <p class="record-summary"><strong>素材需求：</strong>${escapeHtml(idea.materials || "無")}</p>
+          <div class="idea-field">
+            <strong>主題</strong>
+            <p>${escapeHtml(idea.suggestedTopic || idea.title || "未命名建議")}</p>
+          </div>
+          <div class="idea-field">
+            <strong>角度</strong>
+            <p>${escapeHtml(idea.angle || "")}</p>
+          </div>
+          <div class="idea-field">
+            <strong>發文內容</strong>
+            <p>${escapeHtml(idea.draft || "")}</p>
+          </div>
+          <div class="idea-field">
+            <strong>建議素材</strong>
+            <p>${escapeHtml(idea.materials || "無")}</p>
+          </div>
           <div class="card-actions">
             <button class="success-btn" type="button" data-action="toggle-published" data-id="${idea.id}">${idea.isPublished ? "標為未發布" : "標為已發布"}</button>
             <button class="quiet-btn" type="button" data-action="edit-idea" data-id="${idea.id}">編修</button>
@@ -3016,6 +3046,7 @@
         id,
         date: $("#ideaDate").value,
         articleType: $("#ideaArticleType").value,
+        ideaVariant: existing?.ideaVariant || "manual",
         suggestedTopic: $("#ideaTopic").value.trim(),
         angle: $("#ideaAngle").value.trim(),
         platform: $("#ideaPlatform").value.trim(),
@@ -3062,10 +3093,7 @@
 
     function generateDailyIdeas() {
       const date = getActiveDate();
-      const candidates = getItemsByDate(date)
-        .filter(isPostableAction)
-        .sort((a, b) => scoreItem(b) - scoreItem(a))
-        .slice(0, 12);
+      const candidates = selectDailyIdeaPairs(getItemsByDate(date));
 
       if (!candidates.length) {
         showToast("今日尚無可產生建議的輿情資料");
@@ -3074,34 +3102,60 @@
 
       const now = new Date().toISOString();
       let added = 0;
-      candidates.forEach((item) => {
-        const exists = state.dailyPostIdeas.some((idea) => idea.sourceItemId === item.id && idea.date === date);
+      candidates.forEach(({ item, variant }) => {
+        const exists = state.dailyPostIdeas.some((idea) => idea.sourceItemId === item.id && idea.date === date && (idea.ideaVariant || "fanpage") === variant);
         if (exists) return;
-        state.dailyPostIdeas.unshift(buildIdeaFromItem(item, now));
+        state.dailyPostIdeas.unshift(buildIdeaFromItem(item, now, variant));
         added += 1;
       });
 
       saveState("已產生每日建議");
       renderAll();
       switchView("ideas");
-      showToast(added ? `已新增 ${added} 則建議` : "今日建議已存在，沒有重複新增");
+      showToast(added ? `已新增 ${added} 則建議` : "今日兩篇建議已存在，沒有重複新增");
     }
 
-    function buildIdeaFromItem(item, now) {
-      const articleType = chooseArticleType(item);
+    function selectDailyIdeaPairs(items) {
+      const candidates = items
+        .filter(isPostableAction)
+        .sort((a, b) => scoreItem(b) - scoreItem(a));
+      if (!candidates.length) return [];
+      const localFirst = candidates.find(isLocalPostItem) || candidates[0];
+      const serviceSecond = candidates.find((item) => item.id !== localFirst.id && isServicePostItem(item)) ||
+        candidates.find((item) => item.id !== localFirst.id) ||
+        localFirst;
+      return [
+        { item: localFirst, variant: "personal" },
+        { item: serviceSecond, variant: "fanpage" }
+      ];
+    }
+
+    function isLocalPostItem(item) {
+      return ["彰化", "鹿港", "福興"].includes(item.region) || hasAnyText(item, ["彰化", "鹿港", "福興", "秀水"]);
+    }
+
+    function isServicePostItem(item) {
+      return ["交通", "停車", "長照", "醫療", "教育", "社福", "地方建設", "環境", "災害"].includes(item.category) ||
+        item.action === "可做懶人包" ||
+        item.action === "需觀察";
+    }
+
+    function buildIdeaFromItem(item, now, variant = "fanpage") {
+      const articleType = variant === "personal" ? "地方關懷文" : chooseArticleType(item);
       const shortTitle = truncate(item.title || item.summary || "今日輿情", 34);
       const region = item.region || "地方";
       const category = item.category || "議題";
-      const title = buildIdeaTitle(articleType, region, category, shortTitle);
+      const title = buildIdeaTitle(articleType, region, category, shortTitle, variant);
       return {
         id: createId("PI"),
         date: item.date,
         articleType,
-        suggestedTopic: `${region}${category}：${shortTitle}`,
-        angle: buildIdeaAngle(item, articleType),
-        platform: recommendPlatforms(articleType, item),
+        ideaVariant: variant,
+        suggestedTopic: `${variant === "personal" ? "個人頁" : "粉絲專頁"}｜${region}${category}：${shortTitle}`,
+        angle: buildIdeaAngle(item, articleType, variant),
+        platform: recommendPlatforms(articleType, item, variant),
         title,
-        draft: buildIdeaDraft(item, articleType, title),
+        draft: buildIdeaDraft(item, articleType, title, variant),
         materials: buildMaterialNeeds(item),
         isPublished: false,
         publishUrl: "",
@@ -3123,7 +3177,9 @@
       return "地方關懷文";
     }
 
-    function buildIdeaTitle(articleType, region, category, shortTitle) {
+    function buildIdeaTitle(articleType, region, category, shortTitle, variant = "fanpage") {
+      if (variant === "personal") return `${region}日常關心：${shortTitle}`;
+      if (variant === "fanpage") return `服務處整理：${shortTitle}`;
       if (articleType === "限時動態") return `${region}${category}快訊：${shortTitle}`;
       if (articleType === "短影音腳本") return `60 秒看懂 ${region}${category}`;
       if (articleType === "LINE 群組轉傳文") return `${region}朋友請留意：${shortTitle}`;
@@ -3132,7 +3188,13 @@
       return `${region}${category}關心：${shortTitle}`;
     }
 
-    function buildIdeaAngle(item, articleType) {
+    function buildIdeaAngle(item, articleType, variant = "fanpage") {
+      if (variant === "personal") {
+        return "用個人頁的第一人稱口吻，先說看見地方生活的感受，再把議題連回鄉親的日常與服務處願意陪伴處理的態度。";
+      }
+      if (variant === "fanpage") {
+        return "用粉絲專頁的服務口吻，整理民眾最需要知道的重點、可準備的資料與後續追蹤方向，讓資訊有溫度也能行動。";
+      }
       if (articleType === "即時回應文" || articleType === "社群回應文") {
         return "先承接民眾情緒，再整理目前已知事實、可協助窗口與後續追蹤方向，避免與網友爭辯。";
       }
@@ -3148,9 +3210,17 @@
       return `以${item.region || "地方"}民眾視角整理重點，連結服務處日常關懷與後續行動。`;
     }
 
-    function buildIdeaDraft(item, articleType, title) {
+    function buildIdeaDraft(item, articleType, title, variant = "fanpage") {
       const source = item.sourceName ? `（來源：${item.sourceName}）` : "";
-      const summary = item.summary || item.title || "今日相關輿情值得持續關注。";
+      const summary = cleanIdeaText(item.summary || item.title || "今日相關輿情值得持續關注。");
+      const region = item.region || "地方";
+      const category = item.category || "議題";
+      if (variant === "personal") {
+        return `${title}\n\n今天看到一則和${region}有關的消息${source}，心裡第一個想到的是：地方的事，常常不是新聞上短短幾行字而已，而是會影響鄉親每天出門、生活、工作和照顧家人的細節。\n\n這次的重點是：${summary}\n\n我會把這件事記下來，也會持續留意後續發展。若大家身邊有更具體的狀況，像是現場照片、發生時間、地點或需要協助的地方，都可以提供給服務處。\n\n有妤有您，幸福同行。地方的聲音，我們一起慢慢整理、一步一步處理。`;
+      }
+      if (variant === "fanpage") {
+        return `【${region}${category}｜服務處整理】\n\n今天服務處整理一則和鄉親生活有關的訊息${source}。\n\n重點如下：\n1. 發生什麼事：${summary}\n2. 鄉親可以先留意：是否影響交通、生活動線、申請權益或居家安全。\n3. 需要協助時：可提供照片、時間、地點與聯絡方式，服務處會協助彙整並追蹤。\n\n我們知道，地方服務不是只有把消息轉貼出去，更重要的是把大家遇到的問題接住、整理清楚，再陪著一起找方法。`;
+      }
       if (articleType === "即時回應文" || articleType === "社群回應文") {
         return `${title}\n\n今天我們注意到這則討論${source}。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：${summary}\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。`;
       }
@@ -3172,6 +3242,15 @@
       return `${title}\n\n今天看到這則${item.region || "地方"}消息${source}，重點是：${summary}\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。`;
     }
 
+    function cleanIdeaText(value) {
+      return String(value || "")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&nbsp;/g, " ")
+        .replace(/&amp;/g, "&")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
     function buildMaterialNeeds(item) {
       const needs = ["原始連結", "重點截圖"];
       if (["交通", "停車", "地方建設", "環境", "災害"].includes(item.category)) {
@@ -3183,7 +3262,9 @@
       return needs.join("、");
     }
 
-    function recommendPlatforms(articleType, item) {
+    function recommendPlatforms(articleType, item, variant = "fanpage") {
+      if (variant === "personal") return "個人 Facebook / Threads";
+      if (variant === "fanpage") return "粉絲專頁 Facebook / LINE / Threads";
       if (articleType === "限時動態") return "Instagram / Facebook 限時動態";
       if (articleType === "短影音腳本") return "Instagram Reels / Facebook Reels / YouTube Shorts";
       if (articleType === "LINE 群組轉傳文") return "LINE 群組";
