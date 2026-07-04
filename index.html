@@ -1572,6 +1572,7 @@
             <button class="primary-btn" type="button" data-action="new-item">新增輿情</button>
           <button class="success-btn" type="button" data-action="load-auto">載入自動資料</button>
           <button class="success-btn" type="button" data-action="generate-ideas">產生建議</button>
+          <button class="quiet-btn" type="button" data-action="open-firebase-settings">雲端同步</button>
           <button class="quiet-btn" type="button" data-action="export-data">匯出 JSON</button>
           <button class="quiet-btn" type="button" data-action="import-data">匯入 JSON</button>
             <input id="importFile" class="sr-only" type="file" accept="application/json,.json">
@@ -1612,6 +1613,7 @@
             </div>
             <div class="status-line">
               <span id="saveStatus">localStorage 已就緒</span>
+              <span id="cloudSyncStatus">雲端同步未啟用</span>
               <span id="autoCrawlStatus">自動爬抓資料載入中...</span>
               <span id="recordTotals"></span>
             </div>
@@ -1989,6 +1991,57 @@
     </form>
   </dialog>
 
+  <dialog id="firebaseDialog">
+    <form id="firebaseForm">
+      <div class="dialog-head">
+        <h2>Firebase Firestore 雲端同步</h2>
+        <button class="quiet-btn" type="button" data-action="close-dialog" data-dialog="firebaseDialog">關閉</button>
+      </div>
+      <div class="dialog-body">
+        <p class="muted">請在 Firebase Console 建立 Web App 與 Firestore，將 Firebase config 貼到下方。不同裝置使用同一組專案設定與資料庫代號，即可同步輿情資料、特定對象與每日建議發文。</p>
+        <div class="form-grid">
+          <label class="checkbox-field span-4">
+            <input id="firebaseEnabled" type="checkbox">
+            啟用 Firestore 雲端同步
+          </label>
+          <div class="field span-2">
+            <label for="firebaseDatasetId">資料庫代號</label>
+            <input id="firebaseDatasetId" type="text" placeholder="例如：service-office-main">
+          </div>
+          <div class="field span-2">
+            <label for="firebaseProjectId">projectId</label>
+            <input id="firebaseProjectId" type="text" placeholder="your-project-id">
+          </div>
+          <div class="field span-2">
+            <label for="firebaseApiKey">apiKey</label>
+            <input id="firebaseApiKey" type="text" placeholder="AIza...">
+          </div>
+          <div class="field span-2">
+            <label for="firebaseAuthDomain">authDomain</label>
+            <input id="firebaseAuthDomain" type="text" placeholder="your-project.firebaseapp.com">
+          </div>
+          <div class="field span-2">
+            <label for="firebaseStorageBucket">storageBucket</label>
+            <input id="firebaseStorageBucket" type="text" placeholder="your-project.appspot.com">
+          </div>
+          <div class="field span-2">
+            <label for="firebaseMessagingSenderId">messagingSenderId</label>
+            <input id="firebaseMessagingSenderId" type="text">
+          </div>
+          <div class="field span-4">
+            <label for="firebaseAppId">appId</label>
+            <input id="firebaseAppId" type="text" placeholder="1:...:web:...">
+          </div>
+        </div>
+      </div>
+      <div class="dialog-actions">
+        <button class="quiet-btn" type="button" data-action="disable-firebase-sync">停用同步</button>
+        <button class="quiet-btn" type="button" data-action="push-cloud-now">立即上傳本機資料</button>
+        <button class="success-btn" type="submit">儲存並啟用</button>
+      </div>
+    </form>
+  </dialog>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -1998,6 +2051,13 @@
       dailyPostIdeas: "dailyPostIdeas",
       settings: "settings"
     };
+
+    const CLOUD_ROOT_COLLECTION = "opinionRadarStores";
+    const CLOUD_COLLECTIONS = [
+      { stateKey: "opinionItems", collection: "opinionItems" },
+      { stateKey: "trackedAccounts", collection: "trackedAccounts" },
+      { stateKey: "dailyPostIdeas", collection: "dailyPostIdeas" }
+    ];
 
     const OPTIONS = {
       sourceTypes: ["新聞", "社群", "特定對象", "人工紀錄"],
@@ -2051,6 +2111,21 @@
       autoCrawl: null
     };
 
+    let cloudSync = {
+      app: null,
+      db: null,
+      firebase: null,
+      datasetId: "",
+      ready: false,
+      applyingRemote: false,
+      pushing: false,
+      pendingPush: false,
+      saveTimer: null,
+      unsubscribers: []
+    };
+
+    let firebaseModulesPromise = null;
+
     let toastTimer = null;
     let activeClassificationKey = "";
 
@@ -2063,6 +2138,7 @@
       $("#activeDate").value = state.settings.activeDate || todayISO();
       $("#filterDate").value = state.settings.activeDate || todayISO();
       renderAll();
+      await startCloudSyncFromSettings();
       await loadAutoCrawlData({ silent: true });
     }
 
@@ -2074,7 +2150,7 @@
       state.settings.activeDate = todayISO();
       state.settings.version = "2.0.0-auto-crawl";
       ensureSeedAccounts();
-      saveState("資料已載入");
+      persistLocalState("資料已載入");
     }
 
     function readArray(key) {
@@ -2119,7 +2195,7 @@
       });
     }
 
-    function saveState(message = "已儲存") {
+    function persistLocalState(message = "已儲存") {
       localStorage.setItem(STORAGE_KEYS.opinionItems, JSON.stringify(state.opinionItems));
       localStorage.setItem(STORAGE_KEYS.trackedAccounts, JSON.stringify(state.trackedAccounts));
       localStorage.setItem(STORAGE_KEYS.dailyPostIdeas, JSON.stringify(state.dailyPostIdeas));
@@ -2128,6 +2204,11 @@
       if (status) {
         status.textContent = `${message}：${new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" })}`;
       }
+    }
+
+    function saveState(message = "已儲存") {
+      persistLocalState(message);
+      queueCloudSave(message);
     }
 
     function bindEvents() {
@@ -2143,6 +2224,7 @@
       $("#opinionForm").addEventListener("submit", saveOpinionFromForm);
       $("#accountForm").addEventListener("submit", saveAccountFromForm);
       $("#ideaForm").addEventListener("submit", saveIdeaFromForm);
+      $("#firebaseForm").addEventListener("submit", saveFirebaseSettings);
       $("#importFile").addEventListener("change", importDataFile);
       $("#classificationGrid").addEventListener("keydown", handleClassificationKeydown);
 
@@ -2190,6 +2272,9 @@
       if (action === "toggle-published") toggleIdeaPublished(id);
       if (action === "generate-ideas") generateDailyIdeas();
       if (action === "load-auto") loadAutoCrawlData({ silent: false });
+      if (action === "open-firebase-settings") openFirebaseDialog();
+      if (action === "disable-firebase-sync") disableFirebaseSync();
+      if (action === "push-cloud-now") pushStateToCloud("手動上傳");
       if (action === "export-data") exportData();
       if (action === "import-data") $("#importFile").click();
       if (action === "show-classification") showClassificationDetail(button.dataset.classKey);
@@ -2379,6 +2464,293 @@
         added += 1;
       });
       return { added, updated };
+    }
+
+    function getFirebaseSettings() {
+      const firebaseSettings = state.settings.firebase || {};
+      return {
+        enabled: Boolean(firebaseSettings.enabled),
+        datasetId: normalizeDatasetId(firebaseSettings.datasetId || "service-office-main"),
+        config: firebaseSettings.config || {}
+      };
+    }
+
+    function normalizeDatasetId(value) {
+      return String(value || "service-office-main")
+        .trim()
+        .replace(/[\\/#?[\]]+/g, "-")
+        .replace(/\s+/g, "-")
+        .slice(0, 120) || "service-office-main";
+    }
+
+    function isFirebaseConfigComplete(config) {
+      return Boolean(config?.apiKey && config?.authDomain && config?.projectId && config?.appId);
+    }
+
+    function setCloudStatus(message) {
+      const status = $("#cloudSyncStatus");
+      if (status) status.textContent = message;
+    }
+
+    async function loadFirebaseModules() {
+      if (!firebaseModulesPromise) {
+        firebaseModulesPromise = Promise.all([
+          import("https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"),
+          import("https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js")
+        ]).then(([appModule, firestoreModule]) => ({
+          initializeApp: appModule.initializeApp,
+          getApps: appModule.getApps,
+          getFirestore: firestoreModule.getFirestore,
+          collection: firestoreModule.collection,
+          doc: firestoreModule.doc,
+          getDocs: firestoreModule.getDocs,
+          onSnapshot: firestoreModule.onSnapshot,
+          setDoc: firestoreModule.setDoc,
+          writeBatch: firestoreModule.writeBatch
+        }));
+      }
+      return firebaseModulesPromise;
+    }
+
+    async function startCloudSyncFromSettings(options = {}) {
+      const settings = getFirebaseSettings();
+      stopCloudSync();
+      if (!settings.enabled) {
+        setCloudStatus("雲端同步未啟用");
+        return;
+      }
+      if (!isFirebaseConfigComplete(settings.config)) {
+        setCloudStatus("Firebase 設定不完整");
+        return;
+      }
+
+      try {
+        setCloudStatus("雲端同步連線中...");
+        const firebaseApi = await loadFirebaseModules();
+        const appName = `opinion-radar-${settings.datasetId}`;
+        const app = firebaseApi.getApps().find((entry) => entry.name === appName) ||
+          firebaseApi.initializeApp(settings.config, appName);
+        cloudSync.app = app;
+        cloudSync.firebase = firebaseApi;
+        cloudSync.db = firebaseApi.getFirestore(app);
+        cloudSync.datasetId = settings.datasetId;
+        cloudSync.ready = false;
+        cloudSync.applyingRemote = true;
+
+        await Promise.all(CLOUD_COLLECTIONS.map((entry) => attachCloudCollectionListener(entry)));
+
+        cloudSync.applyingRemote = false;
+        cloudSync.ready = true;
+        persistLocalState("雲端資料已同步");
+        renderAll();
+        setCloudStatus(`雲端同步已啟用：${settings.datasetId}`);
+        if (options.pushAfterStart) queueCloudSave("啟用雲端同步");
+      } catch (error) {
+        cloudSync.applyingRemote = false;
+        cloudSync.ready = false;
+        setCloudStatus(`雲端同步失敗：${error.message || error}`);
+        showToast("Firebase 連線失敗，請確認設定與 Firestore 規則。");
+      }
+    }
+
+    function stopCloudSync() {
+      cloudSync.unsubscribers.forEach((unsubscribe) => {
+        try { unsubscribe(); } catch {}
+      });
+      cloudSync.unsubscribers = [];
+      cloudSync.ready = false;
+      cloudSync.db = null;
+      cloudSync.firebase = null;
+      cloudSync.datasetId = "";
+      clearTimeout(cloudSync.saveTimer);
+      cloudSync.saveTimer = null;
+    }
+
+    function cloudStoreRef() {
+      return cloudSync.firebase.doc(cloudSync.db, CLOUD_ROOT_COLLECTION, cloudSync.datasetId);
+    }
+
+    function cloudCollectionRef(collectionName) {
+      return cloudSync.firebase.collection(cloudSync.db, CLOUD_ROOT_COLLECTION, cloudSync.datasetId, collectionName);
+    }
+
+    function attachCloudCollectionListener(entry) {
+      return new Promise((resolve, reject) => {
+        let initial = true;
+        const unsubscribe = cloudSync.firebase.onSnapshot(cloudCollectionRef(entry.collection), (snapshot) => {
+          applyCloudSnapshot(entry.stateKey, snapshot);
+          persistLocalState("雲端資料已同步");
+          renderAll();
+          if (initial) {
+            initial = false;
+            resolve();
+          }
+        }, (error) => {
+          setCloudStatus(`雲端同步錯誤：${error.message || error}`);
+          if (initial) reject(error);
+        });
+        cloudSync.unsubscribers.push(unsubscribe);
+      });
+    }
+
+    function applyCloudSnapshot(stateKey, snapshot) {
+      const list = Array.isArray(state[stateKey]) ? state[stateKey] : [];
+      snapshot.docChanges().forEach((change) => {
+        const data = fromCloudDoc(change.doc);
+        const index = list.findIndex((entry) => entry.id === data.id);
+        if (change.type === "removed") {
+          if (index >= 0) list.splice(index, 1);
+          return;
+        }
+        if (index >= 0) {
+          list[index] = { ...list[index], ...data };
+        } else {
+          list.push(data);
+        }
+      });
+      state[stateKey] = list;
+    }
+
+    function fromCloudDoc(doc) {
+      const data = doc.data() || {};
+      return {
+        ...data,
+        id: data.id || doc.id
+      };
+    }
+
+    function queueCloudSave(reason = "資料更新") {
+      if (!cloudSync.ready || cloudSync.applyingRemote) return;
+      clearTimeout(cloudSync.saveTimer);
+      cloudSync.saveTimer = setTimeout(() => {
+        pushStateToCloud(reason);
+      }, 900);
+    }
+
+    async function pushStateToCloud(reason = "資料更新") {
+      if (!cloudSync.ready || !cloudSync.db) {
+        showToast("尚未啟用 Firebase 雲端同步。");
+        return;
+      }
+      if (cloudSync.pushing) {
+        cloudSync.pendingPush = true;
+        return;
+      }
+      cloudSync.pushing = true;
+      cloudSync.pendingPush = false;
+      try {
+        setCloudStatus("雲端同步中...");
+        for (const entry of CLOUD_COLLECTIONS) {
+          await syncCloudCollection(entry.collection, state[entry.stateKey] || []);
+        }
+        await cloudSync.firebase.setDoc(cloudSync.firebase.doc(cloudSync.db, CLOUD_ROOT_COLLECTION, cloudSync.datasetId, "meta", "status"), {
+          appName: "輿情監測雷達",
+          schemaVersion: 2,
+          updatedAt: new Date().toISOString(),
+          reason
+        }, { merge: true });
+        setCloudStatus(`雲端同步完成：${new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" })}`);
+      } catch (error) {
+        setCloudStatus(`雲端同步失敗：${error.message || error}`);
+        showToast("雲端同步失敗，請檢查 Firebase 設定或 Firestore 規則。");
+      } finally {
+        cloudSync.pushing = false;
+        if (cloudSync.pendingPush) queueCloudSave("再次同步");
+      }
+    }
+
+    async function syncCloudCollection(collectionName, records) {
+      const collection = cloudCollectionRef(collectionName);
+      const existing = await cloudSync.firebase.getDocs(collection);
+      const ids = new Set(records.map((record) => record.id).filter(Boolean));
+      let batch = cloudSync.firebase.writeBatch(cloudSync.db);
+      let count = 0;
+      const commitIfNeeded = async (force = false) => {
+        if (!count && !force) return;
+        await batch.commit();
+        batch = cloudSync.firebase.writeBatch(cloudSync.db);
+        count = 0;
+      };
+
+      for (const doc of existing.docs) {
+        if (!ids.has(doc.id)) {
+          batch.delete(doc.ref);
+          count += 1;
+          if (count >= 450) await commitIfNeeded(true);
+        }
+      }
+      for (const record of records) {
+        if (!record.id) continue;
+        batch.set(cloudSync.firebase.doc(collection, record.id), toCloudDoc(record), { merge: true });
+        count += 1;
+        if (count >= 450) await commitIfNeeded(true);
+      }
+      await commitIfNeeded();
+    }
+
+    function toCloudDoc(record) {
+      return JSON.parse(JSON.stringify({
+        ...record,
+        cloudUpdatedAt: new Date().toISOString()
+      }));
+    }
+
+    function openFirebaseDialog() {
+      const settings = getFirebaseSettings();
+      const config = settings.config || {};
+      $("#firebaseEnabled").checked = settings.enabled;
+      $("#firebaseDatasetId").value = settings.datasetId || "service-office-main";
+      $("#firebaseApiKey").value = config.apiKey || "";
+      $("#firebaseAuthDomain").value = config.authDomain || "";
+      $("#firebaseProjectId").value = config.projectId || "";
+      $("#firebaseStorageBucket").value = config.storageBucket || "";
+      $("#firebaseMessagingSenderId").value = config.messagingSenderId || "";
+      $("#firebaseAppId").value = config.appId || "";
+      $("#firebaseDialog").showModal();
+      $("#firebaseDatasetId").focus();
+    }
+
+    async function saveFirebaseSettings(event) {
+      event.preventDefault();
+      const enabled = $("#firebaseEnabled").checked;
+      const config = {
+        apiKey: $("#firebaseApiKey").value.trim(),
+        authDomain: $("#firebaseAuthDomain").value.trim(),
+        projectId: $("#firebaseProjectId").value.trim(),
+        storageBucket: $("#firebaseStorageBucket").value.trim(),
+        messagingSenderId: $("#firebaseMessagingSenderId").value.trim(),
+        appId: $("#firebaseAppId").value.trim()
+      };
+      state.settings.firebase = {
+        enabled,
+        datasetId: normalizeDatasetId($("#firebaseDatasetId").value),
+        config
+      };
+      persistLocalState("Firebase 設定已儲存");
+      if (!enabled) {
+        stopCloudSync();
+        setCloudStatus("雲端同步未啟用");
+        closeDialog("firebaseDialog");
+        return;
+      }
+      if (!isFirebaseConfigComplete(config)) {
+        showToast("Firebase 設定尚未完整，至少需要 apiKey、authDomain、projectId、appId。");
+        return;
+      }
+      await startCloudSyncFromSettings({ pushAfterStart: true });
+      closeDialog("firebaseDialog");
+    }
+
+    function disableFirebaseSync() {
+      state.settings.firebase = {
+        ...(state.settings.firebase || {}),
+        enabled: false
+      };
+      stopCloudSync();
+      persistLocalState("已停用 Firebase 同步");
+      setCloudStatus("雲端同步未啟用");
+      closeDialog("firebaseDialog");
+      showToast("已停用雲端同步，本機資料仍保留。");
     }
 
     function renderAutoCrawlStatus() {
