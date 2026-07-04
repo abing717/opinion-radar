@@ -2537,7 +2537,10 @@
         cloudSync.ready = false;
         cloudSync.applyingRemote = true;
 
-        await Promise.all(CLOUD_COLLECTIONS.map((entry) => attachCloudCollectionListener(entry)));
+        await Promise.all([
+          ...CLOUD_COLLECTIONS.map((entry) => attachCloudCollectionListener(entry)),
+          attachCloudSettingsListener()
+        ]);
 
         cloudSync.applyingRemote = false;
         cloudSync.ready = true;
@@ -2587,6 +2590,33 @@
           }
         }, (error) => {
           setCloudStatus(`雲端同步錯誤：${error.message || error}`);
+          if (initial) reject(error);
+        });
+        cloudSync.unsubscribers.push(unsubscribe);
+      });
+    }
+
+    function attachCloudSettingsListener() {
+      return new Promise((resolve, reject) => {
+        let initial = true;
+        const settingsRef = cloudSync.firebase.doc(cloudSync.db, CLOUD_ROOT_COLLECTION, cloudSync.datasetId, "settings", "app");
+        const unsubscribe = cloudSync.firebase.onSnapshot(settingsRef, (snapshot) => {
+          if (snapshot.exists()) {
+            const remoteSettings = snapshot.data() || {};
+            state.settings = {
+              ...state.settings,
+              ...remoteSettings,
+              firebase: state.settings.firebase,
+              activeDate: todayISO()
+            };
+            persistLocalState("雲端設定已同步");
+          }
+          if (initial) {
+            initial = false;
+            resolve();
+          }
+        }, (error) => {
+          setCloudStatus(`雲端設定同步錯誤：${error.message || error}`);
           if (initial) reject(error);
         });
         cloudSync.unsubscribers.push(unsubscribe);
@@ -2643,6 +2673,7 @@
         for (const entry of CLOUD_COLLECTIONS) {
           await syncCloudCollection(entry.collection, state[entry.stateKey] || []);
         }
+        await cloudSync.firebase.setDoc(cloudSync.firebase.doc(cloudSync.db, CLOUD_ROOT_COLLECTION, cloudSync.datasetId, "settings", "app"), toCloudSettings(), { merge: true });
         await cloudSync.firebase.setDoc(cloudSync.firebase.doc(cloudSync.db, CLOUD_ROOT_COLLECTION, cloudSync.datasetId, "meta", "status"), {
           appName: "輿情監測雷達",
           schemaVersion: 2,
@@ -2691,6 +2722,15 @@
     function toCloudDoc(record) {
       return JSON.parse(JSON.stringify({
         ...record,
+        cloudUpdatedAt: new Date().toISOString()
+      }));
+    }
+
+    function toCloudSettings() {
+      const { firebase, ...settings } = state.settings || {};
+      return JSON.parse(JSON.stringify({
+        ...settings,
+        activeDate: todayISO(),
         cloudUpdatedAt: new Date().toISOString()
       }));
     }
