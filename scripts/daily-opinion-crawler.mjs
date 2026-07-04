@@ -207,10 +207,7 @@ async function main() {
     .sort((a, b) => scoreItem(b) - scoreItem(a))
     .slice(0, MAX_TOTAL_ITEMS);
 
-  const dailyPostIdeas = opinionItems
-    .filter(isContentSuggestionAction)
-    .slice(0, 12)
-    .map((item) => buildPostIdea(item, generatedAt));
+  const dailyPostIdeas = buildDailyPostIdeas(opinionItems, generatedAt);
 
   const payload = {
     schemaVersion: 1,
@@ -550,20 +547,50 @@ function dedupeItems(items) {
   return output;
 }
 
-function buildPostIdea(item, generatedAt) {
-  const articleType = chooseArticleType(item);
+function buildDailyPostIdeas(items, generatedAt) {
+  return selectDailyIdeaPairs(items).map(({ item, variant }) => buildPostIdea(item, generatedAt, variant));
+}
+
+function selectDailyIdeaPairs(items) {
+  const candidates = items
+    .filter(isContentSuggestionAction)
+    .sort((a, b) => scoreItem(b) - scoreItem(a));
+  if (!candidates.length) return [];
+  const localFirst = candidates.find(isLocalPostItem) || candidates[0];
+  const serviceSecond = candidates.find((item) => item.id !== localFirst.id && isServicePostItem(item)) ||
+    candidates.find((item) => item.id !== localFirst.id) ||
+    localFirst;
+  return [
+    { item: localFirst, variant: "personal" },
+    { item: serviceSecond, variant: "fanpage" }
+  ];
+}
+
+function isLocalPostItem(item) {
+  return ["彰化", "鹿港", "福興"].includes(item.region) || containsAny(`${item.title} ${item.summary} ${item.keywords}`, ["彰化", "鹿港", "福興", "秀水"]);
+}
+
+function isServicePostItem(item) {
+  return ["交通", "停車", "長照", "醫療", "教育", "社福", "地方建設", "環境", "災害"].includes(item.category) ||
+    item.action === "可做懶人包" ||
+    item.action === "需觀察";
+}
+
+function buildPostIdea(item, generatedAt, variant = "fanpage") {
+  const articleType = variant === "personal" ? "地方關懷文" : chooseArticleType(item);
   const shortTitle = truncate(item.title || item.summary || "今日輿情", 34);
-  const title = buildIdeaTitle(articleType, item.region, item.category, shortTitle);
+  const title = buildIdeaTitle(articleType, item.region, item.category, shortTitle, variant);
   return {
-    id: `AUTO-IDEA-${item.date}-${hashText(`${item.id}-${articleType}`)}`,
+    id: `AUTO-IDEA-${item.date}-${hashText(`${item.id}-${articleType}-${variant}`)}`,
     sourceMode: "auto",
     date: item.date,
     articleType,
-    suggestedTopic: `${item.region}${item.category}：${shortTitle}`,
-    angle: buildIdeaAngle(item, articleType),
-    platform: recommendPlatforms(articleType, item),
+    ideaVariant: variant,
+    suggestedTopic: `${variant === "personal" ? "個人頁" : "粉絲專頁"}｜${item.region}${item.category}：${shortTitle}`,
+    angle: buildIdeaAngle(item, articleType, variant),
+    platform: recommendPlatforms(articleType, item, variant),
     title,
-    draft: buildIdeaDraft(item, articleType, title),
+    draft: buildIdeaDraft(item, articleType, title, variant),
     materials: buildMaterialNeeds(item),
     isPublished: false,
     publishUrl: "",
@@ -582,23 +609,39 @@ function chooseArticleType(item) {
   return "地方關懷文";
 }
 
-function buildIdeaTitle(articleType, region, category, shortTitle) {
+function buildIdeaTitle(articleType, region, category, shortTitle, variant = "fanpage") {
+  if (variant === "personal") return `${region}日常關心：${shortTitle}`;
+  if (variant === "fanpage") return `服務處整理：${shortTitle}`;
   if (articleType === "限時動態") return `${region}${category}快訊：${shortTitle}`;
   if (articleType === "政策白話文") return `${category}白話整理：民眾最需要知道的重點`;
   if (articleType === "即時回應文") return `關於「${shortTitle}」的說明與追蹤`;
   return `${region}${category}關心：${shortTitle}`;
 }
 
-function buildIdeaAngle(item, articleType) {
+function buildIdeaAngle(item, articleType, variant = "fanpage") {
+  if (variant === "personal") {
+    return "用個人頁的第一人稱口吻，先說看見地方生活的感受，再把議題連回鄉親的日常與服務處願意陪伴處理的態度。";
+  }
+  if (variant === "fanpage") {
+    return "用粉絲專頁的服務口吻，整理民眾最需要知道的重點、可準備的資料與後續追蹤方向，讓資訊有溫度也能行動。";
+  }
   if (articleType === "即時回應文") return "先承接民眾感受，再整理目前已知事實、可協助窗口與後續追蹤方向。";
   if (articleType === "政策白話文") return "把議題拆成影響誰、現在怎麼做、接下來怎麼追三個重點。";
   if (articleType === "服務型貼文") return "提供民眾可以立即使用的提醒、辦理方式或服務處協助管道。";
   return `以${item.region || "地方"}民眾視角整理重點，連結服務處日常關懷。`;
 }
 
-function buildIdeaDraft(item, articleType, title) {
+function buildIdeaDraft(item, articleType, title, variant = "fanpage") {
   const source = item.sourceName ? `（來源：${item.sourceName}）` : "";
-  const summary = item.summary || item.title || "今日相關輿情值得持續關注。";
+  const summary = cleanIdeaText(item.summary || item.title || "今日相關輿情值得持續關注。");
+  const region = item.region || "地方";
+  const category = item.category || "議題";
+  if (variant === "personal") {
+    return `${title}\n\n今天看到一則和${region}有關的消息${source}，心裡第一個想到的是：地方的事，常常不是新聞上短短幾行字而已，而是會影響鄉親每天出門、生活、工作和照顧家人的細節。\n\n這次的重點是：${summary}\n\n我會把這件事記下來，也會持續留意後續發展。若大家身邊有更具體的狀況，像是現場照片、發生時間、地點或需要協助的地方，都可以提供給服務處。\n\n有妤有您，幸福同行。地方的聲音，我們一起慢慢整理、一步一步處理。`;
+  }
+  if (variant === "fanpage") {
+    return `【${region}${category}｜服務處整理】\n\n今天服務處整理一則和鄉親生活有關的訊息${source}。\n\n重點如下：\n1. 發生什麼事：${summary}\n2. 鄉親可以先留意：是否影響交通、生活動線、申請權益或居家安全。\n3. 需要協助時：可提供照片、時間、地點與聯絡方式，服務處會協助彙整並追蹤。\n\n我們知道，地方服務不是只有把消息轉貼出去，更重要的是把大家遇到的問題接住、整理清楚，再陪著一起找方法。`;
+  }
   if (articleType === "即時回應文") {
     return `${title}\n\n今天注意到這則討論${source}。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：${summary}\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。`;
   }
@@ -608,13 +651,24 @@ function buildIdeaDraft(item, articleType, title) {
   return `${title}\n\n今天整理一則與民眾生活相關的消息${source}：${summary}\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。`;
 }
 
+function cleanIdeaText(value) {
+  return String(value || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function buildMaterialNeeds(item) {
   const needs = ["原始連結", "重點截圖"];
   if (["交通", "停車", "地方建設", "環境", "災害"].includes(item.category)) needs.push("現場照片", "位置資訊", "主管機關說明");
   return needs.join("、");
 }
 
-function recommendPlatforms(articleType, item) {
+function recommendPlatforms(articleType, item, variant = "fanpage") {
+  if (variant === "personal") return "個人 Facebook / Threads";
+  if (variant === "fanpage") return "粉絲專頁 Facebook / LINE / Threads";
   if (articleType === "限時動態") return "Instagram / Facebook 限時動態";
   if (item.region === "鹿港" || item.region === "福興") return "Facebook / Threads / LINE";
   return "Facebook / Threads";
