@@ -33,6 +33,7 @@ Firestore 資料位置：
 - `opinionRadarStores/{資料庫代號}/opinionItems`
 - `opinionRadarStores/{資料庫代號}/trackedAccounts`
 - `opinionRadarStores/{資料庫代號}/dailyPostIdeas`
+- `opinionRadarStores/{資料庫代號}/settings/app`
 - `opinionRadarStores/{資料庫代號}/meta/status`
 
 安全提醒：未加入 Firebase Authentication 前，不建議把 Firestore 規則設定成永久公開讀寫。正式使用若需要保護資料，建議下一版加入 Firebase Auth，或設定只允許指定帳號讀寫。
