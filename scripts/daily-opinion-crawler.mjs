@@ -13,6 +13,7 @@ const TAIPEI_TIME_ZONE = "Asia/Taipei";
 const MAX_ITEMS_PER_FEED = 12;
 const MAX_TOTAL_ITEMS = 90;
 const STRICT_TODAY_ONLY = true;
+const POST_IDEA_VOICE_VERSION = "2026-07-human-local-v2";
 const LOCAL_TERMS = ["彰化", "鹿港", "福興", "秀水"];
 const OTHER_LOCALITY_TERMS = [
   "基隆", "台北", "臺北", "新北", "桃園", "新竹", "苗栗", "台中", "臺中", "南投",
@@ -588,6 +589,7 @@ function buildPostIdea(item, generatedAt, variant = "fanpage") {
     date: item.date,
     articleType,
     ideaVariant: variant,
+    voiceVersion: POST_IDEA_VOICE_VERSION,
     suggestedTopic: `${variant === "personal" ? "個人頁" : "粉絲專頁"}｜${item.region}${item.category}：${shortTitle}`,
     angle: buildIdeaAngle(item, articleType, variant),
     platform: recommendPlatforms(articleType, item, variant),
