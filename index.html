@@ -2053,6 +2053,7 @@
     };
 
     const CLOUD_ROOT_COLLECTION = "opinionRadarStores";
+    const POST_IDEA_VOICE_VERSION = "2026-07-human-local-v2";
     const CLOUD_COLLECTIONS = [
       { stateKey: "opinionItems", collection: "opinionItems" },
       { stateKey: "trackedAccounts", collection: "trackedAccounts" },
@@ -2399,6 +2400,7 @@
         date: idea.date || todayISO(),
         articleType: idea.articleType || "地方關懷文",
         ideaVariant: idea.ideaVariant || "fanpage",
+        voiceVersion: idea.voiceVersion || "",
         suggestedTopic: idea.suggestedTopic || "今日自動輿情建議",
         angle: idea.angle || "",
         platform: idea.platform || "Facebook / Threads",
@@ -2441,11 +2443,17 @@
       const beforeItems = state.opinionItems.length;
       const beforeIdeas = state.dailyPostIdeas.length;
       state.opinionItems = state.opinionItems.filter((item) => !(item.sourceMode === "auto" && itemDates.has(item.date)));
-      state.dailyPostIdeas = state.dailyPostIdeas.filter((idea) => !(idea.sourceMode === "auto" && ideaDates.has(idea.date)));
+      state.dailyPostIdeas = state.dailyPostIdeas.filter((idea) => !shouldReplaceGeneratedIdea(idea, ideaDates));
       return {
         removedItems: beforeItems - state.opinionItems.length,
         removedIdeas: beforeIdeas - state.dailyPostIdeas.length
       };
+    }
+
+    function shouldReplaceGeneratedIdea(idea, dates) {
+      if (!dates.has(idea.date) || idea.isPublished) return false;
+      if (idea.sourceMode === "auto" || idea.sourceMode === "generated") return true;
+      return Boolean(idea.sourceItemId && ["personal", "fanpage"].includes(idea.ideaVariant || "fanpage"));
     }
 
     function mergeById(target, incoming) {
@@ -3456,9 +3464,11 @@
       const now = new Date().toISOString();
       const idea = {
         id,
+        sourceMode: existing?.sourceMode || "manual",
         date: $("#ideaDate").value,
         articleType: $("#ideaArticleType").value,
         ideaVariant: existing?.ideaVariant || "manual",
+        voiceVersion: existing?.voiceVersion || "manual",
         suggestedTopic: $("#ideaTopic").value.trim(),
         angle: $("#ideaAngle").value.trim(),
         platform: $("#ideaPlatform").value.trim(),
@@ -3514,17 +3524,39 @@
 
       const now = new Date().toISOString();
       let added = 0;
+      let refreshed = 0;
+      let skippedPublished = 0;
       candidates.forEach(({ item, variant }) => {
-        const exists = state.dailyPostIdeas.some((idea) => idea.sourceItemId === item.id && idea.date === date && (idea.ideaVariant || "fanpage") === variant);
-        if (exists) return;
-        state.dailyPostIdeas.unshift(buildIdeaFromItem(item, now, variant));
+        const existing = state.dailyPostIdeas.find((idea) => idea.sourceItemId === item.id && idea.date === date && (idea.ideaVariant || "fanpage") === variant);
+        const nextIdea = buildIdeaFromItem(item, now, variant);
+        if (existing) {
+          if (existing.isPublished) {
+            skippedPublished += 1;
+            return;
+          }
+          Object.assign(existing, {
+            ...nextIdea,
+            id: existing.id,
+            createdAt: existing.createdAt || nextIdea.createdAt,
+            publishUrl: existing.publishUrl || "",
+            isPublished: false
+          });
+          refreshed += 1;
+          return;
+        }
+        state.dailyPostIdeas.unshift(nextIdea);
         added += 1;
       });
 
       saveState("已產生每日建議");
       renderAll();
       switchView("ideas");
-      showToast(added ? `已新增 ${added} 則建議` : "今日兩篇建議已存在，沒有重複新增");
+      const message = [
+        added ? `新增 ${added} 則` : "",
+        refreshed ? `刷新 ${refreshed} 則` : "",
+        skippedPublished ? `已發布 ${skippedPublished} 則保留` : ""
+      ].filter(Boolean).join("、");
+      showToast(message ? `已${message}建議` : "今日建議已是最新版");
     }
 
     function selectDailyIdeaPairs(items) {
@@ -3562,9 +3594,11 @@
       const title = buildIdeaTitle(articleType, region, category, shortTitle, variant);
       return {
         id: createId("PI"),
+        sourceMode: "generated",
         date: item.date,
         articleType,
         ideaVariant: variant,
+        voiceVersion: POST_IDEA_VOICE_VERSION,
         suggestedTopic: `${variant === "personal" ? "個人頁" : "粉絲專頁"}｜${region}${category}：${shortTitle}`,
         angle: buildIdeaAngle(item, articleType, variant),
         platform: recommendPlatforms(articleType, item, variant),
