@@ -3532,9 +3532,11 @@
         .filter(isPostableAction)
         .sort((a, b) => scoreItem(b) - scoreItem(a));
       if (!candidates.length) return [];
-      const localFirst = candidates.find(isLocalPostItem) || candidates[0];
-      const serviceSecond = candidates.find((item) => item.id !== localFirst.id && isServicePostItem(item)) ||
-        candidates.find((item) => item.id !== localFirst.id) ||
+      const localCandidates = candidates.filter(isLocalPostItem);
+      const pool = localCandidates.length ? localCandidates : candidates;
+      const localFirst = pool[0];
+      const serviceSecond = pool.find((item) => item.id !== localFirst.id && isServicePostItem(item)) ||
+        pool.find((item) => item.id !== localFirst.id) ||
         localFirst;
       return [
         { item: localFirst, variant: "personal" },
@@ -3554,7 +3556,7 @@
 
     function buildIdeaFromItem(item, now, variant = "fanpage") {
       const articleType = variant === "personal" ? "地方關懷文" : chooseArticleType(item);
-      const shortTitle = truncate(item.title || item.summary || "今日輿情", 34);
+      const shortTitle = buildShortTopic(item);
       const region = item.region || "地方";
       const category = item.category || "議題";
       const title = buildIdeaTitle(articleType, region, category, shortTitle, variant);
@@ -3582,6 +3584,7 @@
         return item.sourceType === "社群" ? "社群回應文" : "即時回應文";
       }
       if (item.action === "可做限動") return "限時動態";
+      if (isPositiveLocalStory(item)) return "地方關懷文";
       if (item.action === "可做懶人包") return "政策白話文";
       if (item.category === "活動") return "活動宣傳文";
       if (["交通", "停車", "長照", "醫療", "教育", "社福"].includes(item.category)) return "服務型貼文";
@@ -3601,46 +3604,57 @@
     }
 
     function buildIdeaAngle(item, articleType, variant = "fanpage") {
+      const texture = getIssueTexture(item);
+      const mood = getIdeaMood(item);
+      if (mood === "positive" && variant === "personal") {
+        return "用個人頁口吻分享地方好消息，不寫成頒獎新聞稿，而是把孩子、老師、社區被看見的感覺說出來。";
+      }
+      if (mood === "positive" && variant === "fanpage") {
+        return "用粉專口吻把地方好消息整理成一則可分享的暖文，給努力的人掌聲，也自然連回教育與社區資源。";
+      }
       if (variant === "personal") {
-        return "用個人頁的第一人稱口吻，先說看見地方生活的感受，再把議題連回鄉親的日常與服務處願意陪伴處理的態度。";
+        return `用個人頁的口吻，從「${texture.concern}」切入，不像新聞摘要，像是在地方跑行程後把一件需要留意的事說給鄉親聽。`;
       }
       if (variant === "fanpage") {
-        return "用粉絲專頁的服務口吻，整理民眾最需要知道的重點、可準備的資料與後續追蹤方向，讓資訊有溫度也能行動。";
+        return `用服務處粉專語氣，把「${texture.reminder}」講清楚，少用口號，多給民眾下一步可以做什麼。`;
       }
       if (articleType === "即時回應文" || articleType === "社群回應文") {
-        return "先承接民眾情緒，再整理目前已知事實、可協助窗口與後續追蹤方向，避免與網友爭辯。";
+        return "先承接民眾擔心，再說清楚已知事實、提醒不要轉傳未確認訊息，最後留下服務處蒐集資料的方式。";
       }
       if (articleType === "政策白話文") {
-        return "把議題拆成民眾最關心的三件事：影響誰、現在怎麼做、接下來怎麼追。";
+        return "用白話說明這件事跟民眾權益、日常生活或地方建設有什麼關係。";
       }
       if (articleType === "服務型貼文") {
-        return "用清楚條列提供辦理方式、提醒事項與服務處可協助事項。";
+        return "用簡短提醒提供民眾可準備的資料、可觀察的重點與服務處協助方式。";
       }
       if (articleType === "活動宣傳文") {
         return "用時間、地點、亮點與交通提醒降低民眾參與門檻。";
       }
-      return `以${item.region || "地方"}民眾視角整理重點，連結服務處日常關懷與後續行動。`;
+      return `以${item.region || "地方"}民眾視角整理重點，語氣自然，避免像制式新聞稿。`;
     }
 
     function buildIdeaDraft(item, articleType, title, variant = "fanpage") {
       const source = item.sourceName ? `（來源：${item.sourceName}）` : "";
-      const summary = cleanIdeaText(item.summary || item.title || "今日相關輿情值得持續關注。");
+      const summary = buildReadableIssueSummary(item);
       const region = item.region || "地方";
       const category = item.category || "議題";
+      const texture = getIssueTexture(item);
+      const mood = getIdeaMood(item);
+      const seed = `${item.id}-${item.title}-${variant}`;
       if (variant === "personal") {
-        return `${title}\n\n今天看到一則和${region}有關的消息${source}，心裡第一個想到的是：地方的事，常常不是新聞上短短幾行字而已，而是會影響鄉親每天出門、生活、工作和照顧家人的細節。\n\n這次的重點是：${summary}\n\n我會把這件事記下來，也會持續留意後續發展。若大家身邊有更具體的狀況，像是現場照片、發生時間、地點或需要協助的地方，都可以提供給服務處。\n\n有妤有您，幸福同行。地方的聲音，我們一起慢慢整理、一步一步處理。`;
+        return buildPersonalDraft({ title, source, summary, region, texture, mood, seed });
       }
       if (variant === "fanpage") {
-        return `【${region}${category}｜服務處整理】\n\n今天服務處整理一則和鄉親生活有關的訊息${source}。\n\n重點如下：\n1. 發生什麼事：${summary}\n2. 鄉親可以先留意：是否影響交通、生活動線、申請權益或居家安全。\n3. 需要協助時：可提供照片、時間、地點與聯絡方式，服務處會協助彙整並追蹤。\n\n我們知道，地方服務不是只有把消息轉貼出去，更重要的是把大家遇到的問題接住、整理清楚，再陪著一起找方法。`;
+        return buildFanpageDraft({ source, summary, region, category, texture, mood, seed });
       }
       if (articleType === "即時回應文" || articleType === "社群回應文") {
-        return `${title}\n\n今天我們注意到這則討論${source}。大家在意的重點，我們會先整理事實，也會持續關心主管機關後續說明。\n\n目前重點：${summary}\n\n若民眾有具體案例或現場狀況，也可以提供時間、地點與照片，服務處會協助彙整反映。`;
+        return `${title}\n\n這件事如果影響到生活，大家會緊張是正常的${source}。\n\n目前先把已知資訊抓出來：${summary}\n\n也提醒大家，還沒確認的截圖或說法先不要急著轉傳。若現場有狀況，可以留下時間、地點、照片，服務處會先彙整，再協助追主管機關的回應。`;
       }
       if (articleType === "政策白話文") {
-        return `${title}\n\n這個議題和民眾生活有關，我們先用白話整理：\n1. 發生什麼事：${summary}\n2. 可能影響：請留意${item.region || "地方"}相關公告與現場狀況。\n3. 後續追蹤：服務處會持續掌握進度，必要時協助反映。`;
+        return `${title}\n\n這則用白話講，其實就是跟${region}鄉親的「${texture.concern}」有關${source}。\n\n目前看到的重點是：${summary}\n\n接下來比較重要的不是口號，而是實際怎麼做、誰會受影響、需要準備什麼。服務處會先把資料整理起來，有新進度再補充給大家。`;
       }
       if (articleType === "服務型貼文") {
-        return `${title}\n\n今天整理一則與民眾生活相關的提醒：${summary}\n\n需要協助的朋友，可以先準備相關資料、照片或聯絡方式，服務處會協助確認可處理的管道。`;
+        return `${title}\n\n這則先提醒一下${region}的朋友${source}。\n\n${summary}\n\n如果跟你的生活有關，可以先把資料留好：時間、地點、照片、聯絡方式。服務處會協助確認該找哪個單位、後續怎麼追。`;
       }
       if (articleType === "限時動態") {
         return `${title}\n\n重點一句：${truncate(summary, 52)}\n\n下一張：民眾可注意事項\n最後一張：服務處協助管道`;
@@ -3651,7 +3665,100 @@
       if (articleType === "LINE 群組轉傳文") {
         return `【${item.region || "地方"}提醒】${truncate(summary, 90)}\n若有相關狀況，可提供照片、時間與地點，方便後續協助彙整。`;
       }
-      return `${title}\n\n今天看到這則${item.region || "地方"}消息${source}，重點是：${summary}\n\n我們會持續關心，也歡迎大家補充在地看到的實際情況。`;
+      return `${title}\n\n這則和${item.region || "地方"}生活有關，先幫大家留意一下${source}。\n\n${summary}\n\n若你剛好在附近，或有遇到相關狀況，可以把地點、時間、照片傳給服務處。我們先整理清楚，再看後續要追哪個單位。`;
+    }
+
+    function buildPersonalDraft({ title, source, summary, region, texture, mood, seed }) {
+      if (mood === "positive") {
+        return `${title}\n\n這類地方消息，我會想多停一下。\n\n${summary}${source}\n\n不一定每一件事都要講得很大，但孩子、老師、社區被看見，就是地方慢慢往前的力量。也謝謝平常在第一線陪孩子、陪社區的人，很多成果都是日常累積出來的。`;
+      }
+      const opening = pickByHash(seed, [
+        "這則我會先放在心上。",
+        "地方的事，有時候看起來只是新聞一則，但現場感受常常很不一樣。",
+        "今天這個訊息，我想用比較白話的方式跟大家說一下。"
+      ]);
+      const middle = pickByHash(`${seed}-middle`, [
+        `${region}的鄉親在意的，通常不是標題寫得多大，而是會不會影響${texture.concern}。`,
+        `很多事情真的要回到生活裡看，才知道大家為什麼會擔心：${texture.concern}。`,
+        `我比較在意的是，這件事後面會不會牽動到大家每天都會遇到的${texture.concern}。`
+      ]);
+      const actionRequest = texture.actionRequest || "如果你就在附近，或有遇到相關狀況，麻煩把「時間、地點、照片」留給服務處。我們先把狀況整理清楚，該問的就問，該追的就追。";
+      return `${title}\n\n${opening}\n\n${middle}\n\n目前看到的重點是：${summary}${source}\n\n${actionRequest}`;
+    }
+
+    function buildFanpageDraft({ source, summary, region, category, texture, mood, seed }) {
+      if (mood === "positive") {
+        return `【${region}${category}｜一起給一點掌聲】\n\n這則消息值得分享給大家${source}。\n\n${summary}\n\n地方的進步，有時候就是從這些小小的累積開始。謝謝孩子、老師、家長和每一位在背後陪伴的人，也期待更多資源繼續進到校園和社區。`;
+      }
+      const lead = pickByHash(seed, [
+        "這則先幫大家抓重點。",
+        "服務處先整理給鄉親參考。",
+        "這件事和生活有關，先把重點說清楚。"
+      ]);
+      const actionLine = pickByHash(`${seed}-action`, [
+        "有現場狀況可以先記下時間、地點，能拍照更好。",
+        "若有遇到影響生活的情形，請保留照片、地點與發生時間。",
+        "需要協助反映時，請盡量提供具體位置與現場照片。"
+      ]);
+      return `【${region}${category}｜服務處提醒】\n\n${lead}${source}\n\n${summary}\n\n鄉親可以先留意：\n- ${texture.reminder}\n- ${actionLine}\n- 服務處會協助彙整，後續有新資訊再更新給大家。`;
+    }
+
+    function getIssueTexture(item) {
+      const category = item.category || "";
+      const text = `${item.title || ""} ${item.summary || ""} ${item.keywords || ""}`;
+      if (ideaTextHasAny(text, ["食安", "食品", "營養午餐", "沙拉油", "致癌", "食材"])) {
+        return {
+          concern: "孩子吃得安不安心、食材來源有沒有把關",
+          reminder: "學校供餐、食材來源與縣府查核資訊是否清楚",
+          actionRequest: "這類事情重點不是製造恐慌，而是把來源和查核講清楚。家長若有學校公告、供餐疑問或需要協助確認的資訊，也可以提供給服務處，我們協助釐清。"
+        };
+      }
+      if (category === "交通") return { concern: "通勤、接送和行車安全", reminder: "是否影響行車動線、路口安全或尖峰通勤" };
+      if (category === "停車") return { concern: "停車、接送和周邊動線", reminder: "停車格、臨停區與出入口動線是否受影響" };
+      if (category === "環境") return { concern: "空氣、噪音、排水和居住品質", reminder: "是否有異味、噪音、積水或環境髒亂" };
+      if (category === "災害") return { concern: "安全、通報和後續清理", reminder: "自身安全優先，並確認通報、封鎖或清理進度" };
+      if (category === "醫療") return { concern: "就醫、照護和家人安心", reminder: "服務時間、就醫動線與可諮詢窗口" };
+      if (category === "長照") return { concern: "長輩照顧和家屬壓力", reminder: "申請條件、服務窗口與家屬可準備資料" };
+      if (category === "教育") return { concern: "孩子上學、接送和校園安全", reminder: "學校公告、接送動線與孩子安全" };
+      if (category === "社福") return { concern: "補助、權益和弱勢照顧", reminder: "申請期限、資格與需要準備的文件" };
+      if (category === "活動") return { concern: "假日安排、交通和在地參與", reminder: "時間、地點、交通方式與是否需要報名" };
+      if (category === "觀光") return { concern: "人潮、交通和地方商圈", reminder: "交通管制、人潮動線與周邊店家資訊" };
+      if (category === "地方建設") return { concern: "施工品質、進度和生活影響", reminder: "施工期程、替代動線與現場安全" };
+      if (category === "治安") return { concern: "居住安全和孩子長輩的安心", reminder: "可疑狀況通報、夜間照明與巡守資訊" };
+      return {
+        concern: "生活便利和地方感受",
+        reminder: "是否影響日常生活、周邊動線或民眾權益",
+        actionRequest: "如果你就在附近，或有遇到相關狀況，麻煩把「時間、地點、照片」留給服務處。我們先把狀況整理清楚，該問的就問，該追的就追。"
+      };
+    }
+
+    function getIdeaMood(item) {
+      const text = `${item.title || ""} ${item.summary || ""} ${item.keywords || ""}`;
+      if (item.sentiment === "正面" || ideaTextHasAny(text, ["表揚", "獲獎", "績優", "啟用", "完工", "分享", "成果", "閱讀收穫"])) return "positive";
+      if (item.sentiment === "負面" || item.sentiment === "爭議") return "urgent";
+      return "service";
+    }
+
+    function isPositiveLocalStory(item) {
+      return isLocalPostItem(item) && getIdeaMood(item) === "positive";
+    }
+
+    function ideaTextHasAny(text, words) {
+      return words.some((word) => String(text || "").includes(word));
+    }
+
+    function pickByHash(seed, options) {
+      if (!options.length) return "";
+      return options[hashToIndex(seed, options.length)];
+    }
+
+    function hashToIndex(value, length) {
+      let hash = 0;
+      const text = String(value || "");
+      for (let i = 0; i < text.length; i += 1) {
+        hash = (hash * 31 + text.charCodeAt(i)) >>> 0;
+      }
+      return hash % length;
     }
 
     function cleanIdeaText(value) {
@@ -3659,8 +3766,37 @@
         .replace(/<[^>]+>/g, " ")
         .replace(/&nbsp;/g, " ")
         .replace(/&amp;/g, "&")
+        .replace(/（自動歸類：[^）]*）/g, "")
+        .replace(/\(自動歸類：[^)]*\)/g, "")
         .replace(/\s+/g, " ")
         .trim();
+    }
+
+    function cleanHeadline(value) {
+      return cleanIdeaText(value)
+        .replace(/\s*[|｜]\s*(生活|政治|社會|地方|國際|財經|即時|新聞).*$/g, "")
+        .replace(/\s*-\s*(Yahoo奇摩新聞|自由時報|聯合新聞網|三立新聞網|中時新聞網|ETtoday新聞雲|中央社).*$/g, "")
+        .trim();
+    }
+
+    function buildReadableIssueSummary(item) {
+      const sourceName = item.sourceName || "";
+      const title = cleanHeadline(item.title || "");
+      let summary = cleanIdeaText(item.summary || "");
+      if (sourceName) summary = summary.replaceAll(sourceName, "");
+      summary = cleanHeadline(summary);
+      if (!summary || summary.length < 12 || normalizeKey(summary).includes(normalizeKey(title))) {
+        summary = title || "今日相關輿情值得持續關注。";
+      }
+      return truncate(summary, 160);
+    }
+
+    function buildShortTopic(item) {
+      const text = cleanHeadline(item.title || item.summary || "今日輿情");
+      if (ideaTextHasAny(text, ["食安", "食品", "營養午餐", "沙拉油", "致癌", "食材"])) {
+        return "營養午餐與食材把關";
+      }
+      return truncate(text, 34);
     }
 
     function buildMaterialNeeds(item) {
