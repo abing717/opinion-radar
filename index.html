@@ -2059,6 +2059,16 @@
       { stateKey: "trackedAccounts", collection: "trackedAccounts" },
       { stateKey: "dailyPostIdeas", collection: "dailyPostIdeas" }
     ];
+    const STALE_NEWS_GUARD_VERSION = "2026-07-stale-news-guard-v1";
+    const STALE_NEWS_TERMS = [
+      "103\u5e74", "104\u5e74", "105\u5e74", "106\u5e74", "107\u5e74", "108\u5e74", "109\u5e74", "110\u5e74", "111\u5e74", "112\u5e74", "113\u5e74", "114\u5e74",
+      "\u6c11\u570b103", "\u6c11\u570b104", "\u6c11\u570b105", "\u6c11\u570b106", "\u6c11\u570b107", "\u6c11\u570b108", "\u6c11\u570b109", "\u6c11\u570b110", "\u6c11\u570b111", "\u6c11\u570b112", "\u6c11\u570b113", "\u6c11\u570b114",
+      "\u53c8\u98c4\u74e6\u65af\u5473", "\u8aa4\u6316\u74e6\u65af\u7ba1\u7dda", "\u73fe\u5834\u62c9\u5c01\u9396\u7dda",
+      "\u6708\u5f71\u71c8\u5b63", "\u842c\u4eba\u6aa2\u6e2c", "\u666e\u7be9", "\u5c45\u5bb6\u6aa2\u75ab", "\u9673\u6642\u4e2d",
+      "\u97d3\u570b\u745c\u6557\u9078", "\u78a7\u96f2\u79aa\u5bfa\u639b\u4e94\u661f\u65d7", "\u8336\u82b1\u5973\u7ac4\u5f70\u5316",
+      "\u5929\u540e\u5bae\u767c\u798f\u888b", "\u5c71\u9640\u5152", "\u6797\u66f8\u8c6a\u56de\u6545\u9109", "\u53f0\u5316\u8a34\u9858"
+    ];
+    const REINDEX_RISK_SOURCE_TERMS = ["\u4e09\u7acb\u65b0\u805e", "SETN"];
 
     const OPTIONS = {
       sourceTypes: ["新聞", "社群", "特定對象", "人工紀錄"],
@@ -2144,12 +2154,13 @@
     }
 
     function loadState() {
-      state.opinionItems = readArray(STORAGE_KEYS.opinionItems);
+      state.opinionItems = pruneStaleOpinionItems(readArray(STORAGE_KEYS.opinionItems));
       state.trackedAccounts = readArray(STORAGE_KEYS.trackedAccounts);
       state.dailyPostIdeas = readArray(STORAGE_KEYS.dailyPostIdeas);
       state.settings = readObject(STORAGE_KEYS.settings, {});
       state.settings.activeDate = todayISO();
       state.settings.version = "2.0.0-auto-crawl";
+      state.settings.staleNewsGuardVersion = STALE_NEWS_GUARD_VERSION;
       ensureSeedAccounts();
       persistLocalState("資料已載入");
     }
@@ -2316,13 +2327,17 @@
           throw new Error(`HTTP ${response.status}`);
         }
         const data = await response.json();
-        const incomingItems = (Array.isArray(data.opinionItems) ? data.opinionItems : []).map(normalizeAutoOpinionItem);
+        const rawIncomingItems = Array.isArray(data.opinionItems) ? data.opinionItems : [];
+        const incomingItems = rawIncomingItems
+          .map(normalizeAutoOpinionItem)
+          .filter((item) => !isStaleOpinionItem(item));
         const incomingIdeas = (Array.isArray(data.dailyPostIdeas) ? data.dailyPostIdeas : []).map(normalizeAutoPostIdea);
         const socialWatchTasks = (Array.isArray(data.socialWatchTasks) ? data.socialWatchTasks : []).map(normalizeSocialWatchTask);
         const replaceResult = replaceAutoDataForDates(
           collectAutoDates(incomingItems, data.generatedDate),
           collectAutoDates(incomingIdeas, data.generatedDate)
         );
+        const staleCleanup = pruneStateStaleOpinionItems();
         const itemResult = mergeById(state.opinionItems, incomingItems);
         const ideaResult = mergeById(state.dailyPostIdeas, incomingIdeas);
 
@@ -2339,6 +2354,7 @@
           ideaCount: incomingIdeas.length,
           removedItems: replaceResult.removedItems,
           removedIdeas: replaceResult.removedIdeas,
+          removedStaleItems: staleCleanup.removedItems + (rawIncomingItems.length - incomingItems.length),
           addedItems: itemResult.added,
           updatedItems: itemResult.updated,
           addedIdeas: ideaResult.added,
@@ -2346,7 +2362,7 @@
           socialWatchTasks
         };
 
-        if (incomingItems.length || incomingIdeas.length) {
+        if (incomingItems.length || incomingIdeas.length || staleCleanup.removedItems) {
           saveState("自動資料已同步");
         }
         renderAll();
@@ -3868,6 +3884,98 @@
       return "Facebook / Threads / LINE";
     }
 
+    function pruneStateStaleOpinionItems() {
+      const before = state.opinionItems.length;
+      state.opinionItems = pruneStaleOpinionItems(state.opinionItems);
+      return { removedItems: before - state.opinionItems.length };
+    }
+
+    function pruneStaleOpinionItems(items) {
+      return (Array.isArray(items) ? items : []).filter((item) => !isStaleOpinionItem(item));
+    }
+
+    function isStaleOpinionItem(item) {
+      if (!item || typeof item !== "object") return false;
+      const isAutoNews = item.sourceMode === "auto" || item.platform === "Google News" || item.autoFeedName || item.autoClassification;
+      if (!isAutoNews) return false;
+
+      const text = collectText(item);
+      if (hasAnyRawTerm(text, STALE_NEWS_TERMS)) return true;
+      if (findPastDateHint(text, item.date || todayISO())) return true;
+
+      const sourceText = [item.sourceName, item.summary, item.notes].filter(Boolean).join(" ");
+      if (hasAnyRawTerm(sourceText, REINDEX_RISK_SOURCE_TERMS) && !hasSameDayTextHint(text, item.date || todayISO())) {
+        return true;
+      }
+
+      return false;
+    }
+
+    function hasAnyRawTerm(text, terms) {
+      const value = String(text || "");
+      return terms.some((term) => value.includes(term));
+    }
+
+    function findPastDateHint(text, targetDate) {
+      const normalized = String(text || "").replace(/\s+/g, " ");
+      const target = parseDateParts(targetDate);
+      if (!target) return "";
+
+      const fullDatePattern = new RegExp("\\b(20\\d{2})\\s*(?:\\u5e74|[/.\\-])\\s*(\\d{1,2})\\s*(?:\\u6708|[/.\\-])\\s*(\\d{1,2})\\s*\\u65e5?", "g");
+      for (const match of normalized.matchAll(fullDatePattern)) {
+        const hint = { year: Number(match[1]), month: Number(match[2]), day: Number(match[3]) };
+        if (isPastDateParts(hint, target)) return match[0];
+      }
+
+      const minguoDatePattern = new RegExp("\\b(1\\d{2})\\s*\\u5e74\\s*(\\d{1,2})\\s*\\u6708\\s*(\\d{1,2})\\s*\\u65e5?", "g");
+      for (const match of normalized.matchAll(minguoDatePattern)) {
+        const hint = { year: Number(match[1]) + 1911, month: Number(match[2]), day: Number(match[3]) };
+        if (isPastDateParts(hint, target)) return match[0];
+      }
+
+      const monthDayPattern = new RegExp("(^|[^\\d])(\\d{1,2})\\s*\\u6708\\s*(\\d{1,2})\\s*\\u65e5", "g");
+      for (const match of normalized.matchAll(monthDayPattern)) {
+        const hint = { year: target.year, month: Number(match[2]), day: Number(match[3]) };
+        if (isPastDateParts(hint, target)) return match[0].trim();
+      }
+
+      return "";
+    }
+
+    function hasSameDayTextHint(text, targetDate) {
+      const normalized = String(text || "").replace(/\s+/g, " ");
+      const target = parseDateParts(targetDate);
+      if (!target) return false;
+      const month = String(target.month);
+      const month2 = String(target.month).padStart(2, "0");
+      const day = String(target.day);
+      const day2 = String(target.day).padStart(2, "0");
+      const patterns = [
+        `${target.year}\u5e74${month}\u6708${day}\u65e5`,
+        `${target.year}/${month}/${day}`,
+        `${target.year}-${month2}-${day2}`,
+        `${month}\u6708${day}\u65e5`,
+        `${month2}/${day2}`,
+        `${month}/${day}`,
+        `${month2}-${day2}`,
+        `${month}-${day}`
+      ];
+      return patterns.some((pattern) => normalized.includes(pattern));
+    }
+
+    function parseDateParts(value) {
+      const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (!match) return null;
+      return { year: Number(match[1]), month: Number(match[2]), day: Number(match[3]) };
+    }
+
+    function isPastDateParts(hint, target) {
+      if (!hint.year || !hint.month || !hint.day) return false;
+      const hintValue = hint.year * 10000 + hint.month * 100 + hint.day;
+      const targetValue = target.year * 10000 + target.month * 100 + target.day;
+      return hintValue < targetValue;
+    }
+
     function exportData() {
       const payload = {
         exportedAt: new Date().toISOString(),
@@ -3897,7 +4005,7 @@
             event.target.value = "";
             return;
           }
-          state.opinionItems = Array.isArray(data.opinionItems) ? data.opinionItems : [];
+          state.opinionItems = pruneStaleOpinionItems(Array.isArray(data.opinionItems) ? data.opinionItems : []);
           state.trackedAccounts = Array.isArray(data.trackedAccounts) ? data.trackedAccounts : [];
           state.dailyPostIdeas = Array.isArray(data.dailyPostIdeas) ? data.dailyPostIdeas : [];
           state.settings = data.settings && typeof data.settings === "object" ? data.settings : { activeDate: todayISO() };
