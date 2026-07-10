@@ -2213,11 +2213,12 @@
     }
 
     function bindEvents() {
-      $("#activeDate").addEventListener("change", (event) => {
+      $("#activeDate").addEventListener("change", async (event) => {
         state.settings.activeDate = event.target.value || todayISO();
         $("#filterDate").value = state.settings.activeDate;
         saveState("已切換日期");
         renderAll();
+        await loadAutoCrawlData({ silent: false, date: state.settings.activeDate });
       });
 
       $("#filterForm").addEventListener("input", renderItemsView);
@@ -2272,7 +2273,7 @@
       if (action === "delete-idea") deleteIdea(id);
       if (action === "toggle-published") toggleIdeaPublished(id);
       if (action === "generate-ideas") generateDailyIdeas();
-      if (action === "load-auto") loadAutoCrawlData({ silent: false });
+      if (action === "load-auto") loadAutoCrawlData({ silent: false, date: getActiveDate() });
       if (action === "open-firebase-settings") openFirebaseDialog();
       if (action === "disable-firebase-sync") disableFirebaseSync();
       if (action === "push-cloud-now") pushStateToCloud("手動上傳");
@@ -2306,9 +2307,11 @@
 
     async function loadAutoCrawlData(options = {}) {
       const silent = Boolean(options.silent);
+      const targetDate = options.date || getActiveDate();
+      const dataUrl = getAutoDataUrl(targetDate);
       try {
-        setAutoCrawlStatus("自動爬抓資料讀取中...");
-        const response = await fetch(`./data/opinion-auto.json?ts=${Date.now()}`, { cache: "no-store" });
+        setAutoCrawlStatus(`${targetDate} 自動爬抓資料讀取中...`);
+        const response = await fetch(`${dataUrl}?ts=${Date.now()}`, { cache: "no-store" });
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
@@ -2327,6 +2330,8 @@
           loaded: true,
           generatedAt: data.generatedAt || "",
           generatedDate: data.generatedDate || "",
+          requestedDate: targetDate,
+          dataUrl,
           source: data.source || "自動爬抓資料",
           note: data.note || "",
           feedErrors: Array.isArray(data.errors) ? data.errors.length : 0,
@@ -2346,18 +2351,25 @@
         }
         renderAll();
         if (!silent) {
-          showToast(`已重新整理自動資料：輿情 ${incomingItems.length} 筆、建議 ${incomingIdeas.length} 則`);
+          showToast(`已載入 ${targetDate} 自動資料：輿情 ${incomingItems.length} 筆、建議 ${incomingIdeas.length} 則`);
         }
       } catch (error) {
         state.autoCrawl = {
           loaded: false,
+          requestedDate: targetDate,
+          dataUrl,
           error: error instanceof Error ? error.message : String(error)
         };
         renderAutoCrawlStatus();
         if (!silent) {
-          showToast("目前無法載入自動資料；部署到 GitHub Pages 後會自動讀取 data/opinion-auto.json");
+          showToast(`${targetDate} 尚無歷史自動資料。`);
         }
       }
+    }
+
+    function getAutoDataUrl(date) {
+      const targetDate = date || todayISO();
+      return targetDate === todayISO() ? "./data/opinion-auto.json" : `./data/archive/${targetDate}.json`;
     }
 
     function normalizeAutoOpinionItem(item) {
@@ -2809,11 +2821,13 @@
         return;
       }
       if (!state.autoCrawl.loaded) {
-        status.textContent = `自動爬抓：尚未載入（${state.autoCrawl.error || "本機 file 開啟可能無法讀取 JSON"}）`;
+        const requestedDate = state.autoCrawl.requestedDate || getActiveDate();
+        status.textContent = `自動爬抓：${requestedDate} 尚未載入（${state.autoCrawl.error || "查無該日歷史資料"}）`;
         return;
       }
       const time = state.autoCrawl.generatedAt ? new Date(state.autoCrawl.generatedAt).toLocaleString("zh-TW") : state.autoCrawl.generatedDate || "未知時間";
-      status.textContent = `自動爬抓：${time}，新聞 ${state.autoCrawl.itemCount} 筆，建議 ${state.autoCrawl.ideaCount} 則`;
+      const requestedDate = state.autoCrawl.requestedDate || state.autoCrawl.generatedDate || getActiveDate();
+      status.textContent = `自動爬抓：${requestedDate}（${time}），新聞 ${state.autoCrawl.itemCount} 筆，建議 ${state.autoCrawl.ideaCount} 則`;
     }
 
     function setAutoCrawlStatus(message) {
