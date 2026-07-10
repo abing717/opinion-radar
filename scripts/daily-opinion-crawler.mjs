@@ -14,6 +14,19 @@ const MAX_ITEMS_PER_FEED = 12;
 const MAX_TOTAL_ITEMS = 90;
 const STRICT_TODAY_ONLY = true;
 const POST_IDEA_VOICE_VERSION = "2026-07-human-local-v2";
+const REINDEX_RISK_SOURCES = ["三立新聞", "三立新聞網SETN.com"];
+const STALE_EVENT_TERMS = [
+  "103年", "104年", "105年", "106年", "107年", "108年", "109年", "110年", "111年", "112年", "113年", "114年",
+  "民國103", "民國104", "民國105", "民國106", "民國107", "民國108", "民國109", "民國110", "民國111", "民國112", "民國113", "民國114",
+  "2021彰化月影燈季", "月影燈季相關報導",
+  "又飄瓦斯味", "誤挖瓦斯管線", "現場拉封鎖線",
+  "彰化萬人檢測", "不普篩", "居家檢疫", "陳時中", "防疫免出門", "疫情",
+  "山陀兒", "陸警範圍新增彰化",
+  "韓國瑜敗選", "功成身退", "中國央視公開讚揚韓國瑜",
+  "蔡英文落款", "鹿港天后宮發福袋", "接見台灣國際搜救隊",
+  "碧雲禪寺掛五星旗", "茶花女竄彰化", "才剛過年", "彰化和美深夜大火",
+  "林書豪回故鄉彰化", "彰化優鮮攜手電商", "台化訴願成功彰化縣府"
+];
 const LOCAL_TERMS = ["彰化", "鹿港", "福興", "秀水"];
 const OTHER_LOCALITY_TERMS = [
   "基隆", "台北", "臺北", "新北", "桃園", "新竹", "苗栗", "台中", "臺中", "南投",
@@ -330,11 +343,30 @@ function getFreshnessRejectReason(item, targetDate) {
     return `RSS 發布時間不是 ${targetDate}`;
   }
   const text = `${cleanTitle(item.title)} ${stripHtml(item.description)} ${item.sourceName || ""}`;
+  const staleEventHint = findStaleEventHint(text);
+  if (staleEventHint) {
+    return `內容命中舊聞事件線索：${staleEventHint}`;
+  }
   const staleHint = findStaleDateHint(text, targetDate);
   if (staleHint) {
     return `內容含舊日期線索：${staleHint}`;
   }
+  const reindexHint = getReindexRiskRejectReason(item, text, targetDate);
+  if (reindexHint) {
+    return reindexHint;
+  }
   return "";
+}
+
+function findStaleEventHint(text) {
+  return STALE_EVENT_TERMS.find((term) => String(text || "").includes(term)) || "";
+}
+
+function getReindexRiskRejectReason(item, text, targetDate) {
+  const sourceName = item.sourceName || inferSourceName(item.description) || "";
+  if (!REINDEX_RISK_SOURCES.includes(sourceName)) return "";
+  if (hasSameDayTextHint(text, targetDate)) return "";
+  return `高風險來源重新索引且缺少當日日期線索：${sourceName}`;
 }
 
 function getRelevanceRejectReason(item, feed) {
@@ -454,6 +486,27 @@ function findStaleDateHint(text, targetDate) {
   }
 
   return "";
+}
+
+function hasSameDayTextHint(text, targetDate) {
+  const normalized = String(text || "").replace(/\s+/g, " ");
+  const target = parseISODateParts(targetDate);
+  if (!target) return false;
+  const month = String(target.month);
+  const month2 = String(target.month).padStart(2, "0");
+  const day = String(target.day);
+  const day2 = String(target.day).padStart(2, "0");
+  const patterns = [
+    `${target.year}年${month}月${day}日`,
+    `${target.year}/${month}/${day}`,
+    `${target.year}-${month2}-${day2}`,
+    `${month}月${day}日`,
+    `${month2}/${day2}`,
+    `${month}/${day}`,
+    `${month2}-${day2}`,
+    `${month}-${day}`
+  ];
+  return patterns.some((pattern) => normalized.includes(pattern));
 }
 
 function parseISODateParts(value) {
