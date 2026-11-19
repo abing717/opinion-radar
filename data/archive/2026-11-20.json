@@ -1,0 +1,3237 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-19T16:40:53.714Z",
+  "generatedDate": "2026-11-20",
+  "timezone": "Asia/Taipei",
+  "source": "GitHub Actions daily crawler + Google News RSS",
+  "note": "新聞以公開 RSS 自動彙整，僅保留 Google News 發布時間為台灣時間當日且標題/摘要未出現舊日期線索的新聞；社群巡查列出 Facebook、Instagram、Threads、YouTube、Dcard、PTT 的公開搜尋入口，不登入、不抓私人資料。",
+  "strictTodayOnly": true,
+  "feeds": [
+    {
+      "name": "國際重大新聞",
+      "classification": "國際重大新聞",
+      "query": "國際 重大新聞 OR 全球 重大新聞",
+      "region": "國際"
+    },
+    {
+      "name": "與台灣相關的國際新聞",
+      "classification": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞 OR 臺灣 國際 新聞 OR 台海 國際",
+      "region": "國際"
+    },
+    {
+      "name": "台灣重大新聞",
+      "classification": "台灣重大新聞",
+      "query": "台灣 重大新聞 OR 全台 最新新聞",
+      "region": "台灣"
+    },
+    {
+      "name": "彰化縣重要新聞（台灣相關）",
+      "classification": "彰化縣重要新聞",
+      "query": "彰化 台灣 新聞 OR 彰化 縣府 OR 秀水 新聞",
+      "region": "彰化",
+      "mustIncludeAny": [
+        "彰化",
+        "鹿港",
+        "福興",
+        "秀水"
+      ]
+    },
+    {
+      "name": "彰化縣重要新聞",
+      "classification": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞 OR 彰化 最新新聞",
+      "region": "彰化",
+      "mustIncludeAny": [
+        "彰化",
+        "鹿港",
+        "福興",
+        "秀水"
+      ]
+    },
+    {
+      "name": "鹿港與福興地方新聞",
+      "classification": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞 OR 福興 新聞 OR 鹿港 福興",
+      "region": "鹿港",
+      "mustIncludeAny": [
+        "鹿港",
+        "福興"
+      ]
+    },
+    {
+      "name": "地方交通停車",
+      "classification": "彰化縣重要新聞",
+      "query": "彰化 交通 OR 彰化 停車 OR 鹿港 停車 OR 福興 交通 OR 秀水 交通",
+      "region": "彰化",
+      "mustIncludeAny": [
+        "彰化",
+        "鹿港",
+        "福興",
+        "秀水"
+      ]
+    },
+    {
+      "name": "地方民生服務",
+      "classification": "彰化縣重要新聞",
+      "query": "彰化 長照 OR 彰化 醫療 OR 彰化 教育 OR 彰化 社福 OR 秀水 民生",
+      "region": "彰化",
+      "mustIncludeAny": [
+        "彰化",
+        "鹿港",
+        "福興",
+        "秀水"
+      ]
+    },
+    {
+      "name": "地方風險事件",
+      "classification": "彰化縣重要新聞",
+      "query": "彰化 環境 OR 彰化 治安 OR 彰化 災害 OR 鹿港 災害 OR 福興 災害 OR 秀水 災害",
+      "region": "彰化",
+      "mustIncludeAny": [
+        "彰化",
+        "鹿港",
+        "福興",
+        "秀水"
+      ]
+    },
+    {
+      "name": "鹿港福興觀光活動",
+      "classification": "鹿港與福興地方新聞",
+      "query": "鹿港 觀光 OR 鹿港 宮廟 OR 福興 活動 OR 福興 觀光",
+      "region": "鹿港",
+      "mustIncludeAny": [
+        "鹿港",
+        "福興"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 環境",
+      "message": "HTTP 429"
+    }
+  ],
+  "filteredOut": [
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "全球經濟指標",
+      "sourceName": "鉅亨網",
+      "pubDate": "Thu, 19 Nov 2026 14:39:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "美中俄元首面對面會談普丁稱「肩負維護和平責任」習近平：不能觸碰底線| 國際",
+      "sourceName": "Newtalk新聞",
+      "pubDate": "Thu, 19 Nov 2026 15:51:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "三方會談果然不是雅爾達2.0 川普只要到油普丁降低出訪風險- 生活新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:44:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "美中俄領袖會晤 三方談俄烏戰爭、中東、核武等議題",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 13:27:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "長庚50週年台灣首創國際外科韌性培訓| 地方亮點",
+      "sourceName": "中央社好生活",
+      "pubDate": "Thu, 19 Nov 2026 10:21:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "川普將會晤習近平普丁 稱中方熱情接待已是重大勝利 | 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 03:11:22 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "美中俄歷史性會晤 發布「和平宣言」提出4項共識",
+      "sourceName": "世界新聞網",
+      "pubDate": "Thu, 19 Nov 2026 12:10:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "【COP31國際聯合新聞稿】全球百個民間社會團體於COP31 發表聯合聲明：發展核電代價高昂，更會排擠真正的氣候行動",
+      "sourceName": "綠色公民行動聯盟",
+      "pubDate": "Thu, 19 Nov 2026 00:02:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "澳門國際發明展爆密室暴力爭議諾貝爾國際發明協會秘書長控遭圍毆、跨海啟動司法追訴- 生活新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 02:45:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "美中俄元首峰會「締造歷史」 3國發表和平宣言",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 14:37:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "新興國際中小學運動會變世界課 32國文化創意進場",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 10:40:52 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "國際 重大新聞",
+      "title": "台南市府舉辦觀光座談會 探討山海特色旅遊",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 07:07:32 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "大車隊子公司全球商務科技遭未經授權存取，部分客戶及會員資料外洩",
+      "sourceName": "iThome",
+      "pubDate": "Thu, 19 Nov 2026 09:15:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "美中俄領袖峰會！川普盼三國合作打擊核武擴散威脅、習近平籲涉重大敏感問題勿觸紅線、普丁願展開建設性合作強化全球穩定",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:20:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "中美俄元首會晤不會成為另一個雅爾達會議- 紐約時報中文網",
+      "sourceName": "纽约时报中文网",
+      "pubDate": "Thu, 19 Nov 2026 03:32:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "三方會談果然不是雅爾達2.0 川普只要到油 普丁降低出訪風險",
+      "sourceName": "梅花新聞網",
+      "pubDate": "Thu, 19 Nov 2026 11:44:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "美中俄元首同桌會晤談世界和平 習近平：大國和則世界安",
+      "sourceName": "世界新聞網",
+      "pubDate": "Thu, 19 Nov 2026 14:49:22 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "FOCUS全球新聞／川普.普欽與習近平首場圓桌會 核武.伊朗.烏克蘭議題端上桌",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 12:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "駐德國代表處僑務秘書– 全球僑社動態",
+      "sourceName": "中華民國僑務委員會",
+      "pubDate": "Thu, 19 Nov 2026 02:11:58 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "【APEC 2026】史無前例，轟動世界！中美俄3國元首會晤並行表和平宣言",
+      "sourceName": "鉅亨號",
+      "pubDate": "Thu, 19 Nov 2026 15:29:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "經濟日報社論／數位危機接連爆發 政府須總體檢",
+      "sourceName": "udn",
+      "pubDate": "Wed, 18 Nov 2026 20:49:03 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "Java爆重大資安漏洞 全球政府緊急籲修補防駭客攻擊 | 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Wed, 18 Nov 2026 17:46:05 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "APEC不斷更新／川習會登場！川普、普欽另會面 美中俄峰會直播、重點看這",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 04:50:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "APEC峰會 習近平提支持成立「世界灣區經濟合作聯盟」",
+      "sourceName": "世界新聞網",
+      "pubDate": "Thu, 19 Nov 2026 06:06:13 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "北京：美中俄峰會談全球和平重要問題 深圳已嚴格維安",
+      "sourceName": "世界新聞網",
+      "pubDate": "Wed, 18 Nov 2026 20:43:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "國際重大新聞",
+      "query": "全球 重大新聞",
+      "title": "一張合照查出驚天獨家！黃仁勳婚外情曝光內幕 紐時：跨國調查一年",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 05:37:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "1151119《今日國際重點新聞》",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 02:11:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "2026台灣國際遊艇展精彩落幕！創2.8億元訂單 吸引2.1萬人次參與",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:04:07 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "「2026台灣國際遊艇展」精彩落幕 全民共享海洋休閒生活新體驗",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:29:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "2026臺灣國際衝浪公開賽進入決戰倒數 11/22金樽迎來最終冠軍之戰",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Wed, 18 Nov 2026 23:20:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "「2026台灣國際遊艇展」精彩落幕 全民共享海洋休閒生活新體驗",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:46:04 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "全球經濟指標",
+      "sourceName": "鉅亨網",
+      "pubDate": "Thu, 19 Nov 2026 14:39:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "Quad重回國際舞台 學者：有助台灣安全",
+      "sourceName": "Rti 中央廣播電臺",
+      "pubDate": "Thu, 19 Nov 2026 03:07:39 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "11/19國際早報｜「台灣有事」後首碰面高市習近平只握手不會談、美股連5跌創6月來最長、GTA6評分99 追平薩爾達紀錄",
+      "sourceName": "風傳媒",
+      "pubDate": "Wed, 18 Nov 2026 22:52:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "新聞幕後／掀遮羞布！中國曾遊說台灣求辦APEC 官員曝：他做越多越不堪",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 09:35:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "中英對照讀新聞》US imposes sanctions against ICC President美國對國際刑事法院院長實施制裁",
+      "sourceName": "自由時報",
+      "pubDate": "Wed, 18 Nov 2026 21:30:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "谷瑞生：台海和平是國際共同利益 籲明確反對片面改變現狀",
+      "sourceName": "Rti 中央廣播電臺",
+      "pubDate": "Thu, 19 Nov 2026 01:07:04 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "臺灣醫療成果登上國際舞台 黃凱文教授受邀亞洲腫瘤消融大會開幕演說",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:07:21 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "台灣晶片聯手英國，從半導體跨入太空！英國6大企業來台搶合作，半導體之後下一個兆元商機在哪？ | 劉煥彥 | 新聞",
+      "sourceName": "風傳媒",
+      "pubDate": "Thu, 19 Nov 2026 01:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "「2026台灣國際遊艇展」精彩落幕 全民共享海洋休閒生活新體驗",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:22:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "川普稱不支持台獨！ 習近平要求美方在台灣問題做正確的事",
+      "sourceName": "VOCO News",
+      "pubDate": "Thu, 19 Nov 2026 14:12:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "新興國際中小學歡慶19週年 王明鉅：肯定國際教育成果、培育世界公民",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 08:48:47 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "2026最常見密碼揭曉！ 你也是用「123456」嗎？",
+      "sourceName": "VOCO News",
+      "pubDate": "Thu, 19 Nov 2026 09:28:03 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台灣 國際 新聞",
+      "title": "國際獅子後援會成立 黃世杰：要當桃園市政發動機",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 11:03:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "2026台灣週吸引近4萬人次參與 展現台灣國際競爭力",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 10:19:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "2026台灣國際遊艇展精彩落幕！創2.8億元訂單 吸引2.1萬人次參與",
+      "sourceName": "創新聞",
+      "pubDate": "Thu, 19 Nov 2026 03:57:59 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "2026臺灣國際衝浪公開賽進入決戰倒數 11/22金樽迎來最終冠軍之戰",
+      "sourceName": "台灣好新聞",
+      "pubDate": "Wed, 18 Nov 2026 23:24:29 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "台灣國際遊艇展圓滿落幕！創造2.8億商機、吸引逾2.1萬人次",
+      "sourceName": "行銷人",
+      "pubDate": "Thu, 19 Nov 2026 09:00:46 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "1151119《今日國際重點新聞》",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 01:03:10 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "國際旅客來台 陳世凱：已達兩大設定目標",
+      "sourceName": "Rti 中央廣播電臺",
+      "pubDate": "Thu, 19 Nov 2026 09:41:46 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "台灣CFP®年會登場 理事長林知延：吸引國際資金須建立財富管理生態系",
+      "sourceName": "UDN",
+      "pubDate": "Thu, 19 Nov 2026 09:03:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "台裔及亞裔第一人劉雲平獲選美眾院民主黨團主席| 國際",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Wed, 18 Nov 2026 21:44:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "台裔第一人57歲劉雲平獲選美國眾議院「民主黨團主席」力挺台灣自我防衛| 國際",
+      "sourceName": "Newtalk新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:50:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "造船學會年度船舶獎台船「中華卓越輪」 年度遊艇獎嘉信「BZ55」",
+      "sourceName": "ETtoday財經雲",
+      "pubDate": "Thu, 19 Nov 2026 08:07:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "台灣碎化消融再創國際臨床研究里程碑台大醫院肝癌、胰臟癌、腎臟癌、惡性肉瘤展現令人振奮追蹤成果",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 13:19:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "臺灣 國際 新聞",
+      "title": "深圳APEC峰會落幕梁文傑：參加就代表台灣立足國際- 政治",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 09:00:16 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "中時社論》中美俄穩定鐵三角 台海和平之窗",
+      "sourceName": "中時新聞網",
+      "pubDate": "Thu, 19 Nov 2026 14:00:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "川習深圳會談 美國務院重申：反對單方面改變台海現狀",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 09:15:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "美中強調戰略穩定！學者曝「認知有落差」：台海安全是關鍵",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 13:58:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "學者看美中俄峰會：台灣須以實力與國際結盟",
+      "sourceName": "大紀元",
+      "pubDate": "Thu, 19 Nov 2026 11:34:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "美中俄三方峰會觸及台海議題？梁文傑：其實台灣並不是重點 | 國際焦點 | 國際",
+      "sourceName": "經濟日報",
+      "pubDate": "Thu, 19 Nov 2026 09:07:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "高市早苗APEC記者會談台灣！重申立場未變：遵循《日中聯合聲明》",
+      "sourceName": "NOWnews今日新聞",
+      "pubDate": "Thu, 19 Nov 2026 08:14:58 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "國防院：台灣模式 讓台海安全成歐洲利益",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 08:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "法國世界報 - 普京在深圳重返國際外交舞台的中心",
+      "sourceName": "RFI",
+      "pubDate": "Wed, 18 Nov 2026 22:22:07 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "經濟學人：明年觀察重點是AI、台海風險",
+      "sourceName": "世界新聞網",
+      "pubDate": "Thu, 19 Nov 2026 06:25:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "APEC｜特朗普：美國不支持「台獨」",
+      "sourceName": "大公文匯網",
+      "pubDate": "Thu, 19 Nov 2026 11:17:47 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "【柳金財專欄】雅爾達密約2.0重現？台灣可能成為三方峰會交易籌碼探析",
+      "sourceName": "梅花新聞網",
+      "pubDate": "Thu, 19 Nov 2026 01:50:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "國際研討會驚見台灣國旗！多國政要關切台海 矢板明夫：台灣不孤單",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 00:46:10 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "COP31 ： 新協議一出台即遭杯葛",
+      "sourceName": "RFI",
+      "pubDate": "Thu, 19 Nov 2026 15:42:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "美中俄領導人將談台灣？ 羅文嘉：台灣問題本就不是兩岸問題",
+      "sourceName": "udn",
+      "pubDate": "Thu, 19 Nov 2026 03:07:42 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "APEC 峰會之際 俄羅斯軍機再次飛越台灣",
+      "sourceName": "RFI",
+      "pubDate": "Thu, 19 Nov 2026 09:45:56 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "美中俄峰會後 高市早苗與川普通話",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 14:45:06 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "台海巡首艘高緯度遠洋巡護船「西拉雅號」交船",
+      "sourceName": "新唐人亞太電視台",
+      "pubDate": "Thu, 19 Nov 2026 05:32:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "英國駐台代表包瓊郁：台英是共享民主價值夥伴",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 03:42:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "快訊／川習談台灣！習近平敦促做對的事 新華社：川普表態「美不支持台獨」",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 08:56:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "台海24個月關鍵期！美報告示警：北京「封鎖隔離台灣」風險提高",
+      "sourceName": "ETtoday新聞雲",
+      "pubDate": "Thu, 19 Nov 2026 01:46:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "與台灣相關的國際新聞",
+      "query": "台海 國際",
+      "title": "台業界關注APEC會議國台辦：把握機遇- 中國",
+      "sourceName": "大公文匯網",
+      "pubDate": "Wed, 18 Nov 2026 20:21:59 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "捷克國會跨黨派訪團拜會國民黨 蕭旭岑：核能攸關台灣能源安全與半導體產業競爭力",
+      "sourceName": "中國國民黨全球資訊網",
+      "pubDate": "Thu, 19 Nov 2026 09:43:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "APEC》川習三會談到台灣，北京喊話美國有回應嗎？學者：北京有期待，美方「相應不理」 | 中央社 | 新聞",
+      "sourceName": "風傳媒",
+      "pubDate": "Thu, 19 Nov 2026 13:04:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "美中俄三方會議要出賣台灣？ USCC年報指台灣對美國重要性不止AI半導體應建立反封鎖計劃｜鏡轉全球｜#鏡新聞",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 13:03:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "高市訪中記者會稱中國是重要的鄰國 強調「對台灣立場沒有改變」 - 新聞",
+      "sourceName": "MoneyDJ",
+      "pubDate": "Thu, 19 Nov 2026 09:22:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "普發2萬元背後的財政考驗 台灣選舉不能淪為現金喊價戰",
+      "sourceName": "ETtoday新聞雲",
+      "pubDate": "Thu, 19 Nov 2026 10:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "記者編輯部| 【王崑義專欄】川習會釋出和平訊號台灣不能只有備戰選項",
+      "sourceName": "梅花新聞網",
+      "pubDate": "Thu, 19 Nov 2026 15:10:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "全球經濟指標",
+      "sourceName": "鉅亨網",
+      "pubDate": "Thu, 19 Nov 2026 14:39:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "鏡評／黃仁勳下台只是序幕",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 01:39:24 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "美國台灣人獅子會拜會駐洛杉磯辦事處 交流公益服務與國際參與|僑社現場",
+      "sourceName": "僑新聞",
+      "pubDate": "Wed, 18 Nov 2026 19:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "惋惜黃去職 微星總座：影響產業長遠發展",
+      "sourceName": "自由財經",
+      "pubDate": "Wed, 18 Nov 2026 21:30:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "習近平：美國應在台灣問題上“做正確的事情”，避免中美關係出現大的波折",
+      "sourceName": "RFI",
+      "pubDate": "Thu, 19 Nov 2026 09:40:56 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "川習三會 分析：台海議題內容在預期之內",
+      "sourceName": "Rti 中央廣播電臺",
+      "pubDate": "Thu, 19 Nov 2026 10:32:41 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "APEC記者會遭追問「台灣有事」 高市早苗：日本立場毫無改變| 國際",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Thu, 19 Nov 2026 07:57:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "jpp (5284) 其他經董事會決議之重大訊息",
+      "sourceName": "GeneOnline",
+      "pubDate": "Thu, 19 Nov 2026 08:38:13 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "王毅介紹成果中俄美峰會開創歷史",
+      "sourceName": "台灣中評網",
+      "pubDate": "Thu, 19 Nov 2026 15:44:10 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "福雷電子加碼2,489億元布局仁武園區 助攻半導體S廊帶高值化發展",
+      "sourceName": "台灣好報",
+      "pubDate": "Thu, 19 Nov 2026 09:03:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "長庚50週年台灣首創國際外科韌性培訓| 地方亮點",
+      "sourceName": "中央社好生活",
+      "pubDate": "Thu, 19 Nov 2026 10:21:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "幕後/中國無心辦APEC「只剩川習會」？ 國安人士：台灣善盡國際責任參與格外重要",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:53:42 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "新聞幕後／掀遮羞布！中國曾遊說台灣求辦APEC 官員曝：他做越多越不堪",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:35:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "川普再點名台灣 談「台獨」表態了？",
+      "sourceName": "東森新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:47:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "華新60周年曾投資聯電、台北101 焦佑倫回憶:錯過台積電創辦",
+      "sourceName": "自由財經",
+      "pubDate": "Thu, 19 Nov 2026 07:49:19 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "涉收境外資金參選！「台灣學姐」陳竹音50萬交保 怒批政治追殺",
+      "sourceName": "台視新聞網",
+      "pubDate": "Thu, 19 Nov 2026 00:05:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "台電24.8億改建林口新村，變電所卻蓋不成？台灣能源治理的公共責任界線",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:59:54 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "台灣 重大新聞",
+      "title": "喊入籍中國又返台選議員「台灣學姐」陳竹音涉犯反滲透法遭拘提50萬交保| 社會",
+      "sourceName": "Newtalk新聞",
+      "pubDate": "Wed, 18 Nov 2026 16:56:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "週五入夜下探13度 週六全台回暖 | 自由電子報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 13:56:16 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "台灣人有多愛練？台北竟跌下冠軍寶座 「這城市」5年暴增近翻倍",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 09:13:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "冷空氣發威！北台灣、花蓮明顯轉冷氣象署揭回暖時間| 生活",
+      "sourceName": "Newtalk新聞",
+      "pubDate": "Thu, 19 Nov 2026 03:07:57 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台8縣市免費看三大影展名作！梁朝偉《悲情城市》重返大銀幕 《異鄉人》台灣首映",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:30:13 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "高雄直擊／BTS神曲全場暴動！RM高喊高雄我愛你 Jin嘴甜：你們好性感",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 13:04:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "大陸冷氣團殺到！賈新興示警「全台有感」 1地區恐跌破10度",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 01:04:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "合體朱立倫楊梅造勢 張善政承諾：守護水庫與埤塘、拒絕設置光電板 | 台灣好新聞",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 14:08:26 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全家霜淇淋2026》口味查詢、買一送一日期、門市查詢及價格總整理",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Wed, 18 Nov 2026 23:49:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台進入「資安颱風季」！趨勢科技示警：你的個資可能早已外洩，3招守住帳戶與荷包 | 數位時代",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 07:07:12 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "麥當勞優惠2026》11月優惠券下載、優惠代碼、買一送一、歡樂送懶人包",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 00:17:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台急凍3天！入夜後高山恐降雪 氣象粉專曝追雪地圖 | 華視新聞",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 01:36:27 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "臺灣空氣品質指數（AQI）和空氣污染資訊| IQAir | IQAir 台灣",
+      "sourceName": "IQAir",
+      "pubDate": "Thu, 19 Nov 2026 06:16:29 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台最難訂！島語大巨蛋店11／26開幕可訂位日期、餐價出爐- 生活",
+      "sourceName": "工商時報",
+      "pubDate": "Thu, 19 Nov 2026 07:12:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "冷空氣南下全台壞天氣 專家：愈晚愈冷下探14度低溫 2地區更凍",
+      "sourceName": "udn",
+      "pubDate": "Wed, 18 Nov 2026 22:41:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "《嫁金釵》《Doctor X》輸了！Netflix台灣最新收視排行榜出爐，冠軍竟是1 部黑馬台劇",
+      "sourceName": "風傳媒",
+      "pubDate": "Thu, 19 Nov 2026 07:59:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台首間！桃機東方宇逸貴賓室獲碳盤查查證、ISO 9001品質認證- 生活",
+      "sourceName": "工商時報",
+      "pubDate": "Thu, 19 Nov 2026 06:36:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台逾4萬青少年用電子煙！《菸防法》修法擬最重罰10萬 董氏基金會揭菸商3大圈套",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:32:26 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台健身房數量創新高！台中188家首度超越台北 帶動中大型店面需求 | 住展",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 05:51:56 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "自由觀點》洋流效應橫掃全台 翻盤關鍵看兩件事 | 自由電子報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 08:06:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "判刑10年上訴中！沈慶京想「全台走透透」 聲請解除電子腳鐐遭駁回 | 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 09:56:49 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "涉行賄柯文哲！沈慶京想解除科控「全台跑」 高院駁回：未限制只能留在台北 | 太報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 07:31:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "冷氣團南下全台急凍！醫揭「2大猝死高危區域」 5件事千萬別做",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 13:03:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "不只北部冷！全台連3天有感降溫專家曝最冷時間點- 生活新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 03:34:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "沈慶京年紀大、有醫療需求...想解除科控「全台走透透」 法院裁定駁回| 聯合新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 05:37:23 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "全台僅5輛! 中部首輛70公尺雲梯車台中亮相｜TVBS新聞 @TVBSNEWS01 │ TVBS新聞網",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 08:53:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "台灣重大新聞",
+      "query": "全台 最新新聞",
+      "title": "頭獎保證2億元！威力彩最新獎號揭曉 頭獎無人中",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 14:20:55 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "賴清德連走彰化三宮廟力挺陳素月 讚許長年心繫鄉親共推交通、水五金與育兒建設",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 08:36:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "57歲男歷經死劫 彰化首例新型血管外去顫器接力救命",
+      "sourceName": "台灣民眾電子報",
+      "pubDate": "Thu, 19 Nov 2026 04:27:59 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "《彰化縣長政見會》改善偏鄉醫療 陳素月提「幸福小黃」解方",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Wed, 18 Nov 2026 21:30:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "醫師夫妻捐贈反光背心與警示燈 守護彰化波麗士",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:03:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "總統賴清德赴彰化三大宮廟參香 力挺陳素月拚縣長 | 觀傳媒",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 14:02:21 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "影／彰化偏鄉長者就醫交通受關注蘇智弦、洪雅婷提六項長照政見- 政治新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:49:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "鼓勵全民運動！彰化縣府耗資4億新建田中樂活運動館 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 11:31:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "賴清德贈匾彰化南瑤宮 「德溥群生」見證百年古廟修復新頁",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 07:34:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "業者送禮、關說怎麼辦？彰化推廉政手冊 12案例助稽查員依法把關",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 03:00:11 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "賴清德彰化南瑤宮參拜 化身陳素月最強助攻手｜#鏡新聞",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 05:11:31 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "彰化榮家家屬座談會 交流照護需求打造安心生活",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 14:35:04 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "彰化南瑤宮首獲總統賜匾 賴清德支持升國定古蹟",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:57:46 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "【拚翻轉2-1】提「2030台積電進彰化」救低薪 邱建富允未來入主縣府主動布局",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 06:06:59 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "彰化瑤宮獲賴清德總統贈匾 林世賢爭取升級為國定古蹟",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 10:42:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "彰化田中樂活運動館動土 挹注4億元打造全齡共享健康中心",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 10:38:45 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "總統賴清德贈匾彰化南瑤宮 盼升格國定古蹟延續百年香火",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 12:58:41 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "2026彰化歲末演唱會 12/19重磅登場歡樂開唱",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 09:40:49 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "（有影片）／邱建富成立體育後援會 提四大政策拚彰化運動發展",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 13:55:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "彰基沐恩廊道變身光影花海 互動光雕打造療癒新空間",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 12:22:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "長輩看病別再靠家人請假 民眾黨提六項長照政見",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 14:52:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 台灣 新聞",
+      "title": "多次酒駕遭罰近百萬並終身不得考照 義務人填寫問卷並請求轉介酒癮治療",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 08:15:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "竹塘消防新地標啟動！彰化縣府斥資4,853萬元 強化救災救護量能 打造安心宜居家園 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Thu, 19 Nov 2026 09:43:02 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "【拚翻轉2-1】提「2030台積電進彰化」 救低薪邱建富允未來入主縣府主動布局",
+      "sourceName": "匯流新聞網",
+      "pubDate": "Thu, 19 Nov 2026 06:06:59 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "均衡消防救災戰力 彰化縣府斥資4800萬建竹塘消防分隊",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:41:16 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "鼓勵全民運動！彰化縣府耗資4億新建田中樂活運動館 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 10:12:19 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "影音/「地政是庶政之母」 彰化田中地政事務所辦公廳舍新建動土",
+      "sourceName": "新頭條",
+      "pubDate": "Thu, 19 Nov 2026 11:08:41 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化田中樂活運動館動土 挹注4億元打造全齡共享健康中心",
+      "sourceName": "三星傳媒",
+      "pubDate": "Thu, 19 Nov 2026 10:49:06 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "卸任在即王惠美日日持鏟 「不敗女王」成「動土女王」",
+      "sourceName": "翻爆",
+      "pubDate": "Thu, 19 Nov 2026 11:31:22 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化4億元打造全齡共享 田中樂活運動館動土",
+      "sourceName": "新唐人亞太電視台",
+      "pubDate": "Thu, 19 Nov 2026 07:13:17 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "影音/挹注4億元打造全齡共享 彰化田中樂活運動館動土",
+      "sourceName": "勢傳媒",
+      "pubDate": "Thu, 19 Nov 2026 12:35:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "不敗女王變「動土女王」！王惠美卸任倒數 天天拿金鏟",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 13:52:57 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化田中地政事務所辦公廳舍新建工程動土",
+      "sourceName": "中華新聞雲／中華日報",
+      "pubDate": "Thu, 19 Nov 2026 09:39:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "田中不用跑遠就能運動 六大設施預計118年完工",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 12:56:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化竹塘消防分隊新廳舍動土 預計117年完工啟用 | 青年日報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 12:11:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "打造現代化救災基地！竹塘消防分隊新建工程動土",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 14:23:46 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "2026彰化歲末演唱會 12/19重磅登場歡樂開唱 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 10:16:25 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "田中地政新廳舍動土 斥資1.2億打造全齡友善洽公空間",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 12:57:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "投入1億2,272萬 彰化田中地政事務所辦公廳舍新建動土",
+      "sourceName": "臺灣導報",
+      "pubDate": "Thu, 19 Nov 2026 10:02:25 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化鹿港再添10公頃產業園區！年產值上看22億、創造千個工作服務中心還設托嬰中心- 生活新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:03:45 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "雲縣府智慧公文與首長信箱榮獲行政院115年度標竿學習案例 推動RPA成效斐然",
+      "sourceName": "睿傳媒 Rightmedia",
+      "pubDate": "Thu, 19 Nov 2026 09:28:04 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化田中樂活運動館動土預計118年完工| 中彰投| 地方",
+      "sourceName": "udn",
+      "pubDate": "Thu, 19 Nov 2026 07:26:12 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "深耕彰化12年！曹嘉豪從基層服務推動制度改革 關注青年發展、交通建設為員林大村永靖打拚",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:36:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "「田中樂活運動館」王縣長等人動土。（照片縣府提供）",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 07:35:06 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "消防局竹塘分隊新建辦公廳舍動土。（照片縣府提供）",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 06:15:36 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "業者送禮、關說怎麼辦？彰化推廉政手冊 12案例助稽查員依法把關",
+      "sourceName": "https://www.yesmedia.com.tw/",
+      "pubDate": "Thu, 19 Nov 2026 03:00:11 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰縣長青幸福卡新增農漁會消費折抵每月200元 獨缺伸港農會的原因曝光了。",
+      "sourceName": "自由時報",
+      "pubDate": "Wed, 18 Nov 2026 21:59:06 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化青創夢想起飛！「創業三扶貼」陪青年走出自己的路",
+      "sourceName": "今周刊",
+      "pubDate": "Wed, 18 Nov 2026 23:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "竹北國中創校70週年大禮 竹縣府投入4.5億元拆除信義樓重建今動土",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 14:12:56 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "彰化 縣府",
+      "title": "彰化月影燈季攜人氣「米菲兔」12/ 12繽紛迎賓 歲末演唱會12/19豪華卡司齊聚鹿港",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 01:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "秀水 新聞",
+      "title": "秀水國中「東棟大樓拆除暨活動中心新建工程」動土",
+      "sourceName": "macrocosm.tw",
+      "pubDate": "Thu, 19 Nov 2026 12:22:58 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "秀水 新聞",
+      "title": "補足校園最後一塊拼圖 秀水國中活動中心正式動土",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 02:48:50 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞（台灣相關）",
+      "query": "秀水 新聞",
+      "title": "彰化消防局竹塘分隊新廳舍動土 斥資4853萬元預計117年啟用",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 03:44:29 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "總統賴清德赴彰化三大宮廟參香 力挺陳素月拚縣長",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 13:55:16 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "總統賴清德（中）力挺陳素月（右4）參選彰化縣長，連走三間宮廟。（照片競總提供）",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 14:53:52 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "影音/「地政是庶政之母」 彰化田中地政事務所辦公廳舍新建動土",
+      "sourceName": "新頭條",
+      "pubDate": "Thu, 19 Nov 2026 11:08:41 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "總統賴清德到彰化縣員林市福寧宮參拜 力挺陳素月",
+      "sourceName": "Yahoo",
+      "pubDate": "Thu, 19 Nov 2026 09:29:34 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化田中地政事務所辦公廳舍新建工程動土",
+      "sourceName": "中華新聞雲／中華日報",
+      "pubDate": "Thu, 19 Nov 2026 09:39:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "竹塘消防新地標啟動！彰化縣府斥資4,853萬元 強化救災救護量能 打造安心宜居家園 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Thu, 19 Nov 2026 09:43:02 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "鼓勵全民運動！彰化縣府耗資4億新建田中樂活運動館 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 11:31:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "賴清德連走彰化三宮廟力挺陳素月 讚許長年心繫鄉親共推交通、水五金與育兒建設",
+      "sourceName": "台灣好新聞",
+      "pubDate": "Thu, 19 Nov 2026 08:46:56 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "【拚翻轉2-1】提「2030台積電進彰化」 救低薪邱建富允未來入主縣府主動布局",
+      "sourceName": "匯流新聞網",
+      "pubDate": "Thu, 19 Nov 2026 06:06:59 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "賴總統彰化參拜力挺陳素月、黃柏瑜| 地方",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Thu, 19 Nov 2026 05:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "（有影片）／邱建富成立體育後援會 提四大政策拚彰化運動發展",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 13:55:49 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "均衡消防救災戰力 彰化縣府斥資4800萬建竹塘消防分隊",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:41:16 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "賴清德贈匾彰化南瑤宮 「德溥群生」見證百年古廟修復新頁",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 13:21:13 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "田中地政新廳舍動土 斥資1.2億打造全齡友善洽公空間",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 12:57:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "選戰倒數！賴清德赴彰化參拜三大信仰中心 力挺陳素月拚勝選 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Thu, 19 Nov 2026 12:00:03 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "深耕彰化12年！曹嘉豪從基層服務推動制度改革 關注青年發展、交通建設為員林大村永靖打拚",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:36:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "總統賴清德贈匾彰化南瑤宮 盼升格國定古蹟延續百年香火",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 12:58:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "賴清德首訪永靖參香 力挺「永靖媳婦」陳素月",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 10:11:38 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "邱建富成立體育後援會 提四大政策打造全民運動大縣",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:30:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "賴清德總統彰化南瑤宮參香 獲致贈「德溥群生」匾額",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:43:54 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化田中樂活運動館動土 挹注4億元打造全齡共享健康中心",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:38:45 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化六大建築新地標：中友百貨、鹿港轉運站、大巨蛋、新田中車站",
+      "sourceName": "Bella.tw儂儂",
+      "pubDate": "Wed, 18 Nov 2026 22:00:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "【拚翻轉2-2】 借鏡嘉義布局彰化產業邱建富提海水淡化廠突破中科二林水電限制",
+      "sourceName": "匯流新聞網",
+      "pubDate": "Thu, 19 Nov 2026 06:06:57 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "田中不用跑遠就能運動 六大設施預計118年完工",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 12:56:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化縣長政見會聚焦長者免健保費 陳素月、魏平政針對醫療福利與產業發展交鋒",
+      "sourceName": "Taiwan News",
+      "pubDate": "Thu, 19 Nov 2026 01:23:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化瑤宮獲賴清德總統贈匾 林世賢爭取升級為國定古蹟",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:42:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "長輩看病別再靠家人請假 民眾黨提六項長照政見",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 14:56:18 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化縣長選戰倒數！魏平政站路口拜票 高喊延續王惠美成果",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 01:32:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "竹塘消防分隊廳舍老舊彰化砸4853萬興建、健身房也入列| 中彰投| 地方",
+      "sourceName": "UDN",
+      "pubDate": "Thu, 19 Nov 2026 07:52:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "影／彰化偏鄉長者就醫交通受關注蘇智弦、洪雅婷提六項長照政見- 政治新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:49:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "影音/挹注4億元打造全齡共享 彰化田中樂活運動館動土",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:48:32 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "「2026彰化縣媽祖祈福文化節」國慶連假邀來「芳苑普天宮」祈福遊彰化",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 01:07:38 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "賴總統到彰化南瑤宮贈匾批在野黨加碼發兩萬現金違憲是選舉花招| 時事",
+      "sourceName": "聯合影音",
+      "pubDate": "Thu, 19 Nov 2026 04:36:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "影／賴清德赴彰化南瑤宮參香贈匾 林世賢爭取列國定古蹟獲允協助",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 07:50:50 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "打造現代化救災基地！竹塘消防分隊新建工程動土",
+      "sourceName": "newsdaily.tw",
+      "pubDate": "Thu, 19 Nov 2026 14:20:07 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "看見長輩幸福笑容 彰化榮家與家屬攜手打造樂齡生活",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 13:00:03 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "（有影片）／邱建富成立體育後援會 提四大政策拚彰化運動發展",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 13:55:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化縣 重要新聞",
+      "title": "彰化縣山地原住民縣議員選戰》張瑋婷打社福專業牌 盼族人權益有制度可依靠",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 04:48:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化檢警查扣以BB彈射擊竹塘鄉長候選人競選看板詹姓犯嫌槍枝。（照片檢方提供）",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 12:15:52 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "影／賴清德彰化輔選走訪南瑤宮、福寧宮、永安宮 力挺陳素月拚「彰化加速」",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 08:40:11 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "2026彰化歲末演唱會 12/19重磅登場歡樂開唱 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 10:16:25 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化選前再傳噩耗！「4連霸里長」原交棒兒子 突病逝",
+      "sourceName": "東森新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:48:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化縣山地原住民縣議員選戰》張瑋婷打社福專業牌 盼族人權益有制度可依靠",
+      "sourceName": "民眾新聞網",
+      "pubDate": "Thu, 19 Nov 2026 04:48:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化燈塔「撞衫」楊謹華爆紅民眾清晨6點排隊搶領時尚小物- 生活",
+      "sourceName": "工商時報",
+      "pubDate": "Thu, 19 Nov 2026 06:56:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化榮家家屬座談會交流照護需求打造安心生活- 生活新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 14:35:04 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "總統賴清德（中）力挺陳素月（右4）參選彰化縣長，連走三間宮廟。（照片競總提供）",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 09:00:49 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化消防局竹塘分隊新廳舍動土 斥資4853萬元預計117年啟用",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 03:44:29 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化4歲女童遭虐腦傷終身難癒 送醫後惡男還傳「這句話」滅證 照顧者重判14年6月",
+      "sourceName": "鏡週刊Mirror Media",
+      "pubDate": "Thu, 19 Nov 2026 09:34:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰縣長青幸福卡新增農漁會消費折抵每月200元 獨缺伸港農會的原因曝光了。",
+      "sourceName": "自由時報",
+      "pubDate": "Wed, 18 Nov 2026 21:59:06 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "賴清德稱讚陳素月「彰化阿信」 30年沒見過她穿高根鞋 | 自由電子報",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 07:51:25 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "深耕彰化12年！曹嘉豪從基層服務推動制度改革 關注青年發展、交通建設為員林大村永靖打拚",
+      "sourceName": "民眾新聞網",
+      "pubDate": "Thu, 19 Nov 2026 06:36:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰警打詐成績全國第一攜手順德公益慈善基金會深耕反詐宣導- 社會新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:11:51 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化田中樂活運動館動土 挹注4億元打造全齡共享",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 05:56:17 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "全國第一個校長霸凌案扯出案外案！彰化男寄恐嚇信嗆「岡山國小放炸彈」遭判刑2月",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:46:23 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "57歲男心跳停止歷經5次電擊救回 彰化首例新型血管外去顫器接力救命",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 13:05:51 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化田中地政事務所新建工程動土 斥資1.2億打造4層樓辦公廳舍",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 06:06:29 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "不滿岡山國小教師遭霸凌彰化男寄恐嚇信揚言炸校下場慘了- 社會新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Wed, 18 Nov 2026 23:43:51 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "影／彰化偏鄉長者就醫交通受關注 蘇智弦、洪雅婷提六項長照政見",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 04:49:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "彰化選前連爆2槍擊1嫌落網 檢警查扣空氣長槍、短槍 吳音寧座車案還在查",
+      "sourceName": "鏡報",
+      "pubDate": "Thu, 19 Nov 2026 08:06:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "影／賴清德赴彰化南瑤宮參香贈匾 林世賢爭取列國定古蹟獲允協助",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 07:32:27 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "彰化縣重要新聞",
+      "query": "彰化 最新新聞",
+      "title": "聞霸凌抱不平他寄信恐嚇「炸校園」！岡山國小霸凌案外案 彰化男遭判刑",
+      "sourceName": "鏡報",
+      "pubDate": "Thu, 19 Nov 2026 05:22:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "吸2484萬觀光客！鹿港2億聯絡道解塞車 產業園區、五星酒店接力進駐",
+      "sourceName": "好房網News",
+      "pubDate": "Thu, 19 Nov 2026 08:19:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "全台最貴光明燈要價50萬！鹿港女董連續10年點「斗首」豪砸550萬",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 04:24:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "彰化鹿港再添10公頃產業園區！年產值上看22億、創造千個工作服務中心還設托嬰中心- 生活新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:03:45 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港最貴「50萬斗首」光明燈被她包10年！豪砸550萬元因曝光 | 民視新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 03:51:24 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港最貴「50萬斗首」光明燈被她包10年！豪砸500萬原因曝光",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 03:55:47 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "彰化月影燈季攜人氣「米菲兔」12/ 12繽紛迎賓 歲末演唱會12/19豪華卡司齊聚鹿港",
+      "sourceName": "《旅奇傳媒》TR Omnimedia",
+      "pubDate": "Thu, 19 Nov 2026 01:01:20 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "彰化六大建築新地標：中友百貨、鹿港轉運站、大巨蛋、新田中車站",
+      "sourceName": "Bella.tw儂儂",
+      "pubDate": "Wed, 18 Nov 2026 22:00:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港天后宮最貴光明燈女董座連11年砸550萬包了- 綜合",
+      "sourceName": "華視新聞網",
+      "pubDate": "Thu, 19 Nov 2026 01:10:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港天后宮最貴光明燈 女董座連11年砸550萬包了！",
+      "sourceName": "自由時報",
+      "pubDate": "Wed, 18 Nov 2026 22:32:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "全台最貴光明燈！鹿港天后宮一盞50萬 女董座砸550萬連續11年點燈",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 03:05:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港天后宮最貴光明燈 女董座連11年砸550萬包了！",
+      "sourceName": "CMoney",
+      "pubDate": "Wed, 18 Nov 2026 22:49:11 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港塞車有解 二期聯絡道動土",
+      "sourceName": "中時新聞網",
+      "pubDate": "Wed, 18 Nov 2026 20:10:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "台灣新聞報Taiwan-News Post - taiwan-news.com.tw",
+      "sourceName": "taiwan-news.com.tw",
+      "pubDate": "Thu, 19 Nov 2026 01:04:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港最貴「50萬斗首」光明燈被她包10年！豪砸550萬元因曝光",
+      "sourceName": "民視新聞網",
+      "pubDate": "Thu, 19 Nov 2026 03:17:03 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "討論牆 | 鹿港最貴「50萬斗首」光明燈被她包10年！豪砸550萬元因曝光",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 08:12:19 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "低谷時媽祖引路！鹿港天后宮最貴光明燈 女董座連11年砸550萬",
+      "sourceName": "ETtoday新聞雲",
+      "pubDate": "Thu, 19 Nov 2026 02:03:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "鹿港轉運站啟用：以公私協力重塑古鎮觀光與交通格局",
+      "sourceName": "www.heatalk.com",
+      "pubDate": "Wed, 18 Nov 2026 23:08:31 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 新聞",
+      "title": "550萬不手軟！女董座連11年包下全台最貴光明燈",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 07:43:51 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "永慶房屋關懷地方文化與偏鄉教育 陪伴民俗技藝傳承、學童探索世界",
+      "sourceName": "好房網News",
+      "pubDate": "Thu, 19 Nov 2026 09:28:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "在地企業家熱心聯合捐贈 彰化消防添救護利器守護生命 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Thu, 19 Nov 2026 10:20:56 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "社會傳真",
+      "sourceName": "臺灣導報",
+      "pubDate": "Thu, 19 Nov 2026 10:02:25 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "70攤甜點齊聚水岸！岡山甘味祭11/21登場 淺堤獻唱、糖雕大師秀絕活",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 12:57:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "「聲樂界林志玲」突然現身國小門口 成了導護姐姐互動曝光",
+      "sourceName": "自由娛樂",
+      "pubDate": "Thu, 19 Nov 2026 13:31:05 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "《自營商買超45-22》中華(75)、名 軒(20)、遠 百(94)",
+      "sourceName": "富聯網",
+      "pubDate": "Thu, 19 Nov 2026 08:31:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "高雄岡山甘味祭11/21登場！70攤甜點、5組音樂卡司打造水岸野餐派對",
+      "sourceName": "焦點時報",
+      "pubDate": "Thu, 19 Nov 2026 09:14:38 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "虎尾中溪社區活動中心竣工揭牌 打造友善無障礙長照新據點",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:11:43 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "股東會：近期股東會一覽表",
+      "sourceName": "富聯網",
+      "pubDate": "Wed, 18 Nov 2026 23:15:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "打造「岡山甜實力」 「2026岡山甘味祭」11/21甜蜜集結70甜點品牌",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 14:15:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "福興 新聞",
+      "title": "岡山甜點控集合！「2026岡山甘味祭」70攤人氣品牌一次吃遍",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:16:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港與福興地方新聞",
+      "query": "鹿港 福興",
+      "title": "業者送禮、關說怎麼辦？彰化推廉政手冊 12案例助稽查員依法把關",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 03:00:11 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "彰化縣- 縣市預報",
+      "sourceName": "交通部中央氣象署",
+      "pubDate": "Thu, 19 Nov 2026 05:24:32 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "總統賴清德赴彰化三大宮廟參香 力挺陳素月拚縣長",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 13:55:16 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "2026彰化歲末演唱會｜一起嗨翻鹿港！ 【 交通管制、停車資訊一次看！】-活動快訊-活動資訊",
+      "sourceName": "彰化旅遊資訊網",
+      "pubDate": "Wed, 18 Nov 2026 20:46:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "賴清德連走彰化三宮廟力挺陳素月 讚許長年心繫鄉親共推交通、水五金與育兒建設",
+      "sourceName": "台灣好新聞",
+      "pubDate": "Thu, 19 Nov 2026 08:46:56 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "吸2484萬觀光客！鹿港2億聯絡道解塞車 產業園區、五星酒店接力進駐",
+      "sourceName": "好房網News",
+      "pubDate": "Thu, 19 Nov 2026 08:19:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "深耕彰化12年！曹嘉豪從基層服務推動制度改革 關注青年發展、交通建設為員林大村永靖打拚",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:45:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "彰化六大建築新地標：中友百貨、鹿港轉運站、大巨蛋、新田中車站",
+      "sourceName": "Bella.tw儂儂",
+      "pubDate": "Wed, 18 Nov 2026 22:00:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "影／彰化偏鄉長者就醫交通受關注 蘇智弦、洪雅婷提六項長照政見",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:51:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "賴清德肯定「彰化加速」10大政見陳素月：積極與中央對接帶動水五金產業合法轉型- 政治新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 07:49:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "彰化四大交通新制相關文章",
+      "sourceName": "Bella.tw儂儂",
+      "pubDate": "Thu, 19 Nov 2026 03:39:12 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 交通",
+      "title": "賴清德參香力挺陳素月 推十大政見拚彰化加速",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 07:59:50 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "免費看告五人！彰化歲末演唱會12/19卡司、480秒煙火 停車交管曝",
+      "sourceName": "NOWnews今日新聞",
+      "pubDate": "Thu, 19 Nov 2026 02:29:18 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "彰化田中樂活運動館動土挹注4億元打造全齡共享健康中心- 社會新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:38:45 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "田中不用跑遠就能運動 六大設施預計118年完工",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 12:56:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "賴清德總統彰化南瑤宮參香 獲致贈「德溥群生」匾額",
+      "sourceName": "新頭條",
+      "pubDate": "Thu, 19 Nov 2026 11:43:54 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "彰化4億元打造全齡共享 田中樂活運動館動土",
+      "sourceName": "新唐人亞太電視台",
+      "pubDate": "Thu, 19 Nov 2026 07:13:17 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "深耕彰化12年！曹嘉豪從基層服務推動制度改革 關注青年發展、交通建設為員林大村永靖打拚",
+      "sourceName": "報新聞 Mega News",
+      "pubDate": "Thu, 19 Nov 2026 07:00:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "挹注4億元打造全齡共享 彰化田中樂活運動館動土 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Thu, 19 Nov 2026 07:23:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "鼓勵全民運動！彰化縣府耗資4億新建田中樂活運動館 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 10:12:19 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "屏東「針筒怪客」又出現！車停路邊遭潑水、放紅包 竟是診所醫師",
+      "sourceName": "newsdaily.tw",
+      "pubDate": "Thu, 19 Nov 2026 09:52:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "彰化 停車",
+      "title": "鼓勵全民運動！彰化縣府耗資4億新建田中樂活運動館",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 10:11:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "鹿港 停車",
+      "title": "田中不用跑遠就能運動 六大設施預計118年完工",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 12:56:58 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方交通停車",
+      "query": "福興 交通",
+      "title": "彰化鹿港再添10公頃產業園區！年產值上看22億、創造千個工作服務中心還設托嬰中心- 生活新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 11:03:45 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "（有影片）／偏鄉長輩看病不再靠家人 民眾黨提六項長照政見",
+      "sourceName": "觀傳媒",
+      "pubDate": "Thu, 19 Nov 2026 13:56:32 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "長輩看病別再靠家人請假 民眾黨提六項長照政見",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 14:56:18 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "影／彰化偏鄉長者就醫交通受關注 蘇智弦、洪雅婷提六項長照政見",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:59:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "彰化田中樂活運動館動土 挹注4億元打造全齡共享健康中心",
+      "sourceName": "三星傳媒",
+      "pubDate": "Thu, 19 Nov 2026 10:49:06 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "賴清德連走彰化三宮廟力挺陳素月 讚許共推交通、水五金與育兒建設",
+      "sourceName": "勢傳媒",
+      "pubDate": "Thu, 19 Nov 2026 12:35:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "鼓勵全民運動！彰化縣府耗資4億新建田中樂活運動館 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 11:31:35 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "彰化田中地政事務所辦公廳舍新建動土- 社會新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 14:02:18 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "彰化縣長政見會聚焦長者免健保費 陳素月、魏平政針對醫療福利與產業發展交鋒",
+      "sourceName": "Taiwan News",
+      "pubDate": "Thu, 19 Nov 2026 01:23:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "賴清德首訪永靖參香 力挺「永靖媳婦」陳素月",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 10:11:38 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "鼓勵全民運動！彰化縣府耗資4億新建田中樂活運動館 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 10:12:19 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "賴清德喊「彰化加速」 全力拉抬陳素月彰化選情",
+      "sourceName": "newsdaily.tw",
+      "pubDate": "Thu, 19 Nov 2026 15:04:46 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "深耕彰化12年！曹嘉豪從基層服務推動制度改革 關注青年發展、交通建設為員林大村永靖打拚",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 06:36:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 長照",
+      "title": "從基層到職業運動 邱建富端四大政策拚體育發展",
+      "sourceName": "newsdaily.tw",
+      "pubDate": "Thu, 19 Nov 2026 14:58:25 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "彰基綠色通道加二基好厝邊，偏鄉醫療順起來",
+      "sourceName": "macrocosm.tw",
+      "pubDate": "Thu, 19 Nov 2026 12:39:26 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "偏鄉腦中風搶救不再孤軍奮戰 彰基、二林醫院跨院合作",
+      "sourceName": "台灣教會公報新聞網",
+      "pubDate": "Thu, 19 Nov 2026 04:21:42 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "《彰化縣長政見會》改善偏鄉醫療 陳素月提「幸福小黃」解方",
+      "sourceName": "自由時報",
+      "pubDate": "Wed, 18 Nov 2026 21:30:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "彰基沐恩廊道互動光雕秀療癒登場陳穆寬：醫療重在愛與陪伴- 健康新聞",
+      "sourceName": "PChome Online 新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:42:14 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "工作不穩就喝兩杯！彰化男酒駕欠92萬 遭終身禁考駕照",
+      "sourceName": "TVBS新聞網",
+      "pubDate": "Thu, 19 Nov 2026 04:49:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "骨折後怕痛不敢動 她胸悶、冒冷汗竟是肺栓塞",
+      "sourceName": "鏡週刊Mirror Media",
+      "pubDate": "Thu, 19 Nov 2026 06:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "彰化基督教醫院130週年創新研發耀國際 IIP三傑獲殊榮、IIIC勇奪5金2銀",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 14:10:55 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "酒駕吞92萬罰單終身禁考照 50歲男戒酒癮",
+      "sourceName": "鏡週刊Mirror Media",
+      "pubDate": "Thu, 19 Nov 2026 04:46:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "多次酒駕遭罰近百萬終身不得考照 彰化分署轉介酒癮治療",
+      "sourceName": "記者爆料網",
+      "pubDate": "Thu, 19 Nov 2026 10:30:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "57歲男心跳停止歷經5次電擊救回 彰化首例新型血管外去顫器接力救命",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 13:05:51 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 醫療",
+      "title": "彰化酒駕慣犯被罰近百萬不繳 執行署扣押無著！轉介酒癮治療",
+      "sourceName": "壹蘋新聞網",
+      "pubDate": "Thu, 19 Nov 2026 02:46:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 教育",
+      "title": "彰化4億元打造全齡共享 田中樂活運動館動土",
+      "sourceName": "新唐人亞太電視台",
+      "pubDate": "Thu, 19 Nov 2026 07:13:17 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 教育",
+      "title": "深耕彰化12年！曹嘉豪從基層服務推動制度改革 關注青年發展、交通建設為員林大村永靖打拚",
+      "sourceName": "報新聞 Mega News",
+      "pubDate": "Thu, 19 Nov 2026 07:00:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 教育",
+      "title": "挹注4億元打造全齡共享 彰化田中樂活運動館動土 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Thu, 19 Nov 2026 07:23:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 教育",
+      "title": "彰化田中樂活運動館動土預計118年完工| 中彰投| 地方",
+      "sourceName": "udn",
+      "pubDate": "Thu, 19 Nov 2026 07:26:12 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 教育",
+      "title": "【拚翻轉2-1】提「2030台積電進彰化」救低薪 邱建富允未來入主縣府主動布局",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 06:12:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 教育",
+      "title": "賴清德肯定「彰化加速」10大政見 陳素月：積極與中央對接帶動水五金產業合法轉型",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 07:49:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "影／魏平政陣營拋彰化社福政見敬老金加碼1萬、老幼免健保費| 2026九合一選舉",
+      "sourceName": "UDN",
+      "pubDate": "Thu, 19 Nov 2026 03:49:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "彰化縣山地原住民縣議員選戰》張瑋婷打社福專業牌 盼族人權益有制度可依靠",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:53:13 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "縣市氣候與能源治理評比 台南居六都之首、屏東居非六都第一",
+      "sourceName": "環境資訊中心",
+      "pubDate": "Thu, 19 Nov 2026 06:00:44 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "賴總統彰化參拜力挺陳素月、黃柏瑜| 地方",
+      "sourceName": "中央社 CNA",
+      "pubDate": "Thu, 19 Nov 2026 05:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "賴清德彰化輔選走訪南瑤宮、福寧宮、永安宮 力挺陳素月拚「彰化加速」",
+      "sourceName": "彰化人彰化事新聞",
+      "pubDate": "Thu, 19 Nov 2026 08:56:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "影／魏平政陣營拋彰化社福政見 敬老金加碼1萬、老幼免健保費",
+      "sourceName": "UDN",
+      "pubDate": "Thu, 19 Nov 2026 03:50:02 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "業者送禮、關說怎麼辦？彰化推廉政手冊 12案例助稽查員依法把關",
+      "sourceName": "https://www.yesmedia.com.tw/",
+      "pubDate": "Thu, 19 Nov 2026 03:00:11 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "總統賴清德到彰化縣員林市福寧宮參拜 力挺陳素月",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:29:34 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "影／賴清德赴員林福寧宮參香批在野黨選舉期普發現金亂喊價| 2026九合一選舉",
+      "sourceName": "UDN",
+      "pubDate": "Thu, 19 Nov 2026 04:27:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "彰化縣山地原住民縣議員選戰》張瑋婷打社福專業牌 盼族人權益有制度可依靠",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 04:48:28 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "【拚翻轉2-1】提「2030台積電進彰化」救低薪 邱建富允未來入主縣府主動布局",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 06:06:59 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "（有影片）／邱建富成立體育後援會 提四大政策拚彰化運動發展",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 13:55:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "影／體育人挺體育人！邱建富成立體育後援會 提四大政策打造全民運動大縣",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 05:23:11 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "賴清德參香力挺陳素月 推十大政見拚彰化加速",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 07:59:50 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "【轉跑道2-1】市代拚花蓮縣議員 田珍綺延續田智宣「不分藍綠」服務精神",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 10:02:03 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方民生服務",
+      "query": "彰化 社福",
+      "title": "徐欣瑩政見拋六大願景 從出生到安老 照顧不同世代",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 05:33:30 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 治安",
+      "title": "競選看板變靶場！候選人眉心、鼻梁留下彈孔 警方上門逮人查扣雙槍",
+      "sourceName": "鏡週刊Mirror Media",
+      "pubDate": "Thu, 19 Nov 2026 11:27:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 治安",
+      "title": "彰化檢警查扣以BB彈射擊竹塘鄉長候選人競選看板詹姓犯嫌槍枝。（照片檢方提供）",
+      "sourceName": "台灣華報",
+      "pubDate": "Thu, 19 Nov 2026 11:43:34 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 治安",
+      "title": "BB槍射鄉長候選人看板頭部！嫌犯抓到了 起出1長槍1短槍",
+      "sourceName": "自由時報",
+      "pubDate": "Thu, 19 Nov 2026 09:45:05 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 治安",
+      "title": "醫師夫妻捐贈反光背心與警示燈 守護彰化波麗士",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 04:03:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 治安",
+      "title": "彰警打詐成績全國第一 攜手順德公益慈善基金會深耕反詐宣導",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 10:12:53 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
+      "title": "彰化田中地政事務所辦公廳舍新建動土",
+      "sourceName": "焦點時報",
+      "pubDate": "Thu, 19 Nov 2026 14:02:18 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
+      "title": "竹塘消防新地標啟動！彰化縣府斥資4,853萬元 強化救災救護量能 打造安心宜居家園 - 墨新聞-MORE News",
+      "sourceName": "墨新聞-MORE News",
+      "pubDate": "Thu, 19 Nov 2026 09:43:02 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
+      "title": "田中地政新廳舍動土 斥資1.2億打造全齡友善洽公空間",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 12:57:40 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "地方風險事件",
+      "query": "彰化 災害",
+      "title": "均衡消防救災戰力 彰化縣府斥資4800萬建竹塘消防分隊",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 10:41:16 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "吸2484萬觀光客！鹿港2億聯絡道解塞車 產業園區、五星酒店接力進駐",
+      "sourceName": "好房網News",
+      "pubDate": "Thu, 19 Nov 2026 08:19:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "2026彰化歲末演唱會｜一起嗨翻鹿港！ 【 交通管制、停車資訊一次看！】-活動快訊-活動資訊",
+      "sourceName": "彰化旅遊資訊網",
+      "pubDate": "Wed, 18 Nov 2026 20:46:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "彰化六大建築新地標：中友百貨、鹿港轉運站、大巨蛋、新田中車站",
+      "sourceName": "Bella.tw儂儂",
+      "pubDate": "Wed, 18 Nov 2026 22:00:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "全新觀光景點登場 潮州文創美食街 立足交通樞紐",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 16:20:26 GMT",
+      "reason": "未命中地方關鍵字：鹿港、福興"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "2026彰化歲末演唱會 12/19重磅登場歡樂開唱 | 中廣新聞網",
+      "sourceName": "LINE TODAY",
+      "pubDate": "Thu, 19 Nov 2026 10:16:25 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "台灣新聞報Taiwan-News Post - taiwan-news.com.tw",
+      "sourceName": "taiwan-news.com.tw",
+      "pubDate": "Thu, 19 Nov 2026 01:04:37 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "張嘉郡、李文來台西車隊掃街 擘劃治水交通與產業觀光新藍圖",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 08:05:19 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "鹿港塞車有解 二期聯絡道動土",
+      "sourceName": "中時新聞網",
+      "pubDate": "Wed, 18 Nov 2026 20:10:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "「大溪豆干旅遊節」一席豆宴・十道食光 尋味百旅饗宴",
+      "sourceName": "《旅奇傳媒》TR Omnimedia",
+      "pubDate": "Thu, 19 Nov 2026 01:16:27 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "服務從公廁見端倪 參山處松柏嶺遊客中心公廁獲南投特優肯定",
+      "sourceName": "台灣好新聞",
+      "pubDate": "Thu, 19 Nov 2026 02:26:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "泉湧北投百年湯「2026臺北溫泉季」登場",
+      "sourceName": "太陽網",
+      "pubDate": "Thu, 19 Nov 2026 01:00:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "深圳APEC狂秀紅毯鋪設機 中國網友自誇「史上最棒發明」",
+      "sourceName": "民視新聞網",
+      "pubDate": "Thu, 19 Nov 2026 06:00:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "華大觀光學院跨國師生備戰2026世界美食嘉年華會 邀韓港澳日料神級名廚密集特訓",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 15:27:03 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "松柏嶺遊客中心公廁獲南投特優 參山處打造友善舒適旅遊環境",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 00:17:22 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "「山海有空，你呢？」花蓮療癒策展登場 花蓮轉運站化身療癒空間",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 15:47:33 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "鹿港轉運站啟用：以公私協力重塑古鎮觀光與交通格局",
+      "sourceName": "www.heatalk.com",
+      "pubDate": "Wed, 18 Nov 2026 23:08:31 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "彰化月影燈季攜人氣「米菲兔」12/ 12繽紛迎賓 歲末演唱會12/19豪華卡司齊聚鹿港",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 01:00:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "新北投71園區東側道路工程完工",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 03:37:47 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 觀光",
+      "title": "105市道改善工程施工便道搭設作業 小坑仔產業道路部分路段11/23起分階段封閉",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 04:26:01 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 宮廟",
+      "title": "全台最貴光明燈要價50萬！鹿港女董連續10年點「斗首」豪砸550萬",
+      "sourceName": "三立新聞網SETN.com",
+      "pubDate": "Thu, 19 Nov 2026 04:24:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 宮廟",
+      "title": "桃園龍德宮2027年九天八夜繞境「緃貫線ㄟ四媽祖」",
+      "sourceName": "Yahoo新聞",
+      "pubDate": "Thu, 19 Nov 2026 02:24:21 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 宮廟",
+      "title": "影／賴清德赴彰化南瑤宮參香贈匾 林世賢爭取列國定古蹟獲允協助",
+      "sourceName": "互傳媒",
+      "pubDate": "Thu, 19 Nov 2026 07:32:27 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "鹿港 宮廟",
+      "title": "低溫商機！愛買限4天推吃鍋優惠 萬家福湯底買1送1",
+      "sourceName": "LIFE 生活網",
+      "pubDate": "Thu, 19 Nov 2026 07:46:39 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "福興 活動",
+      "title": "打造「岡山甜實力」 「2026岡山甘味祭」11/21甜蜜集結70甜點品牌",
+      "sourceName": "今傳媒 JNEWS",
+      "pubDate": "Thu, 19 Nov 2026 14:15:15 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "福興 活動",
+      "title": "永慶房屋關懷地方文化與偏鄉教育 陪伴民俗技藝傳承、學童探索世界",
+      "sourceName": "好房網News",
+      "pubDate": "Thu, 19 Nov 2026 09:28:00 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "福興 活動",
+      "title": "虎尾中溪社區活動中心竣工揭牌 打造友善無障礙長照新據點",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:11:43 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "福興 活動",
+      "title": "高雄岡山甘味祭11/21登場！70攤甜點、5組音樂卡司打造水岸野餐派對",
+      "sourceName": "焦點時報",
+      "pubDate": "Thu, 19 Nov 2026 09:14:38 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "福興 活動",
+      "title": "70攤甜點齊聚水岸！岡山甘味祭11/21登場 淺堤獻唱、糖雕大師秀絕活",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 12:57:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    },
+    {
+      "feed": "鹿港福興觀光活動",
+      "query": "福興 活動",
+      "title": "岡山甜點控集合！「2026岡山甘味祭」70攤人氣品牌一次吃遍",
+      "sourceName": "蕃新聞",
+      "pubDate": "Thu, 19 Nov 2026 09:16:08 GMT",
+      "reason": "RSS 發布時間不是 2026-11-20"
+    }
+  ],
+  "opinionItems": [
+    {
+      "id": "AUTO-2026-11-20-WNBEHE",
+      "sourceMode": "auto",
+      "autoClassification": "與台灣相關的國際新聞",
+      "autoFeedName": "與台灣相關的國際新聞",
+      "date": "2026-11-20",
+      "sourceType": "新聞",
+      "platform": "Google News",
+      "sourceName": "ETtoday運動雲",
+      "title": "睽違7年重返創辦起點！國際滑輪溜冰公開賽大佳河濱開戰",
+      "summary": "睽違7年重返創辦起點！國際滑輪溜冰公開賽大佳河濱開戰 &nbsp;&nbsp; ETtoday運動雲（自動歸類：與台灣相關的國際新聞）",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE93Qi1VcFcwRHZYaklQcHZCZThuSmt3cmJSSXB2cDVSaHdsbXgzREQzd3BuREh1c18zcnZjVkxlbktSS3BNTTE4ZE82UFdEN0Ns0gFPQVVfeXFMTVZrd3RmQWpUdHh5NWQ2cVZLdjhabGxDZDhhaHRNSmJPQzJfb0pVeTNuNkEwb2JwVEg2d2s5OWlKOFZkNTc0UGo1MU40aUlLYw?oc=5",
+      "region": "國際",
+      "keywords": "國際, 其他",
+      "category": "其他",
+      "interactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "views": 0,
+      "sentiment": "中性",
+      "importance": "中",
+      "status": "未讀",
+      "action": "需觀察",
+      "notes": "自動爬抓：與台灣相關的國際新聞。發布時間：2026-11-19T16:15:00.000Z",
+      "publishedAt": "2026-11-19T16:15:00.000Z",
+      "createdAt": "2026-11-19T16:40:53.714Z",
+      "updatedAt": "2026-11-19T16:40:53.714Z"
+    }
+  ],
+  "dailyPostIdeas": [],
+  "socialWatchTasks": [
+    {
+      "id": "SOCIAL-2026-11-20-1JCESEX",
+      "date": "2026-11-20",
+      "targetType": "熱門社群",
+      "platform": "Facebook",
+      "queryName": "今日高回覆熱門貼文＋彰化 / 鹿港 / 福興 / 秀水",
+      "url": "https://www.facebook.com/search/posts/?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88%20%E7%A7%80%E6%B0%B4",
+      "status": "待人工確認",
+      "notes": "請確認今日公開內容中，回覆率、互動數、留言數、分享數或觀看數較高，且與彰化、鹿港鎮、福興鄉、秀水鄉相關的熱門話題，再新增為社群輿情。"
+    },
+    {
+      "id": "SOCIAL-2026-11-20-1NUURR3",
+      "date": "2026-11-20",
+      "targetType": "熱門社群",
+      "platform": "Instagram",
+      "queryName": "今日高互動熱門貼文＋彰化 / 鹿港 / 福興 / 秀水",
+      "url": "https://www.instagram.com/explore/tags/%E5%BD%B0%E5%8C%96/",
+      "status": "待人工確認",
+      "notes": "請確認今日公開內容中，回覆率、互動數、留言數、分享數或觀看數較高，且與彰化、鹿港鎮、福興鄉、秀水鄉相關的熱門話題，再新增為社群輿情。"
+    },
+    {
+      "id": "SOCIAL-2026-11-20-6BL4G2",
+      "date": "2026-11-20",
+      "targetType": "熱門社群",
+      "platform": "Threads",
+      "queryName": "今日高回覆熱門討論＋彰化 / 鹿港 / 福興 / 秀水",
+      "url": "https://www.threads.com/search?q=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88%20%E7%A7%80%E6%B0%B4",
+      "status": "待人工確認",
+      "notes": "請確認今日公開內容中，回覆率、互動數、留言數、分享數或觀看數較高，且與彰化、鹿港鎮、福興鄉、秀水鄉相關的熱門話題，再新增為社群輿情。"
+    },
+    {
+      "id": "SOCIAL-2026-11-20-1M65FLU",
+      "date": "2026-11-20",
+      "targetType": "熱門社群",
+      "platform": "YouTube",
+      "queryName": "今日高觀看熱門影片＋彰化 / 鹿港 / 福興 / 秀水",
+      "url": "https://www.youtube.com/results?search_query=%E5%BD%B0%E5%8C%96+%E9%B9%BF%E6%B8%AF+%E7%A6%8F%E8%88%88+%E7%A7%80%E6%B0%B4",
+      "status": "待人工確認",
+      "notes": "請確認今日公開內容中，回覆率、互動數、留言數、分享數或觀看數較高，且與彰化、鹿港鎮、福興鄉、秀水鄉相關的熱門話題，再新增為社群輿情。"
+    },
+    {
+      "id": "SOCIAL-2026-11-20-AK3QSX",
+      "date": "2026-11-20",
+      "targetType": "熱門社群",
+      "platform": "Dcard",
+      "queryName": "今日高回覆熱門話題＋彰化 / 鹿港 / 福興 / 秀水",
+      "url": "https://www.dcard.tw/search?query=%E5%BD%B0%E5%8C%96%20%E9%B9%BF%E6%B8%AF%20%E7%A6%8F%E8%88%88%20%E7%A7%80%E6%B0%B4",
+      "status": "待人工確認",
+      "notes": "請確認今日公開內容中，回覆率、互動數、留言數、分享數或觀看數較高，且與彰化、鹿港鎮、福興鄉、秀水鄉相關的熱門話題，再新增為社群輿情。"
+    },
+    {
+      "id": "SOCIAL-2026-11-20-BOF6E6",
+      "date": "2026-11-20",
+      "targetType": "熱門社群",
+      "platform": "PTT",
+      "queryName": "今日高回覆熱門話題＋彰化 / 鹿港 / 福興 / 秀水",
+      "url": "https://www.google.com/search?q=site%3Aptt.cc+%E5%BD%B0%E5%8C%96+%E9%B9%BF%E6%B8%AF+%E7%A6%8F%E8%88%88+%E7%A7%80%E6%B0%B4",
+      "status": "待人工確認",
+      "notes": "請確認今日公開內容中，回覆率、互動數、留言數、分享數或觀看數較高，且與彰化、鹿港鎮、福興鄉、秀水鄉相關的熱門話題，再新增為社群輿情。"
+    }
+  ],
+  "summary": {
+    "totalItems": 1,
+    "highImportance": 0,
+    "negativeOrControversial": 0,
+    "changhuaRelated": 0,
+    "lukangOrFuxing": 0,
+    "postIdeas": 0,
+    "feedErrors": 1,
+    "filteredOut": 377
+  }
+}
